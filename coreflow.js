@@ -5,7 +5,7 @@ var request = require('superagent');
 var api = 'https://api.github.com/user/repos';
 var pkg = require('./package.json');
 
-var token = args.ghtoken || args.g || args['github-token'] || '';
+var token = args.ghtoken || args.g || args['github-token'] || '[gh token]';
 var pkgName = args.name || args.n || pkg.name;
 var pkgDesc = args.desc || args.description || pkg.description;
 var pkgHome = args.home || args.homepage || pkg.homepage;
