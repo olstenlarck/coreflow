@@ -1,0 +1,32 @@
+{"date":"2014-12-02T18:54:53.625Z","name":"#node.js","title":"#node.js","account":"tunnckocore@chat.freenode.net","protocol":"irc","isChat":true,"normalizedName":"#node.js"}
+{"date":"2014-12-02T18:54:54.000Z","who":"tunnckoCore","text":"You are now known as Osheaga.","flags":["system"]}
+{"date":"2014-12-02T18:55:00.000Z","who":null,"text":"The topic for #node.js is: Current Stable v0.10.33, Unstable v0.11.14 | Channel Mission Statement: http://bit.ly/node-irc-mission-statement | Channel Info: http://nodeirc.info | Channel Logs: http://logs.nodejs.org/node.js/index.","flags":["system"]}
+{"date":"2014-12-02T18:55:00.000Z","who":"ChanServ","text":"Visit the wiki page https://github.com/joyent/node/wiki","flags":["incoming","notification"]}
+{"date":"2014-12-02T18:55:00.000Z","who":"orwell.freenode.net","text":"Channel mode +Ccnt set by orwell.freenode.net.","flags":["system"]}
+{"date":"2014-12-02T18:55:14.000Z","who":"Efrem-Away","text":"Efrem-Away is now known as Efrem.","flags":["system"]}
+{"date":"2014-12-02T18:55:17.000Z","who":null,"text":"systemovich_ has left the room (Quit: Ping timeout: 252 seconds).","flags":["system"]}
+{"date":"2014-12-02T18:56:00.000Z","who":"night-owl","text":"night-owl is now known as zz_night-owl.","flags":["system"]}
+{"date":"2014-12-02T18:56:04.000Z","who":null,"text":"ConstantineXVI has left the room (Quit: Max SendQ exceeded).","flags":["system"]}
+{"date":"2014-12-02T18:56:30.000Z","who":null,"text":"nexnoded has left the room (Quit: Ping timeout: 250 seconds).","flags":["system"]}
+{"date":"2014-12-02T18:56:38.000Z","who":"claf","text":"tjsail33: its called scraper","flags":["incoming"]}
+{"date":"2014-12-02T18:56:45.000Z","who":"heikki74","text":"heikki74 [~heikki74@85-76-69-18-nat.elisa-mobile.fi] entered the room.","flags":["system","noLinkification"]}
+{"date":"2014-12-02T18:56:56.000Z","who":"encod3","text":"encod3 [~encod3@a83-163-98-141.adsl.xs4all.nl] entered the room.","flags":["system","noLinkification"]}
+{"date":"2014-12-02T18:57:05.000Z","who":"zz_night-owl","text":"zz_night-owl is now known as night-owl.","flags":["system"]}
+{"date":"2014-12-02T18:57:10.000Z","who":null,"text":"nexnoded_ has left the room (Quit: Read error: Connection reset by peer).","flags":["system"]}
+{"date":"2014-12-02T18:57:16.000Z","who":null,"text":"encod3 has left the room (Quit: Remote host closed the connection).","flags":["system"]}
+{"date":"2014-12-02T18:57:25.000Z","who":"rektide","text":"tjsail33: artoo.js","flags":["incoming"]}
+{"date":"2014-12-02T18:57:31.000Z","who":null,"text":"heikki74_ has left the room (Quit: Ping timeout: 258 seconds).","flags":["system"]}
+{"date":"2014-12-02T18:57:31.000Z","who":null,"text":"FooBarWidget has left the room (Quit: Ping timeout: 258 seconds).","flags":["system"]}
+{"date":"2014-12-02T18:57:33.000Z","who":"NeoXiD","text":"ljharb: By the way: Is \"Object.keys(foo).map(...)\" faster than \"for ... in { ... hasOwnProperty ... }\"? I've never made any benchmarks and I'm using the first solution too, but just wondering.","flags":["incoming"]}
+{"date":"2014-12-02T18:57:37.000Z","who":"nexnoded","text":"nexnoded [~nexus@37.157.38.42] entered the room.","flags":["system","noLinkification"]}
+{"date":"2014-12-02T18:57:44.000Z","who":null,"text":"Sonicrida has left the room (Quit: Remote host closed the connection).","flags":["system"]}
+{"date":"2014-12-02T18:57:48.000Z","who":null,"text":"ericf has left the room (Quit: Ping timeout: 245 seconds).","flags":["system"]}
+{"date":"2014-12-02T18:57:49.000Z","who":"FooBarWidget","text":"FooBarWidget [FooBarWidg@2600:3c03::f03c:91ff:fe96:13a] entered the room.","flags":["system","noLinkification"]}
+{"date":"2014-12-02T18:57:50.000Z","who":"ljharb","text":"NeoXiD: so i have two answers for you. the first is, it literally almost never matters, ever","flags":["incoming"]}
+{"date":"2014-12-02T18:58:00.000Z","who":null,"text":"brianloveswords has left the room (Quit: Computer has gone to sleep.).","flags":["system"]}
+{"date":"2014-12-02T18:58:07.000Z","who":"rektide","text":"but that's more client centric. which i personally think is far superior to trying to do stuff on node. you can use WebDriver to drive the browser, artoo.js on the browser to do the scraping","flags":["incoming"]}
+{"date":"2014-12-02T18:58:10.000Z","who":"night-owl","text":"night-owl is now known as zz_night-owl.","flags":["system"]}
+{"date":"2014-12-02T18:58:27.000Z","who":"ljharb","text":"NeoXiD: you should code for clarity and maintainability first. and only worry about performance after it's built, clear, tested, and *profiled*, and even then, you only optimize the slow parts. because it's easy to speed up clean code, but it's crazy hard to clean up fast code.","flags":["incoming"]}
+{"date":"2014-12-02T18:58:31.000Z","who":"dabaR","text":"dabaR [~dbernar1@S0106b81619e8ef55.wp.shawcable.net] entered the room.","flags":["system","noLinkification"]}
+{"date":"2014-12-02T18:58:47.000Z","who":"ljharb","text":"NeoXiD: the second answer is, the loop is faster because JS engines have inexplicably failed to optimize functional iteration methods aggressively.","flags":["incoming"]}
+{"date":"2014-12-02T18:58:55.000Z","who":"tjsail33","text":"rektide - interesting, thanks","flags":["incoming"]}

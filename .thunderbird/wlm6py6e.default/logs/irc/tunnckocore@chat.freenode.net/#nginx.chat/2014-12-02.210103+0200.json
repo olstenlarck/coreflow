@@ -1,0 +1,16 @@
+{"date":"2014-12-02T19:01:03.221Z","name":"#nginx","title":"#nginx","account":"tunnckocore@chat.freenode.net","protocol":"irc","isChat":true,"normalizedName":"#nginx"}
+{"date":"2014-12-02T19:01:03.000Z","who":"tunnckoCore","text":"You are now known as Osheaga.","flags":["system"]}
+{"date":"2014-12-02T19:01:10.000Z","who":null,"text":"The topic for #nginx is: Community Nginx support channel. Don't ask to ask; just ask! Config pastes via http://p.ngx.cc only. This channel is publicly logged. || Latest Releases: [mainline 1.7.7] [stable 1.6.2].","flags":["system"]}
+{"date":"2014-12-02T19:01:10.000Z","who":"ChanServ","text":"Community Nginx support channel. Don't ask to ask; just ask! Config pastes via http://p.ngx.cc only. This channel is publicly logged.","flags":["incoming","notification"]}
+{"date":"2014-12-02T19:01:10.000Z","who":"weber.freenode.net","text":"Channel mode +Ccgnt set by weber.freenode.net.","flags":["system"]}
+{"date":"2014-12-02T19:01:35.000Z","who":"doginal","text":"doginal [~agriggs@unaffiliated/doginal] entered the room.","flags":["system","noLinkification"]}
+{"date":"2014-12-02T19:03:30.000Z","who":"jjasinski","text":"jjasinski [~jjasinski@168.93.96.4] entered the room.","flags":["system","noLinkification"]}
+{"date":"2014-12-02T19:03:51.000Z","who":"ConstantineXVI","text":"ConstantineXVI [sxltrs@2600:3c00::f03c:91ff:feae:8909] entered the room.","flags":["system","noLinkification"]}
+{"date":"2014-12-02T19:05:10.000Z","who":null,"text":"ConstantineXVI has left the room (Quit: Max SendQ exceeded).","flags":["system"]}
+{"date":"2014-12-02T19:05:21.000Z","who":"ConstantineXVI","text":"ConstantineXVI [sxltrs@2600:3c00::f03c:91ff:feae:8909] entered the room.","flags":["system","noLinkification"]}
+{"date":"2014-12-02T19:07:11.000Z","who":null,"text":"tombar has left the room (Quit: Ping timeout: 255 seconds).","flags":["system"]}
+{"date":"2014-12-02T19:07:29.000Z","who":"FatShack","text":"Fireye: Yeah. I just don't know how I'm managing to get it right backwards. I'm getting exactly opposite of what I want.","flags":["incoming"]}
+{"date":"2014-12-02T19:07:34.000Z","who":"tombar","text":"tombar [~tombar@r186-55-111-52.dialup.adsl.anteldata.net.uy] entered the room.","flags":["system","noLinkification"]}
+{"date":"2014-12-02T19:08:18.000Z","who":null,"text":"ConstantineXVI has left the room (Quit: Max SendQ exceeded).","flags":["system"]}
+{"date":"2014-12-02T19:08:24.000Z","who":"Fireye","text":"Sorry, don't have the time at the moment to puzzle it out, you can try the interactive regex tester at debuggex.com, which has a handy cheat sheet, and the ability to do PCRE regex","flags":["incoming"]}
+{"date":"2014-12-02T19:08:24.000Z","who":null,"text":"Osheaga has left the room (Quit: thunderquit).","flags":["system"]}

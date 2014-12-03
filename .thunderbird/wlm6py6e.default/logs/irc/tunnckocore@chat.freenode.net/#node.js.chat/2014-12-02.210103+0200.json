@@ -1,0 +1,66 @@
+{"date":"2014-12-02T19:01:03.223Z","name":"#node.js","title":"#node.js","account":"tunnckocore@chat.freenode.net","protocol":"irc","isChat":true,"normalizedName":"#node.js"}
+{"date":"2014-12-02T19:01:03.000Z","who":"tunnckoCore","text":"You are now known as Osheaga.","flags":["system"]}
+{"date":"2014-12-02T19:01:10.000Z","who":null,"text":"The topic for #node.js is: Current Stable v0.10.33, Unstable v0.11.14 | Channel Mission Statement: http://bit.ly/node-irc-mission-statement | Channel Info: http://nodeirc.info | Channel Logs: http://logs.nodejs.org/node.js/index.","flags":["system"]}
+{"date":"2014-12-02T19:01:10.000Z","who":"ChanServ","text":"Visit the wiki page https://github.com/joyent/node/wiki","flags":["incoming","notification"]}
+{"date":"2014-12-02T19:01:10.000Z","who":"naeluh_cyber_mon","text":"naeluh_cyber_mon [~chatzilla@nhm-gw.nhm.org] entered the room.","flags":["system","noLinkification"]}
+{"date":"2014-12-02T19:01:11.000Z","who":"weber.freenode.net","text":"Channel mode +Ccnt set by weber.freenode.net.","flags":["system"]}
+{"date":"2014-12-02T19:01:26.000Z","who":"herrkin","text":"I am trying to use promises to send sms through at commands","flags":["incoming"]}
+{"date":"2014-12-02T19:01:32.000Z","who":"Sorella","text":"NeoXiD: there are a couple of things to consider here: (1) JS has a function invocation overhead (some functions are inlined, but not everything can be inlined or lambda lifted); (2) Grabbing properties out of the prototype chain is *slow*. Checking if a property exists in an object is *slow*; (3) keys(o).map(f) does two iterations because there's no fusion","flags":["incoming"]}
+{"date":"2014-12-02T19:01:32.000Z","who":"Sorella","text":"in JS (and we can't have because side-effects);","flags":["incoming"]}
+{"date":"2014-12-02T19:01:35.000Z","who":"doginal","text":"doginal [~agriggs@unaffiliated/doginal] entered the room.","flags":["system","noLinkification"]}
+{"date":"2014-12-02T19:01:36.000Z","who":"herrkin","text":"I use bluebird library","flags":["incoming"]}
+{"date":"2014-12-02T19:01:50.000Z","who":null,"text":"xonev has left the room (Quit: Leaving.).","flags":["system"]}
+{"date":"2014-12-02T19:01:50.000Z","who":"Sorella","text":"NeoXiD: so, in the end: it depends, either could be faster, but as ljharb said, it doesn't matter much","flags":["incoming"]}
+{"date":"2014-12-02T19:02:03.000Z","who":"PeterMetz","text":"PeterMetz [~petermetz@host-78-149-23-204.as13285.net] entered the room.","flags":["system","noLinkification"]}
+{"date":"2014-12-02T19:02:19.000Z","who":"AAA_awright","text":"Grabbing properties out of the prototype chain is a hell of a lot faster than copying properties, though","flags":["incoming"]}
+{"date":"2014-12-02T19:02:22.000Z","who":null,"text":"dabaR has left the room (Quit: WeeChat 0.3.8).","flags":["system"]}
+{"date":"2014-12-02T19:02:46.000Z","who":null,"text":"nicolagreco has left the room (Quit: Read error: Connection reset by peer).","flags":["system"]}
+{"date":"2014-12-02T19:02:46.000Z","who":"Sorella","text":"Oh, yeah, with values you're also allocating two arrays, and JS again can't optimise that because side-effects.","flags":["incoming"]}
+{"date":"2014-12-02T19:02:48.000Z","who":"vassagus","text":"vassagus [~vassagus@186.4.2.162] entered the room.","flags":["system","noLinkification"]}
+{"date":"2014-12-02T19:02:55.000Z","who":null,"text":"heikki74 has left the room (Quit: Ping timeout: 244 seconds).","flags":["system"]}
+{"date":"2014-12-02T19:02:57.000Z","who":null,"text":"robbyoconnor has left the room (Quit: Konversation terminated!).","flags":["system"]}
+{"date":"2014-12-02T19:03:08.000Z","who":null,"text":"deanclkclk has left the room (Quit: Ping timeout: 255 seconds).","flags":["system"]}
+{"date":"2014-12-02T19:03:13.000Z","who":"iiulian","text":"iiulian [~iulian@unaffiliated/iandan] entered the room.","flags":["system","noLinkification"]}
+{"date":"2014-12-02T19:03:14.000Z","who":"Sorella","text":"(Inferring purity in JS is probably difficult when `1 + 2` might have side-effects)","flags":["incoming"]}
+{"date":"2014-12-02T19:03:32.000Z","who":"AAA_awright","text":"Though as has been pointed out, don't prematurely optimize, don't even start unless response times or CPU time is a bottleneck for you","flags":["incoming"]}
+{"date":"2014-12-02T19:03:38.000Z","who":"dbernar1","text":"dbernar1 [~dbernar1@S0106b81619e8ef55.wp.shawcable.net] entered the room.","flags":["system","noLinkification"]}
+{"date":"2014-12-02T19:03:51.000Z","who":"ConstantineXVI","text":"ConstantineXVI [sxltrs@2600:3c00::f03c:91ff:feae:8909] entered the room.","flags":["system","noLinkification"]}
+{"date":"2014-12-02T19:03:54.000Z","who":null,"text":"Mackseraner has left the room (Quit: Textual IRC Client: www.textualapp.com).","flags":["system"]}
+{"date":"2014-12-02T19:04:00.000Z","who":"herrkin","text":"ok I repeat. I am trying to send sms using at commands and promises. I am using bluebird library. I did this Promise.reduce(smss, function(sms){send(sms)}) the funny thing is that this only sends the first item in the array as many times as the length of the array.","flags":["incoming"]}
+{"date":"2014-12-02T19:04:06.000Z","who":"mjpearson","text":"mjpearson [~mjp@pool-100-33-106-64.nycmny.fios.verizon.net] entered the room.","flags":["system","noLinkification"]}
+{"date":"2014-12-02T19:04:12.000Z","who":"KicStart","text":"KicStart [~User@gateway/tor-sasl/kicstart] entered the room.","flags":["system","noLinkification"]}
+{"date":"2014-12-02T19:04:24.000Z","who":"dbernar1","text":"dbernar1 is now known as dabaR.","flags":["system"]}
+{"date":"2014-12-02T19:04:24.000Z","who":"nicolagreco","text":"nicolagreco [~mozilla@nat-197-1.internal.eduroam.ucl.ac.uk] entered the room.","flags":["system","noLinkification"]}
+{"date":"2014-12-02T19:04:25.000Z","who":null,"text":"williamcotton has left the room (Quit: Ping timeout: 258 seconds).","flags":["system"]}
+{"date":"2014-12-02T19:04:27.000Z","who":"NeoXiD","text":"Sorella: Thanks to you too!","flags":["incoming"]}
+{"date":"2014-12-02T19:04:41.000Z","who":"deanclkclk","text":"deanclkclk [~deanclkcl@190.83.235.218] entered the room.","flags":["system","noLinkification"]}
+{"date":"2014-12-02T19:04:59.000Z","who":"ljharb","text":"herrkin: what's Promise.reduce","flags":["incoming"]}
+{"date":"2014-12-02T19:05:02.000Z","who":null,"text":"patricka_ has left the room (Quit: Remote host closed the connection).","flags":["system"]}
+{"date":"2014-12-02T19:05:10.000Z","who":null,"text":"ConstantineXVI has left the room (Quit: Max SendQ exceeded).","flags":["system"]}
+{"date":"2014-12-02T19:05:18.000Z","who":null,"text":"dabaR has left the room (Quit: Client Quit).","flags":["system"]}
+{"date":"2014-12-02T19:05:21.000Z","who":"ConstantineXVI","text":"ConstantineXVI [sxltrs@2600:3c00::f03c:91ff:feae:8909] entered the room.","flags":["system","noLinkification"]}
+{"date":"2014-12-02T19:05:22.000Z","who":"ron1","text":"ron1 [~ron1@modemcable021.116-162-184.mc.videotron.ca] entered the room.","flags":["system","noLinkification"]}
+{"date":"2014-12-02T19:05:24.000Z","who":"ljharb","text":"herrkin: you may want Promise.all(smss).then(function (results) { results.forEach(send); }) ?","flags":["incoming"]}
+{"date":"2014-12-02T19:05:35.000Z","who":"jondavidjohn","text":"jondavidjohn [~textual@173.218.79.198] entered the room.","flags":["system","noLinkification"]}
+{"date":"2014-12-02T19:05:36.000Z","who":"patrickarlt","text":"patrickarlt [~patrickar@198.102.62.250] entered the room.","flags":["system","noLinkification"]}
+{"date":"2014-12-02T19:05:38.000Z","who":"qard","text":"First arg of reduce is usually memo.","flags":["incoming"]}
+{"date":"2014-12-02T19:05:44.000Z","who":"MikeS_","text":"MikeS_ [~msmith@8.18.203.252] entered the room.","flags":["system","noLinkification"]}
+{"date":"2014-12-02T19:05:53.000Z","who":null,"text":"yoshokatana has left the room (Quit: Ping timeout: 240 seconds).","flags":["system"]}
+{"date":"2014-12-02T19:05:53.000Z","who":"herrkin","text":"hm.. I didnt try that","flags":["incoming"]}
+{"date":"2014-12-02T19:05:54.000Z","who":null,"text":"ValicekB has left the room (Quit: Ping timeout: 272 seconds).","flags":["system"]}
+{"date":"2014-12-02T19:05:54.000Z","who":"ljharb","text":"also that","flags":["incoming"]}
+{"date":"2014-12-02T19:05:55.000Z","who":"herrkin","text":"lets see.","flags":["incoming"]}
+{"date":"2014-12-02T19:06:13.000Z","who":"x1337807x","text":"x1337807x [~x1337807x@207-170-205-178.static.twtelecom.net] entered the room.","flags":["system","noLinkification"]}
+{"date":"2014-12-02T19:06:17.000Z","who":null,"text":"pmooney has left the room (Quit: Ping timeout: 252 seconds).","flags":["system"]}
+{"date":"2014-12-02T19:06:24.000Z","who":"qard","text":"https://github.com/petkaantonov/bluebird/blob/master/API.md#reducefunction-reducer--dynamic-initialvalue---promise","flags":["incoming"]}
+{"date":"2014-12-02T19:06:29.000Z","who":"pluma","text":"pluma [~pluma@unaffiliated/pluma] entered the room.","flags":["system","noLinkification"]}
+{"date":"2014-12-02T19:06:32.000Z","who":"dabaR","text":"dabaR [~dbernar1@S0106b81619e8ef55.wp.shawcable.net] entered the room.","flags":["system","noLinkification"]}
+{"date":"2014-12-02T19:06:34.000Z","who":null,"text":"asheinfeld has left the room (Quit: Remote host closed the connection).","flags":["system"]}
+{"date":"2014-12-02T19:06:46.000Z","who":"rdbell","text":"rdbell [~rdbell@75.103.8.90] entered the room.","flags":["system","noLinkification"]}
+{"date":"2014-12-02T19:06:51.000Z","who":"d11e9","text":"d11e9 [~d11e9@2.127.72.15] entered the room.","flags":["system","noLinkification"]}
+{"date":"2014-12-02T19:07:09.000Z","who":"asheinfeld","text":"asheinfeld [~asheinfel@rrcs-184-75-88-50.nyc.biz.rr.com] entered the room.","flags":["system","noLinkification"]}
+{"date":"2014-12-02T19:07:20.000Z","who":"ljharb","text":"so yeah bluebird's non-standard Promise.reduce would have worked but the reducer takes the accumulator as the first argument.","flags":["incoming"]}
+{"date":"2014-12-02T19:07:32.000Z","who":null,"text":"c4milo has left the room (Quit: Remote host closed the connection).","flags":["system"]}
+{"date":"2014-12-02T19:08:01.000Z","who":null,"text":"nicolagreco has left the room (Quit: Read error: Connection reset by peer).","flags":["system"]}
+{"date":"2014-12-02T19:08:18.000Z","who":null,"text":"ConstantineXVI has left the room (Quit: Max SendQ exceeded).","flags":["system"]}
+{"date":"2014-12-02T19:08:24.000Z","who":null,"text":"Osheaga has left the room (Quit: thunderquit).","flags":["system"]}

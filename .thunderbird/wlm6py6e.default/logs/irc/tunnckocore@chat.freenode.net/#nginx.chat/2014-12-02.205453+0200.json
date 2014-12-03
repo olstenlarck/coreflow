@@ -1,0 +1,15 @@
+{"date":"2014-12-02T18:54:53.619Z","name":"#nginx","title":"#nginx","account":"tunnckocore@chat.freenode.net","protocol":"irc","isChat":true,"normalizedName":"#nginx"}
+{"date":"2014-12-02T18:54:54.000Z","who":"tunnckoCore","text":"You are now known as Osheaga.","flags":["system"]}
+{"date":"2014-12-02T18:55:00.000Z","who":null,"text":"The topic for #nginx is: Community Nginx support channel. Don't ask to ask; just ask! Config pastes via http://p.ngx.cc only. This channel is publicly logged. || Latest Releases: [mainline 1.7.7] [stable 1.6.2].","flags":["system"]}
+{"date":"2014-12-02T18:55:00.000Z","who":"ChanServ","text":"Community Nginx support channel. Don't ask to ask; just ask! Config pastes via http://p.ngx.cc only. This channel is publicly logged.","flags":["incoming","notification"]}
+{"date":"2014-12-02T18:55:00.000Z","who":"orwell.freenode.net","text":"Channel mode +Ccgnt set by orwell.freenode.net.","flags":["system"]}
+{"date":"2014-12-02T18:55:41.000Z","who":"Fireye","text":"bluenemo: Yes.","flags":["incoming"]}
+{"date":"2014-12-02T18:56:04.000Z","who":null,"text":"ConstantineXVI has left the room (Quit: Max SendQ exceeded).","flags":["system"]}
+{"date":"2014-12-02T18:56:19.000Z","who":"bluenemo","text":"Fireye, do you have a hint to some documentation to get me started on this? I dont really find anything :(","flags":["incoming"]}
+{"date":"2014-12-02T18:56:29.000Z","who":"Fireye","text":"bluenemo: Read the details on what headers nginx honors: http://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_cache_valid","flags":["incoming"]}
+{"date":"2014-12-02T18:56:36.000Z","who":null,"text":"lurch_ has left the room (Quit: lurch_).","flags":["system"]}
+{"date":"2014-12-02T18:56:44.000Z","who":"Fireye","text":"http://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_ignore_headers","flags":["incoming"]}
+{"date":"2014-12-02T18:56:45.000Z","who":"Fireye","text":"as well","flags":["incoming"]}
+{"date":"2014-12-02T18:56:55.000Z","who":"bluenemo","text":"ok thank you Fireye","flags":["incoming"]}
+{"date":"2014-12-02T18:57:10.000Z","who":null,"text":"lorddaedra has left the room (Quit: Remote host closed the connection).","flags":["system"]}
+{"date":"2014-12-02T18:59:17.000Z","who":"Fireye","text":"FatShack: Try this instead: ([^#]|/$)+","flags":["incoming"]}

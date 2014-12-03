@@ -1,0 +1,70 @@
+{"date":"2014-12-02T19:01:03.206Z","name":"##javascript","title":"##javascript","account":"tunnckocore@chat.freenode.net","protocol":"irc","isChat":true,"normalizedName":"##javascript"}
+{"date":"2014-12-02T19:01:03.000Z","who":"tunnckoCore","text":"You are now known as Osheaga.","flags":["system"]}
+{"date":"2014-12-02T19:01:09.000Z","who":null,"text":"The topic for ##javascript is: Can't talk? Get registered on freenode (HOWTO: http://freenode.net/faq.shtml#nicksetup ). | ECMAScript, JavaScript. JS *not* Java. | Say \"!help\" (or ask and wait). | Say \"!mdn abc\" for docs on \"abc\". | Don't paste code in the channel..","flags":["system"]}
+{"date":"2014-12-02T19:01:10.000Z","who":"weber.freenode.net","text":"Channel mode +Ccnt set by weber.freenode.net.","flags":["system"]}
+{"date":"2014-12-02T19:01:19.000Z","who":"wolf_moz-","text":"wolf_moz- [wolf_mozar@Stop.Being.so-srs.biz] entered the room.","flags":["system","noLinkification"]}
+{"date":"2014-12-02T19:01:28.000Z","who":null,"text":"sboudria_ has left the room (Quit: Ping timeout: 272 seconds).","flags":["system"]}
+{"date":"2014-12-02T19:01:34.000Z","who":"robdubya","text":"gulp + angular, or more recentenly jspm","flags":["incoming"]}
+{"date":"2014-12-02T19:01:51.000Z","who":"jmichaelward","text":"jmichaelward [~jmichaelw@23-25-150-153-static.hfc.comcastbusiness.net] entered the room.","flags":["system","noLinkification"]}
+{"date":"2014-12-02T19:02:10.000Z","who":"Sample","text":"roqo: irc channels predate hashtags","flags":["incoming"]}
+{"date":"2014-12-02T19:02:30.000Z","who":"diamonds","text":"/me googles jspm","flags":["incoming"]}
+{"date":"2014-12-02T19:02:36.000Z","who":"diamonds","text":"christ jesus, another one??","flags":["incoming"]}
+{"date":"2014-12-02T19:02:48.000Z","who":"vassagus","text":"vassagus [~vassagus@186.4.2.162] entered the room.","flags":["system","noLinkification"]}
+{"date":"2014-12-02T19:02:55.000Z","who":"robdubya","text":"haha","flags":["incoming"]}
+{"date":"2014-12-02T19:02:57.000Z","who":null,"text":"robbyoconnor has left the room (Quit: Konversation terminated!).","flags":["system"]}
+{"date":"2014-12-02T19:03:01.000Z","who":"diamonds","text":"what differentiates it?","flags":["incoming"]}
+{"date":"2014-12-02T19:03:01.000Z","who":"sythe","text":"sythe [uid20450@facade/leader] entered the room.","flags":["system","noLinkification"]}
+{"date":"2014-12-02T19:03:05.000Z","who":"robdubya","text":"es6 ready","flags":["incoming"]}
+{"date":"2014-12-02T19:03:13.000Z","who":"iiulian","text":"iiulian [~iulian@unaffiliated/iandan] entered the room.","flags":["system","noLinkification"]}
+{"date":"2014-12-02T19:03:17.000Z","who":"seemant","text":"requirejs is not?","flags":["incoming"]}
+{"date":"2014-12-02T19:03:27.000Z","who":"ljharb","text":"lol jspm","flags":["incoming"]}
+{"date":"2014-12-02T19:03:32.000Z","who":"ljharb","text":"npm all the things.","flags":["incoming"]}
+{"date":"2014-12-02T19:03:33.000Z","who":"thykka","text":"Sample, by like.. 20 years!","flags":["incoming"]}
+{"date":"2014-12-02T19:03:49.000Z","who":"Sample","text":"yansanmo: when you refer to the non-blocking components of JS (timers, events, xmlhttprequest as async) are you suggesting all others are blocking? or rather that initialization is blocking","flags":["incoming"]}
+{"date":"2014-12-02T19:03:51.000Z","who":"ConstantineXVI","text":"ConstantineXVI [sxltrs@2600:3c00::f03c:91ff:feae:8909] entered the room.","flags":["system","noLinkification"]}
+{"date":"2014-12-02T19:03:58.000Z","who":"robdubya","text":"ljharb npm sucks dong at ES6. unfortunately. so jspm leverages package.json","flags":["incoming"]}
+{"date":"2014-12-02T19:04:05.000Z","who":"ljharb","text":"ES6 modules will die on the vine if we all don't come up with a seamless way to use them with npm, so using npm guarantees you'll be able to use es6 too.","flags":["incoming"]}
+{"date":"2014-12-02T19:04:12.000Z","who":"robdubya","text":"i straight up refuse to browserify them","flags":["incoming"]}
+{"date":"2014-12-02T19:04:16.000Z","who":"ljharb","text":"lol why","flags":["incoming"]}
+{"date":"2014-12-02T19:04:22.000Z","who":"thykka","text":"damn these kids and their hashtags.. when i was young we didn't even HAVE internet &gt;:E","flags":["incoming"]}
+{"date":"2014-12-02T19:04:25.000Z","who":"saucey","text":"saucey [~chatzilla@2.29.250.9] entered the room.","flags":["system","noLinkification"]}
+{"date":"2014-12-02T19:04:25.000Z","who":"ljharb","text":"the ES6 module spec isn't even finalized yet.","flags":["incoming"]}
+{"date":"2014-12-02T19:04:35.000Z","who":"daum","text":"anyone know a good JS differ for table based data: http://jsfiddle.net/p3zLj8np/ with that basically trying to highlight changes to cells/deletions of rows or additions","flags":["incoming"]}
+{"date":"2014-12-02T19:04:37.000Z","who":"~mohamed@41.249.77.143","text":"couscous has left the room (Part).","flags":["system"]}
+{"date":"2014-12-02T19:04:38.000Z","who":"ljharb","text":"it's straight irresponsible to be using them so soon.","flags":["incoming"]}
+{"date":"2014-12-02T19:04:42.000Z","who":"robdubya","text":"for all intensive poirposes it is","flags":["incoming"]}
+{"date":"2014-12-02T19:04:47.000Z","who":"Sample","text":"hashtags are technological cowpaths brought about by the inherent lack of definition twitter as a service launched with (and grew to popularity from)","flags":["incoming"]}
+{"date":"2014-12-02T19:04:52.000Z","who":null,"text":"Dioxy has left the room (Quit: Be back later ...).","flags":["system"]}
+{"date":"2014-12-02T19:04:58.000Z","who":"dabaR","text":"dabaR [~dbernar1@S0106b81619e8ef55.wp.shawcable.net] entered the room.","flags":["system","noLinkification"]}
+{"date":"2014-12-02T19:04:58.000Z","who":"thykka","text":"we had sticks and stones and we were damn happy about it!","flags":["incoming"]}
+{"date":"2014-12-02T19:05:00.000Z","who":null,"text":"HenriettaSalt_ has left the room (Quit: Ping timeout: 264 seconds).","flags":["system"]}
+{"date":"2014-12-02T19:05:10.000Z","who":null,"text":"ConstantineXVI has left the room (Quit: Max SendQ exceeded).","flags":["system"]}
+{"date":"2014-12-02T19:05:18.000Z","who":null,"text":"dabaR has left the room (Quit: Client Quit).","flags":["system"]}
+{"date":"2014-12-02T19:05:21.000Z","who":"ConstantineXVI","text":"ConstantineXVI [sxltrs@2600:3c00::f03c:91ff:feae:8909] entered the room.","flags":["system","noLinkification"]}
+{"date":"2014-12-02T19:05:26.000Z","who":null,"text":"Aliks has left the room (Quit: Remote host closed the connection).","flags":["system"]}
+{"date":"2014-12-02T19:05:29.000Z","who":"Sample","text":"i wish more software had less focus. this current age of hyperfocus seems to be a result of people trying to make money, not tools","flags":["incoming"]}
+{"date":"2014-12-02T19:05:38.000Z","who":"thykka","text":"^","flags":["incoming"]}
+{"date":"2014-12-02T19:05:43.000Z","who":null,"text":"equex has left the room (Quit: Ping timeout: 245 seconds).","flags":["system"]}
+{"date":"2014-12-02T19:05:48.000Z","who":"thykka","text":"that's the problem with non-FOSS","flags":["incoming"]}
+{"date":"2014-12-02T19:05:51.000Z","who":"seemant","text":"robdubya: browserify?","flags":["incoming"]}
+{"date":"2014-12-02T19:05:53.000Z","who":null,"text":"yoshokatana has left the room (Quit: Ping timeout: 240 seconds).","flags":["system"]}
+{"date":"2014-12-02T19:05:54.000Z","who":null,"text":"ValicekB has left the room (Quit: Ping timeout: 272 seconds).","flags":["system"]}
+{"date":"2014-12-02T19:05:55.000Z","who":"thykka","text":"the people making it aren't the people using it","flags":["incoming"]}
+{"date":"2014-12-02T19:06:20.000Z","who":"robdubya","text":"lets you write code in CommonJS style modules (a la node) and use them in the browser","flags":["incoming"]}
+{"date":"2014-12-02T19:06:21.000Z","who":"ljharb","text":"using anything but browserify and npm is just making things hard for yourself ¯\\_(ツ)_/¯","flags":["incoming"]}
+{"date":"2014-12-02T19:06:30.000Z","who":"pluma","text":"pluma [~pluma@unaffiliated/pluma] entered the room.","flags":["system","noLinkification"]}
+{"date":"2014-12-02T19:06:39.000Z","who":"ljharb","text":"and guaranteed, using browserify and npm will lead to a seamless transition to ES6 modules over time.","flags":["incoming"]}
+{"date":"2014-12-02T19:06:50.000Z","who":"ElDiabolo","text":"ElDiabolo [~jo@xdsl-87-79-55-69.netcologne.de] entered the room.","flags":["system","noLinkification"]}
+{"date":"2014-12-02T19:06:53.000Z","who":"dabaR","text":"dabaR [~dbernar1@S0106b81619e8ef55.wp.shawcable.net] entered the room.","flags":["system","noLinkification"]}
+{"date":"2014-12-02T19:07:05.000Z","who":"diamonds","text":"robdubya, I'm so confused... are you describing browserify?","flags":["incoming"]}
+{"date":"2014-12-02T19:07:10.000Z","who":"robdubya","text":"know what makes it even more seamless? just writing ES6 modules :)","flags":["incoming"]}
+{"date":"2014-12-02T19:07:29.000Z","who":"ljharb","text":"except nothing supports them yet","flags":["incoming"]}
+{"date":"2014-12-02T19:07:32.000Z","who":null,"text":"c4milo has left the room (Quit: Remote host closed the connection).","flags":["system"]}
+{"date":"2014-12-02T19:07:34.000Z","who":"ljharb","text":"and the spec isn't finalized","flags":["incoming"]}
+{"date":"2014-12-02T19:07:43.000Z","who":"ljharb","text":"and nobody can consume your es6 modules using conventional tools","flags":["incoming"]}
+{"date":"2014-12-02T19:07:44.000Z","who":"diamonds","text":"ljharb, shhh!!! It's Seamless.","flags":["incoming"]}
+{"date":"2014-12-02T19:08:03.000Z","who":"robdubya","text":"well - in either case you're \"transpiling / compiling\"","flags":["incoming"]}
+{"date":"2014-12-02T19:08:06.000Z","who":null,"text":"Guest73937 has left the room (Quit: Ping timeout: 244 seconds).","flags":["system"]}
+{"date":"2014-12-02T19:08:10.000Z","who":"ljharb","text":"in either case you have a build step, yes","flags":["incoming"]}
+{"date":"2014-12-02T19:08:18.000Z","who":null,"text":"ConstantineXVI has left the room (Quit: Max SendQ exceeded).","flags":["system"]}
+{"date":"2014-12-02T19:08:24.000Z","who":null,"text":"Osheaga has left the room (Quit: thunderquit).","flags":["system"]}

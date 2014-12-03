@@ -1,0 +1,135 @@
+// <!-- <mdb:mork:z v="1.4"/> -->
+< <(a=c)> // (f=iso-8859-1)
+  (8A=charset)(8B=folderName)(8C=indexingPriority)(8D=smartFolderName)
+  (8E=MRUTime)(8F=useServerRetention)(90=LastPurgeTime)
+  (91=dobayes.mailnews@mozilla.org#junk.empty)
+  (92=dobayes.mailnews@mozilla.org#junk)
+  (80=ns:msg:db:row:scope:folders:all)(81=ns:msg:db:table:kind:folders)
+  (82=key)(83=flags)(84=totalMsgs)(85=totalUnreadMsgs)
+  (86=pendingUnreadMsgs)(87=pendingMsgs)(88=expungedBytes)(89=folderSize)>
+
+<(80=/home/charlike/.thunderbird/wlm6py6e.default/Mail/pop3.mail.bg)
+  (81=1c)(82=ffffffff)(83=0)(84=)(8B=mameto_100@mail.bg)(85
+    =/home/charlike/.thunderbird/wlm6py6e.default/Mail/pop3.mail.bg/Inbox.msf)
+  (86=1004)(25F4=2528)(25DF=2516)(25F5=f451038)(8D=ISO-8859-1)(87=Inbox)
+  (285B=1417581569)(95=1)(88
+    =/home/charlike/.thunderbird/wlm6py6e.default/Mail/pop3.mail.bg/Trash.msf)
+  (89=104)(8A=Trash)(138=1417546230)(8C
+    =/home/charlike/.thunderbird/wlm6py6e.default/Mail/Local Folders/Trash.msf)
+  (10D=1417545957)(8E
+    =/home/charlike/.thunderbird/wlm6py6e.default/Mail/Local Folders/Unsent Me\
+ssages.msf)(8F=804)(91=Outbox)(10E=1417545958)(92
+    =/home/charlike/.thunderbird/wlm6py6e.default/Mail/Local Folders)
+  (93=Local Folders)(1E39
+    =/home/charlike/.thunderbird/wlm6py6e.default/Mail/pop3.mail-1.bg/Inbox.ms\
+f)(2851=25c)(284D=258)(2852=573867)(285A=1417581565)(1E3A
+    =/home/charlike/.thunderbird/wlm6py6e.default/Mail/pop3.mail-1.bg/Trash.ms\
+f)(1E3B=/home/charlike/.thunderbird/wlm6py6e.default/Mail/pop3.mail-1.bg)
+  (1E3C=charlike.mike@mail.bg)>
+{1:^80 {(k^81:c)(s=9)} 
+  [1(^82^80)(^83=1c)(^84^82)(^85^82)(^86=0)(^87=0)(^88=0)(^89=0)(^8A=)
+    (^8B^8B)]
+  [2(^82^85)(^83^86)(^84=2528)(^85=2516)(^86=0)(^87=0)(^88=0)(^89^25F5)
+    (^8A^8D)(^8B^87)(^8E^285B)(^8F=1)]
+  [3(^82^88)(^83^89)(^84=0)(^85=0)(^86=0)(^87=0)(^88=0)(^89=0)(^8A^8D)
+    (^8B^8A)(^8E^138)(^8F=1)]
+  [4(^82^8C)(^83^89)(^84=0)(^85=0)(^86=0)(^87=0)(^88=0)(^89=0)(^8A^8D)
+    (^8B^8A)(^8E^10D)(^8F=1)]
+  [5(^82^8E)(^83^8F)(^84=0)(^85=0)(^86=0)(^87=0)(^88=0)(^89=0)(^8A^8D)
+    (^8B^91)(^8E^10E)(^8F=1)]
+  [6(^82^92)(^83=1c)(^84^82)(^85^82)(^86=0)(^87=0)(^88=0)(^89=0)(^8A=)
+    (^8B^93)]
+  [7(^82^1E39)(^83^86)(^84=25c)(^85=258)(^86=0)(^87=0)(^88=0)(^89^2852)
+    (^8A^8D)(^8B^87)(^8E^285A)(^8F=1)]
+  [8(^82^1E3A)(^83^89)(^84=0)(^85=0)(^86=0)(^87=0)(^88=0)(^89=0)(^8A^8D)
+    (^8B^8A)(^8F=1)]
+  [9(^82^1E3B)(^83=1c)(^84^82)(^85^82)(^86=0)(^87=0)(^88=0)(^89=0)(^8A=)
+    (^8B^1E3C)]}
+
+@$${1{@
+<(285C=1417581726)>[2:^80(^8E^285C)]
+@$$}1}@
+
+@$${2{@
+@$$}2}@
+
+@$${3{@
+@$$}3}@
+
+@$${4{@
+@$$}4}@
+
+@$${5{@
+@$$}5}@
+
+@$${6{@
+@$$}6}@
+
+@$${7{@
+@$$}7}@
+
+@$${8{@
+@$$}8}@
+
+@$${9{@
+@$$}9}@
+
+@$${A{@
+@$$}A}@
+
+@$${B{@
+@$$}B}@
+
+@$${C{@
+@$$}C}@
+
+@$${D{@
+@$$}D}@
+
+@$${E{@
+@$$}E}@
+
+@$${F{@
+@$$}F}@
+
+@$${10{@
+@$$}10}@
+
+@$${11{@
+@$$}11}@
+
+@$${12{@
+@$$}12}@
+
+@$${13{@
+@$$}13}@
+
+@$${14{@
+@$$}14}@
+
+@$${15{@
+@$$}15}@
+
+@$${16{@
+@$$}16}@
+
+@$${17{@
+@$$}17}@
+
+@$${18{@
+@$$}18}@
+
+@$${19{@
+@$$}19}@
+
+@$${1A{@
+@$$}1A}@
+
+@$${1B{@
+@$$}1B}@
+
+@$${1C{@
+@$$}1C}@
+
+@$${1D{@
+@$$}1D}@
