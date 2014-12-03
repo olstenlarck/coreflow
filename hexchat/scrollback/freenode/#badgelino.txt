@@ -1,0 +1,10 @@
+T 1417540075 19*	Now talking on 22#badgelino
+T 1417540075 22*	26weber.freenode.net sets mode 24+n on 22#badgelino
+T 1417540075 22*	26weber.freenode.net sets mode 24+s on 22#badgelino
+T 1417540616 23*	Osheaga (~tunnckoCo@95.87.211.16923) has joined
+T 1417540628 24*	Osheaga has quit (Remote host closed the connection)
+T 1417540638 20*	Disconnected (20)
+T 1417540664 19*	Now talking on 22#badgelino
+T 1417540664 22*	26asimov.freenode.net sets mode 24+n on 22#badgelino
+T 1417540664 22*	26asimov.freenode.net sets mode 24+s on 22#badgelino
+T 1417540665 23*	Osheaga (~tunnckoCo@95.87.211.16923) has joined

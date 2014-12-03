@@ -1,0 +1,17 @@
+T 1417541472 19*	Now talking on 22##unavailable
+T 1417541472 22*	Topic for 22##unavailable is: You've tried to join an unavailable channel. Perhaps the group was never here or has moved off-network ( http://freenode.net/policy.shtml#termination ). Check their website for more information. Your client may be flapping in and out of the channel; in this case, check with channel ops. The channel may be clone-infested; please consult freenode network staff.
+T 1417541472 22*	Topic for 22##unavailable set by 26Martinp23 (24Sun May 15 00:05:37 2011)
+T 1417541492 -18ChanServ-	[##unavailable] You've tried to join an unavailable channel. Perhaps the group was never here or has moved off-network ( http://freenode.net/policy.shtml#termination ). Check their website for more information. Your client may be flapping in and out of channel; in this case, check with channel staff. The channel may be clone-infested; please consult freenode network staff.
+T 1417541496 20*	You are now known as 18Guest67374
+T 1417541510 20*	Disconnected (20)
+T 1417579901 19*	Now talking on 22##unavailable
+T 1417579901 22*	Topic for 22##unavailable is: You've tried to join an unavailable channel. Perhaps the group was never here or has moved off-network ( http://freenode.net/policy.shtml#termination ). Check their website for more information. Your client may be flapping in and out of the channel; in this case, check with channel ops. The channel may be clone-infested; please consult freenode network staff.
+T 1417579901 22*	Topic for 22##unavailable set by 26Martinp23 (24Sun May 15 00:05:37 2011)
+T 1417579902 -18NickServ-	This nickname is registered. Please choose a different nickname, or identify via /msg NickServ identify <password>.
+T 1417579902 -18NickServ-	You have 30 seconds to identify to your nickname before it is changed.
+T 1417579902 -18ChanServ-	[##unavailable] You've tried to join an unavailable channel. Perhaps the group was never here or has moved off-network ( http://freenode.net/policy.shtml#termination ). Check their website for more information. Your client may be flapping in and out of channel; in this case, check with channel staff. The channel may be clone-infested; please consult freenode network staff.
+T 1417579934 19*	Now talking on 22##unavailable
+T 1417579934 22*	Topic for 22##unavailable is: You've tried to join an unavailable channel. Perhaps the group was never here or has moved off-network ( http://freenode.net/policy.shtml#termination ). Check their website for more information. Your client may be flapping in and out of the channel; in this case, check with channel ops. The channel may be clone-infested; please consult freenode network staff.
+T 1417579934 22*	Topic for 22##unavailable set by 26Martinp23 (24Sun May 15 00:05:37 2011)
+T 1417579934 -18ChanServ-	[##unavailable] You've tried to join an unavailable channel. Perhaps the group was never here or has moved off-network ( http://freenode.net/policy.shtml#termination ). Check their website for more information. Your client may be flapping in and out of channel; in this case, check with channel staff. The channel may be clone-infested; please consult freenode network staff.
+T 1417579935 24*	Received a CTCP 24VERSION from 18Seran_

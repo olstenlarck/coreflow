@@ -1,0 +1,74 @@
+T 1417540616 19*	Now talking on 22#Node.js
+T 1417540616 22*	Topic for 22#Node.js is: Current Stable v0.10.33, Unstable v0.11.14 | Channel Mission Statement: http://bit.ly/node-irc-mission-statement | Channel Info: http://nodeirc.info | Channel Logs: http://logs.nodejs.org/node.js/index
+T 1417540616 22*	Topic for 22#Node.js set by 26ljharb!sid43720@oftn/member/ljharb (24Fri Oct 31 07:00:44 2014)
+T 1417540616 -18ChanServ-	[#node.js] Visit the wiki page https://github.com/joyent/node/wiki
+T 1417540616 22*	Channel 22#node.js url: 24http://nodejs.org/
+T 1417540618 23*	Jonathan1cClare (~argomael@69.156.77.8823) has joined
+T 1417540665 19*	Now talking on 22#Node.js
+T 1417540665 22*	Topic for 22#Node.js is: Current Stable v0.10.33, Unstable v0.11.14 | Channel Mission Statement: http://bit.ly/node-irc-mission-statement | Channel Info: http://nodeirc.info | Channel Logs: http://logs.nodejs.org/node.js/index
+T 1417540665 22*	Topic for 22#Node.js set by 26ljharb!sid43720@oftn/member/ljharb (24Fri Oct 31 07:02:34 2014)
+T 1417540665 -18ChanServ-	[#node.js] Visit the wiki page https://github.com/joyent/node/wiki
+T 1417540665 22*	Channel 22#node.js url: 24http://nodejs.org/
+T 1417540669 24*	roelmonnens has quit (Ping timeout: 255 seconds)
+T 1417540671 23*	gH05t (~gH05t@111.92.57.14423) has joined
+T 1417540674 18*	20claf should be happy that theres finally "map"
+T 1417540676 24*	tunnckoCore has quit (Remote host closed the connection)
+T 1417540677 18<20claf18>	lol
+T 1417540687 23*	coffey (~coffey@rrcs-24-173-44-146.sw.biz.rr.com23) has joined
+T 1417540694 24*	28gH05t is now known as 18Guest31731
+T 1417540698 24*	sent1nel has quit (Read error: Connection reset by peer)
+T 1417540702 24*	Guest31731 has quit (Client Quit)
+T 1417540717 23*	sent1nel (~sent1nel@cpe-72-225-211-43.nj.res.rr.com23) has joined
+T 1417540719 24*	noobee has quit (Remote host closed the connection)
+T 1417540725 23*	7GHAABKKF (~zeioth@210.124.20.95.dynamic.jazztel.es23) has joined
+T 1417540725 23*	Zeioth (~zeioth@210.124.20.95.dynamic.jazztel.es23) has joined
+T 1417540725 23*	64MAA9DTR (~zeioth@210.124.20.95.dynamic.jazztel.es23) has joined
+T 1417540726 24*	armyriad has quit (Ping timeout: 256 seconds)
+T 1417540728 24*	Zeioth has quit (Read error: Connection reset by peer)
+T 1417540729 24*	davidreis has quit (Read error: Connection reset by peer)
+T 1417540730 24*	7GHAABKKF has quit (Read error: Connection reset by peer)
+T 1417540734 23*	noobee (~noobee@111.94.235.20623) has joined
+T 1417540738 24*	64MAA9DTR has quit (Remote host closed the connection)
+T 1417540755 23*	Zeioth (~zeioth@210.124.20.95.dynamic.jazztel.es23) has joined
+T 1417540794 24*	brianloveswords has quit (Quit: Computer has gone to sleep.)
+T 1417540842 19*	Now talking on 22#Node.js
+T 1417540842 22*	Topic for 22#Node.js is: Current Stable v0.10.33, Unstable v0.11.14 | Channel Mission Statement: http://bit.ly/node-irc-mission-statement | Channel Info: http://nodeirc.info | Channel Logs: http://logs.nodejs.org/node.js/index
+T 1417540842 22*	Topic for 22#Node.js set by 26ljharb!sid43720@oftn/member/ljharb (24Fri Oct 31 07:02:33 2014)
+T 1417540844 -18ChanServ-	[#node.js] Visit the wiki page https://github.com/joyent/node/wiki
+T 1417540844 22*	Channel 22#node.js url: 24http://nodejs.org/
+T 1417540854 24*	u0m3 has quit (Ping timeout: 264 seconds)
+T 1417540856 23*	ryanxcharles (~ryanxchar@162.245.22.16223) has joined
+T 1417540894 24*	28aj-701 is now known as 18aj701
+T 1417540944 23*	brianloveswords (~brianlove@gateway/shell/bocoup/x-ffmwiodajobvvulj23) has joined
+T 1417540954 23*	nicolagreco (~mozilla@nat-197-1.internal.eduroam.ucl.ac.uk23) has joined
+T 1417540969 24*	sonofdirt has quit (Remote host closed the connection)
+T 1417541002 23*	gH05t (~gH05t@111.92.57.14423) has joined
+T 1417541016 23*	gozala (uid5923@gateway/web/irccloud.com/x-txmxotgwyuefgxua23) has joined
+T 1417541036 24*	gH05t has quit (Client Quit)
+T 1417541048 24*	benjamincoe has quit (Remote host closed the connection)
+T 1417541067 23*	gH05t (~gH05t@111.92.57.14423) has joined
+T 1417541109 20*	Disconnected (20)
+T 1417541259 Not connected. Try /server <host> [<port>]
+T 1417541456 Python interface unloaded
+T 1417541472 19*	Now talking on 22#Node.js
+T 1417541472 22*	Topic for 22#Node.js is: Current Stable v0.10.33, Unstable v0.11.14 | Channel Mission Statement: http://bit.ly/node-irc-mission-statement | Channel Info: http://nodeirc.info | Channel Logs: http://logs.nodejs.org/node.js/index
+T 1417541472 22*	Topic for 22#Node.js set by 26ljharb!sid43720@oftn/member/ljharb (24Fri Oct 31 07:02:34 2014)
+T 1417541477 24*	28Letoc is now known as 18Letoc|away
+T 1417541492 -18ChanServ-	[#node.js] Visit the wiki page https://github.com/joyent/node/wiki
+T 1417541492 22*	Channel 22#node.js url: 24http://nodejs.org/
+T 1417541493 18<28Litruv18>	dw
+T 1417541496 20*	You are now known as 18Guest67374
+T 1417541497 18<28Litruv18>	thanks~
+T 1417541510 20*	Disconnected (20)
+T 1417579901 19*	Now talking on 22#Node.js
+T 1417579901 22*	Topic for 22#Node.js is: Current Stable v0.10.33, Unstable v0.11.14 | Channel Mission Statement: http://bit.ly/node-irc-mission-statement | Channel Info: http://nodeirc.info | Channel Logs: http://logs.nodejs.org/node.js/index
+T 1417579901 22*	Topic for 22#Node.js set by 26ljharb!sid43720@oftn/member/ljharb (24Fri Oct 31 07:02:34 2014)
+T 1417579902 -18ChanServ-	[#node.js] Visit the wiki page https://github.com/joyent/node/wiki
+T 1417579902 22*	Channel 22#node.js url: 24http://nodejs.org/
+T 1417579905 18<24Aria18>	Well, might need extra parens to parse how you want.
+T 1417579934 19*	Now talking on 22#Node.js
+T 1417579934 22*	Topic for 22#Node.js is: Current Stable v0.10.33, Unstable v0.11.14 | Channel Mission Statement: http://bit.ly/node-irc-mission-statement | Channel Info: http://nodeirc.info | Channel Logs: http://logs.nodejs.org/node.js/index
+T 1417579934 22*	Topic for 22#Node.js set by 26ljharb!sid43720@oftn/member/ljharb (24Fri Oct 31 07:02:34 2014)
+T 1417579934 -18ChanServ-	[#node.js] Visit the wiki page https://github.com/joyent/node/wiki
+T 1417579934 22*	Channel 22#node.js url: 24http://nodejs.org/
+T 1417579940 18<25ChrisPartridge18>	IMO, depends on the args to auth().. if it looked neat/clear enough in the code, it wouldn't bother me

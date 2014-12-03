@@ -1,0 +1,65 @@
+T 1417540116 19*	Now talking on 22##php
+T 1417540116 22*	Topic for 22##php is: Stable PHP versions: 5.4.35, 5.5.19, 5.6.3 || http://tinyurl.com/cd6u5lx || /msg php-bot guidelines || keep your language clean || pastebin your code! || http://hashphp.org has some useful links
+T 1417540116 22*	Topic for 22##php set by 26LawnGnome!~adam@unaffiliated/lawngnome (24Tue Nov 18 20:39:41 2014)
+T 1417540116 -18ChanServ-	[##php] Welcome to ##PHP. Please read the topic, and /msg php-bot guidelines.
+T 1417540116 22*	Channel 22##php url: 24http://hashphp.org/
+T 1417540117 18<cythrawll18>	DeoSama, lasat week was in november.
+T 1417540126 18<cythrawll18>	so you should.
+T 1417540133 18<DeoSama18>	ahhh
+T 1417540140 18<Ozera18>	cythrawll, I don't think i'm doing it correctly: http://ideone.com/zMQ3BD
+T 1417540151 18<DeoSama18>	so when it gets to, say, december 8th it won't
+T 1417540153 18<DeoSama18>	well, i do this
+T 1417540178 18<19DeoSama18>	http://screencast.com/t/U67TpsWKuy
+T 1417540184 18<19DeoSama18>	that should always work... right?
+T 1417540184 23*	baako (a0092937@gateway/web/freenode/ip.160.9.41.5523) has joined
+T 1417540188 18<27baako18>	hi guys. those wireless payment on bank credit do they use NFC?
+T 1417540190 18<19DeoSama18>	i mean, i'm definitely open for more things
+T 1417540194 18<26cythrawll18>	Ozera, your keys should be strings and not bare words... (does that even work in python)
+T 1417540197 18<19DeoSama18>	this was just the way i had to do it because this gets run daily
+T 1417540204 23*	trmonk (~trmonk@197.247.214.15723) has joined
+T 1417540213 18<26cythrawll18>	Ozera, and line 35 can just be for x in value
+T 1417540229 18<19salathe18>	ooh, so you only run that code when it's the 1st of the month
+T 1417540239 18<19DeoSama18>	salathe, yeah, exactly
+T 1417540251 18<19salathe18>	so, what's the problem/question?..
+T 1417540255 18<26cythrawll18>	DeoSama, weird.
+T 1417540268 18<26cythrawll18>	DeoSama, I think I knwo why it does that.
+T 1417540286 18<26cythrawll18>	it's because of how usually subtract a month can be off because it subtracts x days.
+T 1417540288 18<19DeoSama18>	salathe, I'm just wondering if this will work... I coded this like a month ago and i forget why i used "last week" instead of "last month"
+T 1417540322 18<19DeoSama18>	cythrawll, ok, so if it gets run on march 1st, it could miss feb completely, right?
+T 1417540348 24*	benjaminpaap has quit (Quit: benjaminpaap)
+T 1417540354 18<19salathe18>	is your system/script timezone UTC?..
+T 1417540364 18<28blondie10101018>	DeoSama: last week to get the previous month is probably functional
+T 1417540367 18<19Ozera18>	cythrawll, cant I just use .item() instead of iteritems()
+T 1417540384 24*	dabaR (184dd4ae@gateway/web/freenode/ip.24.77.212.17424) has left
+T 1417540387 18<26cythrawll18>	DeoSama, no your code prevents that problem
+T 1417540389 18<19DeoSama18>	salathe, yeah, i believe it is UTC
+T 1417540391 18<26cythrawll18>	though I don't think it does completely
+T 1417540392 18<26edwardly18>	delboy1978uk, yes, they run it manually.. I'm not sure, try contacting gsherwood, since he seems to add them
+T 1417540403 18<19DeoSama18>	cythrawll, can you explain?
+T 1417540409 18<26edwardly18>	delboy1978uk, it's not like travis, though.
+T 1417540412 18<26cythrawll18>	Ozera, not if you want the key too.
+T 1417540415 18<19salathe18>	cythrawll: php will decrement the month number, not go back x days
+T 1417540416 18<28blondie10101018>	baako: NFC is not in any way related to PHP and I sure hope you're not trying to find more ways to spy and steal information from people
+T 1417540417 23*	Monie (~Monie@cpe-071-076-159-155.triad.res.rr.com23) has joined
+T 1417540429 18<26cythrawll18>	Ozera, which if you're copying the PHP structure, you don't want.
+T 1417540444 18<19salathe18>	DeoSama: if it's UTC then you've nothing to worry about, last week and last month will give you the same result
+T 1417540450 18<27baako18>	blondie101010: yes I know :D didnt know which channel to ask
+T 1417540468 18<19DeoSama18>	salathe, awesome! thanks for putting my mind at ease! :D
+T 1417540470 23*	Jafura (~Jean-Fran@ptr-178-50-77-242.dyn.mobistar.be23) has joined
+T 1417540473 24*	dragonbe has quit (Remote host closed the connection)
+T 1417540475 18<28blondie10101018>	baako: you've been here often enough to follow guidelines
+T 1417540485 18<19DeoSama18>	I wanted to prevent a bug report from coming jan 1st
+T 1417540494 18<19delboy1978uk18>	thanks edwardly
+T 1417540502 18<28blondie10101018>	DeoSama: it will be fine
+T 1417540509 23*	dragonbe (~dragonbe@static-164-211-78-212.thenetworkfactory.nl23) has joined
+T 1417540516 18<19salathe18>	DeoSama: if it's not UTC, then the "now" time could still be the 30th/31st of a month (e.g. march) then going back a month will be wrong
+T 1417540520 18<27baako18>	blondie101010: so u dont know the right place for mr to get the answer?
+T 1417540551 18<19DeoSama18>	blondie101010, thanks a bunch
+T 1417540552 18<28blondie10101018>	baako: I hope you don't find the information actually
+T 1417540553 18<25Naktibalda18>	baako: google.com
+T 1417540569 18<19delboy1978uk18>	blondie101010: "more ways to spy and steal information"?
+T 1417540578 18<28blondie10101018>	it's in his habits
+T 1417540593 18<19delboy1978uk18>	is that the guy who was doing some weird scraping stuf fthe other day
+T 1417540602 18<19delboy1978uk18>	?
+T 1417540606 18<28blondie10101018>	yup
+T 1417540606 18<27baako18>	Naktibalda: i did but no research just randam topics on nfc nothing related on what technology the card uses

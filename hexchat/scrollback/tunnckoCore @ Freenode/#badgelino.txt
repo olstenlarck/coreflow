@@ -1,0 +1,12 @@
+T 1417541471 19*	Now talking on 22#badgelino
+T 1417541471 22*	26asimov.freenode.net sets mode 24+n on 22#badgelino
+T 1417541471 22*	26asimov.freenode.net sets mode 24+s on 22#badgelino
+T 1417541496 24*	28gZc- is now known as 18Guest67374
+T 1417541596 19*	Now talking on 22#badgelino
+T 1417541596 22*	26orwell.freenode.net sets mode 24+n on 22#badgelino
+T 1417541596 22*	26orwell.freenode.net sets mode 24+s on 22#badgelino
+T 1417546567 22*	26Osheaga has changed the topic to: 
+T 1417547039 22*	26tunnckoCore gives channel operator status to 18Osheaga
+T 1417579932 19*	Now talking on 22#badgelino
+T 1417579932 22*	26kornbluth.freenode.net sets mode 24+n on 22#badgelino
+T 1417579932 22*	26kornbluth.freenode.net sets mode 24+s on 22#badgelino

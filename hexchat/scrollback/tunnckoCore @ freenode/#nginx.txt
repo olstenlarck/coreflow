@@ -1,0 +1,24 @@
+T 1417540616 19*	Now talking on 22#nginx
+T 1417540616 22*	Topic for 22#nginx is: Community Nginx support channel. Don't ask to ask; just ask! Config pastes via http://p.ngx.cc only. This channel is publicly logged. || Latest Releases: [mainline 1.7.7] [stable 1.6.2]
+T 1417540616 22*	Topic for 22#nginx set by 26jaybe (24Tue Oct 28 17:35:29 2014)
+T 1417540616 -18ChanServ-	[#nginx] Community Nginx support channel. Don't ask to ask; just ask! Config pastes via http://p.ngx.cc only. This channel is publicly logged.
+T 1417540623 24*	Dagrizbox has quit (Remote host closed the connection)
+T 1417540665 19*	Now talking on 22#nginx
+T 1417540665 22*	Topic for 22#nginx is: Community Nginx support channel. Don't ask to ask; just ask! Config pastes via http://p.ngx.cc only. This channel is publicly logged. || Latest Releases: [mainline 1.7.7] [stable 1.6.2]
+T 1417540665 22*	Topic for 22#nginx set by 26jaybe (24Tue Oct 28 17:35:29 2014)
+T 1417540665 -18ChanServ-	[#nginx] Community Nginx support channel. Don't ask to ask; just ask! Config pastes via http://p.ngx.cc only. This channel is publicly logged.
+T 1417540676 24*	tunnckoCore has quit (Remote host closed the connection)
+T 1417540731 23*	RaceCondition (~RaceCondi@164.39.5.223) has joined
+T 1417540757 24*	shortdudey123_ has quit (Quit: My MacBook Pro has gone to sleep. ZZZzzz…)
+T 1417540765 23*	coredumb (~coredumb@unaffiliated/coredumb23) has joined
+T 1417540770 18<24coredumb18>	Hello
+T 1417540812 18<24coredumb18>	trying to migrate this php app from apache to nginx, this have https://bpaste.net/show/37097c006621 this htaccess, i've no idea how to port that to nginx to make it function
+T 1417540842 19*	Now talking on 22#nginx
+T 1417540842 22*	Topic for 22#nginx is: Community Nginx support channel. Don't ask to ask; just ask! Config pastes via http://p.ngx.cc only. This channel is publicly logged. || Latest Releases: [mainline 1.7.7] [stable 1.6.2]
+T 1417540842 22*	Topic for 22#nginx set by 26jaybe (24Tue Oct 28 17:35:29 2014)
+T 1417540844 -18ChanServ-	[#nginx] Community Nginx support channel. Don't ask to ask; just ask! Config pastes via http://p.ngx.cc only. This channel is publicly logged.
+T 1417540854 24*	u0m3 has quit (Ping timeout: 264 seconds)
+T 1417540941 23*	tesaf (~btw@69.197.63.14223) has joined
+T 1417540976 23*	Kutakizukari (~PermaMag@5.sub-70-210-7.myvzw.com23) has joined
+T 1417541051 24*	sjefen6 has quit (Ping timeout: 264 seconds)
+T 1417541109 20*	Disconnected (20)

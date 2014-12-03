@@ -1,0 +1,24 @@
+T 1417540075 19*	Now talking on 22#nginx
+T 1417540075 22*	Topic for 22#nginx is: Community Nginx support channel. Don't ask to ask; just ask! Config pastes via http://p.ngx.cc only. This channel is publicly logged. || Latest Releases: [mainline 1.7.7] [stable 1.6.2]
+T 1417540075 22*	Topic for 22#nginx set by 26jaybe (24Tue Oct 28 17:35:29 2014)
+T 1417540075 -18ChanServ-	[#nginx] Community Nginx support channel. Don't ask to ask; just ask! Config pastes via http://p.ngx.cc only. This channel is publicly logged.
+T 1417540076 23*	tombar (~tombar@r190-134-82-52.dialup.adsl.anteldata.net.uy23) has joined
+T 1417540150 24*	nrsk has quit (Quit: KVIrc 4.3.1 Aria http://www.kvirc.net/)
+T 1417540236 24*	chetandhembre has quit (Quit: This computer has gone to sleep)
+T 1417540294 23*	ngxbot (~ngxbot@nginx/bot/ngx23) has joined
+T 1417540308 22*	26ChanServ gives channel operator status to 18ngxbot
+T 1417540316 24*	crewshin has quit (Read error: Connection reset by peer)
+T 1417540379 24*	RockAndOrRoll_ has quit (Ping timeout: 252 seconds)
+T 1417540442 24*	robospatula has quit (Quit: Toodle Parp)
+T 1417540459 23*	Dagrizbox (~Dagrizbox@ip68-5-173-130.oc.oc.cox.net23) has joined
+T 1417540614 23*	ahtik (~ahtik@178.19.210.16223) has joined
+T 1417540616 23*	Osheaga (~tunnckoCo@95.87.211.16923) has joined
+T 1417540616 -18NickServ-	Osheaga!~tunnckoCo@95.87.211.169 has just authenticated as you (tunnckoCore)
+T 1417540623 24*	Dagrizbox has quit (Remote host closed the connection)
+T 1417540628 24*	Osheaga has quit (Remote host closed the connection)
+T 1417540638 20*	Disconnected (20)
+T 1417540664 19*	Now talking on 22#nginx
+T 1417540664 22*	Topic for 22#nginx is: Community Nginx support channel. Don't ask to ask; just ask! Config pastes via http://p.ngx.cc only. This channel is publicly logged. || Latest Releases: [mainline 1.7.7] [stable 1.6.2]
+T 1417540664 22*	Topic for 22#nginx set by 26jaybe (24Tue Oct 28 17:35:29 2014)
+T 1417540664 -18ChanServ-	[#nginx] Community Nginx support channel. Don't ask to ask; just ask! Config pastes via http://p.ngx.cc only. This channel is publicly logged.
+T 1417540665 23*	Osheaga (~tunnckoCo@95.87.211.16923) has joined

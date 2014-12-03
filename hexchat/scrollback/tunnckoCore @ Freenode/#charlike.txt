@@ -1,0 +1,16 @@
+T 1417541471 19*	Now talking on 22#charlike
+T 1417541492 22*	Channel 22#charlike url: 24http://www.charlike.pw
+T 1417541492 22*	26ChanServ gives channel operator status to 18tunnckoCore
+T 1417541496 24*	28gZc- is now known as 18Guest67374
+T 1417541596 19*	Now talking on 22#charlike
+T 1417541597 22*	Channel 22#charlike url: 24http://www.charlike.pw
+T 1417541597 22*	26ChanServ gives channel operator status to 18tunnckoCore
+T 1417546499 22*	26ChanServ gives channel operator status to 18Osheaga
+T 1417546869 22*	26ChanServ gives channel operator status to 18Osheaga
+T 1417547016 18<24Osheaga18>	hoho
+T 1417547027 20<tunnckoCore>30	e tva ti e igrata :D
+T 1417547029 20<tunnckoCore>30	Нали бе :D
+T 1417547048 18<24Osheaga18>	Мда, красота
+T 1417579932 19*	Now talking on 22#charlike
+T 1417579932 22*	Channel 22#charlike url: 24http://www.charlike.pw
+T 1417579932 22*	26ChanServ gives channel operator status to 18tunnckoCore

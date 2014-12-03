@@ -1,0 +1,88 @@
+T 1417540075 19*	Now talking on 22##javascript
+T 1417540075 22*	Topic for 22##javascript is: Can't talk? Get registered on freenode (HOWTO: http://freenode.net/faq.shtml#nicksetup ). | ECMAScript, JavaScript. JS *not* Java. | Say "!help" (or ask and wait). | Say "!mdn abc" for docs on "abc". | Don't paste code in the channel.
+T 1417540075 22*	Topic for 22##javascript set by 26gkatsev!~gkatsev@oftn/board/gkatsev (24Sun Oct 12 07:56:56 2014)
+T 1417540075 23*	gH05t (~gH05t@111.92.57.14423) has joined
+T 1417540085 24*	jduhls has quit (Ping timeout: 272 seconds)
+T 1417540086 23*	MadalinPasarel (~MadalinPa@79.118.89.1123) has joined
+T 1417540097 24*	davasaurous has quit (Ping timeout: 264 seconds)
+T 1417540105 24*	Foxandxss has quit (Quit: Textual IRC Client: www.textualapp.com)
+T 1417540107 24*	gH05t has quit (Client Quit)
+T 1417540129 23*	gsd (~gsd@unaffiliated/gsd23) has joined
+T 1417540129 23*	gH05t (~gH05t@111.92.57.14423) has joined
+T 1417540131 24*	shackleford has quit (Read error: Connection reset by peer)
+T 1417540140 23*	bigawuc (~bigawuc@12.45.163.9923) has joined
+T 1417540146 23*	floatmastaflex (~W@apltvgw.cs.umass.edu23) has joined
+T 1417540159 23*	bigwax (~bigwax___@blk-222-117-211.eastlink.ca23) has joined
+T 1417540166 23*	Misan (~misan@h081217049216.dyn.cm.kabsi.at23) has joined
+T 1417540170 24*	learnme__ has quit (Quit: Page closed)
+T 1417540182 24*	bradleymeck has quit (Quit: bradleymeck)
+T 1417540187 18<26floatmastaflex18>	yo. how do i add an action (mousein, mouseout) to an element that does not exist on document.ready?
+T 1417540204 23*	trmonk (~trmonk@197.247.214.15723) has joined
+T 1417540218 24*	rrrhys has quit (Ping timeout: 245 seconds)
+T 1417540223 18<26floatmastaflex18>	$(container).on("hover", myelement, function() .... appears to be deprecated
+T 1417540223 23*	Nick006 (~Nick006@14.169.125.7123) has joined
+T 1417540228 18<22py018>	If it doesn't exist how are you supposed to add to it
+T 1417540240 18<24bigwax18>	can't you create and assign an element to a var that hasn't be created yet?
+T 1417540247 23*	rrrhys (~rrrhys@101.190.78.7223) has joined
+T 1417540257 18<26floatmastaflex18>	The element gets added to the page later with ajax
+T 1417540263 24*	George__ has quit (Remote host closed the connection)
+T 1417540277 18<28ronny_fro18>	Sorella: well... I gave it honest effort, but I dont know if its gonna work
+T 1417540278 24*	mar77i has quit (Read error: Connection reset by peer)
+T 1417540289 18<26floatmastaflex18>	I use http://api.jquery.com/on/ for other actions
+T 1417540291 18<24bigwax18>	why not just add the listener once the element is added?
+T 1417540297 23*	George__ (~George__@97.102.59.20123) has joined
+T 1417540301 18<26floatmastaflex18>	yes, how do i do that
+T 1417540308 18<26floatmastaflex18>	i was using "on"
+T 1417540309 18<28ronny_fro18>	for now messages have to be written to array, and apparently having react watch that array and know when to update is nuts
+T 1417540316 24*	crewshin has quit (Read error: Connection reset by peer)
+T 1417540317 18<26gH05t18>	floatmastaflex: you could add the events when it's added.
+T 1417540323 18<26floatmastaflex18>	but on() doesn't support hover
+T 1417540328 23*	intothev01d (~intothev0@unaffiliated/intothev01d23) has joined
+T 1417540329 18<24bigwax18>	floatmastaflex: well in your ajax request, i assume you are using jquery yes?
+T 1417540332 18<26floatmastaflex18>	yes, how? could you show me an example?
+T 1417540334 18<26floatmastaflex18>	yes
+T 1417540336 24*	MadalinPasarel has quit (Client Quit)
+T 1417540350 18<26gH05t18>	floatmastaflex: it could be in the ajax response.
+T 1417540372 23*	c4milo (~c4milo@ool-18ba7916.dyn.optonline.net23) has joined
+T 1417540397 24*	alienspy has quit (Remote host closed the connection)
+T 1417540399 24*	dabaR (184dd4ae@gateway/web/freenode/ip.24.77.212.17424) has left
+T 1417540399 24*	nfroidure has quit (Ping timeout: 255 seconds)
+T 1417540412 23*	martinklepsch (~kmartiin@p54842C14.dip0.t-ipconnect.de23) has joined
+T 1417540415 18<26gH05t18>	once the element is added, the events can be added to it as it's usually done.
+T 1417540421 18<24bigwax18>	lets see your current code floatmastaflex
+T 1417540432 18<24bigwax18>	there are multiple ajax methods
+T 1417540432 18<26floatmastaflex18>	sec. i think i know how to do it
+T 1417540435 18<24bigwax18>	in jquery
+T 1417540438 18<26floatmastaflex18>	i will just use mousein / mouseout
+T 1417540453 23*	n00b81|afk (~n00b81@unaffiliated/n00b8123) has joined
+T 1417540453 18<24bigwax18>	yea thats not what im intersted, im interested if you used .ajax or .post etc
+T 1417540461 23*	Guest22 (~textual@198.0.214.7823) has joined
+T 1417540461 18<24bigwax18>	.get
+T 1417540462 18<24bigwax18>	.load
+T 1417540483 23*	alienspy (~alienspy@cpe-74-134-85-175.swo.res.rr.com23) has joined
+T 1417540506 18<22n00b81|afk18>	Hello all, fairly stumped on an issue I'm having with some code at this point.. have really looked at everything at this point. But perhaps I'm just overlooking something silly... anyone care to help?
+T 1417540514 23*	Jafura (~Jean-Fran@ptr-178-50-77-242.dyn.mobistar.be23) has joined
+T 1417540515 24*	matty_r has quit (Quit: Goodbye cruel world)
+T 1417540522 23*	nonny_t (~nonny_t@host-89-242-74-192.as13285.net23) has joined
+T 1417540525 24*	killa_kyle has quit (Quit: My MacBook Pro has gone to sleep. ZZZzzz…)
+T 1417540547 24*	epichero has quit ()
+T 1417540547 18<28bberry18>	py0: is this like what you want? http://jsfiddle.net/6yztud54/4/
+T 1417540556 24*	George__ has quit (Ping timeout: 258 seconds)
+T 1417540568 18<24bigwax18>	floatmastaflex, when you call $.ajax(), you pass it an object. one of the methods in that object is called `success` and this is a function that decides what happens after it receives a response
+T 1417540589 18<24bigwax18>	wait
+T 1417540592 18<24bigwax18>	thats wrong
+T 1417540600 24*	28zz_night-owl is now known as 18night-owl
+T 1417540601 24*	daidoji1 has quit (Remote host closed the connection)
+T 1417540602 24*	rafagomes has quit (Ping timeout: 264 seconds)
+T 1417540605 18<22py018>	wow
+T 1417540606 18<22py018>	yut
+T 1417540609 18<22py018>	nice one bberry
+T 1417540616 23*	Osheaga (~tunnckoCo@95.87.211.16923) has joined
+T 1417540624 18<22py018>	Fridge[name] = this;  ?
+T 1417540628 24*	Osheaga has quit (Remote host closed the connection)
+T 1417540664 19*	Now talking on 22##javascript
+T 1417540664 22*	Topic for 22##javascript is: Can't talk? Get registered on freenode (HOWTO: http://freenode.net/faq.shtml#nicksetup ). | ECMAScript, JavaScript. JS *not* Java. | Say "!help" (or ask and wait). | Say "!mdn abc" for docs on "abc". | Don't paste code in the channel.
+T 1417540664 22*	Topic for 22##javascript set by 26gkatsev!~gkatsev@oftn/board/gkatsev (24Sun Oct 12 07:56:56 2014)
+T 1417540665 23*	Osheaga (~tunnckoCo@95.87.211.16923) has joined
+T 1417540671 23*	gH05t (~gH05t@111.92.57.14423) has joined
+T 1417540675 18<26gH05t18>	id hj1801

@@ -1,0 +1,68 @@
+T 1417540616 19*	Now talking on 22#charlike
+T 1417540616 22*	Channel 22#charlike url: 24http://www.charlike.pw
+T 1417540616 22*	26ChanServ gives channel operator status to 18Osheaga
+T 1417540665 19*	Now talking on 22#charlike
+T 1417540665 22*	Channel 22#charlike url: 24http://www.charlike.pw
+T 1417540665 22*	26ChanServ gives channel operator status to 18Osheaga
+T 1417540676 24*	tunnckoCore has quit (Remote host closed the connection)
+T 1417540701 >18nickserv<	help
+T 1417540703 -18NickServ-	***** NickServ Help *****
+T 1417540703 -18NickServ-	NickServ allows users to 'register' a nickname, and stop
+T 1417540703 -18NickServ-	others from using that nick. NickServ allows the owner of a
+T 1417540703 -18NickServ-	nickname to disconnect a user from the network that is using
+T 1417540703 -18NickServ-	their nickname.
+T 1417540703 -18NickServ-	 
+T 1417540703 -18NickServ-	For more information on a command, type:
+T 1417540703 -18NickServ-	/msg NickServ help <command>
+T 1417540703 -18NickServ-	For a verbose listing of all commands, type:
+T 1417540703 -18NickServ-	/msg NickServ help commands
+T 1417540703 -18NickServ-	 
+T 1417540703 -18NickServ-	The following commands are available:
+T 1417540703 -18NickServ-	GHOST           Reclaims use of a nickname.
+T 1417540703 -18NickServ-	GROUP           Adds a nickname to your account.
+T 1417540703 -18NickServ-	IDENTIFY        Identifies to services for a nickname.
+T 1417540703 -18NickServ-	INFO            Displays information on registrations.
+T 1417540703 -18NickServ-	LISTCHANS       Lists channels that you have access to.
+T 1417540703 -18NickServ-	REGISTER        Registers a nickname.
+T 1417540703 -18NickServ-	RELEASE         Releases a services enforcer.
+T 1417540703 -18NickServ-	SENDPASS        Email registration passwords.
+T 1417540703 -18NickServ-	SET             Sets various control flags.
+T 1417540703 -18NickServ-	UNGROUP         Removes a nickname from your account.
+T 1417540703 -18NickServ-	 
+T 1417540703 -18NickServ-	Other commands: ACC, ACCESS, CERT, DROP, HELP, LISTLOGINS, 
+T 1417540703 -18NickServ-	                LISTOWNMAIL, LOGOUT, REGAIN, SETPASS, STATUS, 
+T 1417540703 -18NickServ-	                TAXONOMY, VACATION, VERIFY
+T 1417540703 -18NickServ-	***** End of Help *****
+T 1417540724 >18nickserv<	help release
+T 1417540724 -18NickServ-	***** NickServ Help *****
+T 1417540724 -18NickServ-	Help for RELEASE:
+T 1417540724 -18NickServ-	 
+T 1417540724 -18NickServ-	RELEASE removes an enforcer for your nick or
+T 1417540725 -18NickServ-	changes the nick of a user that is using your
+T 1417540725 -18NickServ-	nick.
+T 1417540725 -18NickServ-	 
+T 1417540725 -18NickServ-	Enforcers are created when someone uses your
+T 1417540725 -18NickServ-	nick without identifying and prevent all use
+T 1417540725 -18NickServ-	of it.
+T 1417540725 -18NickServ-	 
+T 1417540725 -18NickServ-	If you are logged in to the nick, you need not specify
+T 1417540725 -18NickServ-	a password, otherwise you have to.
+T 1417540725 -18NickServ-	 
+T 1417540725 -18NickServ-	Syntax: RELEASE <nick> [password]
+T 1417540725 -18NickServ-	 
+T 1417540725 -18NickServ-	Example:
+T 1417540725 -18NickServ-	    /msg NickServ RELEASE smith sesame
+T 1417540725 -18NickServ-	***** End of Help *****
+T 1417540842 19*	Now talking on 22#charlike
+T 1417540844 22*	Channel 22#charlike url: 24http://www.charlike.pw
+T 1417540844 22*	26ChanServ gives channel operator status to 18Osheaga
+T 1417541109 20*	Disconnected (20)
+T 1417541472 19*	Now talking on 22#charlike
+T 1417541492 22*	Channel 22#charlike url: 24http://www.charlike.pw
+T 1417541492 22*	26ChanServ gives channel operator status to 18tunnckoCore
+T 1417541496 20*	You are now known as 18Guest67374
+T 1417541510 20*	Disconnected (20)
+T 1417579901 19*	Now talking on 22#charlike
+T 1417579902 22*	Channel 22#charlike url: 24http://www.charlike.pw
+T 1417579934 19*	Now talking on 22#charlike
+T 1417579934 22*	Channel 22#charlike url: 24http://www.charlike.pw

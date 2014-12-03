@@ -1,0 +1,8 @@
+T 1417540616 19*	Now talking on 22#nerds2nerds
+T 1417540616 22*	26wolfe.freenode.net sets mode 24+n on 22#nerds2nerds
+T 1417540616 22*	26wolfe.freenode.net sets mode 24+s on 22#nerds2nerds
+T 1417540616 -18NickServ-	You are now identified for tunnckoCore.
+T 1417540665 19*	Now talking on 22#nerds2nerds
+T 1417540665 22*	26weber.freenode.net sets mode 24+n on 22#nerds2nerds
+T 1417540665 22*	26weber.freenode.net sets mode 24+s on 22#nerds2nerds
+T 1417540665 -18NickServ-	You are now identified for tunnckoCore.

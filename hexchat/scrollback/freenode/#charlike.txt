@@ -1,0 +1,12 @@
+T 1417540075 19*	Now talking on 22#charlike
+T 1417540075 22*	Channel 22#charlike url: 24http://www.charlike.pw
+T 1417540075 22*	26ChanServ gives channel operator status to 18tunnckoCore
+T 1417540616 23*	Osheaga (~tunnckoCo@95.87.211.16923) has joined
+T 1417540616 22*	26ChanServ gives channel operator status to 18Osheaga
+T 1417540628 24*	Osheaga has quit (Remote host closed the connection)
+T 1417540638 20*	Disconnected (20)
+T 1417540664 19*	Now talking on 22#charlike
+T 1417540664 22*	Channel 22#charlike url: 24http://www.charlike.pw
+T 1417540664 22*	26ChanServ gives channel operator status to 18tunnckoCore
+T 1417540665 23*	Osheaga (~tunnckoCo@95.87.211.16923) has joined
+T 1417540665 22*	26ChanServ gives channel operator status to 18Osheaga

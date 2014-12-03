@@ -1,0 +1,527 @@
+T 1417571687 18<27ljharb18>	once something gets taught in school it's really hard for society as a whole to unlearn it.
+T 1417571687 18<20therealklanni18>	Tru dat
+T 1417571728 18<20therealklanni18>	I had to unlearn that habit fairly recently, actually
+T 1417571775 18<22systemfault18>	I still think that FP is harder than imperative/mutation-land programming
+T 1417571782 18<22systemfault18>	Even if a lot of people say that it's just a matter of habit
+T 1417571784 18<25falafel18>	I think is easier TBH
+T 1417571804 18<20therealklanni18>	I think it's easier to do, once you learn it
+T 1417571810 18<25csd_18>	Anyone know how I can enable chrome.storage in the js console?
+T 1417571833 18<20therealklanni18>	I think it has a steeper learning curve, which again is likely largely due to learning OOP first and foremost
+T 1417571835 18<22systemfault18>	I barely started to be able to write haskell programs... it took me a month of learning and trying stuff (not full-time... of course, but still)
+T 1417571836 18<27ljharb18>	csd_: anything that starts with "chrome" is going to be chrome-specific and probably needs a browser flag.
+T 1417571843 18<27ljharb18>	csd_: ie, you won't be able to enable it in the JS console.
+T 1417571852 18<25csd_18>	ljharb: what do you mean?
+T 1417571854 18<27ljharb18>	systemfault: "haskell" and "fp" aren't the same
+T 1417571860 18<27ljharb18>	csd_: what do you think "chrome.storage" is?
+T 1417571877 18<20therealklanni18>	ljharb: yes, but FP is a common paradigm used in haskell
+T 1417571881 18<27ljharb18>	i know that
+T 1417571885 18<20therealklanni18>	I know you do :)
+T 1417571890 18<27ljharb18>	but haskell is hard. that doesn't mean fp is hard.
+T 1417571893 18<20therealklanni18>	Just stated for the benefit of anyone reading
+T 1417571893 18<25csd_18>	ljharb: it's an api to read/write data
+T 1417571895 18<22systemfault18>	ljharb: I see Haskell as being one of the purest form of FP...
+T 1417571907 18<25falafel18>	Haskell is hard if you know other languages before it. Haskell as first language must be easier
+T 1417571910 18<22systemfault18>	ljharb: But yeah... if you consider FP to be map/filter/reduce then it's easy.
+T 1417571911 18<27ljharb18>	csd_: yes but "chrome" means it's chrome-specific. and not actually a cross-browser storage mechanism.
+T 1417571915 18<20j20118>	falafel: yeah, that's less a less convoluted approach
+T 1417571929 18<25csd_18>	ljharb: maybe i'm in the wrong channel, but i am asking about the chrome console specifically
+T 1417571931 18<27ljharb18>	!mdn localStorage @ csd_
+T 1417571931 18<22ecmabot18>	csd_: DOM Storage - DOM | MDN <https://developer.mozilla.org/pt-PT/docs/DOM/Storage>
+T 1417571935 18<20j20118>	the only thing i'd worry about is adding methods for a class you don't own
+T 1417571940 18<27ljharb18>	csd_: yes, if you're asking about chrome apps this isn't the channel for it.
+T 1417571966 18<25csd_18>	do you know where i should ask? #chromium doesn't seem to have any activity
+T 1417571976 18<27ljharb18>	that should be an indicator :-p
+T 1417571979 18<20robdubya18>	csd_ what are you trying to do exactly?
+T 1417571980 18<27ljharb18>	sorry tho, i don't know
+T 1417571986 18<24Denommus18>	what is more recommended?
+T 1417571988 18<20robdubya18>	i do a lot of chrome apps
+T 1417571988 18<20j20118>	s/less//
+T 1417571991 18*	20robdubya ducks
+T 1417571993 18<24Denommus18>	react+bacon or jquery+bacon?
+T 1417572001 18<25csd_18>	robdubya: I'm writing my first Chrome extension. I want to be able to read/write to a local JSON file.
+T 1417572016 18<20therealklanni18>	Highland > bacon
+T 1417572050 18<20j20118>	Denommus: haven't heard of react+bacon, but react > jquery, imo, and i don't see why it wouldn't work
+T 1417572060 18<20therealklanni18>	csd_: decouple your question from "chrome extensions" and just ask about *specifically* what you're having trouble with
+T 1417572067 18<20j20118>	Denommus: Sorella does react+rxjs iirc
+T 1417572073 18<25falafel18>	j201, the only thing is no `do` notation, that's when LiveScript comes in handy, or maybe Sweet macros
+T 1417572076 18<20therealklanni18>	File API is not exclusive to Chrome extensions
+T 1417572105 18<24Denommus18>	therealklanni: uh, is highlander a functional reactive programming library?
+T 1417572112 18<25csd_18>	I just want to be able to persistently store and retrieve local data on the client side
+T 1417572127 18<24Denommus18>	I'm more interested in the reactive part than the UI part, guys
+T 1417572129 18<20therealklanni18>	Denommus: http://highlandjs.org/
+T 1417572135 18<20robdubya18>	then chrome.storage.local should be all you need
+T 1417572150 18<20robdubya18>	just need to enable the permission in your manifest
+T 1417572153 18<25csd_18>	robdubya: but it's undefined, despite having "storage" in my permissions
+T 1417572157 18<20therealklanni18>	It's the latest FRP lib, and IMHO the best API
+T 1417572157 18<24Denommus18>	therealklanni: okay, I have this open, but the docs are just a reference to the API. I want to know whether this is FRP or not
+T 1417572158 18<25falafel18>	j201, in LS it looks something like this http://dpaste.com/2X7WPJ6
+T 1417572164 18<24Denommus18>	therealklanni: okay
+T 1417572167 18<20therealklanni18>	It's FRP
+T 1417572167 18<25falafel18>	j201, which is pretty acceptable
+T 1417572180 18<24Denommus18>	therealklanni: and what makes it better than bacon? More calls?
+T 1417572207 18<20j20118>	falafel: but if you have a method and you want to implement it for an existing class, you have to modify the class directly, right? that's not a big deal, just not quite ideal imo
+T 1417572222 18<20therealklanni18>	Bacon is not so great, in my opinion. RxJS is definitely better, but the API leaves a lot to be desired
+T 1417572230 18<25falafel18>	j201, yes, I just duck type, I find it alright
+T 1417572238 18<20therealklanni18>	Highland does a better job of it
+T 1417572244 18<20therealklanni18>	Again, just one man's opinion
+T 1417572261 18<20j20118>	falafel: fair enough
+T 1417572261 18<20therealklanni18>	quack
+T 1417572277 18<20robdubya18>	csd_ it would only be enabled in the context of the extension
+T 1417572282 18<20robdubya18>	(obv)
+T 1417572309 18<24Denommus18>	therealklanni: but would you use it with React or jQuery?
+T 1417572343 18<20therealklanni18>	I haven't used React, so based solely on that I would probably use jQuery, unless I thought I had time to learn React
+T 1417572343 18<20robdubya18>	react, personally
+T 1417572352 18<24Denommus18>	ok
+T 1417572355 18<24Denommus18>	I'm leaving now, thanks
+T 1417572359 18<20robdubya18>	its a very react-y sort of behavior :)
+T 1417572362 18<20therealklanni18>	kbye
+T 1417572414 18<20therealklanni18>	I mean personally, I think I'd be more inclined to use mythril over React
+T 1417572426 18<20therealklanni18>	But you didn't ask that ;)
+T 1417572446 18<20therealklanni18>	mithril*
+T 1417572451 18<25csd_18>	robdubya: shouldn't a test like this work, if it's properly enabled in the extension? expect(typeof chrome.storage).toEqual('object');
+T 1417572473 18<20robdubya18>	that assumes your tests are runing in the context of the chrome extesnion
+T 1417572478 18<20robdubya18>	which i very much doubt it is
+T 1417572479 18<24legrandin18>	!help anyone with backbone or coffeescript experience, can you help me understand why this is failing to render? https://bpaste.net/show/eeaf900d6e32
+T 1417572479 18<22ecmabot18>	legrandin: Error: `anyone with backbone or coffeescript experience, can you help me understand why this is failing to render? https://bpaste.net/show/eeaf900d6e32` is not a command.
+T 1417572486 18<24legrandin18>	oops
+T 1417572503 18<27ljharb18>	sigh, coffeescript is so repugnant
+T 1417572508 18<25csd_18>	robdubya: i don't know. i'm using karma and it spawns a chrome process to run the tests
+T 1417572509 18<25falafel18>	j201, I end up using applicatives often, and a generic liftA comes in handy for that. I like mixing variadic and composition, it seems counter intuitive, but it gives me a bit more flexibility, and I can export APIs that people can use :)
+T 1417572517 18<24legrandin18>	i didnt ask what you thought of coffeescript ljharb
+T 1417572518 18<27ljharb18>	you're not supposed to render when you initialize a view. it should be explicitly called.
+T 1417572521 18<20therealklanni18>	robdubya: you'll probably want to stub out chrome.storage for tests
+T 1417572522 18<20robdubya18>	csd_ right, but its not going to spawn a chrome *extension* :)
+T 1417572526 18<20robdubya18>	what he said
+T 1417572542 18<27ljharb18>	legrandin: i get to volunteer my opinions whenever i want. if you want coffeescript help, go to #coffeescript or something. this is ##javascript.
+T 1417572554 18<24legrandin18>	coffeescript IS javascript
+T 1417572561 18<24legrandin18>	and the norm is to call render in intialize
+T 1417572564 18<27ljharb18>	no it most certainly is not
+T 1417572569 18<20therealklanni18>	CoffeeScript is NOT JS, it COMPILES to JS :)
+T 1417572576 18<27ljharb18>	"new" should never have side effects. trust me, that's not the norm.
+T 1417572581 18<25zomg18>	coffeescript is javascript?
+T 1417572583 18<27dabaR18>	Ah, the technical answer, therealklanni
+T 1417572584 18<25zomg18>	perl is javascript
+T 1417572586 18<25zomg18>	lol
+T 1417572590 18<20therealklanni18>	lol
+T 1417572594 18<27ljharb18>	i've been using backbone longer than you have i'm sure :-) render should never be called in initialize.
+T 1417572596 18<27dabaR18>	Let the trolling begin
+T 1417572597 18<20therealklanni18>	Everything is JS!
+T 1417572610 18<25csd_18>	 ok, as you can see this is foreign to me. how can i best work with this API and make sure that it's doing what i want it to do?
+T 1417572610 18<27ljharb18>	legrandin: however nothing about your backbone usage looks like it wouldn't work.
+T 1417572627 18<20therealklanni18>	dabaR: ;)
+T 1417572642 18<24nomic18>	https://pbs.twimg.com/media/B35Nn_2CYAAZHqy.jpg      wilsons injury was there during a medical exam in august -- not a "bruise"
+T 1417572651 18<24nomic18>	oops wrong channel
+T 1417572659 18<25falafel18>	people keep hating on Coffee, lol. Meanwhile I keep producing results. Let the wars begin
+T 1417572660 18<20therealklanni18>	I was all like O_o
+T 1417572691 18<20therealklanni18>	I'm not a "fan" of CS, but I use it
+T 1417572691 18<27ljharb18>	falafel: results that most of the JS community can't or won't touch :-
+T 1417572692 18<27ljharb18>	:-p
+T 1417572704 18<25falafel18>	ljharb, meh, results that aren't public anyway
+T 1417572726 18<25falafel18>	ljharb, all people see is minified JS, so it really does no matter
+T 1417572734 18<20therealklanni18>	CS is dead anyway, as in don't hold your breath for the next release
+T 1417572743 18<27ljharb18>	sure, if it's not public. but not open sourcing code is also foolish :-)
+T 1417572749 18<25falafel18>	CS is not dead, it is stable, not stagnated
+T 1417572766 18<20therealklanni18>	Yeah, but from what I have seen we may not see another stable version
+T 1417572784 18<20therealklanni18>	major stable*
+T 1417572786 18<25falafel18>	ljharb, I open source my code in this channel :), don't have time to prepare proper githubs
+T 1417572789 18<27ljharb18>	lol
+T 1417572795 18<24legrandin18>	my company uses nothing but javascript so i dont have a choice
+T 1417572803 18<24legrandin18>	er coffeescript
+T 1417572807 18<27ljharb18>	CS is dead in that it's widely considered to be a poor choice. even if the language itself still works.
+T 1417572809 18<20therealklanni18>	legrandin: there's always personal projects ;p
+T 1417572820 18<27ljharb18>	in this job market you most certainly have a choice :-)
+T 1417572826 18<20therealklanni18>	or new job ;)
+T 1417572860 18<24legrandin18>	therealklanni: to be honest, JS is so ugly that i cant ever see myself writing it. i'd do another compiles-to-javascript language before i would do javascript
+T 1417572862 18<27ljharb18>	that's what i meant
+T 1417572873 18<27ljharb18>	JS is beautiful and elegant.
+T 1417572878 18<27ljharb18>	it could be more so, and it will be over time.
+T 1417572880 18<20therealklanni18>	It's ugly if you write it that way
+T 1417572883 18<25falafel18>	ES6 is pretty enough,ES5 is pfff
+T 1417572888 18<24legrandin18>	ugly compared to python
+T 1417572891 18<27ljharb18>	lol
+T 1417572891 18<20therealklanni18>	Maybe it's the user ;p
+T 1417572899 18<27ljharb18>	i find python incredibly ugly.
+T 1417572905 18<27ljharb18>	also too many underscores.
+T 1417572920 18<24legrandin18>	there are studies that back up python's readability
+T 1417572925 18<25falafel18>	I find Python, Ruby, Coffee, etc quite pretty, I like code with no fluff
+T 1417572951 18<25falafel18>	no semicolons, no parens, no colons, I don't like superflous stuff
+T 1417572981 18<20therealklanni18>	semicolons are optional
+T 1417572981 18<25falafel18>	Lisp is aight too
+T 1417573009 18<25falafel18>	but Java, C#, pff
+T 1417573016 18<27ljharb18>	lol, studies
+T 1417573028 18<27ljharb18>	ruby could be pretty. but it allows you to do too many crazy things.
+T 1417573050 18<27ljharb18>	ruby's syntax, with parens either being always required or never allowed, without so much mutability and reliance on a global namespace, would be nice
+T 1417573089 18<27ljharb18>	but `foo bar baz` when you don't know if that's supposed to be `foo bar(baz)` or `foo(bar, baz)` or `foo(bar)(baz)` is just crazy.
+T 1417573106 18<24legrandin18>	ljharb: what about no integers
+T 1417573125 18<27ljharb18>	?
+T 1417573126 18<25falafel18>	ljharb, in Coffee it is pretty clear, I don't see the confusion people have
+T 1417573130 18<27ljharb18>	i don't particularly care about number types
+T 1417573131 18<24legrandin18>	javascript has no integers
+T 1417573135 18<27ljharb18>	so?
+T 1417573146 18<27ljharb18>	falafel: clear to you, but unclear to others === unclear :-)
+T 1417573154 18<27ljharb18>	i don't find it clear at all
+T 1417573171 18<27ljharb18>	legrandin: oh, you could try #documentcloud btw for backbone/cs questions
+T 1417573184 18<24legrandin18>	yeah i went there theres no one active
+T 1417573216 18<27ljharb18>	that tells you how helpful the community is
+T 1417573226 18<20therealklanni18>	hah
+T 1417573261 18<25falafel18>	ljharb, would you fin this clearer `a b <| c d`
+T 1417573264 18<25falafel18>	*find
+T 1417573281 18<27ljharb18>	what is "<|"
+T 1417573283 18<22systemfault18>	backbone sucks for anything but the smallest projects
+T 1417573295 18<27ljharb18>	i've been using it in a biggish project, and it's not that bad.
+T 1417573302 18<20therealklanni18>	backbone sucks for anything
+T 1417573303 18<24legrandin18>	https://bpaste.net/show/18228627e8ab need help on this, anyone?
+T 1417573304 18<20therealklanni18>	FTFY
+T 1417573306 18<27ljharb18>	but it's not great, because it's faking classical inheritance, and it's tightly coupled with underscore.
+T 1417573314 18<25falafel18>	ljharb, `a b <| c d === a(b)(c(d))`
+T 1417573327 18<24legrandin18>	like i said, backbone and coffeescript is what my company uses
+T 1417573335 18<22systemfault18>	lol... .render()... .render() .... .render()...... ooops, a nested view isn't updating... i forgot a .render()
+T 1417573336 18<24legrandin18>	so i dont really need to know why its bad
+T 1417573347 18<27ljharb18>	falafel: so you're saying "<|" means everything that follows it is an argument to everything to its left?
+T 1417573367 18<24legrandin18>	systemfault: what does that mean
+T 1417573370 18<29jakesyl18>	when i do document.myform.myinput.value = 1; shou;d myform be the form class
+T 1417573372 18<27ljharb18>	legrandin: this is the wrong room for that question. you might as well be asking the same question in ##cars
+T 1417573384 18<27ljharb18>	jakesyl: you should not use `document.myform` to access a form. that's legacy dom stuff.
+T 1417573388 18<24legrandin18>	i disagree ljharb
+T 1417573391 18<27ljharb18>	jakesyl: and no, it'd need to be the ID
+T 1417573395 18<22systemfault18>	legrandin: You should know if you used it for anything non-trivial.
+T 1417573403 18<29jakesyl18>	then what should i use?
+T 1417573406 18<27ljharb18>	legrandin: it's not javascript. it doesn't belong here. if you want to change it to JS then we can help you
+T 1417573416 18<24legrandin18>	systemfault: do you know why its not working?
+T 1417573423 18<20therealklanni18>	!mdn document.querySelector @ jakesyl
+T 1417573424 18<22ecmabot18>	jakesyl: document.querySelector() - Web API Interfaces | MDN <https://developer.mozilla.org/en-US/docs/Web/API/document.querySelector>
+T 1417573438 18<27ljharb18>	you should select by the form name, and the input name.
+T 1417573440 18<25falafel18>	ljharb, a |> b == b <| a == b(a)
+T 1417573445 18<24legrandin18>	i would really appreciate help if you know why it isn't rendering
+T 1417573457 18<25falafel18>	ljharb, those are "pipes" in languages like F#, LiveScript, and other FP langs
+T 1417573468 18<27ljharb18>	falafel: so i kind of get it but i find that insanely unreadable
+T 1417573475 18<19martyj-o18>	Is the only real difference between classes+objects and objects that inherit from other objects that if you change a class at runtime, it doesn't change the already created objects?
+T 1417573485 18<22systemfault18>	legrandin: I don't know CS but that looks "okay"
+T 1417573501 18<22systemfault18>	legrandin: What happens when you run it?
+T 1417573502 18<27ljharb18>	martyj-o: JS has no classes.
+T 1417573505 18<27ljharb18>	!inheritance @ martyj-o
+T 1417573505 18<22ecmabot18>	martyj-o: JavaScript does not really have "inheritance" like classical languages. What it has is more properly called "property delegation" or "behavior delegation" http://davidwalsh.name/javascript-objects - ie `foo.bar(baz)` when `!foo.hasOwnProperty('bar')` is essentially doing `Object.getPrototypeOf(foo).bar.call(foo, baz)`
+T 1417573510 18<24legrandin18>	systemfault: nothing. template doesnt render
+T 1417573517 18<20therealklanni18>	pipe right in, pipe left out, do the hokey pokey...
+T 1417573555 18<22systemfault18>	legrandin: Are you SURE that the potato element is accessible at the point where the template is compiled?
+T 1417573560 18<20therealklanni18>	I feel like that factoid is way over most people's heads
+T 1417573601 18<27ljharb18>	therealklanni: the text may be but the article's not
+T 1417573602 18<19martyj-o18>	ljharb: That's the fucking point.
+T 1417573615 18<27ljharb18>	martyj-o: no need to be rude.
+T 1417573619 18<19martyj-o18>	Why do people not read texts before replying?
+T 1417573625 18<24legrandin18>	systemfault: i dont understand "at the point". i have the template script running before the view script
+T 1417573626 18<27ljharb18>	i did read it. read that article.
+T 1417573630 18<27ljharb18>	martyj-o: the article answers it.
+T 1417573647 18<27ohaibbq18>	legrandin is the document ready once that backbone view is declared?
+T 1417573676 18<24legrandin18>	ohaibbq: yes, the script is the last thing loaded
+T 1417573681 18<25falafel18>	ljharb, well, that's the thing to get used to it, they are incredibly useful in practice. It means you can do things like `[1 1 2 2 3 3] |> unique |> map add 1 |> foldl1 add` instead of `foldl1 add, map add(1), unique [1 1 2 2 3 3]`
+T 1417573694 18<27ljharb18>	falafel: right, but something that takes getting used to isn't clear or easy. it should be intuitive.
+T 1417573695 18<22systemfault18>	legrandin: It's totally possible that $('#potato') has not been parsed "yet" at the point where _.template $('#potato').html() is called
+T 1417573764 18<22systemfault18>	legrandin: If the CS code is in the <head> of the document and the template in the body... then at the point where the head is parsed, #potato doesn't exists.
+T 1417573777 18<24legrandin18>	systemfault: the cs code is after the template script
+T 1417573783 18<27ljharb18>	legrandin: try making a jsfiddle (not a csfiddle) that reproduces the problem.
+T 1417573792 18<27ljharb18>	we can't see why it's broken just from your gist.
+T 1417573795 18<24legrandin18>	ok
+T 1417573802 18<25falafel18>	ljharb, well, it is intuitive if you use those languages. Those operators are everywhere, Elm, F#, LiveScript, even Haskell if you want to
+T 1417573818 18<27ljharb18>	falafel: "it's intuitive if you're familiar with it" means it's not :-p
+T 1417573880 18<25falafel18>	ljharb, it means that the intuition is not on the operator usage itself, but the idea of FP in general.
+T 1417573888 18<27ljharb18>	right
+T 1417573901 18<27ljharb18>	what i'm hoping for is syntax that's intuitive by itself. that makes even more sense in the realm of fp.
+T 1417573907 18<27ljharb18>	parentheses are that imo
+T 1417573975 18<25falafel18>	ljharb, well, what syntax would you chose for that purpose then? Would you really prefer `map(add(1), filter(even, [1,2,3])))` to `[1,2,3] |> filter(even) |> map(add(1))`
+T 1417573994 18<25falafel18>	discarding the obvisou OO approach
+T 1417573997 18<25falafel18>	*obvious
+T 1417574071 18<27ljharb18>	i like the left to rightness of the latter. but i can't really reason it out at all. i find the non-left-to-rightness of the first one to be less troubling than the confusion of the second.
+T 1417574127 18<27ljharb18>	how about `[1, 2, 3] / even * add(1)`
+T 1417574133 18<27ljharb18>	where / is filter and * is map
+T 1417574141 18<27ljharb18>	i dunno, just thinking out loud
+T 1417574149 18<25falafel18>	that seems even more confusing
+T 1417574153 18<27ljharb18>	yeah probably
+T 1417574168 18<27ljharb18>	i've thought lots about what i don't like about existing stuff, i haven't thought that much about an alternative
+T 1417574171 18<25falafel18>	|> and <| have some reason behind them, they imply the order of application
+T 1417574194 18<25falafel18>	or $ in Haskell which is basically <|
+T 1417574209 18<27ljharb18>	[1, 2, 3] → filter(even) → map(add(1))
+T 1417574220 18<27ljharb18>	maybe it's just the "<|" specifically. ← → would be nicer :-)
+T 1417574231 18<22ecmabot18>	falafel: Your `|>` line input has been cleared. (1 minute)
+T 1417574235 18<27ljharb18>	lol
+T 1417574238 18<25falafel18>	lol
+T 1417574299 18<25falafel18>	then there are composition operators in the same fashion, which don't apply the function, but compose them. So you could do `(filter(even) >> map(add(1)))([1,2,3])`
+T 1417574305 18<25falafel18>	So >> and <<
+T 1417574343 18<25falafel18>	but that can be mitigated with a `compose` function, and a `chain` function I guess
+T 1417574359 18<27ljharb18>	yeah once you start getting into "compose" and "chain" i find it gets confusing real fast
+T 1417574390 18<29deltab18>	seq 1 3 | awk '$0 % 2 == 0' | awk '{ print $0 + 1; }'
+T 1417574396 18<25falafel18>	ljharb, a >> b >> c === compose(c, b, a)`, and `chain = flip(compose)`, same ideas
+T 1417574415 18<27ljharb18>	yes but "compose" isn't intuitive imo. also no idea what flip is.
+T 1417574419 18<25falafel18>	or sometimes I call it `pipe` as I also use `chain` for other things
+T 1417574462 18<25falafel18>	ljharb, `flip = curry((f, x, y) => f(y, x))`, so `compose(b,a) === chain(a,b)`. It is just so you can write them in order
+T 1417574470 18<27ljharb18>	um
+T 1417574479 18<27ljharb18>	lol see all this stuff. it's not simple.
+T 1417574495 18<27ljharb18>	i know i can figure it out right now if i push at it, but it shouldn't require pushing.
+T 1417574552 18<25falafel18>	ljharb, `flip` allows you to make functions out of thin air, `prepend = flip(append)` for example
+T 1417574580 18<25falafel18>	ljharb, that's the power of abstracting all the things. With functions is easier IMO
+T 1417574582 18<27ljharb18>	that assumes a lot about the semantics of the function
+T 1417574695 18<25falafel18>	ljharb, it is not so much semantics, but more like laws, ie, associativity, commutativity, etc
+T 1417574700 18<29deltab18>	function flip(f, x, y) { return f(y, x); }  right?
+T 1417574710 18<25falafel18>	deltab, it has to be curried
+T 1417574718 18<29deltab18>	well, close to that
+T 1417574729 18<25falafel18>	function flip(f){return function(x, y){return f(y, x)}}
+T 1417574747 18<29deltab18>	right
+T 1417574754 18<20j20118>	it is nice to be able to write flip f a b = f b a
+T 1417574780 18<25falafel18>	in Coffe I just write `flip = λ (f, a, b) -> f b, a`
+T 1417574785 18<25falafel18>	no so different
+T 1417574800 18<20j20118>	but in a language without currying, i prefer to have partial application sugar rather than currying everything myself
+T 1417574802 18<25falafel18>	or LS `flip = (f, a, b) --> f b, a`
+T 1417574841 18<20j20118>	so in clojure, i probably wouldn't use flip at all, i'd use the #(...) form of writing a function
+T 1417574859 24*	28Guest31611 is now known as 18karstensrage
+T 1417574929 18<25falafel18>	j201, in Clojure is nice to fdo partial application, is short, but .bind in JS is too verbose, and is pretty slow
+T 1417574935 18<25falafel18>	s/fdo/do
+T 1417574943 18<20j20118>	yep, which sucks :/
+T 1417574958 18<25falafel18>	and there's no partialRight
+T 1417574966 18<25falafel18>	or bindRight, or whatever they'd call it
+T 1417574977 18<25falafel18>	or partial application with placeholder...
+T 1417574979 18<25falafel18>	no goodies
+T 1417574980 24*	28lance|afk is now known as 18lanceball
+T 1417574991 18<20j20118>	is it scala that has the foo(_, bar, _) sugar for partial application?
+T 1417574998 18<20j20118>	i like the look fo that
+T 1417575003 18<20j20118>	*of
+T 1417575014 18<25falafel18>	j201, not sure, but JS can do it too, with a little helper of course
+T 1417575042 18<27ljharb18>	_ in scala means like 17 things
+T 1417575045 18<27ljharb18>	its nuts
+T 1417575048 18<25falafel18>	lol
+T 1417575067 18<20j20118>	yeah, i've been meaning to find or write a helper for that
+T 1417575087 18<20j20118>	i've just been doing more clojurescript and elm for my stuff recently, so meh
+T 1417575099 18<25falafel18>	j201, have a script somewhere one sec
+T 1417575152 18<25falafel18>	j201, here http://jsbin.com/qevega/1/edit?js,output
+T 1417575279 18<25falafel18>	j201, in LiveScript you'd just write `add _, 1`, and it'll figure it out for you
+T 1417575306 18<20j20118>	falafel: is it on npm?
+T 1417575336 18<25falafel18>	j201, no, but you can get this stuff from LoDash and Underscore as well, same exact syntax
+T 1417575387 18<25falafel18>	and other libraries like Ramda
+T 1417575479 18<20j20118>	yep, it would just be nice on its own
+T 1417575506 18<25zomg18>	Give up and use Haskell
+T 1417575506 18<25zomg18>	:D
+T 1417575543 18<20j20118>	although i'll probably go with ramda or facebook's immutable for my next js project, so i'll see what they have
+T 1417575576 18<20j20118>	zomg: i often use clojurescript for web stuff (although elm looks promising)
+T 1417575817 18<25falafel18>	I cannot give up and use Haskell, I still have to use PHP, so there, lol
+T 1417575838 18<25falafel18>	welcome to the real world
+T 1417575868 18<27shauno-18>	be the change you want to see
+T 1417575897 18<27shauno-18>	im not in the position where i dont want to leave my job because we're using all the frameworks and libraries that i prefer to use :D
+T 1417575902 18<25falafel18>	fortunately I can use whatever I want in the front end, LiveScript currently, but PureScript will see some production time soon
+T 1417575915 18<27shauno-18>	err i am i mean
+T 1417575918 18<27shauno-18>	that's good
+T 1417575929 18<27shauno-18>	that you have a choice
+T 1417576064 18<25falafel18>	I'd like some first-class contracts on top of JS, that would make it more ideal for me than switching to PureScript. ATM I use my own half-baked contract decorator pattern, which I use to export function for testing
+T 1417576095 18<22systemfault18>	The real world sucks.....
+T 1417576100 18<22systemfault18>	:/
+T 1417576170 18<25falafel18>	I don't mind WordPress for quick websites, it makes it quick and dirty, just so I can get payed
+T 1417576222 18<25falafel18>	there's currently nothing comparable to WP for Node anyway
+T 1417576395 18<22systemfault18>	I feel that  the PHP/apache combo is nearly stupid-proof.
+T 1417576398 18<29Agamemnus18>	Ok
+T 1417576400 18<29Agamemnus18>	falafel
+T 1417576401 18<22systemfault18>	Unlike node.
+T 1417576413 18<29Agamemnus18>	Anyone seen falafel recently?
+T 1417576437 18<25falafel18>	nop, haven't seen him
+T 1417576443 18<24legrandin18>	figured it out
+T 1417576473 18<22systemfault18>	Nice
+T 1417576494 18<25zomg18>	falafel: I wrote a PHP interpreter in Haskell, you could just use that!
+T 1417576511 18<25zomg18>	...if you use an extremely limited subset of PHP since I didn't really bother implementing the entire language into my toy project
+T 1417576513 18<24legrandin18>	needed an EL and a tag for the template to be placed into
+T 1417576514 18<25zomg18>	lol
+T 1417576518 18<24legrandin18>	that was it
+T 1417576538 18<25zomg18>	j201: yeah I used cljs a bit as well, it's alright but not a big fan of lisps =)
+T 1417576665 18<22systemfault18>	I don't think I'll ever be "fan" of a language without static typing.
+T 1417576682 18<24legrandin18>	why?
+T 1417576691 18<29Agamemnus18>	falafel
+T 1417576693 18<29Agamemnus18>	I'm PMing you
+T 1417576695 18<22systemfault18>	They feel sloppy to me.
+T 1417576697 18<29Agamemnus18>	like a rabid dog
+T 1417576713 18<22systemfault18>	I think that the type system should enforce correctness as much as possible.
+T 1417576719 18<24legrandin18>	kinda the point systemfault, dynamically typed languages are supposed to be simple to program
+T 1417576739 18<24legrandin18>	what other languages do you use with static typing systemfault
+T 1417576763 18<22systemfault18>	legrandin: I started with C++... then Java. Haskell is now my favorite toy language
+T 1417576789 18<22systemfault18>	Then... I have experience with JS... PHP... Clojure
+T 1417576819 18<26nights18>	hi
+T 1417576840 18<26nights18>	sometimes in chrome console i get  uncaught reference error when i try to just call a function
+T 1417576857 18<26nights18>	its callable from the code in the site, so i dont understand why it only happens in the console
+T 1417576858 18<24legrandin18>	systemfault: you should try python, it's very nice
+T 1417576875 18<22systemfault18>	legrandin: I played with it a bit, it's not bad.
+T 1417576897 18<24legrandin18>	the standard library is massive
+T 1417576913 18<24legrandin18>	it has the best programming community i've ever seen
+T 1417576941 18<22systemfault18>	I found the Haskell community to be hard to beat...
+T 1417576948 18<22systemfault18>	The C++ one is meh...
+T 1417576948 18<25zomg18>	Haskell is probably one of the few staticly typed langs I like :P
+T 1417576952 18<22systemfault18>	The Java one is total shit.
+T 1417576970 18<25zomg18>	Most of them don't really have so good type inference and thus they become a bit of a pain sometimes
+T 1417577025 18<22systemfault18>	C++'s is not tooo bad... Java's type inference is a joke.
+T 1417577067 18<25falafel18>	!learn
+T 1417577067 18<22ecmabot18>	falafel: SyntaxError: Syntax is `learn ( [alias] foo = bar | foo =~ s/expression/replace/gi )`.
+T 1417577077 18<26nights18>	c++ is the best
+T 1417577083 18<26nights18>	i miss those days
+T 1417577083 18<25zomg18>	systemfault: C++ has type inference? :p
+T 1417577096 18<22systemfault18>	Once I get better with Haskell, I might consider Idris... or Agda... but they too advanced for me. If Haskell is a hipster language then Idris is (Hipster ^2)
+T 1417577100 18<22systemfault18>	zomg: Since C++11
+T 1417577102 18<26nights18>	with C++ theres no one else to blaim than yourself
+T 1417577113 18<24legrandin18>	what about C?
+T 1417577120 18<22systemfault18>	zomg: Using the "auto" keyword
+T 1417577123 18<25Havvy18>	zomg:  You have to manually tell it to use inference, but yes. Just ^^
+T 1417577124 18<25zomg18>	oh
+T 1417577126 18<26nights18>	OO missing
+T 1417577136 18<25Havvy18>	You can do OO in C.
+T 1417577145 18<22systemfault18>	Havvy: Sure lol
+T 1417577151 18<24legrandin18>	thats why its nice, nights
+T 1417577161 18<22systemfault18>	Havvy: You can even do FP in C if you REALLY want... but would you want to?
+T 1417577178 18<25Havvy18>	But while you are talking about C and C++, don't forget that Rust exists.
+T 1417577193 18<29jakesyl18>	Hey so in this script: http://git.io/cGtmQQ nothings submitting and nothing happens when i click the button I'm not sure if it's the javascript part or not
+T 1417577196 18<24legrandin18>	C aint going anywhere
+T 1417577196 18<25zomg18>	tbh C++ is too low level for my taste :P
+T 1417577207 18<22systemfault18>	Rust is still in its infancy... but it's looking great
+T 1417577213 18<26nights18>	you can do OO in c++ but if you want to do OO theres no reason not to use C++
+T 1417577217 18<26nights18>	OO in C i mean
+T 1417577218 18<24legrandin18>	haskell is high level? :O
+T 1417577219 18<25falafel18>	!learn snip
+T 1417577219 18<22ecmabot18>	falafel: SyntaxError: Syntax is `learn ( [alias] foo = bar | foo =~ s/expression/replace/gi )`.
+T 1417577232 18<25falafel18>	!learn snip partial=var _={},partial=function(e,t){t=[].slice.call(arguments,1);return function(n){n=t.concat([].slice.call(arguments)),i=n.length;while(i--)if(n[i]===_)n[i]=n.splice(-1)[0];return e.apply(0,n)}}
+T 1417577232 18<22ecmabot18>	falafel: Learned `snip partial`.
+T 1417577236 18<22systemfault18>	legrandin: One of the highest level languages...
+T 1417577237 18<25falafel18>	!snip partial
+T 1417577237 18<22ecmabot18>	falafel: var _={},partial=function(e,t){t=[].slice.call(arguments,1);return function(n){n=t.concat([].slice.call(arguments)),i=n.length;while(i--)if(n[i]===_)n[i]=n.splice(-1)[0];return e.apply(0,n)}}
+T 1417577241 18<26nights18>	ive never had a better experience with OO programming than in c++
+T 1417577250 18<24legrandin18>	ive never used haskell
+T 1417577251 18<26nights18>	and ive done php,python,java,c#,c++,c
+T 1417577263 18<24legrandin18>	python and C work nicely together
+T 1417577265 18<26nights18>	and javascript :p but i wouldnt even call that a language
+T 1417577271 18<22systemfault18>	JavaScript is trash.
+T 1417577280 18<22systemfault18>	I'm good at it though :P
+T 1417577285 18<26nights18>	:)
+T 1417577291 18<25zomg18>	ES6 is making it less trash though
+T 1417577292 18<26nights18>	c++ is nice. theres lots of traps
+T 1417577298 18<26nights18>	but its really useful
+T 1417577306 18<25zomg18>	Spent some time reading about ES6 stuff today since I never looked at it much before :P
+T 1417577325 18<22systemfault18>	zomg: Yup.... ES6... in a browser near you... sometimes in 202X
+T 1417577342 18<25zomg18>	Traceur and use it today
+T 1417577362 18<29steeze18>	is there a good resource online to build wireframes of apps or anything like that?
+T 1417577365 18<25zomg18>	I'm writing an article about the practical benefits of the new ES6 features. Everyone writing about it seems to just talk about the feature itself rather than why anyone would want to use it
+T 1417577367 18<22systemfault18>	If I have to compile my ES6 to ES5... Might as well pick another language.
+T 1417577405 18<25zomg18>	Like nobody ever told me ES6 template strings could theoretically be used to embed DSLs like SQL or whatever into JS
+T 1417577417 18<25zomg18>	which is quite neat
+T 1417577426 18<22systemfault18>	zomg: String DSLs?
+T 1417577430 18<22systemfault18>	Ew?
+T 1417577441 18<25falafel18>	!learn snip partial=|>var _={},partial=function(e,t){t=[].slice.call(arguments,1);return function(n){n=t.concat([].slice.call(arguments)),i=n.length;while(i--)if(n[i]===_)n[i]=n.splice(-1)[0];return e.apply(0,n)}}
+T 1417577441 18<22ecmabot18>	falafel: Learned `snip partial`.
+T 1417577446 18<25falafel18>	!snip partial
+T 1417577446 18<22ecmabot18>	|>var _={},partial=function(e,t){t=[].slice.call(arguments,1);return function(n){n=t.concat([].slice.call(arguments)),i=n.length;while(i--)if(n[i]===_)n[i]=n.splice(-1)[0];return e.apply(0,n)}} @falafel
+T 1417577451 18<25zomg18>	systemfault: you could write a parser in it I suppose :P
+T 1417577465 18<25zomg18>	I mean writing code is a big string DSL, you just run it thru a parser and whatnot
+T 1417577465 18<25falafel18>	>>var add=function(x,y){return x+y};partial(add, _, 1)(2)
+T 1417577465 18<22ecmabot18>	falafel: (number) 3
+T 1417577493 18<22systemfault18>	I'll never get the difference between currying and a partial
+T 1417577500 18<25zomg18>	systemfault: it's a bit similar to haskell quasiquoting actually... very very very tiny bit similar
+T 1417577503 18<25zomg18>	lol
+T 1417577566 18<25zomg18>	actually another interesting example I saw about it was embedding JSX
+T 1417577585 18<25zomg18>	you can do jsx`<put your jsx nonsense here>` and now you don't need a separate JSX compiler pass
+T 1417577609 18<27ljharb18>	which is much better than the jsx nonsense
+T 1417577618 18<25zomg18>	but using it for SQL escaping is probably the least controversial way of using it :p
+T 1417577623 18<27ljharb18>	tagged template strings are great.
+T 1417577631 18<25zomg18>	yeah
+T 1417577633 24*	28alamar is now known as 18Guest55673
+T 1417577640 18<25zomg18>	it was quite hard to find an explanation how the tag functions work though
+T 1417577655 18<25zomg18>	I mean the parameters for them weren't really explained anywhere and the examples were completely useless
+T 1417577721 18<27ljharb18>	the spec's still evolving.
+T 1417577735 18<27ljharb18>	i'll never understand why people are so quick to embrace language features that aren't even stabilized yet.
+T 1417577741 18<27ljharb18>	ES6 isn't ready yet.
+T 1417577757 18<22systemfault18>	That shows how bad ES5 is.
+T 1417577763 18<25falafel18>	systemfault, a curried function is a partially applied function for as long as there are arguments left to pass. You can implement `curry` with `partial`
+T 1417577772 18<27ljharb18>	ES5 isn't bad.
+T 1417577781 18<27ljharb18>	systemfault: specifically, what is it about ES5 that you find so bad?
+T 1417577782 18<25zomg18>	Yeah I think some of the bits are probably more volatile than others
+T 1417577790 18<25zomg18>	eg. `let` and `const` are probably reasonably stable
+T 1417577796 18<27ljharb18>	the rules around them aren't.
+T 1417577809 18<27ljharb18>	anyways most of the best parts of ES6 are shimmable. there's only a few good features that are syntax
+T 1417577817 18<27ljharb18>	template strings are good
+T 1417577865 18<27ljharb18>	(by rules i mean what's an early error, TDZ stuff, what happens in global scope, etc)
+T 1417577868 18<25zomg18>	let, const, computed prop names, default parameters, destructuring, object initializer shorthand, template literals
+T 1417577874 18<27ljharb18>	but also i don't find let and const that value.
+T 1417577875 18<25zomg18>	probably the top ones I picked
+T 1417577877 18<27ljharb18>	*valuable
+T 1417577880 18<27ljharb18>	const maybe.
+T 1417577885 18<27ljharb18>	but if you have to use "let" your function is too big.
+T 1417577906 18<27ljharb18>	computed property names are nice, but it's just sugar. same with default params, and destructuring.
+T 1417577911 18<25zomg18>	Perhaps, but it might be convenient in for-loops when dealing with closures
+T 1417577911 18<27ljharb18>	what do you mean by object initializer shorthand?
+T 1417577916 18<27ljharb18>	right but you shouldn't be using loops.
+T 1417577934 18<25zomg18>	object initializer shorthand, as in { foo: foo, bar: bar } becomes { foo, bar }
+T 1417577940 18<27ljharb18>	eh.
+T 1417577948 18<25zomg18>	I mean it's not super useful but it's kinda convenient :P
+T 1417577955 18<27ljharb18>	i understand that people love their shortcuts, but you can do all that with a precommit hook and vim macros.
+T 1417577967 18<27ljharb18>	and you won't be able to use them in browsers reliably for a very very long time.
+T 1417577976 18<27ljharb18>	so they're great shortcuts for 5 years from now
+T 1417577979 18<25falafel18>	systemfault, so if you got partial you get curry like this http://dpaste.com/05TFM4G
+T 1417577990 18<25zomg18>	yeah I'm looking at this purely from the perspective of using traceur for it =)
+T 1417578026 18<27ljharb18>	right but at that point who cares what's in the language
+T 1417578032 18<27ljharb18>	you can compile any fairy whispers you want to JS.
+T 1417578073 18<25zomg18>	well that wouldn't be very useful if you want to keep up to date with latest developments in JS-land though
+T 1417578086 18<22systemfault18>	falafel: From what I understand, partial are for language that cannot represent (*2)
+T 1417578120 18<25falafel18>	systemfault, yes, that's a partial application, it would be `partial(multiply, _, 2)`
+T 1417578195 18<25falafel18>	systemfault, but you can partially apply many argument,s in any order as well, like `partial(f, _, a, _, b)` for example
+T 1417578197 18<27ljharb18>	zomg: true. using standard JS stuff in a compiler like 6to5 traceur etc is WAY WAY better imo than using some fake non-JS language.
+T 1417578255 18<22systemfault18>	falafel: Right
+T 1417578256 18<25zomg18>	yeah
+T 1417578319 18<25falafel18>	6to5 is the best transpiler, been using it since I switched from Traceur, it is great
+T 1417578359 18<25falafel18>	and it covers everything without runtime, except the generators
+T 1417578482 18<29bookmark18>	"t,i,l,e,.,b,m,p" anyone know how to get rid of the commas in something like this?
+T 1417578525 18<29bookmark18>	is there a certain cast or some trick
+T 1417578543 18<25falafel18>	bookmark, you mean `.replace`?
+T 1417578549 18<29bookmark18>	hmm
+T 1417578553 18<24Maxdamantus18>	bookmark: where are you getting it from?
+T 1417578579 18<24Maxdamantus18>	bookmark: I suspect it's actually an array, possibly converted to a string (using .toString)
+T 1417578704 24*	28commmmodo_ is now known as 18commmmodo
+T 1417578911 18<29bookmark18>	it was join("")
+T 1417578911 18<25falafel18>	!learn snip partial=|>var _={},partial=function(e,t){t=[].slice.call(arguments,1);return function(n,i){n=t.concat([].slice.call(arguments)),i=n.length;while(i--)if(n[i]===_)n[i]=n.splice(-1)[0];return e.apply(0,n)}}
+T 1417578911 18<22ecmabot18>	falafel: Learned `snip partial`.
+T 1417578917 18<25falafel18>	there was a variable leakin g
+T 1417579161 18<25falafel18>	!trampoline
+T 1417579299 18<25falafel18>	!learn trampoline=A trampoline is a loop that iteratively invokes thunk-returning functions (continuation-passing style). A single trampoline is sufficient to express all control transfers of a program. Converting a program to trampolined style is trampolining. Trampolined functions can be used to implement tail-recursive function calls in stack-oriented programming languages. http://raganwald.com/2013/03/28/trampolines-in
+T 1417579299 18<22ecmabot18>	falafel: Learned `trampoline`.
+T 1417579299 18<25falafel18>	-javascript.html
+T 1417579310 18<27ImBcmDth18>	lol
+T 1417579324 18<27ljharb18>	!thunk
+T 1417579325 18<25falafel18>	damn, almost
+T 1417579326 18<27ljharb18>	wtf is a thunk
+T 1417579336 18<25falafel18>	will add thunk
+T 1417579338 18<27ljharb18>	also that factoid really doesn't tell me anything
+T 1417579346 18<25falafel18>	hence the link
+T 1417579398 18<25falafel18>	!learn trampoline=A trampoline is a loop that iteratively invokes thunk-returning functions (continuation-passing style). Trampolined functions can be used to implement tail-recursive function calls in stack-oriented programming languages. http://raganwald.com/2013/03/28/trampolines-in-javascript.html
+T 1417579398 18<22ecmabot18>	falafel: Learned `trampoline`.
+T 1417579403 18<25falafel18>	that's a bit shorter
+T 1417579450 18<27ljharb18>	k
+T 1417579454 18<27ljharb18>	link 404s.
+T 1417579456 18<27ljharb18>	oh wait
+T 1417579463 18<27ljharb18>	nvm
+T 1417579470 18<19crocket18>	How do I return something that is retrieved in a callbac?
+T 1417579932 19*	Now talking on 22##javascript
+T 1417579932 22*	Topic for 22##javascript is: Can't talk? Get registered on freenode (HOWTO: http://freenode.net/faq.shtml#nicksetup ). | ECMAScript, JavaScript. JS *not* Java. | Say "!help" (or ask and wait). | Say "!mdn abc" for docs on "abc". | Don't paste code in the channel.
+T 1417579932 22*	Topic for 22##javascript set by 26gkatsev!~gkatsev@oftn/board/gkatsev (24Sun Oct 12 07:56:56 2014)
+T 1417579947 18<27ljharb18>	because if so, that's a pure JS implementation that's far far clearer to the target audience than what he wrote.
+T 1417579980 18<27ljharb18>	and if not then i still don't get it :-p
+T 1417579991 18<25falafel18>	ljharb, ok gimme a sec
+T 1417579995 18<27ljharb18>	ok
+T 1417580015 18<27ljharb18>	basically an explanatory blog post shouldn't be using libraries to explain itself. at least not until after it's done without any libs.
+T 1417580087 24*	28Gilgameshkun_ is now known as 18Gilgameshkun
+T 1417580119 18<27ljharb18>	(imo)
+T 1417580165 18<27ImBcmDth18>	function (fn) { return function() { var args = Array.prototype.slice.call(arguments); var params = args.slice(0, fn.length - 1); params.push(args.slice(fn.length - 1)); return fn.apply(this, params); }; }
+T 1417580167 18<27nono_18>	hey whats a good freenode news channel
+T 1417580170 18*	27ImBcmDth thinks
+T 1417580177 18<27ImBcmDth18>	ljharb: ^
+T 1417580213 18<27ljharb18>	ah, so it pulls the first arg out, and puts the rest in an array
+T 1417580213 18<27ljharb18>	ok
+T 1417580303 18<27ImBcmDth18>	ljharb: spoiler - trampolines are less clever than their name would imply :)
+T 1417580338 18<27ljharb18>	lol
+T 1417580449 18<19s3b`18>	falafel: Oh no, you can't go more than two sub classes with that Class() thing?
+T 1417580483 18<19s3b`18>	http://jsbin.com/potawavesu/1/edit?js,console
+T 1417580841 18<25falafel18>	ljharb, ok, took some time, but how about this? http://dpaste.com/3MA38S1
+T 1417580851 18<25falafel18>	ljharb, clarifies things? that's more realworld use case
+T 1417580883 18<27ljharb18>	i don't know what zip does
+T 1417580904 18<25falafel18>	ljharb, zip([1,2],[3,4]) === [[1,3],[2,4]]
+T 1417580923 18<27ljharb18>	so function zip(x, y) { return [x, y]; } ?
+T 1417580929 18<27ljharb18>	why all the recursion
+T 1417580970 18<25falafel18>	ljharb, this explains trampoline
+T 1417580994 18<25falafel18>	if you can transform a recursive function into a tail-recursive function, then you can trampoline it

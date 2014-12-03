@@ -1,0 +1,15 @@
+T 1417540075 19*	Now talking on 22#gulpjs
+T 1417540075 22*	Topic for 22#gulpjs is: gulp.js support IRC
+T 1417540075 22*	Topic for 22#gulpjs set by 26contrahax!~contrahax@ip24-251-13-101.ph.ph.cox.net (24Wed Apr 30 00:58:59 2014)
+T 1417540105 24*	Foxandxss has quit (Quit: Textual IRC Client: www.textualapp.com)
+T 1417540146 23*	iamcarrico (~iamcarric@unaffiliated/iamcarrico23) has joined
+T 1417540399 24*	nfroidure has quit (Ping timeout: 255 seconds)
+T 1417540614 24*	28gratimax is now known as 18gratimax|away
+T 1417540614 23*	ahtik (~ahtik@178.19.210.16223) has joined
+T 1417540616 23*	Osheaga (~tunnckoCo@95.87.211.16923) has joined
+T 1417540628 24*	Osheaga has quit (Remote host closed the connection)
+T 1417540638 20*	Disconnected (20)
+T 1417540664 19*	Now talking on 22#gulpjs
+T 1417540664 22*	Topic for 22#gulpjs is: gulp.js support IRC
+T 1417540664 22*	Topic for 22#gulpjs set by 26contrahax!~contrahax@ip24-251-13-101.ph.ph.cox.net (24Wed Apr 30 00:58:59 2014)
+T 1417540665 23*	Osheaga (~tunnckoCo@95.87.211.16923) has joined

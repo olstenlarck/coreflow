@@ -1,0 +1,92 @@
+T 1417540075 19*	Now talking on 22#Node.js
+T 1417540075 22*	Topic for 22#Node.js is: Current Stable v0.10.33, Unstable v0.11.14 | Channel Mission Statement: http://bit.ly/node-irc-mission-statement | Channel Info: http://nodeirc.info | Channel Logs: http://logs.nodejs.org/node.js/index
+T 1417540075 22*	Topic for 22#Node.js set by 26ljharb!sid43720@oftn/member/ljharb (24Fri Oct 31 07:02:34 2014)
+T 1417540075 -18NickServ-	You are now identified for tunnckoCore.
+T 1417540075 -18ChanServ-	[#node.js] Visit the wiki page https://github.com/joyent/node/wiki
+T 1417540075 22*	Channel 22#node.js url: 24http://nodejs.org/
+T 1417540076 23*	gH05t (~gH05t@111.92.57.14423) has joined
+T 1417540083 23*	noobee (~noobee@111.94.235.20623) has joined
+T 1417540085 24*	nonks_ has quit (Ping timeout: 250 seconds)
+T 1417540085 24*	jduhls has quit (Ping timeout: 272 seconds)
+T 1417540086 23*	MadalinPasarel (~MadalinPa@79.118.89.1123) has joined
+T 1417540095 23*	daffl1 (~Instantbi@184.71.205.15423) has joined
+T 1417540100 18<Sorella18>	NeoXiD: yeah, Lisps tend to strike people as "odd". Dylan has a fairly neat syntax though
+T 1417540105 24*	Foxandxss has quit (Quit: Textual IRC Client: www.textualapp.com)
+T 1417540107 24*	gH05t has quit (Client Quit)
+T 1417540112 18<claf18>	So I decided to redo the sync version of a csv parser
+T 1417540114 23*	Piotras (~pp@188.246.159.115.rev.vline.pl23) has joined
+T 1417540125 18<claf18>	but damn I cant get the parser to spit anything out
+T 1417540128 18<claf18>	http://pastie.org/9756407
+T 1417540129 23*	gsd (~gsd@unaffiliated/gsd23) has joined
+T 1417540129 23*	gH05t (~gH05t@111.92.57.14423) has joined
+T 1417540150 18<NeoXiD18>	Sorella: Only heard of Bob Dylan so far, I'll also write that on my todo list.
+T 1417540160 18<20nekinie18>	@Sorella http://flowtype.org/ has had my interest as of late
+T 1417540170 18<20claf18>	theres definately something in parsed, as that removing the [0] from the console statement shows [object Object].
+T 1417540171 18<22Sorella18>	I think csv-parser is a streaming parser.
+T 1417540179 24*	jamescarr has quit (Remote host closed the connection)
+T 1417540182 24*	bradleymeck has quit (Quit: bradleymeck)
+T 1417540186 23*	Efrem (~chrisanto@23-118-148-148.lightspeed.iplsin.sbcglobal.net23) has joined
+T 1417540232 18<22Sorella18>	nekinie: yeah, logical types are interesting, and I'm studying if I can implement them on my own PL. But Flow (and TS) lack higher-kinded types, so I can't use them =/
+T 1417540236 24*	chetandhembre has quit (Quit: This computer has gone to sleep)
+T 1417540237 24*	daffl has quit (Ping timeout: 240 seconds)
+T 1417540251 23*	miasma_ (~textual@38.88.218.19023) has joined
+T 1417540264 18<20claf18>	Sorella: either way, I can't see from that
+T 1417540278 18<20claf18>	I'd need to shovel that into repl
+T 1417540287 18<20claf18>	and I might be able to see something
+T 1417540288 24*	miasma_ has quit (Max SendQ exceeded)
+T 1417540297 24*	thirdknife has quit (Ping timeout: 240 seconds)
+T 1417540314 24*	zmisc has quit (Ping timeout: 264 seconds)
+T 1417540316 23*	miasma_ (~textual@38.88.218.19023) has joined
+T 1417540316 24*	crewshin has quit (Read error: Connection reset by peer)
+T 1417540325 23*	rosshuggett (~rosshugge@host86-184-138-239.range86-184.btcentralplus.com23) has joined
+T 1417540336 24*	MadalinPasarel has quit (Client Quit)
+T 1417540337 24*	daffl1 has quit (Ping timeout: 240 seconds)
+T 1417540343 24*	deathbear has quit (Quit: Computer has gone to sleep.)
+T 1417540346 23*	daffl (~Instantbi@216-129-84-78.dedicated.allstream.net23) has joined
+T 1417540359 24*	frkout has quit (Read error: Connection reset by peer)
+T 1417540367 24*	Swizec has quit (Quit: Computer has gone to sleep.)
+T 1417540369 23*	frkout (~frkout@101.110.31.12023) has joined
+T 1417540372 23*	c4milo (~c4milo@ool-18ba7916.dyn.optonline.net23) has joined
+T 1417540373 24*	kenperkins has quit (Quit: Apparently I've still forgotten to change my automatic sleep message Zzzz....)
+T 1417540379 24*	kazupon has quit (Remote host closed the connection)
+T 1417540399 24*	nfroidure has quit (Ping timeout: 255 seconds)
+T 1417540402 23*	dshaw_ (~Adium@2601:9:7b80:504:947:bd9:f091:be6b23) has joined
+T 1417540411 24*	dabaR (184dd4ae@gateway/web/freenode/ip.24.77.212.17424) has left
+T 1417540412 23*	fayimora (uid22610@gateway/web/irccloud.com/x-npevgqmnfoalxswb23) has joined
+T 1417540415 23*	roelmonnens (~roelmonne@ip-80-236-207-31.dsl.scarlet.be23) has joined
+T 1417540428 24*	Piotras has quit (Ping timeout: 250 seconds)
+T 1417540447 23*	Sawbones (~Sawbones@173.168.90.5623) has joined
+T 1417540450 24*	node0js608 has quit (Ping timeout: 246 seconds)
+T 1417540453 24*	williamcotton has quit (Ping timeout: 255 seconds)
+T 1417540463 24*	cesconix has quit (Read error: Connection reset by peer)
+T 1417540475 18<20claf18>	well, such a long way to go still!
+T 1417540480 18<20myndzi18>	i copied my upstart script and made a few changes but i can't seem to get initctl to see it -- is there something i need to do to re-scan the init directory or something?
+T 1417540509 24*	_45kb has quit (Quit: Leaving.)
+T 1417540510 24*	jaw187 has quit (Remote host closed the connection)
+T 1417540519 24*	cotko has quit (Ping timeout: 245 seconds)
+T 1417540522 23*	vampi-the-frog (~vampirefr@unaffiliated/vampirefrog23) has joined
+T 1417540547 24*	epichero has quit ()
+T 1417540557 24*	Jonathan1cClare has quit (Ping timeout: 240 seconds)
+T 1417540579 23*	cesconix (~cesconix@host179-107-dynamic.46-79-r.retail.telecomitalia.it23) has joined
+T 1417540587 24*	28toddself is now known as 18toddself_zz
+T 1417540594 23*	MikeS_ (~msmith@8.18.203.25223) has joined
+T 1417540600 24*	28zz_night-owl is now known as 18night-owl
+T 1417540602 24*	rafagomes has quit (Ping timeout: 264 seconds)
+T 1417540614 24*	28gratimax is now known as 18gratimax|away
+T 1417540614 23*	ahtik (~ahtik@178.19.210.16223) has joined
+T 1417540616 23*	Osheaga (~tunnckoCo@95.87.211.16923) has joined
+T 1417540619 23*	Jonathan1cClare (~argomael@69.156.77.8823) has joined
+T 1417540628 24*	Osheaga has quit (Remote host closed the connection)
+T 1417540638 20*	Disconnected (20)
+T 1417540664 19*	Now talking on 22#Node.js
+T 1417540664 22*	Topic for 22#Node.js is: Current Stable v0.10.33, Unstable v0.11.14 | Channel Mission Statement: http://bit.ly/node-irc-mission-statement | Channel Info: http://nodeirc.info | Channel Logs: http://logs.nodejs.org/node.js/index
+T 1417540664 22*	Topic for 22#Node.js set by 26ljharb!sid43720@oftn/member/ljharb (24Fri Oct 31 07:02:34 2014)
+T 1417540664 -18NickServ-	You are now identified for tunnckoCore.
+T 1417540664 -18NickServ-	You are already logged in as tunnckoCore.
+T 1417540664 -18ChanServ-	[#node.js] Visit the wiki page https://github.com/joyent/node/wiki
+T 1417540664 22*	Channel 22#node.js url: 24http://nodejs.org/
+T 1417540665 23*	Osheaga (~tunnckoCo@95.87.211.16923) has joined
+T 1417540665 -18NickServ-	Osheaga!~tunnckoCo@95.87.211.169 has just authenticated as you (tunnckoCore)
+T 1417540669 24*	roelmonnens has quit (Ping timeout: 255 seconds)
+T 1417540671 23*	gH05t (~gH05t@111.92.57.14423) has joined
+T 1417540674 18*	20claf should be happy that theres finally "map"

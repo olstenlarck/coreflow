@@ -1,0 +1,263 @@
+T 1417541471 22*	Topic for 22#nginx set by 26jaybe (24Tue Oct 28 17:35:29 2014)
+T 1417541477 24*	28Letoc is now known as 18Letoc|away
+T 1417541492 -18ChanServ-	[#nginx] Community Nginx support channel. Don't ask to ask; just ask! Config pastes via http://p.ngx.cc only. This channel is publicly logged.
+T 1417541596 19*	Now talking on 22#nginx
+T 1417541596 22*	Topic for 22#nginx is: Community Nginx support channel. Don't ask to ask; just ask! Config pastes via http://p.ngx.cc only. This channel is publicly logged. || Latest Releases: [mainline 1.7.7] [stable 1.6.2]
+T 1417541596 22*	Topic for 22#nginx set by 26jaybe (24Tue Oct 28 17:35:29 2014)
+T 1417541597 -18ChanServ-	[#nginx] Community Nginx support channel. Don't ask to ask; just ask! Config pastes via http://p.ngx.cc only. This channel is publicly logged.
+T 1417542191 24*	28mozzarel1 is now known as 18mozzarella
+T 1417542227 18<20mrits18>	I believe I have too many concurrent web requests comming in and I'm running out of ports. Is there a way to limit total connections at the iptables level?
+T 1417542344 18<19Fireye18>	Something like http://serverfault.com/questions/539954/how-to-globally-limit-total-number-of-tcp-connections-with-iptables ?
+T 1417542354 18<19Fireye18>	(google is handy)
+T 1417543935 18<29d1plo1d18>	hey #nginx, I am trying to configure a load balancer so that it can start up even when one of it's backends is unavailable (ex. a totally unplugged backend server) and fail over to the remaining backends in that scenario. My nginx configuration works except when the backend fails, then it give me a "nginx: [emerg] host not found in upstream" and crashes. Is there anyway to ignore these and have it not crash?
+T 1417543959 18<29d1plo1d18>	(this is on startup after the backend failure that I'm getting this error)
+T 1417544488 18<29FatShack18>	Is there any way to make a location directive for files that *don't* have a particular character in them?
+T 1417545011 18<19bluenemo18>	hi guys. when using a  rewrite regex replacement flag  rule, how do I specify two flags? I'd like to set permanent as well as last
+T 1417545335 18<19Fireye18>	bluenemo: It's one or the other.  Last indicates that nginx will do a new location search based on your regex.  You need to then issue a permanent redirect inside the location that it ends up finding.
+T 1417545367 18<19Fireye18>	FatShack: If you use a regex location, sure.  Look up negative lookahead/behinds
+T 1417545473 18<29FatShack18>	Fireye: Yeah, messing around with that. Problem right now is I'm using autoindex in that directory. If I turn on the negative lookahead regex it blocks access to the index as well, since that index doesn't have that character.
+T 1417545475 18<19Fireye18>	d1plo1d: Sounds like you have an issue with name resolution.  If you specify IP, it'd probably work A-OK, or ensure that even though the host is down, it can be resolved
+T 1417545693 18<29d1plo1d18>	Fireye: ok, that's awesome. Yeah we were using domain names for testing purposes but in production we'll be using ip's. I'll try swapping domains for ips and see if we don't have the same issue. Cheers!
+T 1417546122 24*	28colstrom_ is now known as 18colstrom
+T 1417546389 18<20ngxbot18>	Paste from FatShack: [ http://p.ngx.cc/5b ] - Negative Lookahead
+T 1417546392 18<19bluenemo18>	can I set cache headers in my application that are then evaluated by nginx?
+T 1417546401 18<19bluenemo18>	cant really find anything on that subject
+T 1417546440 18<29FatShack18>	This is having the exact opposite effect that I want. I want to catch all urls that don't have '#' in them and block them. But I still want to allow access to the autoindex. Right now, it's 403ing everything *except* the urls that don't have '#'
+T 1417546541 18<19Fireye18>	bluenemo: Yes.
+T 1417546578 18<19bluenemo18>	Fireye, do you have a hint to some documentation to get me started on this? I dont really find anything :(
+T 1417546589 18<19Fireye18>	bluenemo: Read the details on what headers nginx honors: http://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_cache_valid
+T 1417546604 18<19Fireye18>	http://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_ignore_headers
+T 1417546605 18<19Fireye18>	as well
+T 1417546613 18<19bluenemo18>	ok thank you Fireye
+T 1417546757 18<19Fireye18>	FatShack: Try this instead: ([^#]|/$)+
+T 1417546840 18<19Fireye18>	actually... that isn't quite what you want
+T 1417547248 18<29FatShack18>	Fireye: Yeah. I just don't know how I'm managing to get it right backwards. I'm getting exactly opposite of what I want.
+T 1417547303 18<19Fireye18>	Sorry, don't have the time at the moment to puzzle it out, you can try the interactive regex tester at debuggex.com, which has a handy cheat sheet, and the ability to do PCRE regex
+T 1417548121 18<19bluenemo18>	I'm trying to convert this apache .htaccess rule to nginx: http://paste.debian.net/hidden/e10e6835/  what could I use for {TIME_YEAR}-%{TIME_MON} ? it is to be replaced as 2014-12
+T 1417548243 18<20colstrom18>	@bluenemo : http://winginx.com/en/htaccess ?
+T 1417548283 18<19bluenemo18>	ah lol. cool. thank you  colstrom :)
+T 1417548303 18*	20colstrom tips hat. Anytime.
+T 1417548466 18<19bluenemo18>	tips hat? :)
+T 1417548615 24*	28JmZ_ is now known as 18JmZ
+T 1417548636 18<20colstrom18>	@bluenemo like so? http://imgur.com/5ajbeWB
+T 1417548677 18<19bluenemo18>	ah i c :D
+T 1417549322 24*	28qwebirc34933 is now known as 18CrystalMare
+T 1417549324 >18nickserv<	info tunnckoCore
+T 1417549325 -18NickServ-	Information on tunnckoCore (account tunnckoCore):
+T 1417549325 -18NickServ-	Registered : May 29 19:50:55 2012 (2 years, 26 weeks, 4 days, 23:51:10 ago)
+T 1417549325 -18NickServ-	Last addr  : ~Thunderbi@95.87.211.169
+T 1417549325 -18NickServ-	Last seen  : now
+T 1417549325 -18NickServ-	Logins from: tunnckoCore
+T 1417549325 -18NickServ-	Nicks      : tunnckoCore gZc- Osheaga BUNDESCHWAG xWe2s cor[e]Nation SummerSadness
+T 1417549325 -18NickServ-	Email      : mameto_100@mail.bg (hidden)
+T 1417549325 -18NickServ-	Metadata   : sign = "Make with your mind, the world you need!"
+T 1417549325 -18NickServ-	Metadata   : url = http://www.whistle-bg.tk/
+T 1417549325 -18NickServ-	Flags      : HideMail, NeverOp, Private
+T 1417549325 -18NickServ-	tunnckoCore has enabled nick protection
+T 1417549325 -18NickServ-	*** End of Info ***
+T 1417549357 18<20ngxbot18>	Paste from CrystalMare: [ http://p.ngx.cc/6c ] - apachecode
+T 1417549376 18<22CrystalMare18>	How would I set this code in nginx's config files
+T 1417549401 18<22CrystalMare18>	I'm having issues setting the equivalent up
+T 1417549501 18<20jaybe18>	!apache2nginx | CrystalMare
+T 1417549502 18<20ngxbot18>	CrystalMare: http://nginx.org/en/docs/http/converting_rewrite_rules.html
+T 1417549514 18<19bluenemo18>	(converting apache .htaccess to nginx rules) When I have multiple RewriteCond before the RewriteRule, is there a better way than making an if for every condition whcih does the rewrite? as in have an if with multiple conditions?
+T 1417549539 18<19bluenemo18>	yeah i should read that too ;)
+T 1417549557 18<22CrystalMare18>	Well, none of those examples fit my needs
+T 1417549569 18<22CrystalMare18>	I don't need the rewrite engine
+T 1417549577 18<20jaybe18>	i don't know how to use apache
+T 1417549611 18<20jaybe18>	how about you describe, with words, succinctly, what you wish to accomplish. pick one thing and state it succinctly, and on one line if possible.
+T 1417549622 18<20jaybe18>	leave apache out of it
+T 1417549647 18<28MTecknology18>	AD7six: Thanks for having a fresh copy of that database! :D
+T 1417549659 18<22CrystalMare18>	I want to make sure that I cannot run any PHP within a specified folder,
+T 1417549665 18<22CrystalMare18>	in this case, it's /images
+T 1417549906 18<19bluenemo18>	how could I get the current year / month / day / hour and so on into a variable to use with rewrite? example (that doesnt work) http://paste.debian.net/hidden/d9314f3d/
+T 1417550088 18<19Fireye18>	bluenemo: Use a map to dissect $time_local or $time_iso8601
+T 1417550293 18<19bluenemo18>	Fireye, can you give me a hint on that one? I'm googling around seeing what the idea is, but i dont know how to write that
+T 1417550302 18<19bluenemo18>	(hint = example). if you have the time.
+T 1417550384 18<26switchflip18>	I'm currently using nginx to load balance between two servers with default setting of round robin... but it doesn't seem to be working that manner. It seems more random in its response.
+T 1417550446 18<19Fireye18>	map $time_iso8601 $time_year { ~*^(?P<year>\d{4})-\d{2}-\d{2} $year; }
+T 1417550487 18<19Fireye18>	I'm not sure what the iso8601 format looks like inside of nginx, but you can log it and see for yourself.  Same for the common log format one
+T 1417550494 18<19Fireye18>	http://nginx.org/en/docs/http/ngx_http_core_module.html
+T 1417550500 18<19Fireye18>	(at the bottom are the variables list)
+T 1417550640 18<26switchflip18>	Regarding my earlier question about round robin... I get responses from both servers but its not in the round robin format. Has anyone any idea about this... Thanks!
+T 1417550660 18<19Fireye18>	bluenemo:  Basically, a map allows you to set another variable, and you can use regex captures to pick  and choose portions of the original variable value to fill in the new mapped variable value
+T 1417550776 18<19Fireye18>	switchflip: I haven't tested how truly round-robin the default configuration is.  I'd suggest taking a look at your access logs, and seeing if there is a discernable pattern.  Keep in mind that each request to nginx for that upstream, including assets like jpg and javascript, might go to a different backend
+T 1417550800 18<19Fireye18>	so if you're saying it isn't round robin based on the html output, that isn't the best way to determine it IMO
+T 1417550862 18<19bluenemo18>	Fireye, thank you very much! I do get how map works, but I'm to bad in regexing; would you mind providing me with another two examples for day of month and time of day (0 - 24)?
+T 1417550897 18<26switchflip18>	@Fireye, Thanks. I'll have a look.
+T 1417551886 18<20zackiv3118>	is there a version of $args that also include the question mark? so i can do /abc/123$args .... where args could be the empty string '' or '?key=value' (so I don't have an empty '?' in my url)
+T 1417552088 18<20jaybe18>	zackiv31, $is_args
+T 1417552118 18<20zackiv3118>	jaybe, thanks.. knew it existed somewhere
+T 1417552124 18<20jaybe18>	welcome
+T 1417552144 18<28MTecknology18>	!is_args
+T 1417552270 18<28mustmodify18>	Can I prevent a certain subdomain from responding to https on a certain IP? I have edge.domain.com and staging.domain.com on the same IP. But staging doesn't use SSL. When people accidentally go to https://staging.domain.com, they get edge, and it causes confusion.
+T 1417552326 18<28MTecknology18>	!server_name | mustmodify
+T 1417552372 18<28mustmodify18>	I'm using a server_name directive but it doesn't seem to be working. Is there a !server_name directive?
+T 1417552376 18<28mustmodify18>	I'll check it out.
+T 1417552394 18<28MTecknology18>	what?
+T 1417552434 18<20jaybe18>	MTecknology, he interpreted your response not as a bot command but as literal
+T 1417552450 18<28mustmodify18>	jaybe: at first I thought it was a bot command, but then it didn't do anything.
+T 1417552460 18<20jaybe18>	mustmodify, i know 😃 yup
+T 1417552479 18<20jaybe18>	things get confusing when the bot doesn't bot
+T 1417552498 18<29teward18>	or when the bot isn't present
+T 1417552562 18<28MTecknology18>	oh... he died
+T 1417552570 18<29teward18>	mhm
+T 1417552582 18<28mustmodify18>	MTecknology: RIP, bot. You were a good bot.
+T 1417552590 18<28mustmodify18>	(or not apparently.)
+T 1417552604 18<28MTecknology18>	WARNING 2014-12-02T11:11:01 supybot Disconnect from morgan.freenode.net:6667: error: [Errno 104] Connection reset by peer.
+T 1417552607 18*	28MTecknology grumbles
+T 1417552736 18<29teward18>	MTecknology: those pesky peers!
+T 1417552818 22*	26ChanServ gives channel operator status to 18ngxbot
+T 1417552938 18<28MTecknology18>	!server_name
+T 1417552945 18<28mustmodify18>	bah
+T 1417552952 18<28mustmodify18>	!server_name
+T 1417552955 18<28MTecknology18>	don't
+T 1417552958 18<28mustmodify18>	!i_mean_it
+T 1417552966 22*	26ChanServ sets quiet on 18*!*@74.80.33.74
+T 1417552973 18<28MTecknology18>	he's still catching up from the rejoin.
+T 1417552980 22*	26ChanServ removes quiet on 18*!*@74.80.33.74
+T 1417552986 18<28mustmodify18>	That always seems to work for my wife.
+T 1417552992 18<28mustmodify18>	Just thought I would give it a shot.
+T 1417553687 18<28mustmodify18>	So is it still thinking?
+T 1417555042 24*	28AC`97 is now known as 18sirderpalot
+T 1417555305 18<22athan18>	Hello everyone, when I have a `location` pragma in my configuration, would nginx "cut-off" the matched part of the url before passing it on with `proxy_pass`?
+T 1417555336 18<20jaybe18>	athan, that depends on how you compose the proxy pass argument/destination.  nginx.org/r/proxy_pass
+T 1417555360 18<22athan18>	jaybe: Thank you :)
+T 1417555939 18<20fandi18>	hi
+T 1417555954 18<20fandi18>	how to change Server if i using yum installation ?
+T 1417556006 18<20jaybe18>	fandi, define what, "change Server", means.
+T 1417556071 18<20fandi18>	http://pastebin.com/r67cQtZN
+T 1417556089 18<20fandi18>	Server: nginx/1.6.2 <--- need to modify
+T 1417556124 18<20fandi18>	jaybe, do you have an idea ?
+T 1417556126 18<20fandi18>	thanks
+T 1417556129 18<20jaybe18>	fandi, do you wish for the Nginx version to not show?
+T 1417556132 18<19Fireye18>	You can turn off server tokens
+T 1417556141 18<19Fireye18>	but you can't disable sending the Nginx banner easily
+T 1417556150 18<19Fireye18>	you have to hack it out of the source code and recompile
+T 1417556151 18<20fandi18>	jaybe, i need to change with my number server
+T 1417556165 18<19Fireye18>	http://nginx.org/en/docs/http/ngx_http_core_module.html#server_tokens
+T 1417556198 18<20jaybe18>	fandi, you may not 'change' the [factual] number. you may disable the version number showing, however. see Fireye' link.
+T 1417556223 18<20fandi18>	Fireye, ok .. so there's no configuration i can change. i need to recompile it ?
+T 1417556229 18<20fandi18>	ok thanks all :)
+T 1417556303 18<19Fireye18>	Correct, if you want to send anything other than "nginx/1.7.7" or "nginx", you need to edit the source code and recompile.
+T 1417556322 18<20jaybe18>	fandi, well - yes - there is a configuration you can change, to keep nginx from presenting the version number. you may not *change* the version number to an arbitrary value, no.
+T 1417556334 18<20jaybe18>	(unless you hack/edit source)
+T 1417556368 18<20fandi18>	haha that's great.. make sure there's easy way to modify it'.. but ok :)
+T 1417556392 18<20fandi18>	it's clear me all. thanks for your answer :)
+T 1417556409 18<20jaybe18>	i don't know why one would ever want to 'modify' the version number returned, other than keeping nginx from returning it at all. but whatever! :)
+T 1417556424 18<19Fireye18>	nginx/super_happy_edition
+T 1417556435 18<20fandi18>	jaybe, it's only make use if you using l4 balancer
+T 1417556461 18<20fandi18>	and you need to know which server do you get
+T 1417556508 18<19Fireye18>	If you need to identify what backend, or nginx server actually serves the request, you can set a custom HTTP header with that information
+T 1417556525 18<20fandi18>	http header need l7 balancer :) ...
+T 1417556547 18<20fandi18>	as i know.. but i think l4 balancer is better than l7 ..
+T 1417556828 18<27Ice-x18>	Please buy this game http://www.desura.com/games/WipeGround-Wpx
+T 1417556859 18<20jaybe18>	Ice-x, no; do not solicit/advertise in here. thanks.
+T 1417556923 18<28mustmodify18>	MTecknology: So can I ask about server names?
+T 1417556942 22*	26ChanServ gives channel operator status to 18jaybe
+T 1417556954 22*	26jaybe has kicked 18Ice-x from 22#nginx (24No Soliciting)
+T 1417556958 22*	26jaybe removes channel operator status from 18jaybe
+T 1417556959 24*	28ferrix is now known as 18anonymouse
+T 1417557013 18<26mr_sarna18>	hi everybody
+T 1417557304 18<20ngxbot18>	Paste from mr_sarna: [ http://p.ngx.cc/b8 ] - nginx-
+T 1417557415 18<26mr_sarna18>	guys, Im trying to add a header to the static files being proxied
+T 1417557435 18<26mr_sarna18>	Im using IF... But it doesnt seems to be working http://p.ngx.cc/b8 ]
+T 1417557457 18<26mr_sarna18>	Do any of you have time to take a look on my conf?
+T 1417557484 18<26mr_sarna18>	I've been googling for a while and have not found the answer. I'd apreciate any help
+T 1417557611 18<20jaybe18>	why use an `if`? don't.  i.e.  location /static { add_header XXX; ... }
+T 1417557759 18<26mr_sarna18>	jaybe: because I'm using a regexp and nginx showed an error when I tried to do that why a proxyed request: "Reloading nginx configuration: [emerg]: "proxy_pass" may not have URI part in location given by regular expression, or inside named location, or inside the "if" statement, or inside the "limit_except" block in"
+T 1417557794 18<26mr_sarna18>	jaybe: I have a Jboss web app being proxied with nginx, and I need to add some cache-control headers to static files
+T 1417557809 18<26mr_sarna18>	I though that nested locations may do the job
+T 1417557915 18<22jdewald18>	mr_sarna: Is your proxy_pass just to http://<whatever>/ ?
+T 1417558029 18<26mr_sarna18>	jdewald: Nope --> http://1.2.3.4:1234/something/
+T 1417558038 18<22jdewald18>	ah
+T 1417558059 24*	28enquora_ is now known as 18enquora
+T 1417558064 18<26mr_sarna18>	it works fine. The problem its adding the headers to the static files   :'(
+T 1417558351 24*	28JmZ is now known as 18JmZ_
+T 1417561289 24*	28yokel_ is now known as 18yokel
+T 1417561471 22*	26ChanServ gives channel operator status to 18ngxbot
+T 1417561916 18<19thomas218>	If I have a catchall server directive, and specific server directive both listening on the same port, does nginx automatically use the specific directive, or would it also use the catchall?
+T 1417562861 18<20jaybe18>	thomas2, explicit wins.  nginx.org/r/server_name
+T 1417564189 24*	28ferrix is now known as 18anonymouse
+T 1417564339 18<25Cope18>	I want to remove x-powered-by and server headers; I'm using nginx as bundled by phusion, which doesn't include the HttpHeadersMore module. A friend pointed to: http://stackoverflow.com/a/21177575/60880 but I can't find any reference to remove_header in the docs.  Does this still exist? Are there any other options?
+T 1417564464 18<28MTecknology18>	don't use passenger...
+T 1417564553 18<25Cope18>	granted... let's assume that's not an option right now :)
+T 1417564583 18<25Cope18>	basically are there any ways to remove the headers without the HttpHedersMore module
+T 1417564611 18<25Cope18>	and what is this remove_header thing?
+T 1417565744 18<19Fireye18>	no clue.  How are you communicating with your "phusion" backend?  fastcgi? proxy_pass?
+T 1417565805 18<19Fireye18>	you probably want proxy_hide_header or fastcgi_hide_header
+T 1417565819 18<25Cope18>	aiui passenger is more akin to a mod_ruby thing
+T 1417565827 18<19Fireye18>	http://nginx.org/en/docs/http/ngx_http_fastcgi_module.html#fastcgi_hide_header -- http://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_hide_header
+T 1417565845 18<19Fireye18>	Cope: You don't understand.  How are you handing off requests from nginx to whatever application backend you're using
+T 1417565853 18<19Fireye18>	I don't really care about passenger or ruby or whatever
+T 1417565860 18<19Fireye18>	I care about the mechanism you're using to get things out of nginx to your backend
+T 1417566092 18<25Cope18>	Fireye: that's the point of passenger, unless I am gravely misunderstanding.  There is no backend.  Passenger functions as a module within nginx, which embeds a ruby interpreter in the webserver.
+T 1417566105 18<19Fireye18>	!p.ngx.cc
+T 1417566106 18<20ngxbot18>	For pasting and sharing, #nginx uses: * http://p.ngx.cc/ *. There are other pastebins out there. Many, unfortunately, spam you with ads, javascripts, and filthiness. p.ngx.cc provides- 1) nginx-specific configuration highlighting and linking, 2) No javascript, 3) Interacts with #nginx, 4) No ads. Helpers *trust* visiting p.ngx.cc, and are therefore more likely to try to help you.
+T 1417566116 18<19Fireye18>	toss a copy of your nginx configuration into a p.ngx.cc paste please
+T 1417566126 18<25Cope18>	sre thing 1 sec
+T 1417566186 18<29teward18>	!passenger
+T 1417566186 18<20ngxbot18>	Passenger is neither supported nor endorsed by the Nginx community. No support will be provided for it in this channel. Please see #passenger. Also, have you looked at Puma? http://puma.io
+T 1417566194 18<29teward18>	I'm just going to leave that there...
+T 1417566201 18*	29teward may have come in a bit late
+T 1417566306 18<25Cope18>	yeah I'm not actually asking for passenger support; I get that it's not nginx.  I'm actually asking a general question about removing headers withot the httpheadersmore module.
+T 1417566350 18<19Fireye18>	normally, one hands requests off to a backend application via fastcgi, uwsgi, or proxy_pass
+T 1417566365 18<19Fireye18>	there are directives in those modules to hide HTTP headers, which prevent them from being passed to end users
+T 1417566381 18<20ngxbot18>	Paste from Cope: [ http://p.ngx.cc/07 ] - headers
+T 1417566418 18*	25Cope nods; I can see there being many benefits to moving to that model, but that's not something I can do right away.
+T 1417566450 18<19Fireye18>	Cope: That appears to be the main nginx configuration, but it doesn't include any server statements.  Could you look in /etc/nginx/sites-enabled and paste the configs from there?
+T 1417566492 18<19Fireye18>	I'm trying to see if there is any documentation on the nginx passenger directives
+T 1417566540 18<28Plaidrab18>	I have an intermittent problem with our reverse proxy setup whereby it periodically returns a 404 and the correct content from the upstream server. We can't find where this is coming from. Is this a known misconfig? I haven't been able to ask google the right way.
+T 1417566561 18<19Fireye18>	I found their documentation, but I haaaaaaate how they format it.  Bleh.
+T 1417566584 18<20ngxbot18>	Paste from Cope: [ http://p.ngx.cc/38 ] - sites-enabled
+T 1417566622 18<19dunkel218>	hello
+T 1417566715 18<19Fireye18>	Cope: Passenger hasn't implemented a "passenger_hide_headers" directive.  They have "passenger_ignore_headers", but that's not what you want.  The module will not permit you to do what you intend to do.
+T 1417566741 18<29teward18>	Fireye: it also doesn't help that the Nginx community doesn't endorse 'Passenger'.  (I believe also there's no support on it in channel, per that last factoid, and for Passenger assistance they might want to try #passenger)
+T 1417566757 18<28cardoni18>	Can someone help me troubleshoot my useage of split_clients (for A/B testing)?
+T 1417566768 18<28cardoni18>	https://gist.github.com/cardoni/b5a09634e8ce0596a82a is only serving up A
+T 1417566786 18<19Fireye18>	teward: Yeah, I'm removed from the portion of the nginx community that would use it in the first place, so I was sort of ignorant.  Now I'm enlightened
+T 1417566861 18<19Fireye18>	Plaidrab: Alter your logging format so you load the upstream response codes as well.  That should give you an indication where it's being generated, though it's PROBABLY your backend.  Also, check to see if there are any corresponding entries in the error log
+T 1417566914 18<28Plaidrab18>	We were only able to see them in the nginx log, but not to a degree it was useful.:)  Would cranking up the log level have the info or do I need to alter the log format?
+T 1417566958 18<19Fireye18>	Plaidrab: I mean, if you turn on debugging output you'll certainly get the information you need.  The problem is, you'll get it for every single request
+T 1417566980 18<19Fireye18>	IMO either altering your main logging format is easier, or you can create a secondary logging format, and have two access_log entries for your server
+T 1417566986 18<19dunkel218>	hello
+T 1417567093 18<19dunkel218>	im configuring a virtual host with a new server {} block and added the file to the sites-enabled, but when i do that, now every not found page is showing that root directory why could that happne? for example if I created that server block on server_name api.domain.com; and if i go to nothing.domain.com i see the content of api.domain.com why is that?
+T 1417567277 18<28Plaidrab18>	Thank you, Fireye.  I think I've found what i need to add.
+T 1417567322 18<19Fireye18>	dunkel2: nginx will want to serve data out, and though api.domain.com doesn't match nothing.domain.com, it's still listening on port 80, so it'll serve it from api.domain.com.  You should either have a catch-all type of server configuration, or detect if people are coming in from an invalid hostname (ie; if ($http_host != api.domain.com) { return 302 http://api.domain.com;}
+T 1417567347 18<19acmehandle18>	Is it worthwhile for me to install nginx and apache behind it?
+T 1417567350 18<25Cope18>	Fireye: thanks very much for your help
+T 1417567351 18<19dunkel218>	or add a default_Server ?
+T 1417567363 18<19Fireye18>	a catch-all host would have a listen statement with the default_server flag, and a non-sensical server_name (ala server_name _;)
+T 1417567383 18<19acmehandle18>	I have read that nginx helps prevent ddos
+T 1417567393 18<19dunkel218>	i have this listen   [::]:80 default_server ipv6only=on;   on my default url but should i do that of every different domain in my virtual hosts?
+T 1417567431 18<19Fireye18>	acmehandle:  nginx is generally more responsive and better at dealing with high load, compared to apache.  Other than that, the caching you can use is also helpful.
+T 1417567469 18<19Fireye18>	dunkel2: You should only have one default_server for each IP:Port pair
+T 1417567470 18<19dunkel218>	or should i set my ipv4 default_server and my ipv6 default_server
+T 1417567497 18<28Plaidrab18>	Oh. Hmm.  Do I need to be using an upstream block for the proxy pass to use the $upstream_* family of logging variables?
+T 1417567555 18<19dunkel218>	great Fireye thanks for your time now i understand a little bit more of nginx :)
+T 1417567606 18<19Fireye18>	Plaidrab: Ah, yeah, you need to be using the upstream module for those variables, sorry.  I don't think there's an equivilant for the proxy_module, directly
+T 1417567623 18<19Fireye18>	on the upside, you can have a single server upstream if you want
+T 1417567639 18<19dunkel218>	if i ser the error_page 404 for that default_server, all those not subdomain found calls will go there?
+T 1417567664 18<19Fireye18>	!server_name
+T 1417567665 18<20ngxbot18>	server_name is http://ngx.cc/r/server_name
+T 1417567675 18<19Fireye18>	is that what I'm looking for...
+T 1417567679 18<28cardoni18>	Anyone happen to be good with A/B testing via nginx and want to help me troubleshoot this simple config?: https://gist.github.com/cardoni/b5a09634e8ce0596a82a
+T 1417567709 18<19Fireye18>	dunkel2: http://nginx.org/en/docs/http/server_names.html -- search for catch-all on that page for an example
+T 1417567903 18<19dunkel218>	this config listen [::]:80 default_server ipv6only=on shoudl be only on 1 server block?
+T 1417568005 18<19dunkel218>	i had that on my default server block then i added it to a virtual host with other domain innthe server_name and it shows me a config error
+T 1417570966 18<27popsci18>	Hi folks, i need some help about nginx reverse proxying for subdomain to subfolder like sub.domain.com to domain.com/sub
+T 1417571001 18<20jaybe18>	what help do you need?
+T 1417571119 18<27popsci18>	hey jaybe, How can I redirect static files?
+T 1417571136 18<20jaybe18>	popsci, what are you actually asking?
+T 1417571464 18<27popsci18>	jaybe, location /sub/ { proxy_pass http://sub.domain.com/; } code works fine but css files will not load correctly.
+T 1417571855 18<27popsci18>	I need a rewrite rules for that:  domain.com/cssfiles.css to domain.com/sub/cssfiles.css
+T 1417572286 18<20jaybe18>	popsci, you really should adapt your application to produce the correct path to begin with. however, i.e.  rewrite ^/(.+\.css)$ /sub/$1;
+T 1417572435 24*	28koobs is now known as 18TwitterKoobs
+T 1417572445 24*	28TwitterKoobs is now known as 18koobs
+T 1417572551 18<27popsci18>	thank you jaybe, i'm working on drupal cms, and do not know Drupal id fully compatible with that.
+T 1417578704 24*	28commmmodo_ is now known as 18commmmodo
+T 1417578924 24*	28linelevel1 is now known as 18linelevel
+T 1417579932 19*	Now talking on 22#nginx
+T 1417579932 22*	Topic for 22#nginx is: Community Nginx support channel. Don't ask to ask; just ask! Config pastes via http://p.ngx.cc only. This channel is publicly logged. || Latest Releases: [mainline 1.7.7] [stable 1.6.2]
+T 1417579932 22*	Topic for 22#nginx set by 26jaybe (24Tue Oct 28 17:35:29 2014)
+T 1417579932 -18ChanServ-	[#nginx] Community Nginx support channel. Don't ask to ask; just ask! Config pastes via http://p.ngx.cc only. This channel is publicly logged.

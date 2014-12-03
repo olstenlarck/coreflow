@@ -1,0 +1,534 @@
+T 1417553622 18<25yosito18>	I'm debating whether or not to include built files for my (front end) module in the npm repo. They're not required if someone is using the module with Browserify, but if someone wants to install the module via npm, without using browserify in their project, it might be nice to have the built files in the repo. Thoughts?
+T 1417553645 18<19arjunmehta18>	yosito: that's very similar to what I'm debating now
+T 1417553657 18<25yosito18>	arjunmehta: I just got here, can you recap?
+T 1417553676 18<19arjunmehta18>	oh! hah, funny, right before you logged in:
+T 1417553692 18<19arjunmehta18>	nodehomies, I need some help around best practicing when packaging a module. I have a module that does a pretty basic function (manages timed objects) but I want it to be node and browser compatible. So I want to be able to package it through npm, also generate a browser js file using browserify with an npm build command or something, and then also with npm test, test both the node environment
+T 1417553692 18<19arjunmehta18>	 (using mocha) but also whether it behaves right in the browser. Are there any good standards around this or repos I could check out that demonstrate it well?
+T 1417553708 18<19arjunmehta18>	(sorry for the double post everyone)
+T 1417553710 18<22`mike`18>	please don't spam
+T 1417553720 18<19arjunmehta18>	sorry mike
+T 1417553721 18<25yosito18>	Thanks @arjunmehta
+T 1417553723 18<22`mike`18>	np
+T 1417553745 18<25yosito18>	Yeah, I think thats a very similar issue to mine.
+T 1417553765 18<19arjunmehta18>	`mike` I was just repeating what I said because yosito logged in with a similar question to mine right after I posted that the first time
+T 1417553778 18<22`mike`18>	makes sense
+T 1417553791 18<22`mike`18>	serendipity :)
+T 1417553797 18<27ljharb18>	arjunmehta: don't even bother with generating a browser file. anyone who wants to use it in a browser can use browserify.
+T 1417553801 18<22`mike`18>	what does browserify do?
+T 1417553806 18<25yosito18>	Our team discussed including the build files on npm, and originally we had settled on leaving them out, and providing a tarball on GitHub that included the build files.
+T 1417553814 18<27ljharb18>	arjunmehta: alternatively you can put a UMD inside your module that has browser support
+T 1417553833 18<27ljharb18>	yosito: and yes, do not include built files in npm.
+T 1417553846 18<27ljharb18>	people will install browserify (or their preferred alternative) on their own.
+T 1417553862 18<19arjunmehta18>	ljharb hmmm I see.
+T 1417553884 18<25yosito18>	ljharb: I guess I'm just trying to make the process easier for devs that want to use the module in a project that doesn't already rely on Browserify.
+T 1417553893 18<25yosito18>	Is it a bad practice to include built files in npm?
+T 1417553898 18<27ljharb18>	yosito: enabling them to put off adding browserify isn't making things easier for them.
+T 1417553919 18<25yosito18>	What are the downsides of including the built files?
+T 1417553920 18<19arjunmehta18>	`mike` I think it can do many things, but mostly it seems suited for packaging a project for the browser, while also allowing the use of the "requre" syntax for tying modules together
+T 1417553921 18<27ljharb18>	yosito: technically npm is just a name/version/dependency list/tarball so you can put whatever you want in there. but it doesn't really add value.
+T 1417553933 18<27ljharb18>	yosito: downsides are that your package is larger, and thus less people will use it.
+T 1417553976 18<22`mike`18>	arjunmehta that's strange, sounds very Flash/FLEX-like
+T 1417553989 18<25yosito18>	ljharb: Hmm... yeah, the package itself would be larger, so installing it might take a split second longer, but still a lot faster than manually installing Browserify and then building.
+T 1417553993 18<19arjunmehta18>	ljharb yosito  It would be nice to have a browser compatible file *somewhere* but perhaps the npm repo isn't the best place?
+T 1417553995 18<22zmanning18>	am i correct that yeoman should always create a .config/configstore directory? or is that a node thing
+T 1417554018 18<25yosito18>	arjunmehta: Yeah, that's what our team originally decided, and we hosted that file in a GitHub tagged release.
+T 1417554062 18<25yosito18>	But I'm running into a situation where it would be nice to allow devs to `npm install` the module to get the built files.
+T 1417554069 18<20qard18>	Have browser.js on github, but exclude it in npm ignore file.
+T 1417554093 18<25yosito18>	qard: Why would you exclude it?
+T 1417554106 18<20qard18>	Keep package small.
+T 1417554109 18<27ljharb18>	arjunmehta: there's no need for it to be anywhere. it's a single `browserify` command away
+T 1417554114 18<19arjunmehta18>	ljharb yosito: for example, one of my modules (heartbeats) is just a really basic thing to handle timed events/objects and it would be nice to just be able to download and include the JS file in the HTML, and be able to use it without having to do a whole browserify... not many people have the skills to do that
+T 1417554116 18<27ljharb18>	arjunmehta: because most people will have a pipeline already set up for it.
+T 1417554123 18<27ljharb18>	arjunmehta: that wouldn't be nice.
+T 1417554129 18<25yosito18>	arjunmehta: Right.
+T 1417554130 18<19arjunmehta18>	ljharb: you're assuming everyone is using node
+T 1417554135 18<20qard18>	If it's being installed via npm, it's probably because someone intends to use it via something like browserify.
+T 1417554146 18<27ljharb18>	because that's a worse way to build webpages. and if your module makes it easier for people to rely on globals you're not doing them any favors
+T 1417554154 18<27ljharb18>	arjunmehta: you don't have to use node in production to have it on developer laptops.
+T 1417554159 18<27ljharb18>	or as part of your build process.
+T 1417554164 18<19arjunmehta18>	ljharb: or wants to get on the command line.
+T 1417554171 18<20qard18>	browserify doesn't need the already built file, so no need for it to be there.
+T 1417554191 18<27ljharb18>	a dev who doesn't want to get on the command line should be learning how.
+T 1417554193 18<25yosito18>	Long story short, I'm actually building a site generator right now which may be used for a few hundred sites, that weren't going to have browserify.
+T 1417554211 18<27ljharb18>	yosito: why not?
+T 1417554222 18<27ljharb18>	yosito: every site will want a build step, and that can be part ofi t
+T 1417554269 18<25yosito18>	ljharb: Because they're actually pre-existing stone age sites that are being migrated to a new platform. The sites are already built, there isn't really any need for Browserify, unless this module that I'm adding requires it.
+T 1417554269 18<19arjunmehta18>	I don't know... there are a lot of people out there that don't do things "the right way"
+T 1417554295 18<25yosito18>	Seems silly to add Browserify to 100+ existing sites just to support one little module.
+T 1417554319 18<28javascripter18>	so I have a javascript that lets me get a random ocremix page and link it to me. On that page, the way to find a link to the .mp3 file in consistant. How can I use nodejs to pick a random ocremix .mp3 file and send it to javascript to play?
+T 1417554341 18<19arjunmehta18>	yosito I agree
+T 1417554357 18<19arjunmehta18>	I also see ljharb and qard 's points
+T 1417554366 18<27ljharb18>	yosito: it wouldn't be for one little module
+T 1417554368 18<25yosito18>	arjunmehta: File size of the repo?
+T 1417554377 18<27ljharb18>	it would be to enable them to use the hundreds of thousands of modules on npm
+T 1417554383 18<27ljharb18>	(however many there are now)
+T 1417554387 18<19arjunmehta18>	yosito: no
+T 1417554396 18<25yosito18>	What were the points?
+T 1417554423 24*	28blubberbop is now known as 18phoenixz
+T 1417554432 18<19arjunmehta18>	yosito: yours: it's silly to force a browserify build for the install other users if it's not already part of the workflow and if they aren't using node.
+T 1417554459 18<19arjunmehta18>	yosito: ljharb's: that it's actually a really good way to build a client side script and maybe people should be using browserify for everything anyway
+T 1417554471 18<19arjunmehta18>	ljharb: sorry if I paraphrased that wrong
+T 1417554472 18<19arjunmehta18>	hah
+T 1417554514 18<25yosito18>	Ah, gotcha
+T 1417554517 18<20qard18>	My point was that adding a self-contained browser build to the npm package is kind of pointless, considering pretty much anyone installing via npm is going to just be using browserify or something similar.
+T 1417554525 18<27ljharb18>	yes that's also true
+T 1417554535 18<27ljharb18>	if you can do `npm install` you already have node on the command line
+T 1417554547 18<20qard18>	self-contained browser build code probably fits better as just a separate file that you drop in yourself.
+T 1417554547 18<27ljharb18>	you could put built files in your github repo only, if you want. but don't put them in npm.
+T 1417554550 18<25yosito18>	qard: Agreed, I think. Just kind of trying to explore the idea a little bit.
+T 1417554563 18<20qard18>	Which was why I suggested putting it on Github, but exclude from npm.
+T 1417554586 18<25yosito18>	Anyone aware of any examples of modules on npm that *do* include the built files?
+T 1417554589 18<19arjunmehta18>	ljharb: I guess that's the thing... most modules I've seen have the same github repo for the npm
+T 1417554602 18<27ljharb18>	you can have the same repo
+T 1417554604 18<19arjunmehta18>	qard: how is that done?
+T 1417554607 18<27ljharb18>	use a `.npmignore` file.
+T 1417554615 18<27ljharb18>	then you can have them in the repo and yet not published.
+T 1417554615 18<29lugzer18>	i am back
+T 1417554636 18<20qard18>	Well, there's some variability to build steps. coffeescript should be built to js before publishing to npm, for example.
+T 1417554638 18<25yosito18>	I'm actually against having built files on GitHub even moreso than npm.
+T 1417554639 18<19arjunmehta18>	AH!!!
+T 1417554639 18<19arjunmehta18>	NPMIGNORE!
+T 1417554639 18<19arjunmehta18>	done and done
+T 1417554639 18<19arjunmehta18>	case closed
+T 1417554639 18<19arjunmehta18>	:P
+T 1417554639 18<19arjunmehta18>	kidding, I don't know if that helps yosito
+T 1417554647 18<27ljharb18>	that will help
+T 1417554650 18<20qard18>	Yes, npmignore is what you want.
+T 1417554661 18<25yosito18>	You can include the built files in GitHub by attaching a tarball to a tagged release.
+T 1417554665 18<27ljharb18>	i still don't see any point in committing build artifacts to a repo or storing them anywhere, but you can do it that way if you want.
+T 1417554671 18<27ljharb18>	ooh, that's a better idea.
+T 1417554688 18<19arjunmehta18>	yosito: please explain?
+T 1417554697 18<19arjunmehta18>	what is a tagged release?
+T 1417554714 18<19arjunmehta18>	nm, that I can google
+T 1417554723 18<29lugzer18>	here's my simple proxy which fetches data from api, and starts a local server: http://pastie.org/9756831 -- can anyone explain how to make the server spit out the data upon connecting to it from JS code?
+T 1417554746 18<20qard18>	It's a git thing. Google "git tag"
+T 1417554771 18<27ljharb18>	tags are a git thing. releases are a github thing
+T 1417554775 18<20qard18>	Github make "release" artifacts for things you tag with git tag.
+T 1417554779 18<27jalcine18>	releases are a software thing :)
+T 1417554780 18<25yosito18>	arjunmehta: Basically you just use `git tag`, push to GitHub and then click on the releases tag to add meta info and attach files for a tag.
+T 1417554786 18<25yosito18>	*releases tab
+T 1417554813 18<20qard18>	See: https://github.com/appneta/node-traceview/releases
+T 1417554836 18<19arjunmehta18>	yosito: So where would it end up if someone browses to the repo looking for a browser js file?
+T 1417554847 18<20qard18>	You get pretty release notes and artifact files, pointing to a tagged commit.
+T 1417554868 18<29kevireilly18>	lugzer: retain a reference to the http request string that gets returned from a server request
+T 1417554932 18<19arjunmehta18>	qard Ah I see
+T 1417554952 18<19arjunmehta18>	yosito so in this case, one of those linked buttons could be a browser.js file?
+T 1417554992 18<27ljharb18>	yes
+T 1417554994 18<29kevireilly18>	lugzer: for example, move `var str = '';` to a higher scope and `res.end(str);` though you may want to add logic to make sure the request has been made before attempting to return it from the server
+T 1417555001 18<25yosito18>	Whoa. Epiphany.
+T 1417555034 18<25yosito18>	Here's an example of where a GitHub release ends up: https://github.com/blocks/subscribe-email/releases
+T 1417555078 18<19arjunmehta18>	yosito: This looks ideal
+T 1417555097 24*	28richardlitt_ is now known as 18richardlitt
+T 1417555111 18<25yosito18>	If you attach a tarball to a GitHub release, you can also install that via npm. `npm install <tarball_url>`, so that will solve my issue.
+T 1417555123 18<25yosito18>	Neat. Great chat everybody. :)
+T 1417555191 18<29lugzer18>	kevireilly: i need it just for local development, so it can be without checks... your proposal gets me an error in client code.. and i don't get it. but thanks for a hint
+T 1417555202 18<19arjunmehta18>	yosito ljharb qard: indeed good chat
+T 1417555218 18<19arjunmehta18>	I still have questions around testing
+T 1417555221 18<29kevireilly18>	lugzer: what is the error?
+T 1417555254 18<29lugzer18>	kevireilly: oh wait. now i am getting that data! and no error
+T 1417555261 18<29kevireilly18>	ah ok
+T 1417555268 18<19arjunmehta18>	it's easy to test my code against the node environment. But testing the same code against browsers is a whole other issue. Testling looks kind of awesome for that
+T 1417555287 18<27ljharb18>	it's broken right now, but when it works it's awesome
+T 1417555294 18<29lugzer18>	kevireilly: i was getting unexpected token: ' (an apostrophe)....
+T 1417555297 18<27ljharb18>	the service i mean. the tool works great
+T 1417555320 18<19arjunmehta18>	what is the difference between the service and the tool?
+T 1417555356 18<29lugzer18>	kevireilly: then i thought i need to pass the `str` as argument to the function in `createServer` method. but this didn't work and i just undid the stuff and i got response in the client finally. thanks!
+T 1417555460 18<25plato18>	Hi folks! Does anyone have instructions for POSTing a file with the stock http library? I would like to avoid installing request or other node_modules
+T 1417555510 18<22tjsail3318>	plato - why are you against request?
+T 1417555528 18<25yosito18>	arjunmehta: Oh boy, testing! I just spend a bunch of time learning about testing node stuff in the browser too!
+T 1417555536 18<27ljharb18>	yes, why would you want to avoid extra modules? NIH is toxic
+T 1417555582 18<19arjunmehta18>	yosito: I have used phantom-mocha before and it
+T 1417555589 18<19arjunmehta18>	*it's pretty good actually
+T 1417555599 18<25plato18>	tjsail33: ljharb: i would prefer to avoid a) installing dependencies on the target machine and b) hardcoding the node_modules folder in my repo
+T 1417555616 18<19arjunmehta18>	yosito: were you using anything in particular?
+T 1417555623 18<25yosito18>	I chose BrowserStack to run some mocha tests in a VM. Originally spent a lot of time learning Selenium WebDriver for Node
+T 1417555625 18<22tjsail3318>	well b is solved by just adding it to .gitignore
+T 1417555637 18<19arjunmehta18>	https://github.com/metaskills/mocha-phantomjs
+T 1417555646 18<25yosito18>	At the end, I found out that https://github.com/browserstack/browserstack-runner is a better way to go if you're trying to run Mocha tests in real browsers.
+T 1417555648 18<22tjsail3318>	and i guess you could go into the source of request and pull out the multipart part of it
+T 1417555689 18<29kevireilly18>	lugzer: it is because the server inherits the string that is later filled with actual data. A better approach when the requirements are not this basic is possibly providing a get/set method to fetch and store the data without relying on inheritance
+T 1417555716 18<25plato18>	tjsail33: i bet it uses node-formidable :P
+T 1417555721 18<27ljharb18>	plato: if you're using node, you have a node_modules folder. end of story.
+T 1417555729 18<27ljharb18>	plato: and dependencies are a good thing. `npm install` is easy.
+T 1417555753 18<19arjunmehta18>	yosito: requires a paid account?
+T 1417555766 18<29kevireilly18>	lugzer: also you're missing a `var` in front of callback
+T 1417555766 18<25plato18>	ljharb: its easy to forget, too, when a non-node user is the end user
+T 1417555785 18<25yosito18>	arjunmehta: Hmmm. Could be. I forget. My team has a paid account, but I think they have a free tier?
+T 1417555794 18<27ljharb18>	plato: your program can easily do that.
+T 1417555802 18<25yosito18>	Oh, free trial.
+T 1417555804 18<27ljharb18>	plato: the user has to install your app somehow - that process should do `npm install`
+T 1417555837 18<25yosito18>	Worth paying for if you need to test in real browsers, IMO, but there's also....
+T 1417555841 18<25plato18>	ljharb: my use case is a single .js deployment script in a big cpp/html repo
+T 1417555866 18<25yosito18>	https://ci.testling.com/
+T 1417555866 18<27ljharb18>	plato: then have deps, use browserify, and produce a single .js file when you're done.
+T 1417555877 18<27ljharb18>	plato: there's zero reason to avoid dependencies.
+T 1417555887 18<25yosito18>	arjunmehta: Last time I used testling their free service was down, but they may have fixed it by now.
+T 1417555898 18<25plato18>	the reason is, i would prefer to run one less command in the deployment pipeline
+T 1417555906 18<19arjunmehta18>	yosito: yeah testling is what I was hoping to learn more about. ljharb was saying the service was down too
+T 1417555925 18<27ljharb18>	the client is great. but the service will be down for another month or two at least, unfortunately.
+T 1417555932 18<19tskaggs18>	I'm trying to format pricing objects in my 100k+ item collection but it's taking forever and timesout. Here's the restructuring: http://hastebin.com/cutavuzemo.mel
+T 1417555936 18<19arjunmehta18>	ljharb: do you know why?
+T 1417555940 18<25yosito18>	Here's a thread about the service being down: https://github.com/substack/testling/issues/88
+T 1417555943 18<27ljharb18>	nope
+T 1417555944 18<19arjunmehta18>	ah
+T 1417555984 18<25yosito18>	zuul might be worth looking into, but I've never heard of it.
+T 1417555990 18<19tskaggs18>	Just looking for an efficient way of doing the data restructuring for each item without killing my server
+T 1417556071 18<25yosito18>	Alright, gotta get back in the zone. Good luck arjunmehta! And thanks everybody for the feedback!
+T 1417556079 18<19arjunmehta18>	I've heard it's super bad etiquette to suggest competing services in a github issues thread!
+T 1417556089 18<19arjunmehta18>	yosito: sure thing! Thanks for the discussion, has helped me too!
+T 1417556095 18<29lugzer18>	kevireilly: thanks man. i don't quite understand node but i needed to have this simple example to move forward with frontend development. that was really helpful. thanks again
+T 1417556134 18<29kevireilly18>	lugzer: no worries. In these regards it isn't much different than client side javascript
+T 1417556141 18<29uptownhr_18>	anyone here ever experience problems with mongoose and using "hostname" to connect to a mongodb?
+T 1417556159 18<28boh18>	Does anyone know of any way to extract a frame from a video file at X seconds efficiently?
+T 1417556188 18<28boh18>	fluent-ffmpeg is extremely slow. I think I’d nearly be better opening up Phantom.js and extracting the frames via webkit
+T 1417556197 18<29lugzer18>	kevireilly: true that but i don't quite get those response/request and more server-related topics. i was confused where the string needs to actually go so it can be accessed by frontend. and now it is! :)
+T 1417556204 18<29uptownhr_18>	experiencing a strange issue where the on('open') does fire successfuly but getting a "failed to connect" after trying to query the db
+T 1417556271 18<29kevireilly18>	lugzer: totally understandable. It'll all become clear with regular use :) Welcome to node, may your stay be enjoyable.
+T 1417556298 18<20claf18>	What object returns letters (chars) when called like "foo[0]" or "foo[1]"?
+T 1417556321 18<20claf18>	but does not contain .split() and is not String?
+T 1417556363 18<29kevireilly18>	claf: an array
+T 1417556413 18<29kevireilly18>	claf: check `typeof obj` and/or `Array.isArray(obj)`
+T 1417556447 18<20claf18>	ah of course!
+T 1417556450 18<27ljharb18>	claf: {0: 'a', 1: 'b'} will.
+T 1417556468 18<20claf18>	it returns "string"
+T 1417556469 18<29kevireilly18>	that too haha
+T 1417556477 18<25KicStart18>	boh: convert to binary array and get byte offset into the frame data is how I would approach it.
+T 1417556477 18<29lugzer18>	kevireilly: i have 2 books for node, maybe i'll take a look for some explanations of the server stuff
+T 1417556481 18<20claf18>	but calling .split on it causes Type Error
+T 1417556499 18<28boh18>	KicStart: The format is m4v, does it not employ some sort of compression algorithms?
+T 1417556506 18<20claf18>	(typeof obj) returns "string", that is
+T 1417556543 18<20claf18>	weird how it does not has split
+T 1417556574 18<27ljharb18>	claf: make a jsfiddle?
+T 1417556578 18<20claf18>	oh well, its what .readFileSync returns
+T 1417556584 18<27ljharb18>	readFileSync returns a Buffer.
+T 1417556586 24*	28[BNC]levite is now known as 18Levite
+T 1417556598 18<27ljharb18>	also you should be using readFile, not readFileSync :-p
+T 1417556605 18<20claf18>	actually I got the encoding and it should return a string per doc
+T 1417556610 18<27ljharb18>	ah, ok
+T 1417556617 18<27ljharb18>	then yeah, that's weird. fidle?
+T 1417556619 18<27ljharb18>	*fiddle
+T 1417556699 18<20claf18>	heres a paste with output http://pastie.org/9756894
+T 1417556723 18<28ppalludan18>	using socket.io, can't get "on error" to be triggered, anybody know what the right approach for this?
+T 1417556733 18<25KicStart18>	boh: of course there is a compression algorithm most are DCT/iDCT/FFT based -- since it is an Apple format, you might want to use their APIs
+T 1417556745 18<20claf18>	maybe it really is a buffer
+T 1417556756 18<19tskaggs18>	Has any successfully updated a large collection of 100k+ items in mongodb?
+T 1417556846 18<20claf18>	ljharb: ok, forget that
+T 1417556864 18<20claf18>	the type error doesn't come from that line 4
+T 1417557058 18<27ljharb18>	also don't use foo.toString(), use String(foo)
+T 1417557077 18<27ljharb18>	toString isn't guaranteed to return a string. but String(foo) will call toString and ensure it's a string.
+T 1417557117 18<20claf18>	yeah I was using it to test whats up
+T 1417557131 18<20claf18>	I'm way too tired for this
+T 1417557135 18<20claf18>	later
+T 1417557488 18<26rob2d18>	anyone know why a package would suddenly start listing itself as "502 bad gateway?" -__-
+T 1417557497 18<26rob2d18>	(on NPM)
+T 1417557504 18<27ljharb18>	that's not a package, that'd be the npm registry itself
+T 1417557509 18<27ljharb18>	for that you should ask in #npm
+T 1417557597 18<26rob2d18>	ljharb: ah. thanks
+T 1417558351 24*	28JmZ is now known as 18JmZ_
+T 1417558466 24*	28JSON|work is now known as 18iam5o1|work
+T 1417558535 24*	28Efrem is now known as 18Efrem-Away
+T 1417558919 24*	28toddself is now known as 18toddself_zz
+T 1417559374 24*	28Efrem-Away is now known as 18Efrem
+T 1417559376 24*	28stefan-d is now known as 18stefan-dAway
+T 1417559522 24*	28gratimax|away is now known as 18gratimax
+T 1417559588 18<20rob2d_18>	terrinjokes: after reboot, same issues. @_@
+T 1417559653 24*	28lanceball is now known as 18lance|afk
+T 1417559674 24*	28rob2d_ is now known as 18rob2d
+T 1417559961 24*	28zz_night-owl is now known as 18night-owl
+T 1417561085 18<25srish18>	Hello everyone! I would like to if there is any node module that I can use to copy contents from a template to a variable?
+T 1417561153 24*	28aj-701 is now known as 18aj701
+T 1417561280 18<19tskaggs18>	Ok while I let my server run a test. Anyone have any hints on doing the following conversion of pricing and updating the mongodb efficiently. http://hastebin.com/xudehoxiyo.hs
+T 1417561439 24*	28pedropereira_ is now known as 18pedropereira
+T 1417562123 24*	28tjsail33 is now known as 18zz_tjsail33
+T 1417562325 24*	28lance|afk is now known as 18lanceball
+T 1417562382 24*	28pedropereira_ is now known as 18pedropereira
+T 1417562752 24*	28zz_tjsail33 is now known as 18tjsail33
+T 1417562853 18<26thomasd18>	In nodejs if I'm writing to a stream and reading from another nodejs script. Will the chunk sizes be the same for the reading and writing process
+T 1417562855 18<29parallel2118>	What submitting submitting form values, is using jQuery to serialize paragraphs of text and bad idea?
+T 1417563006 18<26thomasd18>	parallel21: why would it be?
+T 1417563031 18<29parallel2118>	I dunno... just feels weird to transform paragraphs into a single string
+T 1417563252 18<25ChrisPartridge18>	thomasd: depends on streams really, if they are standard streams I'd hazard to say yes
+T 1417563903 18<29parallel2118>	is there a way to include a json object externally from a jade file to iterate over?
+T 1417563991 18<28wybe18>	what do you mean? you have the JSON data in a jade file?
+T 1417564057 18<25ChrisPartridge18>	er, iterate over object in jade template?
+T 1417564063 18<25ChrisPartridge18>	yeah, you can, if that's the question
+T 1417564064 18<26thomasd18>	parallel21: be careful tho cross site scripting attacks are a real threat
+T 1417564148 18<29parallel2118>	thomasd: In which question are you referring two?
+T 1417564148 24*	28lanceball is now known as 18lance|afk
+T 1417564190 18<26thomasd18>	using jQuery to serialize paragraphs
+T 1417564341 18<22unicodesnowman18>	I'm having a very tricky issue with require()
+T 1417564354 18<22unicodesnowman18>	Somehow it's not finding the module and returning an empty object
+T 1417564354 18<24bradleymeck18>	?
+T 1417564369 18<24bradleymeck18>	if it is returning an object it is finding something
+T 1417564372 18<28wybe18>	you sure you have nothing linked?
+T 1417564391 18<24bradleymeck18>	how are you exporting your stuff , module.exports or exports (do not mix these)
+T 1417564395 18<22unicodesnowman18>	module.exports
+T 1417564402 18<22unicodesnowman18>	I console.logged the path
+T 1417564404 18<22unicodesnowman18>	it's the same
+T 1417564416 18<29parallel2118>	thomasd: Ah! Thank ye.
+T 1417564419 18<22unicodesnowman18>	i'll pastebin my folder structure
+T 1417564438 18<29parallel2118>	thomasd: What are some alternatives then?
+T 1417564445 18<20prazic18>	hello all. just wondering, anyone used pm2 before? must it be started by root?
+T 1417564484 18<20hipsterslapfight18>	yes, no
+T 1417564517 18<26thomasd18>	parallel21: your not doing anything wrong just be careful
+T 1417564533 18<29parallel2118>	thomasd: ah, thanks
+T 1417564541 18<22unicodesnowman18>	here http://pastebin.com/raw.php?i=TAT1RcxF
+T 1417564560 24*	28maurice_ is now known as 18mauricebutler
+T 1417564579 18<22unicodesnowman18>	console.log(__dirname + '/requests.js') gives identical output, with both 'node server.js' and 'node lib/zotero.js'
+T 1417564591 18<22unicodesnowman18>	so I'm not sure why it's finding the module and exports in one case, but not finding it in the other
+T 1417564617 18<24bradleymeck18>	use require.resolve to find where it is looking stuff up
+T 1417564673 18<28lexi218>	just a super quick question wanted to know how far out 0.12. is from being released or anywhere i can see the status
+T 1417564676 18<24bradleymeck18>	also be sure server.js uses a relative path
+T 1417564693 18<22unicodesnowman18>	bradleymeck, server.js does use a relative path
+T 1417564709 18<22unicodesnowman18>	node server.js: /var/www/mw/citoid/deploy/src/lib/requests.js
+T 1417564715 18<22unicodesnowman18>	node lib/zotero.js: /var/www/mw/citoid/deploy/src/lib/requests.js
+T 1417564731 18<24bradleymeck18>	require('lib/zotero.js') would mean I wan't node_modules/lib/zotero.js, while './lib/zotero.js' would mean I want relative to the file
+T 1417564733 18<22unicodesnowman18>	so.. they're resolving identical files, but node server.js returns an empty object for require() and has no requestJSON
+T 1417564749 18<22unicodesnowman18>	bradleymeck, yep, it's ./lib/zotero.js
+T 1417564774 18<24bradleymeck18>	unicodesnowman: does server.js have a circular dependency?
+T 1417564800 18<22unicodesnowman18>	bradleymeck, it also requires lib/request.js, if that's what you mean?
+T 1417564820 18<24bradleymeck18>	nah that would still be a tree
+T 1417564826 18<28wybe18>	in a circular dependency, index.js would ultimately end up requiring itself
+T 1417564836 18<28wybe18>	so request.js shouldnt req index
+T 1417564851 18<22unicodesnowman18>	wybe, nope, it doesn't.
+T 1417564861 18<28wybe18>	hmm le mysterie
+T 1417564877 18<22unicodesnowman18>	if index.js requires lib/requests.js, and another module also requires it.. both should get the same module, instead of only the first getting the module, right?
+T 1417564888 18<24bradleymeck18>	kind of
+T 1417564906 18<28wybe18>	the results are cached, but you should be good
+T 1417564918 18<22unicodesnowman18>	okay
+T 1417564923 18<22unicodesnowman18>	oh wait
+T 1417564927 18<24bradleymeck18>	if a.js requires b.js but b.js requires a.js , if you require a.js b.js would get w/e the module.exports of a.js is when b.js is requires (probably an empty object)
+T 1417564930 18<25ChrisPartridge18>	that is a fn? are you calling it?
+T 1417564942 18<22unicodesnowman18>	index.js actually requires lib/a.js
+T 1417564958 18<22unicodesnowman18>	nvm, I'll use real filenames, index.js actually requires lib/distinguish.js
+T 1417564969 18<19miqui18>	hi folks....
+T 1417564971 18<22unicodesnowman18>	lib/distinguish.js requires ./requests.js
+T 1417564980 18<22unicodesnowman18>	lib/requests.js requires ./zotero.js
+T 1417564986 18<22unicodesnowman18>	lib/zotero.js requires lib/requests.js
+T 1417564991 18<28wybe18>	ah
+T 1417564993 18<22unicodesnowman18>	that's a circular dependency, right?
+T 1417564994 18<28wybe18>	there you have it
+T 1417564996 18<19miqui18>	anyone here use waterline to implement a json based datamodel?
+T 1417565007 18<28wybe18>	the last two aren't gonna rhyme, no
+T 1417565013 18<24bradleymeck18>	unicodesnowman: lib/requests and and lib/zotero are a cercular dep
+T 1417565020 18<24bradleymeck18>	circular*
+T 1417565027 18<28wybe18>	miqui, i messed about with sails for a while (which uses waterline)
+T 1417565028 18<22unicodesnowman18>	wybe, I see. How can I fix it (ie, let zotero.js access a function from lib/request.js)
+T 1417565047 18<22unicodesnowman18>	but also let zotero.js be ran independently
+T 1417565059 18<22unicodesnowman18>	(PS: I'm sorry for this complicated dependency structure, not my project :P)
+T 1417565061 18<24bradleymeck18>	unicodesnowman: for sanity sake? just make a new file
+T 1417565073 18<28wybe18>	yep
+T 1417565091 18<28wybe18>	either that or some more fundamental changes
+T 1417565093 18<22unicodesnowman18>	oh, good idea.
+T 1417565132 18<19miqui18>	wybe: thanks...
+T 1417565140 18<22unicodesnowman18>	thank you :)
+T 1417565167 18<28wybe18>	anybody here perchance looked into this mysterious io.js?
+T 1417565173 18<27ljharb18>	it's not mysterious
+T 1417565179 18<27ljharb18>	it's just a fork of node
+T 1417565190 18<28wybe18>	i understood as much
+T 1417565195 18<28wybe18>	but im not sure exactly why they forked
+T 1417565205 18<28wybe18>	politics or another technical approach?
+T 1417565275 18<27ljharb18>	anyone can fork anything for any reason
+T 1417565282 18<27ljharb18>	but i believe it's politics.
+T 1417565326 24*	28kurtkraut is now known as 18KurtKraut
+T 1417565340 18<28wybe18>	true, as is their good right
+T 1417565362 18<28wybe18>	glad thats cleared up tho ;) wouldn't want to miss anything of course
+T 1417565379 18<20hipsterslapfight18>	#io.js and #node-forward if you're interested
+T 1417565383 18<27hareth18>	honestly this frighten me :( fragmented ecosystem is the last thing that I want :D
+T 1417565391 18<28wybe18>	hipsterslapfight, thank you
+T 1417565393 18<26thomasd18>	In nodejs if I'm writing to a stream and reading from another nodejs script. Will the chunk sizes be the same for the reading and writing process
+T 1417565429 18<22unicodesnowman18>	naming convention poll: "queryJSON.js" or "queryJson.js" ?
+T 1417565462 18<28wybe18>	unicodesnowman, if you ask me, in the camelcased one it's more clear where an abbreviation like that ends
+T 1417565470 18*	22unicodesnowman agrees
+T 1417565516 18<27ljharb18>	i disagree
+T 1417565522 18<27ljharb18>	initialisms should be capitalized
+T 1417565524 18<27ljharb18>	queryJSON.
+T 1417565532 18<28wybe18>	XMLHTTPRequest?
+T 1417565543 18<27ljharb18>	well, that shouldn't have XML in the name at all :-p
+T 1417565556 18<27ljharb18>	the only reason to obsessively stick to java's camelcasing algorithm is if you're using a system that's constrained by that. JS and node arne't.
+T 1417565559 18<27ljharb18>	*aren't
+T 1417565578 18<28wybe18>	that is true, it is purely a question of readability and personal preference
+T 1417565595 18<27ljharb18>	totally. i find "Json" not at all readable because that's not the same as "JSON"
+T 1417565604 18<27ljharb18>	it's USA, not Usa (oosa) :-p
+T 1417565611 18<28wybe18>	you're right about that
+T 1417565626 18<25Havvy18>	ljharb:  I read it as "oosa" either way.
+T 1417565629 18<27ljharb18>	lol
+T 1417565642 18<25Havvy18>	Node's going with Usa convention.
+T 1417565646 18<25Havvy18>	*Rust
+T 1417565660 18<28wybe18>	you'll have to make some concessions though, not just in capitalization
+T 1417565661 18<25Havvy18>	Cow<Arc<&Pod>>
+T 1417565676 18<28wybe18>	apostrophe's, accent grave, all that stuff
+T 1417565679 18<25Havvy18>	XmlHttpRequest
+T 1417565721 18<28wybe18>	for myself, i think its just easier
+T 1417565735 18<28wybe18>	i wouldnt even have to think about capitaliation if i just camelcase it all
+T 1417565749 18<27ljharb18>	wybe: why? touché is a valid JS identifier.
+T 1417565759 18<27ljharb18>	(the correct response is "touché")
+T 1417565776 18<27ljharb18>	:-p
+T 1417565789 18<28wybe18>	ljharb, haha
+T 1417565801 18<28wybe18>	im not even sure if you're kidding :P
+T 1417565810 18<27ljharb18>	it is valid
+T 1417565820 18<27ljharb18>	>> var touché = 3
+T 1417565820 18<28purr18>	ljharb: undefined
+T 1417565821 18<24bradleymeck18>	CapitalCaseTheConstructors camelCaseTheFunction under_score_the_variables
+T 1417565824 18<27ljharb18>	>> var touché = 3; touché
+T 1417565824 18<28purr18>	ljharb: (number) 3
+T 1417565826 18<27ljharb18>	there.
+T 1417565837 18<27ljharb18>	definitely PascalCase constructors
+T 1417565844 18<27ljharb18>	but camelcase and underscores mixed? ew
+T 1417565849 18<28wybe18>	eww
+T 1417565853 24*	28tekacs is now known as 18Guest70651
+T 1417565864 18<28wybe18>	pretty cool though, touché indeed
+T 1417565882 18<28wybe18>	i'd hate the collegue who did that haha
+T 1417565920 18<28wybe18>	it helps just coding in english, I guess
+T 1417566065 18<28Mackseraner18>	hi! with socket.io... if a socket disconnects, do i have to remove listeners on it on the server? like socket.on('disconnect', function(socket) { socket.off(...); })?
+T 1417566138 24*	28Zak is now known as 18Guest56918
+T 1417566419 24*	28night-owl is now known as 18zz_night-owl
+T 1417566847 24*	28zz_night-owl is now known as 18night-owl
+T 1417568557 24*	28meandi_1 is now known as 18meandi
+T 1417568775 18<26nfour18>	Mackseraner, nope
+T 1417568793 18<26nfour18>	it should remove it automatically
+T 1417568818 18<28Mackseraner18>	good to know, thank you!
+T 1417568828 18<24Geekingfrog18>	nfour, is it socket.io specific or true for all this kind of pattern?
+T 1417568838 18<26nfour18>	io specific
+T 1417568851 18<24Geekingfrog18>	thanks
+T 1417569103 22*	26ChanServ gives channel operator status to 18MI6
+T 1417569238 24*	28KurtKraut is now known as 18kurtkraut
+T 1417569320 18<26nfour18>	had the weirdest issue with socket yesterday. namespaces + acknowledge callbacks on client emitted events results in a client-side error, but only on the first page load.
+T 1417569324 18<26nfour18>	had to switch to rooms
+T 1417569369 18<24Geekingfrog18>	What's the difference between namespaces and rooms? I thought it was the same
+T 1417569542 18<22unicodesnowman18>	Geekingfrog, are you talking about socket.io?
+T 1417569551 18<24Geekingfrog18>	yes
+T 1417569572 18<22unicodesnowman18>	I believe rooms further divide namespaces, but I don't use socket.io myself
+T 1417569865 18<29kopasetik18>	best practice for porting client-side ajax call to node/express?
+T 1417570053 18<27ljharb18>	that makes no sense
+T 1417570068 18<27ljharb18>	a clientside ajax call doesn't care what kind of server it's talking to. you just move the url to point to your new code
+T 1417570132 18<28wybe18>	if you want to do requests from server-to-server, might give 'superagent' a spin
+T 1417570152 18<20prazic18>	hipsterslapfight: so that was a no to starting as root?
+T 1417571840 18<27MI618>	joyent/node: Jonathan Johnson v0.12 * 6120472 : url: change hostname regex to negate invalid chars - http://git.io/3nh0QA
+T 1417572015 18<29hephaestus_rg18>	hi anyone here?
+T 1417572021 18<29hephaestus_rg18>	is there a boilerplate for a readme in node?
+T 1417572027 18<29hephaestus_rg18>	i know rails generates one
+T 1417572044 18<29hephaestus_rg18>	or some kind of convention for a readme
+T 1417572049 18<27ljharb18>	no
+T 1417572054 18<25ChrisPartridge18>	hephaestus_rg: there are some packages which do it
+T 1417572055 18<27ljharb18>	it just needs to be readable
+T 1417572061 18<27ljharb18>	convention is to use markdown.
+T 1417572071 18<27ljharb18>	rails and node aren't the same thing :-)
+T 1417572073 18<25ChrisPartridge18>	hephaestus_rg: but really, it's not a hard task
+T 1417572111 18<27dabaR18>	perhaps node-y things, that are like rails, have a convention for a readme
+T 1417572113 18<29hephaestus_rg18>	i mean like what topics to address
+T 1417572122 18<27dabaR18>	hephaestus_rg: you wanna tell us what you need a readme for?
+T 1417572129 18<29hephaestus_rg18>	like installing, building, testing the node app
+T 1417572136 18<27dabaR18>	hephaestus_rg: read the one rails gives, and you will know what topics to address
+T 1417572139 18<25ChrisPartridge18>	install? example? tests? depends on the package...
+T 1417572158 18<29hephaestus_rg18>	in my case i'm writing a irc bot framework for a websocket based chat system
+T 1417572167 18<29andrew918318>	how can i implement a way to check the header for a token every time a request is made from my front end ?
+T 1417572208 18<27dabaR18>	hephaestus_rg: have you considered to make it installable with npm install, testable with npm test, and buildable with a build system like grunt?
+T 1417572222 18<29hephaestus_rg18>	i guess that would be nice
+T 1417572233 18<27dabaR18>	Then it might be a short readme. Though don't take my word for it, I'm pretty inexperienced...
+T 1417572267 18<28wybe18>	you'll probably want to document the events you're exposing as well, but there's no convention of how to do that for as far as I know
+T 1417572275 18<25ChrisPartridge18>	andrew9183: not very hard.. are you using express or something?
+T 1417572282 18<29andrew918318>	yes
+T 1417572288 18<28wybe18>	You could also use JSDoc, combines nicely with grunt/gulp ish things
+T 1417572351 18<27ljharb18>	jsdoc, icky
+T 1417572365 18<27dabaR18>	:)
+T 1417572383 18<29andrew918318>	ChrisPartridge: how would you do it? does it require sprinkling an auth method on every request
+T 1417572394 18<27dabaR18>	There was a guy on ##php today, stating how he now uses a time tracking app to track all the time he spends. Including watching movies with fam, etc.
+T 1417572402 18<27dabaR18>	How long he sleeps, etc.
+T 1417572411 18<27dabaR18>	jsdoc mention reminded me of that.
+T 1417572433 18<25ChrisPartridge18>	andrew9183: well, if you're using express, pop it in a middleware, fn(req,res,next) { if(req.get('some-token') == 'secret') return next(); return res.send(401, 'noob!'); }
+T 1417572619 18<24Aria18>	hephaestus_rg: my boilerplate is basically "packagename\n=========\n\n Describe package\n\nUse\n-----\nDescribe how to use it"
+T 1417572659 18<27ljharb18>	i started by copying the format of a package whose readme i liked, and now all of mine look the same
+T 1417572689 18<27dabaR18>	That's another good way to do it.
+T 1417572704 18<27dabaR18>	Aria does create a fair bit of documentation though, I believe :)
+T 1417572739 18<24Aria18>	Well, I make smallish packages, so they're easy to describe at that level.
+T 1417572757 24*	28gratimax is now known as 18gratimax|away
+T 1417572760 24*	28gratimax|away is now known as 18gratimax
+T 1417572761 18<24Aria18>	https://www.npmjs.org/package/dustjacket was today's.
+T 1417572787 18<24Aria18>	(I make not claims of that being a good API, but the documentation is reasonable for a first pass)
+T 1417573327 24*	28gratimax is now known as 18gratimax|away
+T 1417574045 18<29hephaestus_rg18>	hi i'm using this library for websocket clients https://github.com/einaros/ws
+T 1417574054 18<29hephaestus_rg18>	is there some way to set headers? (i need to set cookies)
+T 1417574261 18<25Havvy18>	hephaestus_rg:  Why not just send a message `set-cookie: {name: ..., value: ...}` over the socket?
+T 1417574288 24*	28frem_ is now known as 18frem
+T 1417574523 18<29hephaestus_rg18>	i don't directly control the server Havvy but thanks anyways i figured it out, ws takes an options hash
+T 1417574601 18<25Havvy18>	I never looked too deeply into how low level web sockets is. It's not HTTP, so you cannot set HTTP cookies with it directly, 99% sure on that.
+T 1417574892 18<25SilentKsionda18>	Hello. So, currently, I have a website that is currently just static html pages served with nginx. I was thinking about having it running through node.js as an exercise to get more familiar with node.js. Is this a worthwhile way to get more familiar with node.js, you think? Or should I focus learning efforts elsewhere?
+T 1417574977 18<25AAA_awright18>	SilentKsionda: Nginx is going to implement HTTP better, but why not... are you wondering is there a better project?
+T 1417574980 24*	28lance|afk is now known as 18lanceball
+T 1417575087 18<25SilentKsionda18>	AAA_awright: Well, yeah, that, and node.js is still kinda fuzzy enough for me that knowing what I should/can/want to do with it is kinda hard, if that makes sense. Right now, it's a neat toy I want to play with, but I figure a goal or game would lead to me grokking it faster. If that makes sense.
+T 1417575108 18<25Havvy18>	SilentKsionda:  How about writing a node bot?
+T 1417575114 18<25Havvy18>	irc bot
+T 1417575121 18<25SilentKsionda18>	Ooh.
+T 1417575125 18<25Havvy18>	!npm tennu
+T 1417575126 18<29npmbot18>	Havvy: tennu (0.9.6) - Tennu - Modular IRC Bot Framework for Node.js -> https://npmjs.org/package/tennu
+T 1417575130 18<25Havvy18>	https://tennu.github.io/
+T 1417575157 18<24Geekingfrog18>	SilentKsionda, I made a scrapper using node to learn it, it was also pretty fun
+T 1417575173 18<28Nikesh18>	When installing a package globally that creates an `executable`, does it essentially run $ node <npm-package.js> ?
+T 1417575231 18<25SilentKsionda18>	Havvy, Geekingfrog: Totally sweet. Also a thing I have on my someday/maybe list. Totally going to think seriously about that. Even if I don't do it first.
+T 1417575242 18<25Havvy18>	Nikesh:  No. It runs a binary provided by the package. If you install it locally, you'll find the binary in node_modules/.bin/
+T 1417575284 18<20iam5o1|work18>	hmmm.
+T 1417575285 18<28Nikesh18>	Havvy: ah. how is the binary built?
+T 1417575323 18<20iam5o1|work18>	why is writing an irc bot such a common way to get a grasp of node / a language?
+T 1417575351 18<25Havvy18>	Nikesh:  It's still a js file, just usually not the same one you get from require('package-name')
+T 1417575406 18<25Havvy18>	Nikesh:  They're defined using the "bin" property in package.json -> https://github.com/Tennu/tennu/blob/master/package.json#L65
+T 1417575525 18<25Havvy18>	iam5o1|work:  IRC is a simple protocol.
+T 1417575574 18<25Havvy18>	And it's easy to use to show how to achieve modularity. When you provide a service over IRC, you need three parts.  The service, an irc socket handler, and glue between them.
+T 1417576160 22*	26ChanServ gives channel operator status to 18AvianFlu
+T 1417576723 18<20iam5o1|work18>	Havvy: yeah. i used an irc module to try make a multi-network bot that can relay chat between two channels on different networks. just FTL.
+T 1417576762 18<20iam5o1|work18>	also got my head around what chatter bot things actually do.
+T 1417576814 18<28Nikesh18>	Havvy: ahh, i see
+T 1417576837 18<25Havvy18>	iam5o1|work:  Ah, I set up a bridge bot a few months ago for #sweet.js here and Moznet, but nobody joined #sweet.js here, so...
+T 1417576850 18<20iam5o1|work18>	:P
+T 1417576900 18<20pontiki18>	i made a bridge bot in mirc, aeons ago :(
+T 1417576944 18<25Havvy18>	Note that npmbot is mine.
+T 1417576945 18<25ChrisPartridge18>	pontiki: with perl? ;p
+T 1417576976 18<20pontiki18>	mirc has it's own script language, sort of a tcl/basic mashup
+T 1417576982 18<25ChrisPartridge18>	oh, mirc heh
+T 1417576989 18*	25ChrisPartridge is using it now
+T 1417577001 18<25Havvy18>	mIRCScript
+T 1417577014 18<25ChrisPartridge18>	Pretty sure my first foray into programming was perl + irc
+T 1417577039 18<20pontiki18>	i've written irssi scripts in perl
+T 1417577408 24*	28petschm_ is now known as 18petschm
+T 1417579049 24*	28gratimax|away is now known as 18gratimax
+T 1417579164 24*	28orionstein is now known as 18orionsaresh
+T 1417579168 24*	28gratimax is now known as 18gratimax|away
+T 1417579388 18<29andrew918318>	any idea what’s wrong with this: https://gist.github.com/andrewho83/706d9e8f19febbde2164
+T 1417579405 18<20zmisc18>	My first foray was bash scripting (not sure if that counts)
+T 1417579454 24*	28generic is now known as 18shanse
+T 1417579465 18<25ChrisPartridge18>	andrew9183: how does this.requireApiToken actually get called?
+T 1417579932 19*	Now talking on 22#Node.js
+T 1417579932 22*	Topic for 22#Node.js is: Current Stable v0.10.33, Unstable v0.11.14 | Channel Mission Statement: http://bit.ly/node-irc-mission-statement | Channel Info: http://nodeirc.info | Channel Logs: http://logs.nodejs.org/node.js/index
+T 1417579932 22*	Topic for 22#Node.js set by 26ljharb!sid43720@oftn/member/ljharb (24Fri Oct 31 07:02:33 2014)
+T 1417579932 29*	[freenode-info] channel flooding and no channel staff around to help? Please check with freenode support: http://freenode.net/faq.shtml#gettinghelp
+T 1417579932 -18ChanServ-	[#node.js] Visit the wiki page https://github.com/joyent/node/wiki
+T 1417579932 22*	Channel 22#node.js url: 24http://nodejs.org/
+T 1417579940 18<25ChrisPartridge18>	IMO, depends on the args to auth().. if it looked neat/clear enough in the code, it wouldn't bother me
+T 1417579953 18<24Aria18>	No, that's right. No parens needed in that case. Always have to look up how new and . play together.
+T 1417579982 18<24Aria18>	merpnderp: Does your AJAX include the CSRF token to authorize the request?
+T 1417580013 18<24Aria18>	merpnderp: That's what CSRF tokens are for -- something you have to include for authorization that another page can't know (or get the browser to include for it, like a cookie)
+T 1417580118 18<20merpnderp18>	Aria: well look at that. I had forgotten I'd had to add the csrf tokens to my forms. DO you know if I can move this into the cookies so I don' thave to mess with them?
+T 1417580164 18<20merpnderp18>	and when I was looking at my cookies I saw that there were csrf tokens in them. I just assumed they were bing read from the cookies. But my login form has a csrf token template property.
+T 1417580197 18<24Aria18>	Nope. Cookies are the problem: another page with a form pointing at your form handler would have the browser add the cookie.
+T 1417580251 18<24Aria18>	Cross-domain ajax won't have the browser do this, but a regular form post (which is scriptable, in an iframe) would.
+T 1417580437 18<20merpnderp18>	Aria: yikes. This makes ajax requests really messy
+T 1417580509 18<24Aria18>	Yup. My favorite way is to transmit it in a header.
+T 1417580513 18<24Aria18>	So it's not IN the body.
+T 1417580519 18<24Aria18>	But that requires cooperating through the stack.
+T 1417580543 18<27ljharb18>	nothing wrong with doing it as a param tho
+T 1417580549 18<27ljharb18>	if you use jquery you can inject it automatically into every ajax request
+T 1417580553 18<24Aria18>	Yep.
+T 1417580555 18<27ljharb18>	i'm sure other ajax libs can also
+T 1417580565 18<24Aria18>	Oh, true. In the URL, with the body posted.
+T 1417580587 18<27ljharb18>	no i mean as a param in the body
+T 1417580590 18<20merpnderp18>	ljharb: I'm using jquery just for my ajax requests
+T 1417580617 18<27ljharb18>	merpnderp: ok, well you can use the ajaxSend method to add it as a param, or, set it as a header
+T 1417580653 18<27ljharb18>	like so: $(document).ajaxSend(function (e, xhr, options) { if (!(/get/i).test(options.type)) { xhr.setRequestHeader("X-CSRF-Token", 'TOKEN'); }
+T 1417580703 18<20merpnderp18>	ljharb: and I need to call that before every post/get?
+T 1417580759 18<29oberststen18>	Hey guys, so I'm freshly new to node.js and I'm very excited! I'm coming from websites on PHP, so my main doubt is... How to make HTML files? I know about jade, but is there any way to create the views in pure HTML and just pass the needed variables to the file?
+T 1417580833 18<27ljharb18>	merpnderp: nope
+T 1417580837 18<27ljharb18>	merpnderp: just once per pageload
+T 1417580846 18<27ljharb18>	merpnderp: and every ajax request automatically gets the token added without you doing anything else.
+T 1417580952 18<20merpnderp18>	ljharb: I put your code in a script tag before I load my react script and on the ajax request I don't see the new header as being added.
+T 1417580988 18<27ljharb18>	hmm - you may need to do it in a document.ready
+T 1417580992 18<27ljharb18>	ie wrap it in a $()
