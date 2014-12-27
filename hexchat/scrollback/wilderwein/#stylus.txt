@@ -1,0 +1,2 @@
+T 1418426924 19*	Now talking on 22#stylus
+T 1418426933 19*	You have left channel 22#stylus (24"Leaving")

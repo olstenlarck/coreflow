@@ -1,0 +1,23 @@
+T 1417732681 19*	Now talking on 22#breach
+T 1417732681 22*	Topic for 22#breach is: Breach - breach.cc - dev@breach.cc
+T 1417732681 22*	Topic for 22#breach set by 26spolu!~spolu@73.162.113.207 (24Wed Dec  3 01:17:13 2014)
+T 1417732769 20<tunnckoCore>30	how exactly install breach on ubuntu 14.04? lol, i can't figure it out.
+T 1417732820 20<tunnckoCore>30	i extracted the archive and have `breach-v0.3.22-alpha.6-linux-x64` folder
+T 1417732850 20<tunnckoCore>30	in it we have ./breach which throws error on line 6
+T 1417732871 20<tunnckoCore>30	and __AUTO_UPDATE_BUNDLE__ folder with `exo_browser` and `breach_core`
+T 1417732907 20<tunnckoCore>30	the error:
+T 1417732908 20<tunnckoCore>30	./breach: line 6: /home/charlike/dev/breach-v0.3.22-alpha.6-linux-x64/__AUTO_UPDATE_BUNDLE__/exo_browser/exo_browser: cannot execute binary file: Exec format error
+T 1417733107 20<tunnckoCore>30	also tried this CHROME_DEVEL_SANDBOX=/usr/lib/chromium-browser/chrome-sandbox ./breach
+T 1417733563 19<spolu>	tunnckoCore, the executable seems to be corrupted?
+T 1417733598 20<tunnckoCore>30	i dont know, i just download and extract from the website
+T 1417733632 18<22shane___18>	spolu, I'm getting that error after removing the alsa and pulseaudio packages from ubuntu. We're trying to remove any unnecessary packages from our environment. Just curious if this is the fault of Thrust or chromium in general?
+T 1417733649 18<26spolu18>	shane___, chromium
+T 1417733655 20<tunnckoCore>30	spolu: maybe because im on 32bit?
+T 1417733659 19<spolu>	tunnckoCore, you 32bit?
+T 1417733668 19<spolu>	tunnckoCore, yep that's it
+T 1417733668 20<tunnckoCore>30	spolu: yes
+T 1417733671 20<tunnckoCore>30	huh
+T 1417733687 20<tunnckoCore>30	spolu: some plans for 32bit support?
+T 1417733694 19<spolu>	tunnckoCore, not at the moment unfortunately :(
+T 1417733728 20<tunnckoCore>30	spolu: yea.. ;[ okey, thanks and keep goin' :)
+T 1417733770 18<26spolu18>	:)

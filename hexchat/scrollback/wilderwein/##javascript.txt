@@ -1,0 +1,593 @@
+T 1419627582 18<28bprompt18>	alderman:    though utf-8 in the past for IE has been lacky
+T 1419627651 18<29alderman18>	http://joxi.ru/WL21JPlT8ZzpAX
+T 1419627664 18<29alderman18>	this is in editor
+T 1419627790 18<29alderman18>	http://joxi.ru/4zANBg4CB58GA9 how it looks in IE
+T 1419627874 18<28bprompt18>	hmmm
+T 1419627896 18<28bprompt18>	alderman:    the 2nd picture if from the "view source" IE viewer?
+T 1419627927 18<29alderman18>	the top - is from direct opening JS in browserm and the bottom - view source
+T 1419628049 18*	29alderman afk for few mintes. to smoke and calm myself
+T 1419628061 18<28bprompt18>	alderman:     do you get the same on other browsers?   I'd think either, IE is not rendering the cyrillic, or notepad++ which is what you have there, may not be saving the document in utf-8 encoding....  I recall I set it manually in notepad++ a few times, and it reset it when I saved the file   to I think uses ansi by default
+T 1419628129 18<20tejas-manohat18>	yo does anyone here use cloudflare
+T 1419628492 18<29alderman18>	bprompt: in ff, chrome - all is ok.  the problem is only in IE. i tried already a lor of times in np++ to convert to different ecoding (UTF-8, UTF-8 with BOM, ansi, windows-1251), but the result is the same...
+T 1419628567 18<28bprompt18>	alderman:     I'd think is the browser then
+T 1419628577 18<28bprompt18>	alderman:     I
+T 1419628590 18<28bprompt18>	alderman:     IE utf-8 has been lagging behind in the past I know that much
+T 1419628591 18<29alderman18>	seems that i will move that words in view (html) as object, and after that from JS will cal them ....
+T 1419628631 18<29alderman18>	dirty workaround, but have no options...
+T 1419628743 18<29alderman18>	btw, thanks guys and have a nice day =)
+T 1419628747 18<29alderman18>	or night =)
+T 1419629606 18<29mihkkal18>	Can anyone tell me why this is not working? http://codepen.io/anon/pen/ByLYwV
+T 1419629638 18<29mihkkal18>	Just the javascript, I am just trying to figure out why it's not changing the text
+T 1419629812 18<26blackkbot18>	because its in the wrong spot
+T 1419629819 18<27ljharb18>	they left already
+T 1419629825 18<27ljharb18>	there's a JS error in the console, it's missing jquery :-)
+T 1419629841 18<26blackkbot18>	oh and it doesnt do anything
+T 1419629874 18<26blackkbot18>	$(document).ready(function(){			$("#list option:selected").text();		}); literally does nothing
+T 1419629937 18<26b4b18>	Hey does anyone know of any licenses that state a js lib is free to use but must be included via a certain url rather than downloaded locally?
+T 1419629961 18<27ljharb18>	lol
+T 1419629981 18<27ljharb18>	b4b: a "you must use it insecurely, and make me pay for the bandwith" license?
+T 1419629983 18<26blackkbot18>	that doesn't sound reasonable because you download it on your comptuer and then display it locally but the file is downloaded
+T 1419629988 18<27ljharb18>	i've definitely never heard of something that absurd, no
+T 1419630002 18<27ljharb18>	b4b: why is it you think that's a good idea?
+T 1419630012 18<29deltab18>	b4b: you can just say that
+T 1419630036 18<26blackkbot18>	free to use until you can't
+T 1419630073 18<29deltab18>	a licence would generally be a licence to distribute copies, which they wouldn't be doing
+T 1419630085 18<26b4b18>	mainly so changes are automatically propagated
+T 1419630091 18<26b4b18>	and for stats
+T 1419630118 18<27ljharb18>	stats you can't guarantee anyways, because of browser caching
+T 1419630128 18<27ljharb18>	so that's a really selfish way to guarantee that people be insecure
+T 1419630146 18<27ljharb18>	as for changes, i'd recommend using semver to communicate changes, rather than assuming that you'll never make a breaking change
+T 1419630182 18<26blackkbot18>	cdn?
+T 1419630256 18<26b4b18>	its not a general purpose lib so it wouldnt be on sensitive websites
+T 1419630262 18<27ljharb18>	every website is sensitive
+T 1419630283 18<27ljharb18>	a candy crush website is sensitive, for example, because it's nobody's business how much time i waste playing some stupid game
+T 1419630305 18<26blackkbot18>	ljharb are you trying to tell us something?
+T 1419630305 18<27ljharb18>	also because both comcast and verizon inject malware into every HTTP webpage their customers use
+T 1419630307 18<27ljharb18>	lol
+T 1419630315 18<27ljharb18>	(first thing that popped into my head)
+T 1419630359 18<29Agamemnus18>	i'm having trouble
+T 1419630362 18<29Agamemnus18>	again
+T 1419630372 18<26b4b18>	anyways opinions aside would it just be free to use but not distribute?
+T 1419630374 18<29Agamemnus18>	http://jsfiddle.net/ea60ps0s/26/ looks good, right?
+T 1419630385 18<22Trioxin18>	an action performed on the return of getElementById will affect all elements with that id right?
+T 1419630388 18<19GreenJello18>	b4b, ask a lawyer
+T 1419630389 18<27ljharb18>	b4b: it's JS, you can't "not distribute" it.
+T 1419630401 18<27ljharb18>	definitely talk to a lawer tho
+T 1419630403 18<27ljharb18>	*lawyer
+T 1419630413 18<27ljharb18>	Trioxin: IDs are unique, there can't ever be more than one
+T 1419630426 18<29Agamemnus18>	b4b: yes
+T 1419630431 18<29Agamemnus18>	i have this license
+T 1419630437 18<27ljharb18>	Agamemnus: the puzzle lines aren't smooth
+T 1419630445 18<27ljharb18>	and some of them overlap
+T 1419630450 18<29Agamemnus18>	ah, never mind that
+T 1419630455 18<29Agamemnus18>	i have other problems...
+T 1419630457 18<22Trioxin18>	so classname then? I don't have to loop through them or anything right?
+T 1419630460 18<29Agamemnus18>	i'll get to them in a moment
+T 1419630466 18<26b4b18>	another concern of mine is people forking the code
+T 1419630469 18<26blackkbot18>	ljharb i don't distribute my js .... i don't do anything with it most of the time
+T 1419630469 18<27ljharb18>	Trioxin: you do have to iterate.
+T 1419630471 18<28mdxprograms18>	Trioxin, use a common class on the elements and target by class
+T 1419630473 18<29Agamemnus18>	b4b: it is called an end-user license
+T 1419630475 18<29deltab18>	Trioxin: you do, unless you're using jQuery
+T 1419630482 18<19GreenJello18>	Trioxin, use jQuery
+T 1419630489 18<27ljharb18>	Trioxin: getElementsByClassName, and querySelectorAll, return a NodeList.
+T 1419630496 18<27ljharb18>	Trioxin: but it's much simpler to just use jquery.
+T 1419630497 18<29Agamemnus18>	if you are not an end-user, you can't legally copy the code
+T 1419630498 18<22Trioxin18>	k
+T 1419630502 18<19GreenJello18>	it just does everything to everything the selector matches
+T 1419630512 18<27ljharb18>	Agamemnus: what's "not an end user"?
+T 1419630524 18<29Agamemnus18>	someone who re-distributes the code.
+T 1419630544 18<19GreenJello18>	well yeah, by default you can't distribute someone else's code, or even hotlink it afaik
+T 1419630554 18<27ljharb18>	you can hotlink anything by default
+T 1419630557 18<26blackkbot18>	a beginning user?
+T 1419630568 18<29Agamemnus18>	for example
+T 1419630576 18<29Agamemnus18>	when I provide my jigsaw game
+T 1419630578 18<19GreenJello18>	ljharb, I don't think it's ever been tested in court, and I doubt it's clearly stated...
+T 1419630584 18<29Agamemnus18>	i provide the javascript code
+T 1419630588 18<27ljharb18>	so if i both use a web browser and also operate a proxy server, then am i an end user or not?
+T 1419630593 18<29Agamemnus18>	users get an end-user license
+T 1419630611 18<29Agamemnus18>	but they can't copy the code and re-distribute it.
+T 1419630642 18<19GreenJello18>	I really wish there was a law channel on freenode
+T 1419630650 18<29Agamemnus18>	an end user license is really the de facto license when you sell software
+T 1419630651 18<19GreenJello18>	where are the open source lawyers? :-)
+T 1419630664 18<29Agamemnus18>	GreenJello: broke?
+T 1419630666 18<27ljharb18>	hosting a website isn't selling software tho
+T 1419630690 18<26blackkbot18>	how about a lawnorder channel for ordering lawns and law and order!
+T 1419630703 18<27ljharb18>	dun dun
+T 1419630703 18<29Agamemnus18>	if the code is meant to be re-distributed then that is slightly different
+T 1419630718 18<29Agamemnus18>	like let's say I purchase content from someone
+T 1419630729 18<29Agamemnus18>	like, music. Or software
+T 1419630733 18<29Agamemnus18>	And I put it up on my site
+T 1419630743 18<27ljharb18>	sure, because then you purchased it first
+T 1419630750 18<27ljharb18>	but if you create content and put it up on your site, then you're not selling it
+T 1419630752 18<29Agamemnus18>	But that's a very specific license
+T 1419630755 18<26blackkbot18>	you have the right to distribute the stuff
+T 1419630768 18<29Agamemnus18>	let me get the technical term
+T 1419630775 18<26blackkbot18>	robbery
+T 1419630776 18<26blackkbot18>	idk
+T 1419630783 18<19GreenJello18>	you can distribute if you purchase it, but not always if you license it
+T 1419630829 18<19GreenJello18>	commercial licenses: no distribution rights, copyleft: some distribution rights, permissive: do pretty much whatever
+T 1419630955 18<29Agamemnus18>	http://audiojungle.net/item/marrakesh-nights/3520786
+T 1419630963 18<29Agamemnus18>	so they changed that, after I bought the music
+T 1419630969 18<29Agamemnus18>	but there used to be two licenses
+T 1419630988 18<29Agamemnus18>	a license where you can use it in your website
+T 1419630995 18<26blackkbot18>	id like to get the patent to the process of making a patent
+T 1419630998 18<27ljharb18>	the original license you bought it under applies forever fwiw
+T 1419631000 18<29Agamemnus18>	and a license where you can re-distribute it in software
+T 1419631021 18<29Agamemnus18>	that's a somewhat flimsy difference nowadays
+T 1419631027 18<29Agamemnus18>	but in legal terms it makes sense
+T 1419631041 18<29Agamemnus18>	because downloading through a browser is not considered redistribution
+T 1419631044 18<29Agamemnus18>	except it really is
+T 1419631079 18<29Agamemnus18>	i read a really long article about it that explains it
+T 1419631098 18<29Agamemnus18>	technically there is absolutely no difference
+T 1419631112 18<29Agamemnus18>	but lawyerly, it is a big difference
+T 1419631117 18<29Agamemnus18>	and yes there are a lot of grey areas
+T 1419631118 18<29deltab18>	do you have a url for that?
+T 1419631122 18<26blackkbot18>	lol technically would be for lawyers
+T 1419631141 18<29Agamemnus18>	like, what if you package your own browser, and download the music (for the user) through your app?
+T 1419631149 18<29Agamemnus18>	it's really the same..
+T 1419631150 18<26blackkbot18>	technical details for the two things are the in depth details
+T 1419631162 18<29Agamemnus18>	no no the lawyers don't go into technicals
+T 1419631167 18<29Agamemnus18>	let me see if I can find it, deltab
+T 1419631174 18<26blackkbot18>	lawyers exist on technicalities
+T 1419631193 18<26blackkbot18>	judges are the ones who interpret the law
+T 1419631225 18<26blackkbot18>	judges are like lawyers after getting a mushroom in super mario
+T 1419631260 18<26b4b18>	damn i was hoping for an easy answer
+T 1419631305 18<26blackkbot18>	we don't do easy in ##javascript
+T 1419631341 18<26b4b18>	the lib im talking about requires services that are on my domain
+T 1419631346 18<27ljharb18>	the easy answer is don't worry about licensing, expect people should manually update, and expect they'll not all hotlink from your URL
+T 1419631355 18<29Agamemnus18>	can't find it
+T 1419631356 18<29Agamemnus18>	damnit
+T 1419631356 18<26b4b18>	so it makes sense for it to be included from the domain
+T 1419631364 18<27ljharb18>	true
+T 1419631377 18<26blackkbot18>	find a better library?
+T 1419631397 18<29Agamemnus18>	GreenJello: I have read a fair bit about Creative Commons non-commercial licenses
+T 1419631406 18<29Agamemnus18>	my conclusion is that it is total B.S.
+T 1419631430 18<29Agamemnus18>	people are worse than lawyers when it comes to interpreting that license
+T 1419631430 18<26blackkbot18>	thats my conclusion on all things related to "justice"
+T 1419631454 18<29Agamemnus18>	some people say that a non-commercial license applies to whenever someone is making any money
+T 1419631460 18<29Agamemnus18>	(ie: you can't)
+T 1419631465 18<27ljharb18>	that's correct
+T 1419631472 18<29Agamemnus18>	some say, it doesn't apply to non-profits (but they make money!)
+T 1419631484 18<27ljharb18>	"make money" refers to profit not revenue
+T 1419631486 18<27ljharb18>	nonprofits don't make money
+T 1419631489 18<29Agamemnus18>	some say, if you're not making a lot of money it's okay
+T 1419631502 18<29Agamemnus18>	ljharb: nonprofits employ people
+T 1419631506 18<27ljharb18>	so?
+T 1419631510 18<29Agamemnus18>	ok
+T 1419631512 18<29Agamemnus18>	consider this
+T 1419631519 18<29Agamemnus18>	I make a nonprofit
+T 1419631520 18<26blackkbot18>	they give the employees money and thats not profit thats overhead
+T 1419631524 18<27ljharb18>	the NC CC license is just a default though. the creator can always case-by-case make it more permissive
+T 1419631531 18<29Agamemnus18>	I pay myself all of the non-profit's profit
+T 1419631537 18<29Agamemnus18>	as a salary
+T 1419631542 18<27ljharb18>	there's lots of laws about that
+T 1419631551 18<27ljharb18>	so either you're complying, and that's totally ok, or you're not, and it's fraud
+T 1419631553 18<29Agamemnus18>	now you will be able to say that I can use "non-commercial" stuff
+T 1419631557 18<29Agamemnus18>	no it's not fraud
+T 1419631565 18<29Agamemnus18>	who are you to say how much I should pay myself?
+T 1419631567 18<27ljharb18>	if you're violating the laws about it, it is
+T 1419631572 18<27ljharb18>	the market determines that
+T 1419631578 18<28bprompt18>	hmmm
+T 1419631589 18<27ljharb18>	if your job normally gets paid 50K, and you pay yourself 100K, then the IRS auditors won't let that fly
+T 1419631592 18<29Agamemnus18>	there isn't a market here
+T 1419631595 18<27ljharb18>	(or shouldn't)
+T 1419631602 18<29Agamemnus18>	for the IRS, there is no difference
+T 1419631603 18<27ljharb18>	it's a grey area, sure
+T 1419631607 18<29Agamemnus18>	i'm still paying taxes to them
+T 1419631615 18<27ljharb18>	but you and the nonprofit are distinct legal entities
+T 1419631628 18<29Agamemnus18>	it doesn't make a difference for the IRS
+T 1419631634 18<27ljharb18>	if you are making money and the company's not, then the company can use an NC-CC license.
+T 1419631637 18<26blackkbot18>	the owner profiting from a non profit doesn't seem right
+T 1419631644 18<26blackkbot18>	sooo im going to guess you can't do that
+T 1419631645 18<29Agamemnus18>	ljharb: and that's messed up
+T 1419631653 18<27ljharb18>	blackkbot: every nonprofit employee profits from a nonprofit.
+T 1419631654 18<29Agamemnus18>	blackkbot but how much is profiting
+T 1419631657 18<26blackkbot18>	or you can but shouldn't
+T 1419631660 18<28bprompt18>	afaik when it comes to non-profit, salaries are about the same going rate as commercial firms, the non-profitness part is just not applied to salaries or employees pay, so that's money is left out as "not profit", even though it may well be just as substantial as a for-profit
+T 1419631667 18<29Agamemnus18>	so i have to work for free if I am at a nonprofit
+T 1419631676 18<27ljharb18>	no, salary isn't part of that
+T 1419631678 18<29Agamemnus18>	who says how much I should make
+T 1419631681 18<27ljharb18>	a company's profit is measured *after* salary
+T 1419631687 18<29Agamemnus18>	right
+T 1419631689 18<27ljharb18>	the market, common sense, etc
+T 1419631697 18<29Agamemnus18>	none of that is codified
+T 1419631704 18<26blackkbot18>	what?
+T 1419631705 18<27ljharb18>	it's codified in a way that's up to interpretation
+T 1419631711 18<29Agamemnus18>	especially so if the non-profit is not actually asking for any donations
+T 1419631711 18<27ljharb18>	that's what judges are for
+T 1419631713 18<28bprompt18>	common sense?   wass dat? =)
+T 1419631728 18<26blackkbot18>	i sense commoners
+T 1419631741 18<29Agamemnus18>	my point is that many people consider making a profit as commercial and not as non-commercial. But it isn't that simple.
+T 1419631750 18<29Agamemnus18>	If no one made any profit, everyone would live in a box
+T 1419631755 18<29Agamemnus18>	A BOX
+T 1419631759 18<27ljharb18>	it is that simple, because "profit" has an explicit legal definition
+T 1419631764 18<29Agamemnus18>	not at all
+T 1419631766 18<27ljharb18>	and anything paid out to employees is not part of profit
+T 1419631770 18<26blackkbot18>	my common-sensor is tingling
+T 1419631775 18<27ljharb18>	it does as far as the law is concerned.
+T 1419631786 18<29Agamemnus18>	The two situations are as follows
+T 1419631787 18<27ljharb18>	it doesn't matter in the slightest, that it has a different common definiton.
+T 1419631789 18<27ljharb18>	*definition
+T 1419631800 18<29Agamemnus18>	1) a company that makes money and is a sole-proprietorship
+T 1419631804 18<26blackkbot18>	and yeah non profits are hardly not profiting
+T 1419631809 18<29Agamemnus18>	2) a non-profit that pays everything to the single employee
+T 1419631819 18<27ljharb18>	to be a nonprofit you have to be a 501 3c corporation
+T 1419631827 18<29Agamemnus18>	501 c3
+T 1419631831 18<27ljharb18>	right thanks
+T 1419631831 18<27ljharb18>	that requires that there be no profit
+T 1419631832 18<26blackkbot18>	good will gets volunteer workers and gets donated items and sells them
+T 1419631849 18<29Agamemnus18>	sure, there can be no profit. but the money goes to the single employee
+T 1419631849 18<27ljharb18>	which means everything has to either a) be paid out as salary, b) spent as expenses, c) reinvested in the company
+T 1419631869 18<27ljharb18>	b and c are kind of the same
+T 1419631882 18<26blackkbot18>	if i invest in myself and im an employee of the company wouldn't that be investing in the company?
+T 1419631883 18<27ljharb18>	specifically a nonprofit can never pay out dividends to shareholders
+T 1419631884 18<29Agamemnus18>	yeah but how is it that the nonprofit can use creative commons non-commercial stuff, and the for-profit single proprietorship can't?
+T 1419631890 18<27ljharb18>	blackkbot: nope, not legally
+T 1419631894 18<26blackkbot18>	wrong channel anyways guys
+T 1419631898 18<29Agamemnus18>	the point i am making is that there isn't a difference
+T 1419631898 18<27ljharb18>	also true
+T 1419631905 18<27ljharb18>	Agamemnus: there is a legal difference, even if it doesn't make sense.
+T 1419631905 18<29Agamemnus18>	not for the PERSON
+T 1419631910 18<27ljharb18>	right but that doesn't matter
+T 1419631914 18<27ljharb18>	it only matters for the *company*.
+T 1419631915 18<26blackkbot18>	there is but you need a lawyer to talk to
+T 1419631926 18<29Agamemnus18>	no but i'm talking about perception, not legalities
+T 1419631929 18<26b4b18>	would this work /* copyright blah, may only be hotlinked @ http://blah.com/blah.js cannot be modified */
+T 1419631935 18<27ljharb18>	yes but licenses only care about legalities
+T 1419631935 18<26blackkbot18>	who cares how it looks
+T 1419631938 18<27ljharb18>	perception is irrelevant
+T 1419631942 18<29Agamemnus18>	that's not true
+T 1419631954 18<27ljharb18>	if it was just about perception we wouldn't need a license.
+T 1419631964 18<29Agamemnus18>	the CC non-commercial license doesn't have a specific definition and has never been tested in court.
+T 1419631977 18<29Agamemnus18>	i read a lot about it
+T 1419631992 18<29Agamemnus18>	they did a poll a few years ago
+T 1419632000 18<29Agamemnus18>	and that muddied things up even more
+T 1419632002 18<26blackkbot18>	but polls are useless
+T 1419632016 18<29Agamemnus18>	but there isn't any other way to do it
+T 1419632017 18<26blackkbot18>	polls told al gore he was going to win
+T 1419632028 18<26blackkbot18>	polls told george bush he was going to  win
+T 1419632039 18<29Agamemnus18>	because the CC organization has no authority on interpretation of the cookie cutter licenses they create
+T 1419632056 18<26blackkbot18>	turns out small polls isn't a good way to get a census...
+T 1419632073 18<29Agamemnus18>	here, take a look at this http://creativecommons.org/weblog/entry/17127
+T 1419632081 18<26blackkbot18>	i can't read
+T 1419632086 18<26blackkbot18>	lol ok maybe
+T 1419632129 18<29Agamemnus18>	Oh another interesting one is
+T 1419632152 18<29Agamemnus18>	http://en.wikipedia.org/wiki/Perfect_10,_Inc._v._Amazon.com,_Inc.
+T 1419632172 18<29Agamemnus18>	If this trial took place today, they would probably settle
+T 1419632187 18<29Agamemnus18>	because there is now technology to search for copyright "infringement"
+T 1419632195 18<29Agamemnus18>	same thing youtube did with viacom
+T 1419632208 18<26blackkbot18>	cool porn...
+T 1419632216 18<29Agamemnus18>	my point is, there are a lot of grey areas, you always take a chance
+T 1419632242 18<29Agamemnus18>	sometimes a bigger or smaller chance
+T 1419632248 18<26blackkbot18>	http://www.alrc.gov.au/publications/10-transformative-use-and-quotation/transformative-use-and-fair-use
+T 1419632275 18<26blackkbot18>	they changed it so after you change something it isn't what it was
+T 1419632295 18<29Agamemnus18>	The only problem with fair use laws is that you can't argue with big companies
+T 1419632303 18<29Agamemnus18>	they will shut you down if they don't like it
+T 1419632310 18<29Agamemnus18>	either way
+T 1419632315 18<26blackkbot18>	when can you ever argue with big companies?
+T 1419632329 18<29Agamemnus18>	doesn't matter if you are "infringing" or "being infringed on"
+T 1419632333 18<29Agamemnus18>	might is right
+T 1419632360 18<29Agamemnus18>	ANYWAY
+T 1419632363 18<29Agamemnus18>	back to my problem
+T 1419632378 18<26blackkbot18>	oi
+T 1419632389 18<29Agamemnus18>	http://jsfiddle.net/ea60ps0s/26/
+T 1419632400 18<29Agamemnus18>	so i think i have some sort of memory issue
+T 1419632411 18<29Agamemnus18>	it looks perfect in jsfiddle in my phone
+T 1419632430 18<29Agamemnus18>	but in my game it looks blurred and jagged
+T 1419632443 18<29Agamemnus18>	i can't figure out what is going on
+T 1419632472 18<29Agamemnus18>	but only for big textures
+T 1419632474 18<26b4b18>	fuck it im just going to put that and hope for the best
+T 1419632522 18<26blackkbot18>	make the canvas resolution 1:1 idk what the function is but i read something related to this a few weeks ago maybe
+T 1419632568 18<29Agamemnus18>	what do you mean
+T 1419632576 18<29Agamemnus18>	i don't know what that means
+T 1419632581 24*	28Armen1 is now known as 18Armen138
+T 1419632640 18<29Agamemnus18>	you gave me an idea tho
+T 1419632686 18<26blackkbot18>	window.devicePixelRatio
+T 1419632730 18<26blackkbot18>	http://www.devicepixelratio.com/
+T 1419632743 18<29Agamemnus18>	doesn't make sense in this context
+T 1419632747 18<19xelra18>	Dude, that just highlighted me. :P
+T 1419632754 18<25CornishPasty18>	haha
+T 1419632754 18<26blackkbot18>	lol
+T 1419632766 18<26blackkbot18>	sorry innocent highlight
+T 1419632778 18<29Agamemnus18>	guilty, guilt, guilty.... take him away
+T 1419632787 18<29Agamemnus18>	y*
+T 1419632791 18<26blackkbot18>	oh god they are gonna hang me
+T 1419632809 18<29Agamemnus18>	high crimes and misdemeanors
+T 1419633186 18<25okdamn18>	hey any way to compare 2 audio files and check if they matches ?
+T 1419633203 18<25okdamn18>	sorry i mean whats inside the wav files
+T 1419633205 18<26blackkbot18>	file1 == file2
+T 1419633208 18<26blackkbot18>	lol
+T 1419633255 18<25okdamn18>	lol
+T 1419633274 18<25okdamn18>	blackkbot:  i mean can i translate wav file to text or something similar? :D
+T 1419633328 18<26blackkbot18>	filebuffer
+T 1419633381 18<26blackkbot18>	https://developer.mozilla.org/en-US/docs/Web/API/FileReader
+T 1419633417 18<25okdamn18>	blackkbot:  mmmm
+T 1419633431 18<25okdamn18>	filebuffer for what?
+T 1419633455 18<26blackkbot18>	fileReader
+T 1419633464 18<26blackkbot18>	clearly i had the wrong wrod
+T 1419633469 18<26blackkbot18>	yup wrod
+T 1419633502 18<25okdamn18>	?? :D
+T 1419633706 18<26blackkbot18>	okdamn and this https://developer.mozilla.org/en-US/docs/Web/API/FileReader.readAsBinaryString
+T 1419633716 18<26blackkbot18>	then you have two strings to compare...
+T 1419633983 18<25okdamn18>	blackkbot:  thanks i am wondering if any easy way to detect words in audio without having to struggle with speech recognition etc
+T 1419633989 18<25okdamn18>	do you even know if possible?
+T 1419634052 18<29deltab18>	for what purpose?
+T 1419634072 18<22Jan-18>	hihi :)
+T 1419634078 18*	22Jan- has not been here for ages
+T 1419634088 18<25okdamn18>	to get voice commands delta6
+T 1419634109 18<26blackkbot18>	http://updates.html5rocks.com/2013/01/Voice-Driven-Web-Apps-Introduction-to-the-Web-Speech-API
+T 1419634196 18<29deltab18>	hihi Jan-!
+T 1419634199 18<29deltab18>	merry christmas!
+T 1419634215 18<25okdamn18>	blackkbot:  but that works only on chrome
+T 1419634240 18<26blackkbot18>	ok well you can't have everything ... sorry..
+T 1419634268 18<29deltab18>	okdamn: http://www.labnol.org/software/add-speech-recognition-to-website/19989/ or http://www.sitepoint.com/html5-speech-input-fields/
+T 1419634282 18<19Stalkr_18>	Apologize if this is the wrong channel for this but... For anyone who uses package managers, would you use npm or bower for Bootstrap? Trying to setup gulp for my system build and I can't figure this out
+T 1419634285 18<25okdamn18>	lol k np
+T 1419634287 18<25okdamn18>	thank you
+T 1419634308 18<29deltab18>	Chrome or Safari
+T 1419634348 18<22Jan-18>	hey deltab :)
+T 1419634384 18<29deltab18>	Jan-: did you like Black Mirror? or are you waiting for 2014 Wipe?
+T 1419634407 18<22Jan-18>	ooh it's been a while since black mirror
+T 1419634410 18<22Jan-18>	I know someone who was in it
+T 1419634411 18<22Jan-18>	:)
+T 1419634455 18<25okdamn18>	deltab:  webkit speech recognition is chrome only
+T 1419634465 18<22Jan-18>	I have some really old code I have to totally refactor and port from jscript to node.
+T 1419634468 18*	22Jan- rubs hands
+T 1419634470 18<22Jan-18>	Here goes nothing.
+T 1419634493 18<22Jan-18>	the thing is, is it reasonable to write general purpose software in node, or is it just for network servieces?
+T 1419634512 18<29deltab18>	http://caniuse.com/#search=speech
+T 1419634534 18<29deltab18>	Jan-: there are lots of tools using node: compilers, build tools, etc.
+T 1419634638 18<25okdamn18>	deltab:  that is not recognition api :P
+T 1419634668 18<29deltab18>	oh, okay
+T 1419634706 18<25okdamn18>	np
+T 1419634742 18<29deltab18>	Jan-: also video encoding, thumbnailing, metadata extraction: https://www.npmjs.com/search?q=video
+T 1419634809 18<22Jan-18>	I need to port some of my code
+T 1419634825 18<22Jan-18>	it's for reading and writing wave files and processing what's in them
+T 1419634903 18<22Jan-18>	there's a riff file parser, which uses a struct thing I wrote
+T 1419634911 18<22Jan-18>	and corresponding writers
+T 1419634925 18*	22Jan- *headscratch* it's kinda involved now I think about it :/
+T 1419634936 18<29deltab18>	https://www.npmjs.com/search?q=riff
+T 1419636057 24*	28acheney is now known as 18austincheney
+T 1419636427 18<29maxi18>	hey whats up guys!
+T 1419636455 18<29maxi18>	i have a question about firebase.. i need to make some trusted validation that cant be done on the client side
+T 1419636468 18<29maxi18>	its pretty complex so i dont think you can do it with firebase rules
+T 1419636522 18<29maxi18>	so im thinking maybe i gonna use nodeJS to have a serverside service running that answers to add events and validates and updates a row to "validated" or something.. but i dont know if there might be a better solution to this problem.. someone have any idea?
+T 1419636590 24*	28OnkelTem_ is now known as 18OnkelTem
+T 1419637120 18<26dman77718>	what's more popular amoung the commmunity, brower-sync or livereload?
+T 1419637136 18<26dman77718>	*browser-sync or livereload
+T 1419637176 18<19ashnur18>	i like my ctrl+r
+T 1419637366 18<29maxi18>	Is anyone here?
+T 1419637399 18<29maxi18>	i have a question about firebase.. i need to make some trusted validation that cant be done on the client side
+T 1419637408 18<29maxi18>	so im thinking maybe i gonna use nodeJS to have a serverside service running that answers to add events and validates and updates a row to "validated" or something.. but i dont know if there might be a better solution to this problem.. someone have any idea
+T 1419637421 18<19ashnur18>	wat
+T 1419637423 18<19ashnur18>	doublewat
+T 1419637450 18<19ashnur18>	well, good thing i don't know the answer
+T 1419638080 18*	22Jan- hits node.js with a club
+T 1419638088 18<22Jan-18>	*whack* *whack* work properly!
+T 1419638331 18<29deltab18>	Jan-: heh, what's it doing?
+T 1419638406 18<29maxi18>	hey
+T 1419638413 18<29maxi18>	why doesnt anyone answer me :(
+T 1419638419 18<29maxi18>	this is bullying!
+T 1419638455 18<29deltab18>	maxi: better how?
+T 1419638504 18<29maxi18>	im building an app and this time i dont have anything on the serverside because im using firebase so everything is clientside
+T 1419638522 18<29maxi18>	but i need to have some trusted validation
+T 1419638525 18<29maxi18>	on a form
+T 1419638564 18<29maxi18>	and i came up with a solution to have a nodeJS server running which responds to add events on the firebase database and then validates the form and changes a value to "validated" or something
+T 1419638612 18<29deltab18>	yes
+T 1419638634 18<29maxi18>	its not really just a simple form validation that can be done with firebase rules.. so i need some other layer on the serverside
+T 1419638645 18<29maxi18>	but i dont know what is the best way to do this?
+T 1419638714 18<29maxi18>	everything is so nice and sleek right now having a nodeJS service running to do just that would just make the whole system ugly
+T 1419638780 18<29maxi18>	someone have any idea what i should do?
+T 1419638831 18<22Jan-18>	deltab I am forced to admit it was my fault
+T 1419638848 18<22Jan-18>	I created a batch file called node.bat and wondered why I got odd results when I tried to run node foo.js
+T 1419638875 18<29deltab18>	ah
+T 1419638960 18<22Jan-18>	it seems pretty straightforward
+T 1419638965 18<22Jan-18>	it's an interpreter and an API
+T 1419639000 18<22Jan-18>	I'm not sure if it's reasonable to expect it to spool whole wave files through
+T 1419639011 18<22Jan-18>	but then it uses the v8 interpreter, doesn't it?
+T 1419639152 18<29deltab18>	yes
+T 1419639181 18<22Jan-18>	some of these wave files are 50 megs
+T 1419639209 18<29deltab18>	what do you want to do to them?
+T 1419639227 18<22Jan-18>	it's a linear timecode analyser
+T 1419639239 18<29deltab18>	could it work on a stream?
+T 1419639261 18<29deltab18>	node's good with stream, I understand
+T 1419639265 18<22Jan-18>	basically it takes wave files with no broadcast timecode header, reads an audio based timecode signal out of the actual waveform data, and creates a new file with the timecode header and one or more of the input tracks.
+T 1419639313 18<22Jan-18>	so at some point, I do need to spool through all the audio.
+T 1419639329 18<22Jan-18>	right now I actually do that with mplayer, so I could keep doing that, but it involves intermediate files and messiness.
+T 1419639339 18<29deltab18>	yep, but you could do that on a stream
+T 1419639348 18<29deltab18>	read a block, write a block, repeat
+T 1419639355 18<22Jan-18>	I only actually need to piece through the headers.
+T 1419639399 18<22Jan-18>	actually we do have the intention of making it parse the audio data.
+T 1419639413 18<22Jan-18>	in a wave file, the audio channels are just interleaved byte by byte, so I may need to spin through that too.
+T 1419639631 18<29Agamemnus18>	wow
+T 1419639635 24*	28VBlizzard is now known as 18blizzy
+T 1419639635 18<29Agamemnus18>	people are stupid
+T 1419639640 18<29Agamemnus18>	in general i mean
+T 1419639643 18<29Agamemnus18>	not you fine folks
+T 1419639652 18<29Agamemnus18>	it's enough to give someone indigestion
+T 1419639656 24*	28titty is now known as 18titties
+T 1419639738 24*	28titties is now known as 18nosuni
+T 1419639801 18<22Jan-18>	Agamemnus: It's a tragedy :/
+T 1419639942 18<22Jan-18>	okay, what did I mean by "var msComm = new ActiveXObject('648A5600-2C6E-101B-82B6-000000000014');"
+T 1419640023 18<22Jan-18>	hmm. "could not create automation class named mswinsock.winsock"
+T 1419640086 18<29deltab18>	well obviously it creates a, uh, um, thing
+T 1419640107 18<22Jan-18>	it creates a...
+T 1419640110 18*	22Jan- takes a deep breath
+T 1419640123 18<22Jan-18>	sixfoureightafivesixzerozero-dash-two...
+T 1419640130 18*	22Jan- continues speaking for several minutes
+T 1419640153 18<29deltab18>	they must really hate you
+T 1419640168 18<22Jan-18>	what must
+T 1419640194 18<29deltab18>	the author of that code
+T 1419640221 18<22Jan-18>	errr.
+T 1419640231 18<29deltab18>	:-)
+T 1419640233 18*	22Jan- shuffles awkwardly from foot to foot
+T 1419640271 18<29deltab18>	seriously though you should have made a constant for that
+T 1419640311 18<22Jan-18>	I think it resolves to an activeX object called mswinsock
+T 1419640316 18<22Jan-18>	it's basically a raw socket
+T 1419640363 18<29deltab18>	serial port?
+T 1419640370 18<22Jan-18>	IP networking
+T 1419640390 18<29deltab18>	not MSComm?
+T 1419640426 18<29deltab18>	what methods are used from it?
+T 1419640428 18<22Jan-18>	comm is serial
+T 1419640434 18<22Jan-18>	mswinsock is ip network
+T 1419640510 18<22Jan-18>	I wrote this ages ago, probably in XP
+T 1419640518 18<22Jan-18>	the winsock object doesn't even exist anymore
+T 1419640531 18<22Jan-18>	and I'm fairly sure unprivileged scripts in windows 7 aren't allowed raw sockets :)
+T 1419640657 18<29deltab18>	what methods do you call on it?
+T 1419640686 18<19brittan18>	Hey guys is there a way to assign ajax response data to a varable? Sorry if this is a newb question but I’m not finding what I’m looking for on StackOverflow.
+T 1419640688 18<22Jan-18>	I don't, because activexobjects in jscript are odd.
+T 1419640709 18<22Jan-18>	wow, have you guys ever read really old code and thought "what was I thinking"
+T 1419640729 18<22Jan-18>	ARG_WARN_NOTALLOWEDUNKNOWN = 'This script does not understand the commandline argument %%ARGNAME%%';
+T 1419640751 18<29deltab18>	brittan: certainly, but only in code that runs as a consequence of the result arriving
+T 1419640824 18<29deltab18>	Jan-: yeah, sometimes; also "this is great! why haven't I been using this?"
+T 1419640854 24*	28night-owl is now known as 18zz_night-owl
+T 1419640859 18<22Jan-18>	I do use commandline.js all the time
+T 1419640867 18<22Jan-18>	it's my general purpose command line argument parsing lib
+T 1419640882 18<29deltab18>	good
+T 1419640912 18<22Jan-18>	I'm not sure if I like the approach of most node code
+T 1419640919 18<22Jan-18>	this module.exports = foo thing is weird
+T 1419640962 18<29deltab18>	ah, sure, but it does give you modules
+T 1419640999 18<22Jan-18>	the first thing I'm looking at porting is the commandline stuff as it'll be handy for testing code as I work
+T 1419641002 18<29deltab18>	you can use lots of library modules and they won't conflict in global variables
+T 1419641028 18<29deltab18>	and node has lots and lots of library modules
+T 1419641043 18<22Jan-18>	but their approach is something like "process.argv.forEach(function(val,index,array){console.log(val);});
+T 1419641046 18<22Jan-18>	wtf
+T 1419641119 18<22Jan-18>	wooo
+T 1419641122 18*	22Jan- achieves hello world in node
+T 1419641129 18<29deltab18>	I think that's nicer than  for (var index = 0; index < process.argv.length; index++) { var val = process.argv[index]; console.log(val); }
+T 1419641155 18<22Jan-18>	yes, but the latter syntax is javascript, whereas the former is something some nutball made up
+T 1419641162 18<29bubble18>	007emails.com i am trying to create an xmlhttprequest to automate the process of form submission but the textarea parameter is not shown in the request .. please someone check and tell me
+T 1419641192 18<29deltab18>	Jan-: also javascript; it's flexible enough for you to do all kinds of styles
+T 1419641217 18<22Jan-18>	Yeah, but to totally break basic style like that
+T 1419641217 18<22Jan-18>	I'm not gonna do it
+T 1419641232 18<25Havvy18>	How is using Array.prototype.forEach breaking basic style?
+T 1419641264 18<29deltab18>	it didn't exist when she learnt javascript, therefore it's unnatural :-)
+T 1419641273 18<22Jan-18>	I don't find it used a lot.
+T 1419641286 18<22Jan-18>	Anyway, I'm certainly *aware* of it.
+T 1419641294 18<25Havvy18>	It's part of the ECMAScript specification.
+T 1419641387 18<22Jan-18>	I think I can probably just port my commandline thing right across
+T 1419641395 18<25Havvy18>	Note also how it's half the size as the latter.
+T 1419641395 18<22Jan-18>	although it's got some odd code in it
+T 1419641440 18<26blackkbot18>	what its pretty common
+T 1419641453 18<26blackkbot18>	well map is maybe not forEach
+T 1419641494 18*	25Havvy doesn't want to read through code showing the low level mechanics of iteration when its the fact you are iterating that is important.
+T 1419641546 18<29deltab18>	in python it's just  for val in process.argv: print val
+T 1419641570 18<22Jan-18>	what the hell was I thinking here
+T 1419641573 18<22Jan-18>	if(typeof this['checkSanity' + this.type] != 'function'){...}
+T 1419641590 18<22Jan-18>	man, I should write an interfaces thing
+T 1419641595 18<29deltab18>	testing whether a function exists
+T 1419641603 18<22Sorella18>	Jan-: map/foreach/etc. are all fairly common. In fact, they *are* the default in all languages with support for higher-order programming: JavaScript, Ruby, etc.
+T 1419641617 18<26blackkbot18>	thats not that bad Jan-
+T 1419641625 18<22Jan-18>	so that would check if it had a function called something like checksSanityBoolean
+T 1419641631 18<29deltab18>	yup
+T 1419641632 18<22Jan-18>	bah
+T 1419641650 18<22Sorella18>	Jan-: why not just call the function?
+T 1419641672 18<29deltab18>	it might not exist!
+T 1419641678 18<22Sorella18>	If it doesn't exist, it'll give you an error. If you check with an if statement you can't magically add that function anyway
+T 1419641689 18<22Sorella18>	So crashing everything is the only sensible outcome in both cases
+T 1419641692 18<22Jan-18>	if it fails that it'll throw(Commandline.exception('Internal error: no checker function for argument ' + this.id + ' of type ' + ARG_ALLOWEDTYPES[this.type]));
+T 1419641706 18<25Havvy18>	If you want interfaces and some compile time checking, you could take a look at TypeScript.
+T 1419641709 18<22Jan-18>	although all those ERROR_MSGS are global.
+T 1419641735 18<22Jan-18>	I can fix that
+T 1419641763 18<22Sorella18>	Jan-: if the method doesn't exist, you'll get a `Error(can't call method "name" of <object description>)`, which is basically what you have there
+T 1419641792 18<22Jan-18>	yeah I know.
+T 1419641805 18<22Jan-18>	the idea is that this commandline arguments thing is quite completist, it tries to be helpfup
+T 1419641822 18<22Jan-18>	so there's a lot of checking that won't necessarily help people who are using software that uses the lib, but it will help a programmer set it up right.
+T 1419641908 18<25Havvy18>	Jan-:  I'd also suggest using `!==` instead of `!=` even when (especially when?) it makes no difference
+T 1419641924 18<22Jan-18>	hmm, yeah, you're right
+T 1419642009 18<22Jan-18>	I guess there are already lots of commandline things for node.
+T 1419642015 18<22Jan-18>	But all my other code is set up for these, so.
+T 1419642032 18*	29deltab nods
+T 1419642266 18<22Jan-18>	is node's module system the only way to link files?
+T 1419642348 18<29Agamemnus18>	<script> tags
+T 1419642352 18<19substack18>	Jan-: far from it
+T 1419642456 18<22Jan-18>	one suggestion I found was eval(fs.readFileSync('foo.js'));
+T 1419642460 18<22Jan-18>	which seems a bit bruteforce :)
+T 1419642493 24*	28zz_night-owl is now known as 18night-owl
+T 1419642508 24*	28Havvy[Hex] is now known as 18Havvy
+T 1419642518 18<25Havvy18>	Is there a reason that Node's module system doesn't work for you?
+T 1419642593 18<22Sorella18>	Jan-: Node's module system is fairly expressive even if you want to do dynamic code loading.
+T 1419642612 18<22Jan-18>	I just don't want to add a load of boilerplate to my existing stuff if I can avoid it
+T 1419642629 18<22Sorella18>	Jan-: which boilerplate?
+T 1419642650 18<29deltab18>	modules.exports =
+T 1419642653 18<22Jan-18>	an awful lot of module.exports=...
+T 1419642691 18<22Jan-18>	which I'd have to wrap in some sort of if(node)...
+T 1419642746 18<29deltab18>	there's libraries that provide the module pattern elsewhere
+T 1419642768 18<22Jan-18>	on the basis that I am right now engaged in porting some code from one environment to another (which is already reasonably fairly well set up for it) I don't really want to do a very specifically node styled branch if I can avoid it
+T 1419642779 18<22Jan-18>	I mean, I can deal with creating a dozen globals called things like "RiffParser" and "Struct"
+T 1419642780 18<22Sorella18>	Jan-: just use Node modules and compile for other platforms
+T 1419642809 18<22Jan-18>	compile eh
+T 1419642825 18<22Sorella18>	!g browserify @ Jan-
+T 1419642825 18<22ecmabot18>	Jan-: Browserify <http://browserify.org/>
+T 1419642838 18<29deltab18>	you'll like have lots of modules
+T 1419642841 18<22Sorella18>	That'll compile your Node modules so it works in any JS platform, using any kind of module system
+T 1419642849 18<22Jan-18>	oh, right, so not really *compile*, but... ok.
+T 1419642852 18<29deltab18>	there are programs that bundle them up into one file
+T 1419642870 18<22Jan-18>	##node.js is dead, so I'm not sure who to ask
+T 1419642876 18<22Sorella18>	Jan-: compiling is transforming some source in language X to some source in language Y. In this case, it's transforming JS into JS
+T 1419642877 18<26blackkbot18>	rip ##node.js
+T 1419642882 18<29deltab18>	not translating the code, but making a compilation
+T 1419642883 18<22Sorella18>	(which is actually fairly common)
+T 1419642926 18<22Jan-18>	eesh.
+T 1419642928 18<22Jan-18>	this is weird.
+T 1419642933 18<22Jan-18>	why doesn't it just work like normal js
+T 1419642941 18<19substack18>	Jan-: it's #node.js
+T 1419642983 18<19substack18>	Jan-: are you writing browser or server code?
+T 1419642985 18<22Sorella18>	Jan-: it is normal JS, with an expressive module system. Not having a module system is impossible if you want to write anything with more than a few dozen lines of coe
+T 1419643001 18<22Sorella18>	Which would mean that Node itself couldn't exist
+T 1419643014 18<20ignacio18>	Hi all, I need some help. I'm trying to use a if in a array
+T 1419643038 18<26blackkbot18>	if in an array?
+T 1419643040 18<20ignacio18>	http://fpaste.org/163245/19643035/ anyone understand what I'm trying to do?
+T 1419643055 18<22Sorella18>	ignacio: you can use the conditional expression instead. `(x > 1)? consequent : alternate`
+T 1419643061 18<26blackkbot18>	no clue
+T 1419643074 18<26blackkbot18>	beautify your code a bit
+T 1419643101 18<22Sorella18>	ignacio: which language is that?
+T 1419643111 18<20ignacio18>	Sorella, I think javascript..
+T 1419643115 18<20ignacio18>	just <script> in html
+T 1419643131 18<22Sorella18>	Not really JS. It's probably being compiled by something.
+T 1419643142 18<20ignacio18>	ah, flask?
+T 1419643143 18<20ignacio18>	http://fpaste.org/163246/64314014/
+T 1419643153 18<22Jan-18>	Sorella: I think every C programmer ever might disagree :)
+T 1419643155 24*	28jscinoz_ is now known as 18jscinoz
+T 1419643156 18<22Sorella18>	The conditional operator works in JS. I'm not sure if it'll work with this language you've got
+T 1419643183 18<22Sorella18>	Jan-: I don't take C programmers seriously when it comes to good decisions in PL
+T 1419643193 18<20ignacio18>	Sorella, but that is in the html (<script>), I'm noob in js, my idea is to add that value only if code is >= 1
+T 1419643205 18<22Sorella18>	!mdn conditional operator @ ignacio
+T 1419643206 18<22ecmabot18>	ignacio: Conditional (ternary) Operator - JavaScript | MDN <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator>
+T 1419643209 18<22tach4n18>	ignacio: it looks like you have some templating or something mixed in there or something
+T 1419643243 18<29deltab18>	Jan-: even C has static and extern
+T 1419643290 18<22tach4n18>	I think every c programmer ever would agree modules are a good idea
+T 1419643313 18<22tach4n18>	or at least the ones who have tried to write portable programs
+T 1419643369 18<29deltab18>	in C you have to decide which names are exported per .c file
+T 1419643392 18<22Jan-18>	urrrrr node is weirrrd
+T 1419643401 18<26blackkbot18>	no its really not
+T 1419643412 18<20ignacio18>	thank you
+T 1419643414 18<26blackkbot18>	its just javascript without the dom
+T 1419643425 18<26blackkbot18>	and with the system tools
+T 1419643430 18<22Jan-18>	it's barely even really javascript
+T 1419643441 18<22Jan-18>	unified namespace linking has been a javascript basic since there was javascript
+T 1419643443 18<26blackkbot18>	... no javascript is barely even really javascript
+T 1419643446 18<22tach4n18>	no, it's just javascript + their api
+T 1419643468 18<26blackkbot18>	yeah i said system tools instead of node api
+T 1419643474 18<20ignacio18>	Sorella, I'm not sure if that is what I need,
+T 1419643476 18<22Sorella18>	Jan-: not even browsers do that anymore because everyone agrees that it's a really bad idea
+T 1419643477 18<20ignacio18>	I dont understand that D:
+T 1419643487 18<22tach4n18>	blackkbot: it's an important distinction, very important
+T 1419643541 18<20ignacio18>	Sorella, {{ code }} > 1 ? ({  y: {{ code }}, legendText:"Code: {{ code }} ", indexLabel: "Code" }), ?
+T 1419643542 18<20ignacio18>	Didnt work
+T 1419643592 18<22Sorella18>	ignacio: you'll need to give us the compiled code, rather than this weird template thingie.
+T 1419643595 18<22Sorella18>	!php @ ignacio
+T 1419643595 18<22ecmabot18>	ignacio: You're showing us (PHP|ASP|other backend language) code, but asking a question about the browser, which sees the output. Maybe your code produces correct output, maybe it doesn't. Please show us the HTML as the browser sees it.
+T 1419643601 18<20ignacio18>	¿php?
+T 1419643605 18<20ignacio18>	ah,
+T 1419643631 18<22Jan-18>	hrn, the eval() trick doesn't seem to work
+T 1419643695 18<20ignacio18>	Sorella, http://fpaste.org/163248/41964369/
+T 1419643762 18<20ignacio18>	btw, for know how its works. Here is the old code http://gcil.cf/ (started to redesign the html code.)
+T 1419643813 18<22Sorella18>	ignacio: so, what is {{ code }} there? And where exactly do you want to use a conditional? And what for?
+T 1419643838 18<20ignacio18>	{{ code }} = the amount of 'code tasks'
+T 1419643840 18<22Sorella18>	Jan-: what do you mean by "doesn't work"?
+T 1419643865 18<20ignacio18>	I want to use it on L53 - l58, dont add that value to the chart, if is 0
+T 1419643881 18<22Sorella18>	ignacio: I would strongly advise against generating JS with that templating engine though. It's the easiest route to add XSS to all parts of your website
+T 1419643905 18<22Jan-18>	if I define foo() in "includeme.js", then eval(fs.readFileSync('includeme.js')); foo(); in another file, I get a not-defined on foo.
+T 1419643912 18<22Sorella18>	ignacio: instead just generate some data structures that are properly encoded, then handle that with JS

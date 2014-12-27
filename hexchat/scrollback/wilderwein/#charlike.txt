@@ -1,0 +1,40 @@
+T 1417707330 19*	Now talking on 22#charlike
+T 1417707331 22*	Channel 22#charlike url: 24http://www.charlike.pw
+T 1417707331 22*	26ChanServ gives channel operator status to 18tunnckoCore
+T 1417707710 19*	Now talking on 22#charlike
+T 1417707713 22*	Channel 22#charlike url: 24http://www.charlike.pw
+T 1417707713 22*	26ChanServ gives channel operator status to 18tunnckoCore
+T 1417732669 19*	Now talking on 22#charlike
+T 1417732669 22*	Channel 22#charlike url: 24http://www.charlike.pw
+T 1417732669 22*	26ChanServ gives channel operator status to 18tunnckoCore
+T 1417824691 19*	Now talking on 22#charlike
+T 1417824691 22*	Channel 22#charlike url: 24http://www.charlike.pw
+T 1417824691 22*	26ChanServ gives channel operator status to 18tunnckoCore
+T 1417825197 19*	Now talking on 22#charlike
+T 1417825198 22*	Channel 22#charlike url: 24http://www.charlike.pw
+T 1417825198 22*	26ChanServ gives channel operator status to 18tunnckoCore
+T 1418164960 22*	26ChanServ gives channel operator status to 18Nikoletka
+T 1418165151 22*	26ChanServ gives channel operator status to 18Nikoletka
+T 1418165164 20<tunnckoCore>30	sas
+T 1418165637 22*	26ChanServ gives channel operator status to 18Nikoletka
+T 1418310097 19*	Now talking on 22#charlike
+T 1418310097 29*	[freenode-info] why register and identify? your IRC nick is how people know you. http://freenode.net/faq.shtml#nicksetup
+T 1418310097 22*	Channel 22#charlike url: 24http://www.charlike.pw
+T 1418310097 22*	26ChanServ gives channel operator status to 18tunnckoCore
+T 1418487843 22*	26rajaniemi.freenode.net gives channel operator status to 18ChanServ
+T 1418512224 22*	26rajaniemi.freenode.net gives channel operator status to 18ChanServ
+T 1418513318 22*	26rajaniemi.freenode.net gives channel operator status to 18ChanServ
+T 1418513789 22*	26rajaniemi.freenode.net gives channel operator status to 18ChanServ
+T 1418903248 19*	Now talking on 22#charlike
+T 1418903248 22*	Channel 22#charlike url: 24http://www.charlike.pw
+T 1418903248 22*	26ChanServ gives channel operator status to 18tunnckoCore
+T 1419130457 19*	Now talking on 22#charlike
+T 1419130457 22*	Channel 22#charlike url: 24http://www.charlike.pw
+T 1419130457 22*	26ChanServ gives channel operator status to 18tunnckoCore
+T 1419187453 19*	Now talking on 22#charlike
+T 1419187453 22*	Channel 22#charlike url: 24http://www.charlike.pw
+T 1419187453 22*	26ChanServ gives channel operator status to 18tunnckoCore
+T 1419296296 19*	Now talking on 22#charlike
+T 1419296296 22*	Channel 22#charlike url: 24http://www.charlike.pw
+T 1419296296 22*	26ChanServ gives channel operator status to 18tunnckoCore
+T 1419606642 22*	26sendak.freenode.net gives channel operator status to 18ChanServ

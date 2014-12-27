@@ -1,0 +1,630 @@
+T 1419355810 18<22robert_18>	https://regex101.com/r/qN8rH8/1
+T 1419355821 18<24OnlineCop18>	What if there are zero fields in there, just algorithm?
+T 1419355830 18<22robert_18>	rewt:  ':' is a delimiter.
+T 1419355852 18<22robert_18>	it should give you whatever it can extract from the string.
+T 1419355901 18<19rewt18>	but the N means there could be 1 or 2 or 3 or 4 or any number fields?
+T 1419355934 18<19mikunos18>	I don't understand how to get the array('userId' => 'Playlistcode' )
+T 1419355942 18<24OnlineCop18>	Step 1: Find   {{...}}   and store the contents in a field. Split that field apart on the ':' delimiter. Now you have all your fields.
+T 1419355974 18<24OnlineCop18>	Step 2: Match everything after {{...}} and parse that however you wish.
+T 1419355977 19<rewt>	mikunos, what do you get with the regex i gave?
+T 1419355997 18<24OnlineCop18>	mikunos: Are you using an associative array or numbered?
+T 1419355998 18<19mikunos18>	rewt I don't understand how to loop it
+T 1419356004 18<19mikunos18>	associative
+T 1419356007 18<24OnlineCop18>	preg_match_all()
+T 1419356032 18<19mikunos18>	yes yes
+T 1419356041 18<19mikunos18>	I have already done the loop
+T 1419356060 18<19mikunos18>	http://snipet.co.uk/S7M
+T 1419356067 18<22robert_18>	rewt: correct.
+T 1419356081 18<19mikunos18>	but it is wrong
+T 1419356119 18<19rewt18>	mikunos, can you paste $matches and the final $playlists from that
+T 1419356150 18<19mikunos18>	http://snipet.co.uk/Wv
+T 1419356172 18<19rewt18>	robert_, then your best bet is as OnlineCop says ( extract everything between {{ }} and split on ':' )
+T 1419356197 18<19rewt18>	mikunos, that doesn't look right
+T 1419356239 18<19mikunos18>	how have I to get from this matches the array('userId' => 'playlist') ?
+T 1419356290 18<22robert_18>	yeah; I'm working out how to get it into a capture group
+T 1419356334 18<19rewt18>	robert_, something like:  /\{\{(.*?)}}/
+T 1419356356 18<19rewt18>	mikunos, what's the array dump function?
+T 1419356377 18<19mikunos18>	????
+T 1419356377 18<29pork_18>	bug: If you have a found a bug with one of the components, please save the data to a file so it can be reproduced and tell Lindrian about it as soon as he is around. Thank you.
+T 1419356916 18<19rewt18>	mikunos: http://ideone.com/jvKLcn
+T 1419357076 18<19mikunos18>	rewt THANKS!!!!
+T 1419358751 24*	28[z] is now known as 18ItsLuke
+T 1419358954 18<29Kake_Fisk18>	Is it only inside of square brackets ^ means NOT?
+T 1419358973 18<29genio18>	yes
+T 1419358982 18<24OnlineCop18>	[^...] means "not stuff in here"
+T 1419358987 18<29Kake_Fisk18>	ah, thanks ^^
+T 1419359009 18<29genio18>	^ is a metacharacter that means the beginning of the line.  within a character class [] it's a negation
+T 1419359029 18<24OnlineCop18>	You can also use a "negative look-ahead" if you want to negate an entire group:  (?!not_this_stuff)
+T 1419359105 18<29genio18>	yep, just make sure you understand that a character class is a grouping of ORed together characters rather than a string
+T 1419359611 18<19rewt18>	and no | required in a char class
+T 1419360231 18<29Kake_Fisk18>	Ah, yeah. I got that ^^
+T 1419363213 24*	28ItsLuke is now known as 18bloodninja
+T 1419363242 24*	28bloodninja is now known as 18ItsLuke
+T 1419365177 18<26heedly18>	how would I matching anything but a number?
+T 1419365210 18<24OnlineCop18>	\D
+T 1419365226 18<24OnlineCop18>	Since \d is a number, \D is "anything but a number"
+T 1419365402 18<26heedly18>	ok, thanks
+T 1419365408 18<24OnlineCop18>	No problem.
+T 1419365420 18<26heedly18>	now how would I matching anything but two spaces and a number?
+T 1419365448 18<24OnlineCop18>	In that order?
+T 1419365456 18<26heedly18>	yep
+T 1419365473 19<OnlineCop>	And do you want to "peek forward" and match it, or move the "regex cursor" and match it?
+T 1419365487 18<24OnlineCop18>	(?=  \d)  will "peek forward", and   \ \ \d  will move the cursor and match it.
+T 1419365556 18<26heedly18>	hmm
+T 1419365564 18<26heedly18>	not as easy as I thouht
+T 1419365575 18<24OnlineCop18>	Depends on what you're trying to do.
+T 1419365625 18<26heedly18>	well I wanna match (.*?)$ unless it has two space and digit
+T 1419366282 24*	28Bremsnachten is now known as 18Bremsstrahlung
+T 1419366388 24*	28Bremsstrahlung is now known as 18Bremsnachten
+T 1419366414 19<SrPx_>	Hello, I'm trying a regex to filter ".hi" and ".o" files on vifm. This filters ".o" files: /^.*\.o$/ ... I've tried replacing "o" with "(o|hi)" there but it didn't filter both, why?
+T 1419366457 18<24OnlineCop18>	So you have  /^.*(o|hi)$/  ?
+T 1419366479 18<24OnlineCop18>	Er...  /^.*\.(o|hi)$/
+T 1419366514 18<27SrPx_18>	yes
+T 1419366517 18<26doug64k18>	why not just /\.(o|hi)$/
+T 1419366543 18<27SrPx_18>	indeed, but that doesn't work too :(
+T 1419366555 18<26doug64k18>	if a replace mentions the whole name the replacement needs the whole name
+T 1419366573 18<24OnlineCop18>	Escape the '(' and ')' characters?
+T 1419366587 19<doug64k>	no I want them to be regex not parentheses
+T 1419366588 18<24OnlineCop18>	 /\.\(o|hi\)$/  ?
+T 1419366594 18<26doug64k18>	lol no
+T 1419366598 18<24OnlineCop18>	Humor me.
+T 1419366605 18<26doug64k18>	if the extension had parentheses it would work
+T 1419366610 18<24OnlineCop18>	If it doesn't work, then we'll try something else.
+T 1419366618 18<27SrPx_18>	ah actually I needed a \ for the pipe... thanks
+T 1419366625 18<27SrPx_18>	good idea
+T 1419366630 18<26doug64k18>	that matches "(o" OR "hi)"
+T 1419366641 18<26doug64k18>	not even
+T 1419366656 18<24OnlineCop18>	So you're saying   /\.(o\|hi)$/  works for you?
+T 1419366664 18<24OnlineCop18>	Where you escape the pipe?
+T 1419366666 18<27SrPx_18>	yes, :filter /\.(o\|hi)$/ precisely
+T 1419366719 18<26doug64k18>	OnlineCop: it is nonsense
+T 1419366726 18<27SrPx_18>	thank you
+T 1419366746 19<doug64k>	that is not a regex issue
+T 1419366752 18<26doug64k18>	you need to quote your shell arguments
+T 1419366764 18<24OnlineCop18>	Some languages, like sed, require parentheses to be escaped when they mean "group". Bleh.
+T 1419366772 18<26doug64k18>	no they dont
+T 1419366776 18<26doug64k18>	you dont understand the issue
+T 1419366786 18<26doug64k18>	the issue is with the shells interpretation of your input
+T 1419366793 18<26doug64k18>	you need to escape bash specific characters
+T 1419366815 18<26doug64k18>	if you follow the rule of putting regexes in single quotes in bash, the problem practically disappears
+T 1419366828 18<24OnlineCop18>	Yeah, but he mentioned vim.
+T 1419366839 18<24OnlineCop18>	I don't use vim, so couldn't tell if it would be the same.
+T 1419366844 19<doug64k>	example: grep 'my regex has | and $ and ; and no problem'
+T 1419366913 19<doug64k>	if you were invoking that from C or something, none of your argv would have those extra nonsense backslashes that are not part of the regex
+T 1419366973 19<doug64k>	SrPx_: the correct way is to put the regex in single quotes, not put a confusing mess of extra escapes in it for the shell
+T 1419367029 18<27SrPx_18>	Are you sure? Nor single nor double quotes worked 
+T 1419367044 18<24OnlineCop18>	Single quotes are what I use.
+T 1419367065 18<24OnlineCop18>	Double quotes read the '$' as a bash expansion, where single quotes don't.
+T 1419367066 18<27SrPx_18>	it is vifm not vim
+T 1419367069 19<doug64k>	:fiter 'regex here...'    <-- like that?
+T 1419367135 18<26doug64k18>	crap, I wonder if this is a vim command prompt escaping issue
+T 1419367138 18<27SrPx_18>	:filter '\.(o|hi)$' -- this worked
+T 1419367143 18<26doug64k18>	cool
+T 1419367161 19<SrPx_>	I had :filter '/regex here/' before
+T 1419367187 18<26doug64k18>	it's better to not have a minefield of extra things to be escaped
+T 1419367235 18<26doug64k18>	(by using single quotes)
+T 1419367998 18<29Kake_Fisk18>	Shouldn't this find any number? (\d*)
+T 1419368008 18<24OnlineCop18>	Zero or more times, yes.
+T 1419368014 18<24OnlineCop18>	But it also matches "nothing"
+T 1419368065 18<29Kake_Fisk18>	Oh, that's a bit scary. I think I might want +
+T 1419368070 18<24OnlineCop18>	Yes.
+T 1419368372 18<26doug64k18>	OnlineCop: actually, I take that back. I dont know sed enough to say what it has or not, but having to escape ; was a red flag that it was really shell escaping causing a problem
+T 1419368411 18<24OnlineCop18>	Yeah; I take it all with a grain of salt. Some people know more about things than I do, so I don't stress over it if I'm wrong. :D
+T 1419368621 19<doug64k>	Ive been using regexes for years but I have noticed a missing thing in practically every tutorial: they say what you do need to escape, but rarely do any spell out what you don't have to escape. I think it would help for people to confidently know what needs and doesnt need escaping in regex
+T 1419368691 18<26doug64k18>	do you need to escape ] outside a character class?
+T 1419368763 18<26doug64k18>	is it guaranteed to tolerate \] ?
+T 1419368900 19<Kake_Fisk>	regex is kinda fun when you understand it ^^
+T 1419368915 18<24OnlineCop18>	No, you don't need to escape ']'
+T 1419368946 18<20apipkin18>	I’m trying to go through a file and replace anything that is like $manBlue with $man-blue and $manBlueDk with $man-blue-dk. But what I have will replace with $man-blue- and $man-blue-dk.   I have \$([a-z]+)([A-Z][a-z]*)([A-Z][a-z]*)?([A-Z][a-z]*)?   for capture and    $\L$1\-\L\u$2-\L\u$3-\L\u$4   for replace. 
+T 1419368977 18<20apipkin18>	I’m not sure how to make the hyphen optional only if there is a group present
+T 1419369061 24*	28ItsLuke is now known as 18[z]
+T 1419369284 24*	28SrPx_ is now known as 18SrPx
+T 1419369676 18<29Kake_Fisk18>	Gah, it decided not to work now :/
+T 1419371920 24*	28[z] is now known as 18ItsLuke
+T 1419373529 24*	28ItsLuke is now known as 18[z]
+T 1419374129 18<19Qtax18>	apipkin, unless you can evaluate code in the replacement in some way, you can only replace with the same thing
+T 1419374192 18<19Qtax18>	i mean, what goes in the replacement can not depend on the match in such a case (except capturing groups)
+T 1419374260 18<19Qtax18>	ah, that's perl, makes things easier
+T 1419374510 18<19Qtax18>	perl -pe 's/(\$[a-z]+)([A-Z][a-z]*)([A-Z][a-z]*)?([A-Z][a-z]*)?/"$1-\L$2" . ($3 ? "-\L$3" : "") . ($4 ? "-\L$4" : "")/g'
+T 1419374514 18<19Qtax18>	or something like that
+T 1419374763 18<26doug64k18>	why not {,3} for that repetition
+T 1419374801 18<26doug64k18>	hmm interesting, I wonder how that would affect captures
+T 1419374870 18<26doug64k18>	itLooksLikeItCapturesCamelCaseNamesButItOnlyLetsYouUseFourWords?
+T 1419375014 18<26doug64k18>	can't you split on a zero width lookahead assertion?
+T 1419375028 18<26doug64k18>	then join your separators in
+T 1419375072 18<26doug64k18>	going to tias
+T 1419375554 18<26doug64k18>	wow...
+T 1419375562 18<26doug64k18>	perl 6... why did they call it perl
+T 1419375566 18<26doug64k18>	nothing works
+T 1419375575 18<26doug64k18>	(I havent used it for years)
+T 1419375581 18<24OnlineCop18>	They wanted to put it before swine.
+T 1419375586 18<19joo-_18>	:)
+T 1419375619 18<19Qtax18>	ofc u can do stuff like this too: perl -pe 's/(\$[a-z]+|\G(?!^))([A-Z][a-z]*)/$1-\L$2/g'
+T 1419375968 18<26doug64k18>	OnlineCop: what I meant was, I used perl a lot about 12 years ago... it has entirely changed since then. nothing (of the old crap I tried to do) works
+T 1419375991 18<24OnlineCop18>	I was just being felicitous. :D
+T 1419376023 18<24OnlineCop18>	s/felicitous/facetious/
+T 1419376063 18<24OnlineCop18>	Actually, both felicitous and facetious could be used there. *smirk*
+T 1419378434 18<26heedly18>	Why doesn' this work? re.search(r'([0-9]+(?:ABCDEFMXYabcdx|))','1a')
+T 1419378465 18<24OnlineCop18>	Why do you have a    |)  in there?
+T 1419378470 18<20apipkin18>	Qtax: Ah! You can use conditionals in the replace?? sweet!
+T 1419378515 18<26doug64k18>	heedly: why not use ? instead of "or nothing"
+T 1419378516 18<26heedly18>	oh, nm
+T 1419378533 18<26heedly18>	I should have done [] in the (?:)
+T 1419378565 18<26heedly18>	doug64k: what's the difference?
+T 1419378586 18<26doug64k18>	clearer, probably simpler FSA
+T 1419378606 18<26doug64k18>	like [ABCDEFMXYabcdx]?
+T 1419378628 18<26heedly18>	yep
+T 1419378629 24*	28AUS3RIS is now known as 18aus3ris
+T 1419378630 24*	28aus3ris is now known as 18AUS3RIS
+T 1419378630 18<24OnlineCop18>	Only if you want a single character to follow the digits instead of that literal string.
+T 1419378634 18<26heedly18>	yep
+T 1419378697 18<26heedly18>	doug64k: cool thanks
+T 1419378712 18<26doug64k18>	I should say: re.search(r'([0-9]+[ABCDEFMXYabcdx]?)','1a')
+T 1419378713 18<26doug64k18>	np
+T 1419378795 18<26doug64k18>	apipkin: (?:) is a non-capturing group.
+T 1419378876 18<26doug64k18>	apipkin: oh nevermind you were referring to something else
+T 1419378888 18<20apipkin18>	doug64k: oh yeah :) 
+T 1419378928 18<26doug64k18>	Qtax: is e missing where the g is?
+T 1419378982 19<doug64k>	apipkin: in perl you can make the replacement be "executable" so it evaluates an expression instead of interpreting the replace as regex. is that still true qtax?
+T 1419378999 18<19Qtax18>	doug64k, in the first example, yes
+T 1419379002 18<26doug64k18>	you needed "e" modifier though
+T 1419379030 18<26doug64k18>	ah, that is what the -e is?
+T 1419379037 19<doug64k>	I was focusing on the end of the regex
+T 1419379067 18<26doug64k18>	no
+T 1419379253 18<19rewt18>	lc join '-', grep defined, $1, $2, $3, $4
+T 1419386070 19<alte>	Is there a better way to match "ab"  occuring possibly more than once than the regex "[a]+[b]+"
+T 1419386093 20<tunnckoCore>30	of course
+T 1419386106 19<alte>	tunnckoCore: Of course there is, as I'm new to regexing
+T 1419386110 18<29alte18>	What is it?
+T 1419386155 20<tunnckoCore>30	wrong chat sorry, lol
+T 1419386156 18<29alte18>	(if you don't mind sharing with me)
+T 1419386162 18<29alte18>	Ah, ok
+T 1419386222 19<rewt>	what do you want to match exactly?  your regex doesn't match your question
+T 1419386237 18<26doug64k18>	alte no need for character class
+T 1419386239 18<26doug64k18>	a+b+
+T 1419386253 18<29alte18>	Seems obvious in retrospect
+T 1419386261 18<26doug64k18>	that matches aaaaaaaaaaaabbbbbbbbbb though
+T 1419386262 18<29alte18>	I orignally tried [ab]+
+T 1419386266 18<26doug64k18>	is that the intention?
+T 1419386277 18<29alte18>	Yes. Match ab abb aab aaaaaaabbbbbbbbbbbbb 
+T 1419386280 18<26doug64k18>	you want to match ababababab
+T 1419386288 18<26doug64k18>	then do (?:ab)+
+T 1419386300 18<29alte18>	I need to learn about regexes some more
+T 1419386310 18<29alte18>	Why is it in parenthese, and what does the ?: mean?
+T 1419386316 18<26doug64k18>	the + tightly binds to whatever is to the left
+T 1419386322 18<26doug64k18>	ab+ binds the + to b only
+T 1419386336 18<26doug64k18>	parentheses are for capturing...
+T 1419386342 18<26doug64k18>	but they can be used for precedence
+T 1419386357 18<29alte18>	So how does (?:ab)+ work?
+T 1419386364 19<doug64k>	when you want to find multiple occurance of a regex, you force the + to bind to the whole ab thing
+T 1419386377 18<26doug64k18>	the ?: means "dont bother storing it as a capture"
+T 1419386387 18<29alte18>	So why not just (ab)+
+T 1419386392 18<29alte18>	And what is a capture?
+T 1419386393 18<26doug64k18>	that captures it
+T 1419386394 18<29genio18>	() is a capturing group.  Whatever is matched within is stored as $1, $2, etc.   (?:) is a non-capturing group.  It doesn't waste effort saving the matches for later use
+T 1419386426 18<29genio18>	[] is a character class
+T 1419386427 18<29alte18>	This is some complex stuff. Magick
+T 1419386454 18<29genio18>	so, you've just learned some of the basics of regular expressions.  groups, both capturing and not, and character classes
+T 1419386468 18<29alte18>	Woooooo. I'll forget it within an hour
+T 1419386469 19<doug64k>	you could turn first name lastname into lastname, firstname with a regex replace like s/(\S+)\s+(\S+)/$2, $1/g
+T 1419386483 18<26doug64k18>	the parentheses capture whatever it matched
+T 1419386531 18<29alte18>	Nah, didn't work when I tried it
+T 1419386545 18<29alte18>	echo "John Doe" | sed "s/(\S+)\s+(\S+)/$2, $1/g"
+T 1419386599 18<29alte18>	Should that have worked? 
+T 1419386612 18<19rewt18>	no, sed uses bre iirc
+T 1419386624 18<29alte18>	No idea what that means...
+T 1419386625 18<19rewt18>	maybe sed -r
+T 1419386659 18<29alte18>	Nah, you were right
+T 1419386665 18<29alte18>	$2, $2 becomes \2, \1
+T 1419386665 18<26doug64k18>	alte: https://regex101.com/r/wS6sG9/1
+T 1419386717 18<29genio18>	sed -r uses extended
+T 1419386724 18<29alte18>	doug64k: it says (ab)+ works too
+T 1419386731 18<26doug64k18>	how many matches though
+T 1419386737 18<26doug64k18>	2 is what you want for that input right?
+T 1419386749 18<29alte18>	What do you mean?
+T 1419386756 18<26doug64k18>	the ab is one, and the abababababab is one
+T 1419386763 18<26doug64k18>	not one for each ab that happens at all
+T 1419386775 18<26doug64k18>	look at the top right
+T 1419386781 18<26doug64k18>	see the number of matches?
+T 1419386782 18<29alte18>	This is all hypothetical. I'm jsut running this against rockyou.txt to learn
+T 1419386786 18<29alte18>	Yeah, 2
+T 1419386789 18<26doug64k18>	ok
+T 1419386802 18<26doug64k18>	yeah thats right, sorry
+T 1419386806 18<26doug64k18>	I got a false positive
+T 1419386816 18<29alte18>	How would I match each ab in abababababab as seperate?
+T 1419386848 18<26doug64k18>	get rid of +
+T 1419386855 18<29alte18>	D'oh
+T 1419386865 18<29alte18>	thanks
+T 1419386871 18<29alte18>	I seriously need to sit down and learn this
+T 1419386898 18<26doug64k18>	it is not even close to as hard as it looks
+T 1419386913 18<29alte18>	But you see some examples online that are just amazing
+T 1419386927 18<29alte18>	/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.[\W]).{8,}$/
+T 1419386934 18<29alte18>	/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.[\W]).{8,}$/
+T 1419386937 18<29alte18>	\/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.[\W]).{8,}$/
+T 1419386945 18<29alte18>	/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.[\W]).{8,}$/
+T 1419386955 19<alte>	Ignore the first forward slash. The rest is the regex
+T 1419386978 18<26doug64k18>	I put a space at the start to defeat irc command interpretation
+T 1419386990 18<26doug64k18>	2 works?
+T 1419386990 18<29alte18>	 /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.[\W]).{8,}$/
+T 1419387001 18<29alte18>	2 works
+T 1419387032 18<26doug64k18>	what is amazing though
+T 1419387044 18<26doug64k18>	amazingly cpu intensive
+T 1419387047 19<alte>	Regex can do so much
+T 1419387068 18<26doug64k18>	that one seems pretty expensive, but if that does the job and tests run fast enough, good enough
+T 1419387085 18<29alte18>	Of course the complex example I showed is inefficient. It's just from a stakoverflow post on password requirements
+T 1419387158 18<26doug64k18>	ah, that does "must have digit" "must have lowercase" "must have uppercase" "must have non-word character, must be 8 characters long
+T 1419387191 18<26doug64k18>	it's not bad - a password is pretty short
+T 1419387203 19<doug64k>	I wouldnt throw a meg at that regex :D
+T 1419387226 18<29alte18>	It seems like it would take one days of sitting there to figure that out
+T 1419387227 18<26doug64k18>	it's a lot faster than it looked though
+T 1419387270 19<alte>	I don't feel comfortable with regex. Sed is different from egrep, egrep differs from perl, etc
+T 1419387271 18<26doug64k18>	the ?= is a lookahead assertion
+T 1419387312 18<29alte18>	The hell is that
+T 1419387354 18<29alte18>	q(?=)u matches a q followed by a u without including u in the match
+T 1419387384 18<26doug64k18>	he asserts: 1) there must be any number of any character then a digit, 2) that there must be any number of any character then a lowercase. 3) there must be any number of any character then an uppercase. 4) there must be any number of any character then a non-word. 
+T 1419387406 18<26doug64k18>	if it passes all that...
+T 1419387411 18<26doug64k18>	he matches at least 8 characters
+T 1419387439 18<26doug64k18>	at the start of it all he binds to the start of string
+T 1419387444 18<29alte18>	I don't get it
+T 1419387445 18<26doug64k18>	at the end of it all he binds to end of string
+T 1419387454 18<26doug64k18>	so nothing will "get away" from passing through it
+T 1419387467 18<29alte18>	echo "qu" | egrep -E "q(?=)u" does nothing
+T 1419387483 18<26doug64k18>	try that with grep -P
+T 1419387494 18<26doug64k18>	ah
+T 1419387498 18<26doug64k18>	wait though, it is nonsense
+T 1419387506 18<29alte18>	How?
+T 1419387513 18<26doug64k18>	q then lookahead assert nothing then u?
+T 1419387529 18<29alte18>	Does the u go in parentheses?
+T 1419387539 18<29alte18>	Oh, look, it works
+T 1419387559 18<26doug64k18>	let's say you wanted to find all X that have a p after it, but you don't want to match the p, just make sure it is there...
+T 1419387567 18<26doug64k18>	you could do /X(?=p)/
+T 1419387578 18<26doug64k18>	the match wouldn't include the p but it won't match unless a p is next
+T 1419387585 18<29alte18>	Mind blowing
+T 1419387634 18<29alte18>	So much to learn. 
+T 1419387641 18<29alte18>	I don't want to but all of you though
+T 1419387654 18<29alte18>	s/but/bug
+T 1419387671 18<26doug64k18>	this channel is too quiet - I wish more people bugged :D
+T 1419387685 18<29alte18>	Neat. If I go and bug ##c, I get banned
+T 1419387706 18<29alte18>	Hell, this account isn't even registered. Been banned on ##c with two other account
+T 1419387747 18<29alte18>	Also, irssi isn't working. Won't let me switch windows
+T 1419387832 18<29alte18>	Yeah, alt-1 doesn't work
+T 1419387834 18<29alte18>	Damn
+T 1419387860 18<29genio18>	esc then 1
+T 1419387872 18<29alte18>	Did they change it?
+T 1419387876 18<29alte18>	I know it used to be alt
+T 1419387882 18<26doug64k18>	really... http://irssi.org/ doesnt say a word about what it is
+T 1419387893 18<29genio18>	 /win 1 as well
+T 1419387908 18<29alte18>	I liked my alt shortcut
+T 1419387915 18<26doug64k18>	you use screen right?
+T 1419387930 18<29alte18>	Nope. 
+T 1419387957 18<26doug64k18>	nevermind
+T 1419387962 18<29alte18>	Just a normal sple
+T 1419387980 18<29alte18>	Using a plain old irssi in gnome-terminal. Not sure what screen is for. 
+T 1419388006 18<29genio18>	screen is what you should forego in favor of tmux these days :)
+T 1419388018 18<29alte18>	Oh dang.
+T 1419388032 18<29alte18>	Is this about to be like vim/emacs...screen/tmux
+T 1419388066 18<29genio18>	nah.  screen is just starting to show its age.  Some unicode coping problems exist, etc.  tmux just works (tm)
+T 1419388105 18<29alte18>	Out of curiosity, any idea how t get alt-1 working in irssi again?
+T 1419388235 19*	doug64k looks around at all the regex wizards, wondering what the heck irssi is
+T 1419388250 18<29genio18>	irssi is an IRC client
+T 1419388283 18<26doug64k18>	ok thanks
+T 1419388308 18<29genio18>	and when you run it behind screen/tmux, your session stays going even when you aren't around.  you then ssh into your machine and reattach your screen/tmux session and you're right back where you left.
+T 1419388339 18<29genio18>	anytime you're doing long-running stuff over ssh, use screen/tmux so you don't kill your running apps when you quit your ssh session
+T 1419388705 18<29alte18>	I don't ssh. No server, and no computer other than at home.
+T 1419388713 18<29alte18>	So, If I ever need to, might use it.
+T 1419391189 18<24OnlineCop18>	I'm back. Did I miss any interesting conversations?
+T 1419391309 18<19rewt18>	yes
+T 1419391316 18<24OnlineCop18>	Aw...
+T 1419391325 18<19rewt18>	i guess you can change your nick now
+T 1419391342 24*	28OnlineCop is now known as 18OfflineDragon
+T 1419391354 18<19rewt18>	hah
+T 1419391355 18*	26OfflineDragon lets out a sad roar.
+T 1419391361 18<19rewt18>	aw
+T 1419391381 18<26OfflineDragon18>	Wow, really? This nick is taken?
+T 1419391383 24*	28OfflineDragon is now known as 18OnlineCop
+T 1419396167 24*	28Guest9252 is now known as 18Pilate
+T 1419403870 19<P1RATEZ>	This pattern works for me in Chrome and Firefox but not in IE10+, what am I doing wrong oh great regex gods https://regex101.com/r/qB6rP9/1https://regex101.com/r/qB6rP9/1
+T 1419403888 18<24OnlineCop18>	Which one of those is a link?
+T 1419403912 18<27P1RATEZ18>	hmm wtf
+T 1419403926 18<24OnlineCop18>	Ctrl+V'd too many times?
+T 1419403952 18<27P1RATEZ18>	https://regex101.com/r/qB6rP9/1
+T 1419403974 18<27P1RATEZ18>	That's a good catch, didn't realize. I have white goo between KEYS ;>
+T 1419403975 18<27P1RATEZ18>	jk
+T 1419403986 18<24OnlineCop18>	Does the "match" section actually match what you want it to?
+T 1419404000 18<24OnlineCop18>	What do you want it to match, exactly?
+T 1419404025 18<27P1RATEZ18>	I'll give link to the web site where its working to test the regex101 code
+T 1419404052 18<24OnlineCop18>	I mean, are you trying to match a number range?
+T 1419404093 18<27P1RATEZ18>	http://www.cptn.com/Members/Status/certification_renewal.asp#txtMemberID
+T 1419404130 18<24OnlineCop18>	And what are the criteria for the membership ID number?
+T 1419404159 18<27P1RATEZ18>	I'm attempting to match ranges, 1-99998 skip 99999, can't be 0 or begin with 0 but can contain 0
+T 1419404182 18<24OnlineCop18>	Can numbers start with '0'?
+T 1419404193 18<27P1RATEZ18>	nope
+T 1419404193 18<24OnlineCop18>	What about numbers above 99,999?
+T 1419404197 18<27P1RATEZ18>	nope
+T 1419404222 18<27P1RATEZ18>	no more than 5 digits
+T 1419404261 18<24OnlineCop18>	So you're looking for something that matches 1-99998 exactly?
+T 1419404292 18<27P1RATEZ18>	Can use firebug/chrome dev tools to edit the pattern live in the web page to test in IE, it does' match number like 7563 (which I can't figure out the reason in IE)
+T 1419404321 18<22Andrio18>	P1RATEZ, I notice you have 99999 as a positive example. Can you explain that?
+T 1419404354 18<27P1RATEZ18>	What do you mean?
+T 1419404359 18<22Andrio18>	https://regex101.com/r/qB6rP9/2
+T 1419404496 18<24OnlineCop18>	https://regex101.com/r/qB6rP9/3
+T 1419404528 18<22Andrio18>	Oh, right.
+T 1419404531 18<27P1RATEZ18>	oh god...andrio that worked in IE...now to test in chrome
+T 1419404615 18<27P1RATEZ18>	sweet merciful rejexus...thanks for the prompt help to u both
+T 1419404620 18<27P1RATEZ18>	fml
+T 1419404631 18<24OnlineCop18>	Glad it works.
+T 1419404656 18<22Andrio18>	._. no problem.
+T 1419404794 19<P1RATEZ>	on that note, would like some advice on regex HTML, I know its on ur thou shalt not EVAR do..EVARR! but.. how would someone go about checking for <!--#INCLUDE (are there variations to this comment)
+T 1419404873 18<27P1RATEZ18>	a certain merchant uses that to screen files on their server and instead of blocking include comments it decided to block the entire word include and thus blocking some of online transactions pages
+T 1419404899 18<27P1RATEZ18>	the pages also took 15 seconds to process extra due to their realtime debugger each time ANY page is loaded on their servers
+T 1419404927 18<24OnlineCop18>	All comments?
+T 1419404936 18<24OnlineCop18>	Like (?s:<!--.*?-->)
+T 1419404943 18<24OnlineCop18>	Or specifically with #INCLUDE in them?
+T 1419404952 19<P1RATEZ>	would the 'length' of the regex reduce the impact of their checks..just include
+T 1419404984 18<27P1RATEZ18>	Online, those wild card characters, would that spike CPU usage
+T 1419404995 18<27P1RATEZ18>	vs using something like \s for space
+T 1419405004 18<24OnlineCop18>	Not with  .*?  as that '?' makes it non-greedy.
+T 1419405011 18<27P1RATEZ18>	ahhhhhhh
+T 1419405027 18<27P1RATEZ18>	that's what i'm after ok...i get it, thats what that means
+T 1419405031 18<24OnlineCop18>	Like, you want to match from where to where?
+T 1419405112 18<27P1RATEZ18>	just how to go about matching an include <!--#INCLUDE "https://largeecommercesite"..... ->
+T 1419405125 18<24OnlineCop18>	The URL after the include?
+T 1419405141 18<24OnlineCop18>	<!--#INCLUDE "(.*?)".*-->
+T 1419405197 18<27P1RATEZ18>	doesn't need to match the URI but just the include part. the merchant thinks that include can be circumvented in various ways so they block all occurences of the word
+T 1419405200 18<27P1RATEZ18>	include
+T 1419405218 18<27P1RATEZ18>	so if I had 'text' on the page 'membership includes manual'
+T 1419405224 18<27P1RATEZ18>	the entire page doesn't get processed
+T 1419405256 18<27P1RATEZ18>	so people see a blank page (after MAKING a transaction) like gimmie YO MONEY...big time fraud flaw..
+T 1419405280 18<24OnlineCop18>	So give an example of what it would look like, and what you're trying to match.
+T 1419405360 18<27P1RATEZ18>	<!--#INCLUDE VIRTUAL="https://secure/account/file.asp" -->
+T 1419405376 18<24OnlineCop18>	And what part do you want to match? Just   <!--#INCLUDE.*?-->  ?
+T 1419405412 18<27P1RATEZ18>	how would someone go about 'checking' to block that include, the best method, u can block it in MANY WAYS, the most efficient however is what I'm after...based on ur experience dealing with it
+T 1419405461 18<24OnlineCop18>	I don't understand what you mean by "blocking" the include. If it matches, you reject the text.
+T 1419405492 18<28igcewieling18>	1) PHP 5.3.3 2) "ewieling-desk/ewieling-de 198.170.196.157 D Yes Yes A 1044 OK (144 ms)" and "hanwha-teaneck 147.28.147.253 Yes Yes A 5060 OK (11 ms) " 3) "ewieling-desk" "198.170.196.157" "1044"  OK (144 ms)" and "hanwha-teaneck" "147.28.147.253" "5060" "OK (11 ms)" 4) "#^([\w-]+)(?:/\[\w-]+)?\s+(\S+)\s+\D+\s+(\d+)\s+(.+)$#"
+T 1419405567 19<P1RATEZ>	apologies...i'm using the merchants term, blocking is just what happens after the page is being parsed on their end, rejection is correct as u said from regex point of u
+T 1419405599 18<24OnlineCop18>	igcewieling: What are your criteria for matching?
+T 1419405652 18<28igcewieling18>	I spend 20 mins going over it and another 5 getting info together and I see the error 30 seconds after posting. 8-|
+T 1419405657 18<24OnlineCop18>	igcewieling: You have a stray '\' character before the  '['  character.
+T 1419405677 18<24OnlineCop18>	igcewieling: https://regex101.com/r/qY1qG9/1
+T 1419405685 18<28igcewieling18>	OnlineCop: thanks for the help and sorry for the bother.
+T 1419405694 18<24OnlineCop18>	igcewieling: It's not a problem. Glad to help.
+T 1419405739 18<24OnlineCop18>	P1RATEZ: I would simply match for that string. If it exists in any capacity, block the string (or simply replace it with "" ).
+T 1419405747 18<28igcewieling18>	the highlighting on that page is handy, I'll have to use it for testing.
+T 1419406014 18<24OnlineCop18>	P1RATEZ: Was this something that would be done on the server side (PHP, etc.), or client side (Javascript) ?
+T 1419406322 18<24OnlineCop18>	Will the #include always contain quotation marks around its payload, or can it be omitted?
+T 1419406332 18<24OnlineCop18>	Such as in https://regex101.com/r/hO5tJ8/1
+T 1419413781 24*	28telex_ is now known as 18telex
+T 1419414700 24*	28[z] is now known as 18ItsLuke
+T 1419415601 24*	28ItsLuke is now known as 18[z]
+T 1419415787 18<24regex101-629018>	hi guys
+T 1419415827 18<24regex101-629018>	can smb tell me how to make this tool, to check all words in test string?
+T 1419415855 18<24NiLon18>	what you mean by checking all words?
+T 1419415892 18<24regex101-629018>	http://awesomescreenshot.com/0594385de4
+T 1419415894 18<24regex101-629018>	for example
+T 1419415917 18<24regex101-629018>	i want Checker to highlight all matching word
+T 1419415923 18<24regex101-629018>	words*
+T 1419415938 18<24regex101-629018>	but it highlights only first one
+T 1419415939 18<24NiLon18>	remove s flag
+T 1419416012 18<24regex101-629018>	i'm sorry NiLon, but where is it?(
+T 1419416043 18<24NiLon18>	oh wait is there any flags?
+T 1419416052 18<24regex101-629018>	no.. there isn't
+T 1419416054 18<24NiLon18>	oh right, it's just hint
+T 1419416058 18<24NiLon18>	then you need to add the g flag
+T 1419416071 18<24NiLon18>	it's on the right where is "gmixsu"
+T 1419416104 18<24regex101-629018>	Thanks a lot!
+T 1419416149 18<24regex101-629018>	I just missed that field and question mark!
+T 1419416154 18<24regex101-629018>	thank you, NiLon
+T 1419417179 18<22ConqueredWarrior18>	Hello
+T 1419417184 18<22ConqueredWarrior18>	what does "^" do?
+T 1419417187 18<22ConqueredWarrior18>	I don't understand
+T 1419417417 18<19zxd18>	hi
+T 1419417450 18<19zxd18>	trying to match this line  with acl turned on  nfs1.hk1:/data          /mnt/nfs/data           nfs     auto,acl,noatime,nolock,bg,nfsvers=3,intr,tcp,actimeo=1800 0 0
+T 1419417454 18<19zxd18>	usinng egrep -E 'nfs1\.hk1:/data[[:space:]]+/mnt/nfs/data[[:space:]]+nfs[[:space:]]+^Cacl(,|[[:space:]]+)' /etc/fstab
+T 1419417456 18<19zxd18>	but it wont match
+T 1419417591 18<27P1RATEZ18>	ConqueredWarrior: it means 'not' i believe
+T 1419417784 18<19Doqnach18>	ConqueredWarrior: it means either "start of string" or "not" depending on the context
+T 1419417838 18<19Doqnach18>	ConqueredWarrior: when used as the first character it denotes that the match has to be at the start of the string, when used in the context of [^somethinghere] it means "not 'somethinghere'"
+T 1419417932 18<19Doqnach18>	zxd: tried \s instead of [[:space:]] ?
+T 1419418042 18<19go|dfish18>	zxd: well the string contains 'nfs auto,acl' and your pattern contains 'nfs[[:space:]]+^Cacl'
+T 1419418047 18<19Doqnach18>	and you miss "auto"
+T 1419418066 18<19Doqnach18>	no idea what that ^C is supposed to be
+T 1419418255 18<19Doqnach18>	zxd: https://regex101.com/r/qL6eH5/1 something like this?
+T 1419418330 18<19Doqnach18>	https://regex101.com/r/qL6eH5/2 for slightly faster processing
+T 1419418353 18<19zxd18>	^C is ctrl-c inserted by mistake
+T 1419418356 18<19zxd18>	but still no match
+T 1419418365 18<19Doqnach18>	zxd: did you check my link?
+T 1419418369 18<19zxd18>	checking...
+T 1419418425 19<zxd>	that's perl regex?
+T 1419418446 18<19Doqnach18>	PCRE, yes
+T 1419418669 18<19Doqnach18>	zxd: if it doesn't work, please update the link "test string" with example data from your /etc/fstab
+T 1419418686 18<19Doqnach18>	and tell us which should match and which shouldn't
+T 1419418882 18<19zxd18>	it matches
+T 1419418890 18<19zxd18>	but I wanted to use ERE
+T 1419418935 18<19Doqnach18>	ERE?
+T 1419419086 18<29iksik18>	zxd: can You post some part of Your fstab?
+T 1419419122 18<29iksik18>	oh, it's already there - sorry ;]
+T 1419419135 18<19Doqnach18>	I wonder what ERE is :-P
+T 1419419137 18<29iksik18>	btw. acl isn't the first option in your fstab line ;)
+T 1419419143 18<29iksik18>	'auto' is
+T 1419419148 18<19Doqnach18>	iksik: you are running behind :-P
+T 1419419151 18<29iksik18>	;P
+T 1419419154 18<29iksik18>	sorry :D
+T 1419419157 18<19Doqnach18>	hehehe
+T 1419419170 18<19Doqnach18>	np, just saying so you don't spend time on a problem already solved ;-]
+T 1419419178 18<29iksik18>	grep -E 'nfs1\.hk1:/data\s+/mnt/nfs/data\s+nfs\s+auto([^\s]+)' fstab
+T 1419419181 18<29iksik18>	kind of matches to me
+T 1419419243 18<19Doqnach18>	iksik: I gave zxd https://regex101.com/r/qL6eH5/2 and he replied it matches but he wanted to use "ERE" whatever that may be... no clue of what that would have for effect either
+T 1419419299 19<iksik>	no idea either, -E modifier seems to be extended regexp (according to man)
+T 1419419381 19<iksik>	linux version of grep also has -P modifier which works with PCRE regex afair
+T 1419419385 18<19Doqnach18>	ow
+T 1419419397 18<19Doqnach18>	so he wanted -E with [[:space:]] instead of \s
+T 1419419406 18<19Doqnach18>	no idea why you would want that but okay
+T 1419419539 18<19Doqnach18>	hmmm regex101 doesn't support posix syntax as extension?
+T 1419419550 18<29iksik18>	no idea ;]
+T 1419419574 18<19Doqnach18>	can't find an option for it
+T 1419419576 18<29iksik18>	but, also... grep -E 'nfs1\.hk1:/data[[:space:]]+/mnt/nfs/data[[:space:]]+nfs[[:space:]]+auto(,|[[:space:]]+)' fstab - seems to work on my desktop
+T 1419419612 18<19Doqnach18>	yeah simply replacing the \s with [[:space:]] on mine should work as well but can't test
+T 1419419637 18<19Doqnach18>	I guess zxd already moved on though :-P
+T 1419419643 18<29iksik18>	yup ;)
+T 1419419674 18<27sysmeme18>	and cross posting channels?
+T 1419419811 18<19Doqnach18>	?
+T 1419420232 18<19zxd18>	hey
+T 1419420234 18<19zxd18>	I am here
+T 1419420235 18<19zxd18>	sorr
+T 1419420236 18<19zxd18>	y
+T 1419427006 18<22ConqueredWarrior18>	I see Doqnach , what does it mean when you only use ^ ? it matches anything?
+T 1419427095 24*	28veonik_ is now known as 18veonik
+T 1419427941 18<19Doqnach18>	ConqueredWarrior: if you do /^/ ?
+T 1419427996 18<19Doqnach18>	ConqueredWarrior: yes, that will match anything, even an empty string, because it will match on 
+T 1419428006 18<19Doqnach18>	'nothing' at any point anywhere
+T 1419428037 18<22ConqueredWarrior18>	Doqnach: I saw that in nginx config
+T 1419428359 18<19Doqnach18>	weird
+T 1419428371 18<22ConqueredWarrior18>	maybe I misunderstood
+T 1419428384 18<19Doqnach18>	might be the fastest "match all" fallback for rewrites
+T 1419428404 18<22ConqueredWarrior18>	for example this location ^~ /static/
+T 1419428410 19<Doqnach>	think it would be one of the fastest regex's to execute for an engine
+T 1419428414 18<19Doqnach18>	oww
+T 1419428419 18<19Doqnach18>	that's something different
+T 1419428428 19<Doqnach>	that is not regex but part of nginx syntax
+T 1419428442 18<22ConqueredWarrior18>	or rewrite ^ /yourapplication/;
+T 1419428450 19<ConqueredWarrior>	hm? the documetnation says it's a regex no?
+T 1419428462 18<19Doqnach18>	ow sorry, the second example explains better ;-P
+T 1419428484 18<22ConqueredWarrior18>	so instead of using *, they use ^ because it stops earlier?
+T 1419428485 19<Doqnach>	yes, as I said I guess it's the fastest possible "match all" regex for the engine to execute
+T 1419428501 18<22ConqueredWarrior18>	that makes sense, because I was really confused until then
+T 1419428504 18<22ConqueredWarrior18>	thank you Doqnach 
+T 1419428506 18<19Doqnach18>	.* will still look through the whole string while ^just stops
+T 1419428516 18<19Doqnach18>	but I have no actual foundation for this assumption
+T 1419443384 24*	28veonik is now known as 18veonik_
+T 1419443716 24*	28veonik_ is now known as 18veonik
+T 1419444155 24*	28[z] is now known as 18ItsLuke
+T 1419444200 24*	28ItsLuke is now known as 18ItsChristmas
+T 1419447334 24*	28veonik is now known as 18veonik_
+T 1419454285 24*	28ItsChristmas is now known as 18ItsLuke
+T 1419461082 24*	28ItsLuke is now known as 18[z]
+T 1419478220 24*	28Thor is now known as 18Guest1025
+T 1419478308 24*	28Thor^^ is now known as 18Guest31540
+T 1419482109 24*	28thor_ is now known as 18Thor
+T 1419487215 24*	28byte48 is now known as 18Guest53776
+T 1419494547 18<25vol4ko18>	hello guys,
+T 1419494557 19<vol4ko>	i am having a hard time learning regex
+T 1419500004 18<27sysmeme18>	vol4ko: what you look for?
+T 1419501084 24*	28[z] is now known as 18ItsLuke
+T 1419501261 24*	28ItsLuke is now known as 18[z]
+T 1419503969 24*	28Snowstormer is now known as 18Guest15834
+T 1419505176 18<19mikunos18>	Merry Christmass to all guys
+T 1419505282 18<19mikunos18>	how have I to include in the result the full link in this RE ? https://regex101.com/r/dQ8nX8/1
+T 1419505394 18<19mikunos18>	any idea?
+T 1419506161 18<19go|dfish18>	mikunos: you mean like this? https://regex101.com/r/dQ8nX8/2
+T 1419506239 18<19mikunos18>	yes Thanks!!! 
+T 1419507548 24*	28Guest15834 is now known as 18santacat
+T 1419514684 18<19zxd18>	does bash pass  \@  and @  the same to program, example  program \@    or program @
+T 1419514692 18<19zxd18>	wrong channel
+T 1419514880 24*	28Sergonium is now known as 18Particularized
+T 1419515546 18<19regex101-057218>	Hello guys
+T 1419515625 18<19regex101-057218>	Can someone look on https://regex101.com/r/kB1pS6/2 and say why http://93.158.4.3 is not matched and how to fix it?
+T 1419515774 18<19regex101-057218>	Hello ^)
+T 1419515778 18<19regex101-057218>	Hello :)
+T 1419515852 18<22Andrio18>	Looks like your expression requires a character after the host address.
+T 1419515865 18<22Andrio18>	...[^\.\,\)\(\s]$
+T 1419515884 18<22Andrio18>	There's technically no need to escape any of those, by the way.
+T 1419516015 18<19regex101-057218>	This I know, but how to fix it?
+T 1419516128 18<22Andrio18>	No idea, as I don't know what you're trying to accomplish...
+T 1419516165 18<19regex101-057218>	It's a validation for url 
+T 1419516258 18<22Andrio18>	It's missing support for IPv6 addresses...
+T 1419516382 18<22Andrio18>	Did you mean to use a lookbehind to check that the URL doesn't end with certain characters?
+T 1419516629 18<22Andrio18>	As far as I can tell, http://andriocelos.ml/, is a valid URL though.
+T 1419517620 18<28regex101-712218>	No
+T 1419517656 18<28regex101-712218>	I just want to exclude those kind of characters
+T 1419517698 18<28regex101-712218>	http://andriocelos.ml/ - should be valid
+T 1419517929 18<22Andrio18>	Ah
+T 1419519056 24*	28[z] is now known as 18ItsLuke
+T 1419519098 19<bewees>	Do you think this regex is safe and unambiguous to get the mountpoint path from `mount`?: (?=.*on) on (.*)(?=.*type) type .*\(.*\)
+T 1419519142 18<22Andrio18>	Um
+T 1419519145 18<25Mateon118>	Greedy quantifiers can be abused in some cases, try using lazy quantifiers like .*?
+T 1419519149 18<22Andrio18>	Your lookaheads are redundant.
+T 1419519348 19<bewees>	Why are they redundant? If ' on ' is within the mountpoint then it would break the regex without the lookaheads? :S
+T 1419519474 18<22Andrio18>	You have ' on' immediately after the lookahead.
+T 1419519495 18<22Andrio18>	Which can pass the lookahead.
+T 1419519674 18<26bewees18>	Andrio, Mhm, is it better like this?: (?=.*) on (.*)(?=.*) type .*\(.*\)
+T 1419519732 18<22Andrio18>	Um, no.
+T 1419519943 18<26bewees18>	Like this?: on (.*) type .*\(.*\)  
+T 1419519973 24*	28ItsLuke is now known as 18CodiCrums
+T 1419520057 18<26bewees18>	And i should only replace the greedy quantifiers of the brackets at the end right?:  on (.*) type .*?\(.*?\)
+T 1419521057 24*	28CodiCrums is now known as 18NobbysNuts
+T 1419522623 18<25regex101-628218>	guys, any nginx gurus here?
+T 1419523297 24*	28NobbysNuts is now known as 18[z]
+T 1419523595 18<25regex101-628218>	http://serverfault.com/questions/654749/nginx-rewrite-part-of-url
+T 1419524495 24*	28Bremsstrahlung is now known as 18Bremsnachten
+T 1419525755 24*	28gm152 is now known as 18b
+T 1419538953 24*	28[z] is now known as 18ItsLuke
+T 1419539872 24*	28ItsLuke is now known as 18Luke
+T 1419539895 24*	28Luke is now known as 18ItsLuke
+T 1419539919 24*	28ItsLuke is now known as 18Luke
+T 1419539948 24*	28Luke is now known as 18Guest34050
+T 1419540012 24*	28Guest34050 is now known as 18ItsLuke
+T 1419551412 24*	28ItsLuke is now known as 18[z]
+T 1419561578 24*	28Kage is now known as 18KageSanta
+T 1419562213 22*	26ChanServ gives voice to 18pork_
+T 1419563666 24*	28genio_ is now known as 18genio
+T 1419566289 24*	28r0bby_ is now known as 18robbyoconnor
+T 1419571920 24*	28KageSanta is now known as 18Kage
+T 1419580850 24*	28go|dfish1 is now known as 18go|dfish
+T 1419581076 24*	28intx_ is now known as 18intx
+T 1419584269 18<19crocket18>	How do I match lines that don't contain 'error'?
+T 1419584284 18<19crocket18>	It's https://docs.python.org/3.4/library/re.html#regular-expression-syntax
+T 1419588138 24*	28Bremsnachten is now known as 18Bremsstrahlung
+T 1419590127 24*	28supay is now known as 18supay_afk
+T 1419591524 24*	28BlueShark_ is now known as 18BlueShark
+T 1419592719 24*	28AUS3RIS is now known as 18aus3ris
+T 1419593796 18<29Everspace18>	crocket: I would just check every line (^.*error.*$), and if it's there, I don't want this line.
+T 1419593830 18<19crocket18>	Everspace, That matches every lien that contains error.
+T 1419593832 18<19crocket18>	lien -> line
+T 1419593906 18<29Everspace18>	crocket: So do for(line in file): if(!myRegex.match(line)): print "Yippee!
+T 1419593988 18<29Everspace18>	"
+T 1419594006 18<26doug64k18>	Everspace: what language is that? C#?
+T 1419594017 18<26doug64k18>	ah print
+T 1419594023 18<26doug64k18>	python?
+T 1419594047 18<29Everspace18>	doug64k: Trying to do 1-line of python since crocket linked python
+T 1419594048 19<crocket>	Everspace, I use journalwatch which ignores lines that contain some regex patterns.
+T 1419594083 18<19crocket18>	The patterns are written in a file.
+T 1419594099 19<crocket>	Unless you know how to invert the pattern in regex itself, you're out of luck.
+T 1419594114 18<19crocket18>	Or, you have to patch the program.
+T 1419594162 19<doug64k>	odd, python's regex api has no way to test a regex (just see if it matches, throw away all the details)
+T 1419594176 18<26doug64k18>	that I could see anyway
+T 1419594190 18<26doug64k18>	it would be slightly more efficient
+T 1419594431 18<29Everspace18>	crocket: I don't have the power to help you. Sorry :(
+T 1419594657 18<29Everspace18>	crocket: Although my intuition tells me that you would want to not do this, because if you get a line with "FATAL" (but no error) and ignore it you will have some bad times.
+T 1419594701 18<19crocket18>	ok
+T 1419594707 18<19crocket18>	I don't like systemd journal.
+T 1419594711 24*	28aus3ris is now known as 18AUS3RIS
+T 1419594714 18<19crocket18>	It doesn't have a concept of log level.
+T 1419594726 18<19crocket18>	It makes everything difficult.
+T 1419594743 24*	28AUS3RIS is now known as 18aus3ris
+T 1419597032 24*	28[z] is now known as 18ItsLuke
+T 1419597382 24*	28ItsLuke is now known as 18[z]
+T 1419598779 24*	28AUS3RIS is now known as 18aus3ris
+T 1419598818 24*	28aus3ris is now known as 18AUS3RIS
+T 1419598848 24*	28Snowstormer is now known as 18santacat
+T 1419599668 24*	28supay_afk is now known as 18supay
+T 1419601740 24*	28[z] is now known as 18ItsLuke
+T 1419606636 22*	26sendak.freenode.net gives channel operator status to 18ChanServ
+T 1419616448 24*	28ItsLuke is now known as 18chav
+T 1419616480 24*	28chav is now known as 18ItsLuke
+T 1419616567 24*	28ItsLuke is now known as 18ChunSarv
+T 1419616636 24*	28ChunSarv is now known as 18ItsLuke
+T 1419622391 19<ItsLuke>	Hi. How can I have this regex capture all the words after "Wolf, "? https://regex101.com/r/kL7sC7/1
+T 1419623121 18<24ItsLuke18>	Hello?
+T 1419623131 18<24ItsLuke18>	I kinda need this urgent a bit
+T 1419623506 18<24ItsLuke18>	uth
+T 1419623638 18<24ItsLuke18>	Someone
+T 1419623639 18<24ItsLuke18>	!ops ?
+T 1419624056 18<28j_wright18>	^Wolf, (.+)$
+T 1419624200 18<24ItsLuke18>	j_wright, Nope. https://regex101.com/r/kL7sC7/2
+T 1419624245 18<28j_wright18>	yeah I remember not typing [ ]
+T 1419624296 18<24ItsLuke18>	Sorry?
+T 1419624324 18<28j_wright18>	([^Wolf, (.+)$]) is not what I suggested
+T 1419624948 18<28j_wright18>	why not just get all the words?
+T 1419625019 18<28j_wright18>	 /(\w+)/g or /(\S+)/g
+T 1419632333 24*	28SkyLizard is now known as 18DrSkyLizard
+T 1419633847 24*	28ItsLuke is now known as 18[z]

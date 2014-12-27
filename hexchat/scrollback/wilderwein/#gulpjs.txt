@@ -1,0 +1,614 @@
+T 1417768441 24*	28rdohms is now known as 18rdohms_away
+T 1417771288 24*	28rdohms_away is now known as 18rdohms
+T 1417780118 18<27SidFerreira18>	how do I join two specific orders in a specific order with gulp?
+T 1417788329 18<27SidFerreira18>	Hi?
+T 1417788441 18<25darylteo18>	generally if noone answers its because noone knows. lol
+T 1417788454 18<25darylteo18>	noone looking , anyway
+T 1417788627 24*	28Cottser|away is now known as 18Cottser
+T 1417788954 18<24callumacrae18>	Or because the question doesn't make much sense
+T 1417788955 18<24callumacrae18>	What are you actually trying to achieve?
+T 1417789505 18<25darylteo18>	aaaaaaaaandd he's gone
+T 1417789506 18<25darylteo18>	lo
+T 1417791718 24*	28rdohms is now known as 18rdohms_away
+T 1417795326 24*	28rdohms_away is now known as 18rdohms
+T 1417795911 24*	28rdohms is now known as 18rdohms_away
+T 1417797170 24*	28Cottser is now known as 18Cottser|away
+T 1417797402 18<27Fishrock18>	anyone around who can help me with source mapping from gulp-browserify? or should I be using a different browserify integration?
+T 1417797800 18<27Fishrock18>	oh. gulp-browserify is no longer mentained. hmm
+T 1417797845 18<24callumacrae18>	Don't use gulp-browserify!
+T 1417797846 18<24callumacrae18>	Ever!
+T 1417797905 18<24callumacrae18>	https://github.com/gulpjs/gulp/blob/master/docs/recipes/browserify-uglify-sourcemap.md
+T 1417797927 18<27Fishrock18>	ok
+T 1417797929 18<27Fishrock18>	XD
+T 1417797934 18<24callumacrae18>	here's my really simple version: https://github.com/Lostmyname/monkey/blob/master/gulpfile.js#L30-L37
+T 1417797948 18<27Fishrock18>	aight I'll try this. thanks
+T 1417798897 18<27Fishrock18>	callumacrae: what aren't you using vinyl-buffer?
+T 1417798901 18<27Fishrock18>	why*
+T 1417798908 18<27Fishrock18>	Is that for sourcemaps only or?
+T 1417798960 24*	28rdohms_away is now known as 18rdohms
+T 1417798981 18<24callumacrae18>	I would assume so but I'm not really sure
+T 1417799003 18<24callumacrae18>	https://www.npmjs.org/package/vinyl-buffer
+T 1417799004 18<24callumacrae18>	Looks like it
+T 1417799337 18<27Fishrock18>	callumacrae: if my browserify target file is the same as the output, do I need to put the name again in source()?
+T 1417799407 18<24callumacrae18>	file name, or file?
+T 1417799441 18<27Fishrock18>	file name
+T 1417799443 18<27Fishrock18>	so like
+T 1417799450 18<27Fishrock18>	browserify('src/js/app.js')
+T 1417799455 18<27Fishrock18>	and my output should be app.js
+T 1417799464 18<27Fishrock18>	do I need source('app.js')
+T 1417799465 18<27Fishrock18>	?
+T 1417799534 24*	28rdohms is now known as 18rdohms_away
+T 1417799600 18<24callumacrae18>	I'm pretty sure you do, but give it a try!
+T 1417799611 18<24callumacrae18>	Worst case, it overwrites every file on your computer
+T 1417799645 18<27Fishrock18>	:P
+T 1417799664 18<27Fishrock18>	this kids, is why you do not run gulp and browserify with sudo
+T 1417799665 18<27Fishrock18>	jk
+T 1417799674 18<27Fishrock18>	but don't run it with sudo anyways
+T 1417799675 18<24callumacrae18>	sudo sudo gulp overwrite-everything
+T 1417801118 18<29Eddieh_18>	I've ran into a bit of an issue with gulp. Running gulp completes fine, but produces no expected output files for some reason. I expect this might be an issue with ownership/permissions. Any ideas?
+T 1417801396 18<27Fishrock18>	hmmm still having trouble actually getting sourcemaps from browserify + gulp + uglify
+T 1417808100 24*	28rdohms_away is now known as 18rdohms
+T 1417815726 24*	28rdohms is now known as 18rdohms_away
+T 1417816068 24*	28contrahax is now known as 18_contrahax
+T 1417816129 24*	28_contrahax is now known as 18contrahax
+T 1417818534 24*	28rdohms_away is now known as 18rdohms
+T 1417819127 24*	28rdohms is now known as 18rdohms_away
+T 1417824691 19*	Now talking on 22#gulpjs
+T 1417824691 22*	Topic for 22#gulpjs is: gulp.js support IRC
+T 1417824691 22*	Topic for 22#gulpjs set by 26contrahax!~contrahax@ip24-251-13-101.ph.ph.cox.net (24Wed Apr 30 00:58:59 2014)
+T 1417824713 18<20bforbes18>	without using gulp.dest(), how do I get the end event to fire?
+T 1417824753 18<20bforbes18>	I'm trying to write a clean task and I have to wait until a filter runs and completes for all files before deleting files
+T 1417825198 19*	Now talking on 22#gulpjs
+T 1417825198 22*	Topic for 22#gulpjs is: gulp.js support IRC
+T 1417825198 22*	Topic for 22#gulpjs set by 26contrahax!~contrahax@ip24-251-13-101.ph.ph.cox.net (24Wed Apr 30 00:58:59 2014)
+T 1417834139 24*	28airtonix_ is now known as 18airtonix
+T 1417845098 24*	28gratimax|away is now known as 18gratimax
+T 1417855458 24*	28rdohms_away is now known as 18rdohms
+T 1417857461 24*	28rdohms is now known as 18rdohms_away
+T 1417888523 18<19Blackrush18>	Hello, anybody knows a browserify transformer applying to Facebook Flow?
+T 1417896279 18<25phrozensilver18>	hey
+T 1417896283 18<25phrozensilver18>	gulp rocks!
+T 1417897209 18<19Blackrush18>	Is there any way to stream Flow |> React |> Browserify ?
+T 1417898918 18<29NitroLiq18>	Anyone savvy with browserSync? I've almost got my gulpfile working except some minor browserSync task issues I can't seem to figure out.
+T 1417900309 24*	28Cottser|away is now known as 18Cottser
+T 1417902727 24*	28Cottser is now known as 18Cottser|away
+T 1417907869 24*	28rdohms_away is now known as 18rdohms
+T 1417908908 24*	28rdohms is now known as 18rdohms_away
+T 1417912731 18<22tetsuo__18>	do gulp tasks run sequentially or in parallel?
+T 1417917889 18<24Zckrs18>	#yeoman
+T 1417935929 18<20devhoag_18>	tetsuo__: gulp tasks run sequentially
+T 1417935964 18<20devhoag_18>	tetsuo__: by default anyway, you could run them in parallel with an npm package I'm sure.
+T 1417942013 24*	28rdohms_away is now known as 18rdohms
+T 1417949825 24*	28rdohms is now known as 18rdohms_away
+T 1417961449 24*	28Cottser|away is now known as 18Cottser
+T 1417969946 24*	28rdohms_away is now known as 18rdohms
+T 1417984257 24*	28raytiley_ is now known as 18raytiley
+T 1417990848 24*	28rdohms is now known as 18rdohms_away
+T 1417992286 24*	28rdohms_away is now known as 18rdohms
+T 1417992881 24*	28rdohms is now known as 18rdohms_away
+T 1417994446 24*	28gratimax is now known as 18gratimax|away
+T 1417996409 24*	28gratimax|away is now known as 18gratimax
+T 1417998972 24*	28gratimax is now known as 18gratimax|away
+T 1418004282 24*	28gratimax|away is now known as 18gratimax
+T 1418021950 24*	28rdohms_away is now known as 18rdohms
+T 1418024567 24*	28rdohms is now known as 18rdohms_away
+T 1418029296 24*	28rdohms_away is now known as 18rdohms
+T 1418034199 24*	28iamcarri_ is now known as 18iamcarrico
+T 1418039487 18<27SidFerreira18>	have anyone used gulp merge?
+T 1418041076 18<29ihab18>	Hello I'm trying to build my code using gulp I have browserify modules written in coffeescript here's my task http://kib2.free.fr/pastebin/view_paste.php?id=363
+T 1418041194 18<29ihab18>	what's wrong with this?
+T 1418041201 18<29ihab18>	it keeps givin me /Users/ihab/Workspace/Cloud9ers/really/really-js/node_modules/vinyl-transform/index.js:11
+T 1418041201 18<29ihab18>	    if (file.isNull()) return this.push(file), next()
+T 1418041218 18<29ihab18>	no method isNull
+T 1418056856 24*	28rdohms is now known as 18rdohms_away
+T 1418059899 24*	28rdohms_away is now known as 18rdohms
+T 1418060476 24*	28rdohms is now known as 18rdohms_away
+T 1418061064 24*	28iamcarrico is now known as 18iamcarrico_away
+T 1418061445 24*	28rdohms_away is now known as 18rdohms
+T 1418062325 24*	28gratimax is now known as 18gratimax|away
+T 1418062736 18<26Ansem18>	Hey, having a weird problem with gulp not finding some files.. ?
+T 1418062781 18<26Ansem18>	http://pastebin.com/mHk6tsEr
+T 1418062917 24*	28Cottser is now known as 18Cottser|away
+T 1418062968 24*	28gratimax|away is now known as 18gratimax
+T 1418063226 24*	28gratimax is now known as 18gratimax|away
+T 1418065065 24*	28gratimax|away is now known as 18gratimax
+T 1418066509 24*	28iamcarrico_away is now known as 18iamcarrico
+T 1418070121 24*	28gratimax is now known as 18gratimax|away
+T 1418075610 24*	28rdohms is now known as 18rdohms_away
+T 1418077250 24*	28Cottser|away is now known as 18Cottser
+T 1418078032 24*	28gratimax|away is now known as 18gratimax
+T 1418078790 24*	28rdohms_away is now known as 18rdohms
+T 1418079386 24*	28rdohms is now known as 18rdohms_away
+T 1418099033 18<29welly18>	Hey gulp fans. I'm trying to copy a directory and its contents to a new location. Not having a lot of luck. Can anyone give me any pointers?
+T 1418099077 18<29welly18>	doing return gulp.src('./directory').pipe(gulp.dest(config.sassPath'); which only copies the directory name
+T 1418099096 18<29welly18>	oh, that wasn't entirely exact - .pipe(gulp.dest(config.sassPath));
+T 1418099393 18<29welly18>	Got it figured out
+T 1418105622 24*	28Zak is now known as 18Guest64165
+T 1418109159 18<29welly18>	Hey all. gulp-uglify is giving me the shits - it keeps crashing with the following error: reset.css: Unexpected token: punc ({)
+T 1418109191 18<29welly18>	and when my internet connection finally fires into action, I'll paste some code
+T 1418109464 18<29welly18>	Ok.. doing nothing unusual - http://pastie.org/9769326
+T 1418109487 18<29welly18>	and even the css file it's failing to uglify is as basic as it comes
+T 1418110637 18<25darylteo18>	for welly when he comes back: isn't that a problem in the stylesheet
+T 1418111398 24*	28rdohms_away is now known as 18rdohms
+T 1418111853 24*	28rdohms is now known as 18rdohms_away
+T 1418113004 18<25jabbott18>	Could someone tell me why my jsmin task keeps failing with the following:  http://pastebin.com/TmpuFYQw
+T 1418113940 18<25jabbott18>	Here's the updated error with a gulp task attached:  http://pastebin.com/5HjKhmR2
+T 1418114742 18<25jabbott18>	http://stackoverflow.com/questions/27374627/jsmin-errors-out
+T 1418115467 24*	28rdohms_away is now known as 18rdohms
+T 1418116057 24*	28rdohms is now known as 18rdohms_away
+T 1418117126 24*	28rdohms_away is now known as 18rdohms
+T 1418125168 18<19tarkus18>	When you need a custom (e.g. JSX) transform to be applied to .js files referenced in a gulpefile.js, what's the best way to do it?
+T 1418125197 18<19tarkus18>	Does this seem legit? https://github.com/kriasoft/react-starter-kit/blob/master/gulpfile.js#L56-L68
+T 1418132807 24*	28rdohms is now known as 18rdohms_away
+T 1418143882 24*	28iamcarri_ is now known as 18iamcarrico
+T 1418144614 24*	28iamcarrico is now known as 18iamcarrico_away
+T 1418144619 24*	28iamcarrico_away is now known as 18iamcarrico
+T 1418153044 24*	28DonovanLambert is now known as 18Donovan
+T 1418154658 24*	28gratimax is now known as 18gratimax|away
+T 1418155267 24*	28rdohms_away is now known as 18rdohms
+T 1418156166 24*	28gratimax|away is now known as 18gratimax
+T 1418156863 24*	28gratimax is now known as 18gratimax|away
+T 1418160161 24*	28gratimax|away is now known as 18gratimax
+T 1418162415 24*	28rdohms is now known as 18rdohms_away
+T 1418163466 18<27Koryin18>	I have a question about some weird behavior if anyone is able to assist.
+T 1418163637 24*	28gratimax is now known as 18gratimax|away
+T 1418165027 24*	28gratimax|away is now known as 18gratimax
+T 1418165506 18<27Koryin18>	Nobody alive?
+T 1418165608 18<27blazar18>	You might as well just post your question.
+T 1418165618 18<27Koryin18>	I suppose.
+T 1418165684 18<27Koryin18>	an empty gulp async task ( gulp.task('sample', function (done) {}); ) seems to bail out immedietly without throwing errors, where as the same thing but with a setTimeout in it will wait. Why?
+T 1418165740 18<27Koryin18>	When I say bail out, gulp closes without any feedback. I just get dumped back on the command line.
+T 1418165832 18<27blazar18>	What does the timeout do?
+T 1418165942 18<27Koryin18>	its just a simple setTimeout(done, 1000000000)
+T 1418166015 18<27Koryin18>	If I set it to a more sane value, gulp completes successfully and I get the "Finished 'sample'" output
+T 1418166050 18<27blazar18>	I would expect the second one to complete successfully with a sane value for the timeout; as it's calling the async callback.
+T 1418166056 18<27Koryin18>	so basically, the presence of "done" seems to change things and I don't know why.
+T 1418166450 18<27blazar18>	Koryin: Please take a look at: https://github.com/orchestrator/orchestrator/blob/master/README.md
+T 1418166455 18<27blazar18>	Under orchestrator.add
+T 1418166461 18<27blazar18>	The description for fn
+T 1418166473 18<27blazar18>	Orchestrator is used by gulp for managing tasks
+T 1418166487 18<27blazar18>	The description for fn describes how you should define your function
+T 1418166503 18<27blazar18>	It also explains what a "hint" is, and what those hints can be
+T 1418166526 18<27Koryin18>	how is that different than what I had? I used the callback hint.
+T 1418166550 18<27blazar18>	For the second example, but you didn't call the callback in the first example
+T 1418166591 18<27Koryin18>	On purpose, as its demonstrates the weird behavior I'm trying to figure out.
+T 1418166622 18<27Koryin18>	If nothing calls the callback, it should wait but it bails out immedietely.
+T 1418166741 18<27Koryin18>	I get the same behavior if I use a stream and give it an impossible event to end on: ".on('pizza', done);"
+T 1418166749 18<27Koryin18>	it bails out without an error.
+T 1418166791 18<27Koryin18>	and right now, if I give it ".on('end', done);" it still bails out.
+T 1418166876 18<27blazar18>	Then I don't really know
+T 1418166952 18<27Koryin18>	This also bails out: "gulp.src('C:\\').on('end', done);"
+T 1418167887 18<25Starcraftmazter18>	HI WHYS GULP BETTAR THAN GRUNT
+T 1418168860 18<27Koryin18>	@blazar, its node. Node is exiting because its event queue is empty.
+T 1418168924 18<27blazar18>	Koryin: Thanks :-)
+T 1418168931 18<27blazar18>	What lead to discovering the issue?
+T 1418168980 18<27Koryin18>	Node was exiting with an error code of 0 and nothing in gulp's source explained where that was coming from. So, it had to be something else.
+T 1418310097 19*	Now talking on 22#gulpjs
+T 1418310097 22*	Topic for 22#gulpjs is: gulp.js support IRC
+T 1418310097 22*	Topic for 22#gulpjs set by 26contrahax!~contrahax@ip24-251-13-101.ph.ph.cox.net (24Wed Apr 30 00:58:59 2014)
+T 1418310757 24*	28iamcarrico is now known as 18iamcarrico_away
+T 1418310774 24*	28iamcarrico_away is now known as 18iamcarrico
+T 1418316792 24*	28rdohms is now known as 18rdohms_away
+T 1418321332 24*	28iamcarrico is now known as 18iamcarrico_away
+T 1418322960 24*	28iamcarrico_away is now known as 18iamcarrico
+T 1418324007 24*	28rdohms_away is now known as 18rdohms
+T 1418325462 24*	28iamcarrico is now known as 18iamcarrico_away
+T 1418325989 24*	28iamcarrico_away is now known as 18iamcarrico
+T 1418329421 24*	28oskarrough is now known as 18orough
+T 1418335960 24*	28rdohms is now known as 18rdohms_away
+T 1418337307 24*	28gratimax is now known as 18gratimax|away
+T 1418337347 24*	28gratimax|away is now known as 18gratimax
+T 1418338925 24*	28iamcarrico is now known as 18iamcarrico_away
+T 1418341025 24*	28iamcarrico_away is now known as 18iamcarrico
+T 1418341821 24*	28contrahax is now known as 18_contrahax
+T 1418342569 24*	28_contrahax is now known as 18contrahax
+T 1418346344 24*	28iamcarrico is now known as 18iamcarrico_away
+T 1418347493 24*	28iamcarrico_away is now known as 18iamcarrico
+T 1418349165 24*	28iamcarrico is now known as 18iamcarrico_away
+T 1418350412 24*	28contrahax is now known as 18_contrahax
+T 1418350693 24*	28iamcarrico_away is now known as 18iamcarrico
+T 1418351519 24*	28iamcarrico is now known as 18iamcarrico_away
+T 1418361939 24*	28_contrahax is now known as 18contrahax
+T 1418362279 24*	28iamcarrico_away is now known as 18iamcarrico
+T 1418363789 24*	28iamcarrico is now known as 18iamcarrico_away
+T 1418363975 20<tunnckoCore>30	https://github.com/tunnckoCore/youtube-regex tests was added ;]
+T 1418367657 24*	28contrahax is now known as 18_contrahax
+T 1418367657 24*	28_contrahax is now known as 18contrahax
+T 1418372368 24*	28contrahax is now known as 18_contrahax
+T 1418372637 24*	28gratimax is now known as 18gratimax|away
+T 1418372668 24*	28gratimax|away is now known as 18gratimax
+T 1418373229 24*	28_contrahax is now known as 18contrahax
+T 1418374727 24*	28rdohms_away is now known as 18rdohms
+T 1418374802 24*	28gratimax is now known as 18gratimax|away
+T 1418378541 24*	28rdohms is now known as 18rdohms_away
+T 1418383504 24*	28rdohms_away is now known as 18rdohms
+T 1418383951 24*	28rdohms is now known as 18rdohms_away
+T 1418385616 24*	28gratimax|away is now known as 18gratimax
+T 1418386188 24*	28gratimax is now known as 18gratimax|away
+T 1418386852 24*	28Cottser|away is now known as 18Cottser
+T 1418398581 18<20apipkin18>	I’m wanting to run gulp-rename with a suffix to a few tasks. What is the best way to do this without just copy and pasting?
+T 1418398784 24*	28gratimax|away is now known as 18gratimax
+T 1418399261 18<20apipkin18>	Found it. Just pass the stream to a new function, work on it, and return the stream
+T 1418402237 18<24elkorn18>	hello everyone. I'm having some issues with installing gulp-compass. I've installed it from npm but there are a lot of dependencies missing, mainly from /vagrant/node_modules/gulp/node_modules/gulp-util/node_modules/lodash.template
+T 1418402251 18<24elkorn18>	it looks like peerDependencies are misconfigured there or i'm doing something very very wrong
+T 1418402262 18<24elkorn18>	did somebody encounter this?
+T 1418402353 18<24elkorn18>	some of the missing deps: wrappy, lodash._isnative, lodash._objecttypes, lodash._shimkeys, lodash.isobject, clone, clone-stats,
+T 1418402582 18<24elkorn18>	installing gulp-util separately did not help as well
+T 1418402613 18<25iamcarrico_away18>	elkorn are you trying to install them globally? Or within your project?
+T 1418402785 18<24elkorn18>	within my project
+T 1418402790 18<24elkorn18>	--save-dev
+T 1418402845 18<24elkorn18>	i feel i should not have to install all this stuff since npm should take care of that as they're gulp-compass' deps
+T 1418405630 18<24elkorn18>	iamcarrico_away, any ideas on this?
+T 1418411983 18<20apipkin18>	I’m finding an issue with gulp-ruby-sass then using gulp-csso. The issue is `sass()` returns two files in a streams (css and map) and CSSO is trying to optimize the map file and is throwing errors.
+T 1418412044 18<20apipkin18>	What I’m wanting to know is, how can I filter out the stream to only contain the files that I’m wanting to `csso()`? Meaning, now can I prune the stream to only contain certain files by extension?
+T 1418412845 24*	28mtsr is now known as 18mtsr_
+T 1418414410 24*	28gratimax is now known as 18gratimax|away
+T 1418416293 18<25AAA_awright18>	Gulpfiles should be this easy (compressed onto one line):
+T 1418416293 18<25AAA_awright18>	task main { glob **/*.jade | jade-blocks | $blocks ; $blocks | minify-css | concat | file (f) => f.replace(/.jinja2$/, ".${f.blockname}.style.jade") ; $blocks | conditional-jsx | uglify-js | concat | file (f) => f.replace(/.jade$/, ".${f.blockname}.script.jade") }
+T 1418416372 18<25AAA_awright18>	So that's declaring a task; it reads a file stream of files matching a glob; takes files and produces a stream of blocks within the file; then each block goes through two streams: find CSS file references, minify and concat, and write to filesystem; and same for JS
+T 1418416391 18<25AAA_awright18>	Hmm actually maybe I should change that slightly
+T 1418416451 18<25AAA_awright18>	That's close enouhg
+T 1418416489 18<25AAA_awright18>	Note use of closure and named functions... Later, I have "conditional-jsx" defined as:
+T 1418416514 18<25AAA_awright18>	function conditional-jsx(file){ if(file.name~=/\.jsx$/) jsx; else cat }
+T 1418416623 18<25AAA_awright18>	... this idea is a WIP
+T 1418422056 24*	28gratimax|away is now known as 18gratimax
+T 1418422230 24*	28gratimax is now known as 18gratimax|away
+T 1418422419 24*	28gratimax|away is now known as 18gratimax
+T 1418422685 24*	28gratimax is now known as 18gratimax|away
+T 1418428087 18<27dave123418>	hi there! what's the best way to keep "gulp watch" running continuously on a server? bash script? forever? something else?
+T 1418430574 24*	28gratimax|away is now known as 18gratimax
+T 1418439837 24*	28gratimax is now known as 18gratimax|away
+T 1418443404 18<20frickettz18>	I used np to install Gulp on my Win 8.1 machine (npm install --g gulp) and it appeared to install alright.  But whenever I try to use the gulp command I get:  'gulp' is not recongized as an internal or external command, operable program or batch file
+T 1418443418 18<20frickettz18>	Anyone know what might be causing that?
+T 1418514356 18<19bline18>	Anyone know a seed or generator with gulp for jade/coffee/stylus/polymer?
+T 1418516189 18<29tejas-manohar18>	anyone have a good workflow for builidng before deploying to gh-pages?
+T 1418516329 18<27iamcarrico18>	tejas-manohar: https://github.com/iamcarrico/gulp-poole/blob/master/index.js is what I use
+T 1418516368 18<29tejas-manohar18>	lamcarrico: only jekyll, right? i just doing normal static webpage on gh pages
+T 1418516669 18<27iamcarrico18>	tejas-manohar: This is built for Jekyll, yes— but some of the Sass workflow you could steal from it.
+T 1418516681 18<29tejas-manohar18>	ah
+T 1418518847 24*	28iamcarrico is now known as 18iamcarrico_away
+T 1418518884 24*	28iamcarrico_away is now known as 18iamcarrico
+T 1418518910 24*	28iamcarrico is now known as 18iamcarrico_away
+T 1418519504 24*	28iamcarrico_away is now known as 18iamcarrico
+T 1418519517 24*	28gratimax|away is now known as 18gratimax
+T 1418519518 24*	28iamcarrico is now known as 18iamcarrico_away
+T 1418519878 24*	28iamcarrico_away is now known as 18iamcarrico
+T 1418522549 24*	28gratimax is now known as 18gratimax|away
+T 1418522821 24*	28gratimax|away is now known as 18gratimax
+T 1418523078 24*	28iamcarrico is now known as 18iamcarrico_away
+T 1418523449 24*	28gratimax is now known as 18gratimax|away
+T 1418531471 24*	28gratimax|away is now known as 18gratimax
+T 1418532696 24*	28gratimax is now known as 18gratimax|away
+T 1418551897 24*	28gratimax|away is now known as 18gratimax
+T 1418552472 24*	28gratimax is now known as 18gratimax|away
+T 1418562569 24*	28iamcarrico_away is now known as 18iamcarrico
+T 1418564233 24*	28iamcarrico is now known as 18iamcarrico_away
+T 1418564351 24*	28Zak is now known as 18Guest51694
+T 1418582691 24*	28gratimax|away is now known as 18gratimax
+T 1418595392 24*	28iamcarri_ is now known as 18iamcarrico
+T 1418604204 24*	28iamcarrico is now known as 18iamcarrico_away
+T 1418604722 24*	28iamcarrico_away is now known as 18iamcarrico
+T 1418606754 24*	28iamcarrico is now known as 18iamcarrico_away
+T 1418607643 24*	28gratimax is now known as 18gratimax|away
+T 1418608712 24*	28gratimax|away is now known as 18gratimax
+T 1418608790 24*	28iamcarrico_away is now known as 18iamcarrico
+T 1418610709 18<28merobertsjr_18>	did you include a gulpfile, and in it designate a gulp task?
+T 1418612535 18<19morenoh14918>	with gulp should you ever be using temp directories?
+T 1418612859 24*	28contrahax is now known as 18_contrahax
+T 1418616966 24*	28iamcarrico is now known as 18iamcarrico_away
+T 1418624840 24*	28mikaelb_ is now known as 18mikaelb
+T 1418636427 24*	28iamcarrico_away is now known as 18iamcarrico
+T 1418640634 24*	28iamcarrico is now known as 18iamcarrico_away
+T 1418640823 24*	28iamcarrico_away is now known as 18iamcarrico
+T 1418641271 18<24rainervonvielen18>	Hi
+T 1418642755 24*	28iamcarrico is now known as 18iamcarrico_away
+T 1418644023 24*	28iamcarrico_away is now known as 18iamcarrico
+T 1418645077 24*	28iamcarrico is now known as 18iamcarrico_away
+T 1418647356 18<20fhuel18>	Hey guys
+T 1418647425 18<20fhuel18>	I'm making friend with gulp, but there are some aspects that I really can't grasp
+T 1418647451 18<20fhuel18>	what's the right way to ask for help in this group ?
+T 1418648356 24*	28iamcarrico_away is now known as 18iamcarrico
+T 1418656352 18<24rainervonvielen18>	fhuel: Best would be if you actually ask your question. To share source code, use something like http://pastebin.com/
+T 1418656387 18<20fhuel18>	ok, thanks rainervonvielen
+T 1418658881 18<24rainervonvielen18>	I have a caching problem. I use gulp-ruby-sass locally to generate the main css file in the DEV environment. But I never get the newest file. The only way I can get rid of the cache is: delete file; access file (404); write file
+T 1418658909 18<24rainervonvielen18>	If I delete the file and write it without accessing it in between, its still cached.
+T 1418658919 18<24rainervonvielen18>	I can guarantee that it's no the browser cache
+T 1418658957 18<24rainervonvielen18>	I use Apache via VirtualBox as a web server, caching is disabled. All file headers have also cache disabled. Still the problem remains.
+T 1418658976 18<24rainervonvielen18>	Has anybody had experienced this?
+T 1418659001 18<27iamcarrico18>	rainervonvielen if you access the file directly, via the OS, not apache, is the right one there?
+T 1418659009 18<24rainervonvielen18>	Yes
+T 1418659060 18<27iamcarrico18>	Then it has nothing to do with gulp, it is purely an issue with either your websever or browser cache. Check your apache configs.
+T 1418659099 18<24rainervonvielen18>	Thanks, will do. Could it also be the case that Apache can't access the file because gulp has some kind of "ownage" of it?
+T 1418659132 18<24rainervonvielen18>	there is no watcher on the dist folder though
+T 1418659248 18<27iamcarrico18>	rainervonvielen: I have never seen that happen if it is true.
+T 1418659382 18<24rainervonvielen18>	Ok
+T 1418659387 18<24rainervonvielen18>	I just did http://stackoverflow.com/questions/11532636/prevent-http-file-caching-in-apache-httpd-mamp but it did not help.
+T 1418659677 18<24rainervonvielen18>	I just noticed that the css file has two lines. In the first line there is all the CSS and in the second line there is a little red dot displayed in google chrome: http://i.imgur.com/vk8R4mW.jpg
+T 1418659690 18<24rainervonvielen18>	Just read that this is an indication of two BOMs
+T 1418660180 18<24rainervonvielen18>	nevermind, even without it the problem remains
+T 1418660389 18<24rainervonvielen18>	YES; finally.
+T 1418660390 18<24rainervonvielen18>	http://stackoverflow.com/a/9560505/3355711
+T 1418660393 18<24rainervonvielen18>	This solved the issue
+T 1418661967 24*	28iamcarrico is now known as 18iamcarrico_away
+T 1418662464 24*	28iamcarrico_away is now known as 18iamcarrico
+T 1418668614 24*	28iamcarrico is now known as 18iamcarrico_away
+T 1418672558 18<29jaawerth18>	Not sure if I should ask this here or in #sass, but: I'm trying to switch from gulp-ruby-sass to gulp-sass (from ruby sass to libsass). Even though libsass is supposed to support sourcemaps now, docs say to use gulp-sourcemaps, so I am..
+T 1418672592 18<29jaawerth18>	it's working well enough inline, or if I specify a totally separate folder, but I"m looking to get it to duplicate the ruby-sass behavior of dumping the maps in main.css.map - anyone managed to do this?
+T 1418673435 18<29jaawerth18>	eh, guess I"ll just let them be inline for now
+T 1418685928 18<24dmarr18>	Anyone know why i'd see this with gulp-ruby-sass: Encoding::CompatibilityError: incompatible character encodings: ASCII-8BIT and UTF-8
+T 1418688422 18<24dmarr18>	upgraded to ruby 2.1 and sass 3.4.9 and it went away
+T 1418688617 24*	28iamcarrico is now known as 18iamcarrico_away
+T 1418688738 24*	28gratimax is now known as 18gratimax|away
+T 1418690495 24*	28iamcarrico_away is now known as 18iamcarrico
+T 1418691549 24*	28gratimax|away is now known as 18gratimax
+T 1418701279 24*	28iamcarrico is now known as 18iamcarrico_away
+T 1418702326 24*	28sindresorhus_ is now known as 18sindresorhus
+T 1418702356 24*	28sindresorhus is now known as 18Guest31951
+T 1418711443 24*	28Leon is now known as 18Guest90410
+T 1418715986 24*	28contrahax is now known as 18_contrahax
+T 1418720996 18<19thomastuts18>	hey guys, i made a gulp plugin to check a config against a template, would appreciate any input on it to see if it could be useful to anyone else: https://github.com/thomastuts/gulp-config-checker
+T 1418730724 24*	28iamcarrico_away is now known as 18iamcarrico
+T 1418732284 24*	28philhawksworth_ is now known as 18philhawksworth
+T 1418735223 24*	28iamcarrico is now known as 18iamcarrico_away
+T 1418736079 24*	28iamcarrico_away is now known as 18iamcarrico
+T 1418743644 24*	28iamcarrico is now known as 18iamcarrico_away
+T 1418751643 24*	28gratimax_ is now known as 18gratimax
+T 1418753316 24*	28iamcarrico is now known as 18iamcarrico_away
+T 1418757520 24*	28_contrahax is now known as 18contrahax
+T 1418758398 18<26koken18>	@all anyone here?
+T 1418758533 24*	28contrahax is now known as 18_contrahax
+T 1418767249 18<26MLM18>	How do I merge a stream into a through2 stream inside of the transform or flush function?
+T 1418767323 18<26MLM18>	I tried using `es.merge(this, myStream)` but it doesn't seem to work
+T 1418776930 18<19BuSheeZy18>	just solved a problem I have been having with gulp
+T 1418776970 18<19BuSheeZy18>	when I made a change with ftp it was updating too quickly before the file was uploaded and outputing a blank file
+T 1418776977 18<19BuSheeZy18>	but atimeout on it and fixed it
+T 1418776982 18<19BuSheeZy18>	put a timeout*
+T 1418776989 18<19BuSheeZy18>	been driving me insane
+T 1418781968 24*	28contrahax is now known as 18_contrahax
+T 1418783002 18<29jaawerth18>	BuSheeZy: with gulp-ftp? I thought to avoid that you just had to have some (any) kind of stream following ftp to make sure it flushed
+T 1418783013 18<19BuSheeZy18>	stylus
+T 1418783030 18<29jaawerth18>	ahh
+T 1418783044 18<19BuSheeZy18>	I don't have much experience with i
+T 1418783056 18<19BuSheeZy18>	with it
+T 1418783081 18<19BuSheeZy18>	I've made a couple in the past, but I make it and then never touch it again
+T 1418783101 18<19BuSheeZy18>	sass and such
+T 1418787078 24*	28_contrahax is now known as 18contrahax
+T 1418807337 18<24ProLoser18>	hallo
+T 1418807339 18<24ProLoser18>	anyone around?
+T 1418812164 24*	28contrahax is now known as 18_contrahax
+T 1418816681 24*	28mikaelb_ is now known as 18mikaelb
+T 1418820782 24*	28Cottser is now known as 18Cottser|away
+T 1418833460 18<19HaNdTriX18>	Hi anybody has a clue how to zip a directory and provide the root directory name using gulp-zip?
+T 1418833460 18<19HaNdTriX18>	Example:
+T 1418833460 18<19HaNdTriX18>	  gulp.src('dist/*', {base: '.'})
+T 1418833460 18<19HaNdTriX18>	      .pipe(zip('myAwesomeZip.zip'))
+T 1418833460 18<19HaNdTriX18>	      .pipe(gulp.dest('packages'));
+T 1418833461 18<19HaNdTriX18>	Unzipping the `myAwesomeZip.zip` will unpack a folder called `dist`, but I want it to be called `myAwesomeZip`.
+T 1418842424 18<25AAA_awright18>	If I branched gulpjs so I could `gulp gulpjs.com` and build the website with complete API documentation, recipe book, etc... any problems with that?
+T 1418842805 18<27blazar18>	HaNdTriX: Please check the source for it: https://github.com/sindresorhus/gulp-zip/blob/master/index.js
+T 1418842812 18<27blazar18>	I assume you need to change the base path
+T 1418842817 18<27blazar18>	But that's only an assumption
+T 1418843580 18<19HaNdTriX18>	thx blazar but that didn't work :(
+T 1418844274 18<19HaNdTriX18>	But I have solved it. I just had to remove the basedir option.
+T 1418845637 24*	28_contrahax is now known as 18contrahax
+T 1418849168 18<20mattk_18>	hi, i have a (possibly stupid) question, which i couldn't find the answer to with Google. can i run gulp tasks through a node web server, for example using Express, without the need for a gulpfile or running it from the command line? ideally, i want to kick off tasks when a HTTP request comes through.
+T 1418849270 24*	28contrahax is now known as 18_contrahax
+T 1418851216 24*	28_contrahax is now known as 18contrahax
+T 1418903248 19*	Now talking on 22#gulpjs
+T 1418903248 22*	Topic for 22#gulpjs is: gulp.js support IRC
+T 1418903248 22*	Topic for 22#gulpjs set by 26contrahax!~contrahax@ip24-251-13-101.ph.ph.cox.net (24Wed Apr 30 00:58:59 2014)
+T 1418930120 24*	28blazar_ is now known as 18blazar
+T 1418943266 24*	28Cottser|away is now known as 18Cottser
+T 1418943637 24*	28Cottser is now known as 18Cottser|away
+T 1418943785 24*	28garthk_ is now known as 18garthk
+T 1418946444 24*	28Cottser|away is now known as 18Cottser
+T 1418948408 18<20robdubya18>	hey all - running into a bit of a wacky issue with bower link and symlinks whilst using gulp. seems to just ignore symlinked dependencies. anybody seen this before?
+T 1418951282 24*	28Cottser is now known as 18Cottser|away
+T 1418956295 24*	28nwmcsween__ is now known as 18nwmcsween
+T 1418980470 18<24ProLoser18>	hallo, anyone around?
+T 1418982714 18<24ProLoser18>	i need some help configuring coffee and source maps
+T 1418984368 18<25chiel18>	hi folks, i have a gulp task which compiles sass, but on error it dies horrible. i managed to get it to catch the error, but the task never completes and it doesn't re-compile when the file changes again, despite watching it. i've also looked at gulp-plumber but it seems to have the same issue with the task not running again. is there anything i can do to make that work>\
+T 1418986489 24*	28Zak is now known as 18Guest67216
+T 1418990289 18<24callumacrae18>	chiel: gulp-plumber should do the trick, it's what I use
+T 1418993291 18<22Industrial18>	Hi.
+T 1418993352 18<22Industrial18>	I have made a project workflow tool for my projects (https://github.com/Industrial/id-project) that I like to use in different node.js based projects to compile, browser reload etc. I'ts a DRY approach at configuring a source and build directory and enabling compile/watch tasks.
+T 1418993408 18<22Industrial18>	I have a problem with it: I've npm published id-project so I can just include it as a dependency and add a gulpfile that requires the module and configures the steps that are enabled/disabled and the paths for everything.
+T 1418993417 18<22Industrial18>	but it will only work through npm publish
+T 1418993505 18<22Industrial18>	When I am developing on id-project I can't put it directly in the node_modules directory of another project and run gulp. I get the error: `[13:51:29] Task 'default' is not in your gulpfile`
+T 1418993517 18<22Industrial18>	well, it is :)
+T 1418993545 18<22Industrial18>	but when I npm publish a new version and just do a npm install --save-dev id-project and run it with the same gulpfile.coffee it will work
+T 1418993568 18<22Industrial18>	so currently I don't know if my changes to id-project actually work until after I have NPM published it.
+T 1418993594 18<22Industrial18>	I've tried npm link aswell, but it gets me the same result as using the repo in node_modules of MyProject directly
+T 1418994026 18<22Industrial18>	The error being thrown is in response to the task_not_found event
+T 1418994028 18<22Industrial18>	https://github.com/gulpjs/gulp/search?utf8=%E2%9C%93&q=task_not_found
+T 1418994034 18<22Industrial18>	but I can't find where that is being thrown.
+T 1418994253 18<22Industrial18>	I'm not sure what the difference is between an `npm install` installed package and a `git clone` installed one
+T 1418994366 18<22Industrial18>	I can do a dir diff .. sec :D
+T 1418994389 18<22Industrial18>	Maybe it has to do with the environment being passed to Orchestrator ? I don't know :S
+T 1418994577 18<22Industrial18>	there is actually no difference -_-
+T 1418995827 18<22Industrial18>	Anyone?
+T 1418996451 18<22Industrial18>	if I have to keep npm publishing to test my gulp file setup then I will end up with a eally high version number that I dont want, and hundreds of npm registered versions that do not make sense
+T 1418996461 18<22Industrial18>	I have 20-30 projects depending on my gulp setup
+T 1418996474 18<22Industrial18>	so I dont want to copy the gulpfile between projects
+T 1418996503 18<22Industrial18>	if I use git to manage the changes then it means a lot of unnessesary changes and merges etc
+T 1418996531 18<22Industrial18>	also the gulpfile is now a lot of different files, not one file :)
+T 1418998643 18<22Industrial18>	https://github.com/gulpjs/gulp/issues/833
+T 1419007273 18<22zidoh18>	What the difference for a plugin between throwing an error, emitting an error and sending an error through callback(error) ? How does gulp handle this differently?
+T 1419012697 24*	28nwmcsween is now known as 18Guest84027
+T 1419016163 24*	28sindresorhus_ is now known as 18sindresorhus
+T 1419022548 24*	28rdohms_away is now known as 18rdohms
+T 1419026904 24*	28rdohms is now known as 18rdohms_away
+T 1419029246 24*	28rdohms_away is now known as 18rdohms
+T 1419029825 24*	28rdohms is now known as 18rdohms_away
+T 1419037311 24*	28contrahax is now known as 18_contrahax
+T 1419130457 19*	Now talking on 22#gulpjs
+T 1419130457 22*	Topic for 22#gulpjs is: gulp.js support IRC
+T 1419130457 22*	Topic for 22#gulpjs set by 26contrahax!~contrahax@ip24-251-13-101.ph.ph.cox.net (24Wed Apr 30 00:58:59 2014)
+T 1419131325 24*	28gratimax|away is now known as 18gratimax
+T 1419142219 18<24ProLoser18>	hallo
+T 1419142224 18<24ProLoser18>	i need some help with coffee and sourcemaps
+T 1419146449 24*	28Cottser|away is now known as 18Cottser
+T 1419148558 24*	28rdohms_away is now known as 18rdohms
+T 1419161416 24*	28rdohms is now known as 18rdohms_away
+T 1419172496 24*	28rdohms_away is now known as 18rdohms
+T 1419187409 20<tunnckoCore>30	https://github.com/tunnckoCore/prompt-promise - cli user input as promise - command prompt, confirm prompt, multiline and password
+T 1419187453 19*	Now talking on 22#gulpjs
+T 1419187453 22*	Topic for 22#gulpjs is: gulp.js support IRC
+T 1419187453 22*	Topic for 22#gulpjs set by 26contrahax!~contrahax@ip24-251-13-101.ph.ph.cox.net (24Wed Apr 30 00:58:59 2014)
+T 1419196488 18<20tak_18>	hi
+T 1419196524 18<20tak_18>	i am trying to build highlight.js (from node) with gulp, can anyone help?
+T 1419199429 24*	28rdohms is now known as 18rdohms_away
+T 1419200543 24*	28rdohms_away is now known as 18rdohms
+T 1419201122 24*	28rdohms is now known as 18rdohms_away
+T 1419213931 24*	28gratimax is now known as 18gratimax|away
+T 1419222322 24*	28gratimax|away is now known as 18gratimax
+T 1419224827 24*	28Zimdale_ is now known as 18Guest88726
+T 1419224991 24*	28Guest88726 is now known as 18Zimdale
+T 1419225043 24*	28Zimdale is now known as 18Guest90059
+T 1419225064 24*	28garthdb_ is now known as 18garthdb
+T 1419228303 24*	28gratimax is now known as 18gratimax|away
+T 1419229597 24*	28gratimax|away is now known as 18gratimax
+T 1419235406 24*	28gratimax is now known as 18gratimax|away
+T 1419235410 24*	28gratimax|away is now known as 18gratimax
+T 1419239796 24*	28rdohms_away is now known as 18rdohms
+T 1419245046 24*	28gratimax is now known as 18gratimax|away
+T 1419246989 24*	28Guest90059 is now known as 18Zimdale
+T 1419249650 24*	28Cottser|away is now known as 18Cottser
+T 1419250391 18<28henn1nk18>	hello, any idea how to get a better output what is broken?
+T 1419250393 18<28henn1nk18>	https://gist.github.com/henn1nk/f34ec195507bef2859f8
+T 1419255861 24*	28gratimax|away is now known as 18gratimax
+T 1419256434 24*	28gratimax is now known as 18gratimax|away
+T 1419264043 18<25yosito18>	For some reason, this gulp task isn't writing to the fs when I pass CSS files into gulp.src. It works fine with JS files. Any ideas? https://gist.github.com/josiahsprague/0fedf3688916c7e5a425
+T 1419264320 18<25yosito18>	Nevermind! 🙈 What I was passing into gulp.src was not found. I had the paths wrong!
+T 1419265703 24*	28rdohms is now known as 18rdohms_away
+T 1419265990 24*	28rdohms_away is now known as 18rdohms
+T 1419266583 24*	28rdohms is now known as 18rdohms_away
+T 1419270526 24*	28gratimax|away is now known as 18gratimax
+T 1419271108 24*	28rdohms_away is now known as 18rdohms
+T 1419271603 24*	28rdohms is now known as 18rdohms_away
+T 1419271646 24*	28rdohms_away is now known as 18rdohms
+T 1419272238 24*	28rdohms is now known as 18rdohms_away
+T 1419276780 18<29trainingday18>	hi
+T 1419277125 18<29trainingday18>	anyone can help me with gulp
+T 1419277171 18<29trainingday18>	builing a app in intel xdk and code i am using has gulp
+T 1419279347 24*	28rdohms_away is now known as 18rdohms
+T 1419287612 24*	28z3n2 is now known as 18phrozensilver
+T 1419290787 18<25AAA_awright18>	I'm looking for a module that can strip trailing whitespace from a file...
+T 1419290837 18<25AAA_awright18>	Specifically, I'm linting for this, but React-compiled files still produce trailing whitespace, and I want to remove this (only for jsx files) before passing to linting...
+T 1419290859 18<25AAA_awright18>	Or maybe just lint compiled jsx files and native js files separately, and let uglfiy take care of whitespace
+T 1419291712 24*	28rdohms is now known as 18rdohms_away
+T 1419296296 19*	Now talking on 22#gulpjs
+T 1419296296 22*	Topic for 22#gulpjs is: gulp.js support IRC
+T 1419296296 22*	Topic for 22#gulpjs set by 26contrahax!~contrahax@ip24-251-13-101.ph.ph.cox.net (24Wed Apr 30 00:58:59 2014)
+T 1419303876 18<25zzing18>	I am using the gulp-server-livereload plugin, and using gulp.src('dist').pipe(...)   and it says that 'dist' should be the root folder, but the root folder is actually the root of my project, not the dist directory underneath it.  Is there something I might be doing wrong? (gulpfile: https://gist.github.com/iaefai/3fbd6d1fc8593b83a485 )
+T 1419309071 24*	28contrahax is now known as 18_contrahax
+T 1419309108 24*	28_contrahax is now known as 18contrahax
+T 1419318149 24*	28contrahax is now known as 18_contrahax
+T 1419322505 24*	28_contrahax is now known as 18contrahax
+T 1419322536 24*	28contrahax is now known as 18_contrahax
+T 1419324165 24*	28_contrahax is now known as 18contrahax
+T 1419324252 24*	28contrahax is now known as 18_contrahax
+T 1419327371 24*	28_contrahax is now known as 18contrahax
+T 1419327430 24*	28contrahax is now known as 18_contrahax
+T 1419328824 24*	28rdohms_away is now known as 18rdohms
+T 1419330009 24*	28rdohms is now known as 18rdohms_away
+T 1419330546 24*	28contrahax is now known as 18_contrahax
+T 1419355129 24*	28_contrahax is now known as 18contrahax
+T 1419355160 24*	28contrahax is now known as 18_contrahax
+T 1419355305 24*	28_contrahax is now known as 18contrahax
+T 1419358843 24*	28Zimdale is now known as 18jailbot
+T 1419358847 24*	28jailbot is now known as 18Zimdale
+T 1419361964 18<28thou18>	hi
+T 1419371412 24*	28gratimax is now known as 18gratimax|away
+T 1419372187 24*	28rdohms_away is now known as 18rdohms
+T 1419378770 24*	28rdohms is now known as 18rdohms_away
+T 1419390854 24*	28sindresorhus_ is now known as 18sindresorhus
+T 1419390883 24*	28sindresorhus is now known as 18Guest91429
+T 1419412701 24*	28Guest91429 is now known as 18sindresorhu
+T 1419412706 24*	28sindresorhu is now known as 18sindresorhus
+T 1419417733 24*	28rdohms_away is now known as 18rdohms
+T 1419426357 18<24arthurvr18>	sindresorhus contrahax: hanging out here?
+T 1419429479 18<28Vec18>	 I am trying to gulp.src('dir/**') the stream omits the dir in the dirname of the output files, how do I include it ? If I execute,  var glob = require('glob'), glob('dir/**'', function (err, file){ console.log(file)}) the dir is included
+T 1419432881 18<28Vec18>	strangely specifying a base of . resolves this issue, not sure why as yet gulp.src('dir/**', {base: '.'})
+T 1419441733 24*	28contrahax is now known as 18_contrahax
+T 1419441739 24*	28_contrahax is now known as 18contrahax
+T 1419442569 24*	28contrahax is now known as 18_contrahax
+T 1419455357 18<27JSON_voorhees18>	is madman steve lacy in here?
+T 1419465671 24*	28rdohms is now known as 18rdohms_away
+T 1419467728 24*	28rdohms_away is now known as 18rdohms
+T 1419468322 24*	28rdohms is now known as 18rdohms_away
+T 1419511767 24*	28rdohms_away is now known as 18rdohms
+T 1419514908 24*	28rdohms is now known as 18rdohms_away
+T 1419529566 18<19alp8218>	is there a way to convert sass to scss files? i want my gulp-sass to work with the intended syntax too
+T 1419547035 24*	28rdohms_away is now known as 18rdohms
+T 1419549042 24*	28rdohms is now known as 18rdohms_away
+T 1419557594 24*	28gratimax|away is now known as 18gratimax
+T 1419557645 24*	28gratimax is now known as 18gratimax|away
+T 1419558644 24*	28gratimax|away is now known as 18gratimax
+T 1419558674 24*	28gratimax is now known as 18gratimax|away
+T 1419561272 24*	28gratimax|away is now known as 18gratimax
+T 1419562163 24*	28rhodesjason_ is now known as 18rhodesjason
+T 1419562163 24*	28tkellen_ is now known as 18tkellen
+T 1419562168 24*	28KramerC_ is now known as 18KramerC
+T 1419569121 24*	28gratimax is now known as 18gratimax|away
+T 1419569225 24*	28gratimax|away is now known as 18gratimax
+T 1419580966 18<19tarkus18>	How can I convert a peace of html to json with Gulp? e.g. test.html: <p>hello</p> will become test.json: { html: '<p>hello</p>' }
+T 1419582117 18<19tarkus18>	How can I manipulate the input stream without writing a plugin?
+T 1419586298 24*	28rdohms_away is now known as 18rdohms
+T 1419591492 24*	28wib_ is now known as 18wib
+T 1419593538 24*	28rdohms is now known as 18rdohms_away
+T 1419597650 24*	28Cottser|away is now known as 18Cottser
+T 1419598078 24*	28rdohms_away is now known as 18rdohms
+T 1419598670 24*	28rdohms is now known as 18rdohms_away
+T 1419601722 24*	28rdohms_away is now known as 18rdohms
+T 1419602298 24*	28rdohms is now known as 18rdohms_away
+T 1419605365 24*	28rdohms_away is now known as 18rdohms
+T 1419605940 24*	28rdohms is now known as 18rdohms_away
+T 1419628599 18<27Respek18>	hi all, I have a bit of a problem..
+T 1419628650 18<27Respek18>	it'd seem that someone on my team was a little bit sloppy, and edited the compiled style.css directly, quite a bit in fact
+T 1419628679 18<27Respek18>	so now, I have to apply all of those changes to the scss to get the site working properly
+T 1419628692 18<27Respek18>	any ideas on a strategy to approach that with?
+T 1419629630 18<25ben-eb18>	i would probably save the modified one into a new file, then run your compile step again, beautify both files and then diff the output
+T 1419629805 18<19ben-eb_18>	and um... document your build process better so that it doesn't happen again :)
+T 1419629899 18<19ben-eb_18>	and make sure they read it :D
+T 1419633186 18<27joeyDB18>	hi guys. is there an easy way to find where an HTML task would be failing given I'm using partials?
+T 1419633200 18<27joeyDB18>	it just fails and doesn't tell me anything other than "Write after end"
+T 1419633223 18<27joeyDB18>	any help would be much appreciated, happy holidays
+T 1419633658 18<19ben-eb_18>	what are you trying to do?
+T 1419634062 18<27joeyDB18>	well its weird because I'm on a branch that was building just fine last tuesday
+T 1419634073 18<27joeyDB18>	suddenly it won't build past the HTML task
+T 1419634087 18<27joeyDB18>	spits out a couple undefined errors and a "write after end"
+T 1419634095 18<27joeyDB18>	on all branches
+T 1419634106 18<19ben-eb_18>	is it a syntax error in your partial?
+T 1419634137 18<27joeyDB18>	I thought it could be that but how in the world to find the one with the syntax error?
+T 1419634142 18<27joeyDB18>	i've got... many partials
+T 1419634155 18<19ben-eb_18>	:)
+T 1419634162 18<27joeyDB18>	it doesn't tell me where it ends :|
+T 1419634172 18<27joeyDB18>	no way to debug this
+T 1419634220 18<19ben-eb_18>	git diff --name-status master..branchName
+T 1419634229 18<19ben-eb_18>	to get the modified files on your branch
+T 1419634241 18<19ben-eb_18>	and then check the partial files in that list?
+T 1419634252 18<27joeyDB18>	alright, lemme see. that's a good idea
+T 1419634262 18<19ben-eb_18>	hope it works out :)
+T 1419634301 18<27joeyDB18>	thanks
+T 1419635024 18<27joeyDB18>	ohhhh man ben-eb_ i just found a needle in a haystack
+T 1419635034 18<19ben-eb_18>	awesome! :)
+T 1419635095 18<19ben-eb_18>	version control for the win
+T 1419635127 18<27joeyDB18>	yeah... i didnt think of that
+T 1419635172 18<27joeyDB18>	thanks sir
+T 1419635195 18<19ben-eb_18>	you're welcome :) enjoy the rest of your holidays
+T 1419635244 18<27joeyDB18>	you too
+T 1419636490 18<27Respek18>	thanks ben-eb_
+T 1419636509 18<19ben-eb_18>	no worries
+T 1419637047 18<27Respek18>	ben-eb_ I guess one other question would be, any trick to diffing them other than just visually?
+T 1419637113 18<19ben-eb_18>	use the diff command
+T 1419637185 18<27Respek18>	had no idea that was a command
+T 1419637206 18<27Respek18>	herp derp
+T 1419637242 18<19ben-eb_18>	hah, yeah :)
+T 1419637317 18<19ben-eb_18>	you can also run it with -y to get a side by side :)
+T 1419637326 18<19ben-eb_18>	diff 1.css 2.css -y
+T 1419638382 18<27joeyDB18>	well... that would've been useful lol
+T 1419638420 18<19ben-eb_18>	diff? yeah, its a good one
+T 1419638434 18<19ben-eb_18>	you can also do git diff
+T 1419638458 18<19ben-eb_18>	i didn't know how many files you had :)
+T 1419642492 18<19mattblang18>	what do you guys use for copying over bower components

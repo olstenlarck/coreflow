@@ -1,0 +1,10 @@
+T 1418903248 19*	Now talking on 22##unavailable
+T 1418903248 22*	Topic for 22##unavailable is: You've tried to join an unavailable channel. Perhaps the group was never here or has moved off-network ( http://freenode.net/policy.shtml#termination ). Check their website for more information. Your client may be flapping in and out of the channel; in this case, check with channel ops. The channel may be clone-infested; please consult freenode network staff.
+T 1418903248 22*	Topic for 22##unavailable set by 26Martinp23 (24Sun May 15 00:05:37 2011)
+T 1418903248 -18NickServ-	You are now identified for tunnckoCore.
+T 1418903248 -18ChanServ-	[##unavailable] You've tried to join an unavailable channel. Perhaps the group was never here or has moved off-network ( http://freenode.net/policy.shtml#termination ). Check their website for more information. Your client may be flapping in and out of channel; in this case, check with channel staff. The channel may be clone-infested; please consult freenode network staff.
+T 1419187453 19*	Now talking on 22##unavailable
+T 1419187453 22*	Topic for 22##unavailable is: You've tried to join an unavailable channel. Perhaps the group was never here or has moved off-network ( http://freenode.net/policy.shtml#termination ). Check their website for more information. Your client may be flapping in and out of the channel; in this case, check with channel ops. The channel may be clone-infested; please consult freenode network staff.
+T 1419187453 22*	Topic for 22##unavailable set by 26Martinp23 (24Sun May 15 00:05:37 2011)
+T 1419187453 -18NickServ-	You are now identified for tunnckoCore.
+T 1419187453 -18ChanServ-	[##unavailable] You've tried to join an unavailable channel. Perhaps the group was never here or has moved off-network ( http://freenode.net/policy.shtml#termination ). Check their website for more information. Your client may be flapping in and out of channel; in this case, check with channel staff. The channel may be clone-infested; please consult freenode network staff.

@@ -1,0 +1,732 @@
+T 1419403266 18<20sla3k18>	ajprog_laptop1: try to hard refresh your browser or purge any cache.
+T 1419403269 18<24ajprog_laptop118>	browser cache -- I modified the index.html file and it updated
+T 1419403311 18<24ajprog_laptop118>	caching -- shouldn't be it is a fresh LEMP droplet from digitalocean
+T 1419403327 18<20sla3k18>	KeiKun: That happens when directory indexing is off and you do not have any index.* file. Try to open index.{html,php} with full name.
+T 1419403334 18<28KeiKun18>	anyway
+T 1419403351 18<28KeiKun18>	alias seems doesn't work
+T 1419403376 18<28KeiKun18>	my server block's root /var/www/html; but i created a location /test/ { } which it should show content of /var/www/sql;
+T 1419403382 18<28KeiKun18>	yet doesn't work
+T 1419403419 24*	28ferrix is now known as 18anonymouse
+T 1419403435 18<20sla3k18>	ajprog_laptop1: share the conf file over pastebin.
+T 1419403448 18<20sla3k18>	ajprog_laptop1: share the conf file over pastebin.
+T 1419403469 24*	28ajprog_laptop1 is now known as 18ajprog_laptop
+T 1419403508 18<20sla3k18>	argghhh, network latency
+T 1419403560 18<29ajprog_laptop18>	I will, I am working on setting up ssh
+T 1419403688 24*	28deimos__ is now known as 18deimos
+T 1419403772 18<29ajprog_laptop18>	sla3k: http://pastebin.cmsmadesimple.org/676
+T 1419403805 18<20ngxbot18>	Paste from KeiKun: [ http://p.ngx.cc/ee ] - my conf
+T 1419403818 18<28KeiKun18>	^ guys anyone?
+T 1419403978 24*	28quydo is now known as 18ubungu
+T 1419404180 18<20sla3k18>	ajprog_laptop: try this: http://sprunge.us/eUUG
+T 1419404199 24*	28ubungu is now known as 18quydo
+T 1419404248 18<20sla3k18>	KeiKun: share your conf file and I can have a look.
+T 1419404297 18<28KeiKun18>	sla3k, ngxbot> Paste from KeiKun: [ http://p.ngx.cc/ee ] - my conf
+T 1419404379 18<20sla3k18>	KeiKun: define Document root under your location ~ \.php$ block as well and try after reloading the conf.
+T 1419404401 18<28KeiKun18>	sla3k, what you mean?
+T 1419404481 18<29ajprog_laptop18>	sla3k: now I get a 403 Forbidden
+T 1419404577 18<20sla3k18>	ajprog_laptop: permissions on "/var/www/domain.com" ? Also, if it is CentOS or Red Hat, try disabling SELinux temporarily.
+T 1419404887 18<29ajprog_laptop18>	log file says it is trying to index the dir
+T 1419404892 18<29ajprog_laptop18>	but not allowed
+T 1419404943 18<29ajprog_laptop18>	I have any index.php, but it doesn't look like it is trying it
+T 1419405118 18<20sla3k18>	ajprog_laptop: try to remove: fastcgi_split_path_info ^(.+\.php)(/.+)$; in the conf file.
+T 1419405120 18<29ajprog_laptop18>	sla3k: I was missing the ';' at the end of the server_name
+T 1419405121 18<29ajprog_laptop18>	line
+T 1419405146 18<20sla3k18>	ahhh, good catch ;)
+T 1419405176 18<29ajprog_laptop18>	that is what I get for not looking at the error logs sooner
+T 1419405183 18<29ajprog_laptop18>	thanks for the help
+T 1419405208 18<20sla3k18>	KeiKun: I guess you are missing the same in your conf.
+T 1419405227 18<20sla3k18>	a ' ; ' at the end of server_name
+T 1419407750 18<28KeiKun18>	sla3k, still not working
+T 1419407927 18<24KeiKun_18>	doesn't "location /something { root /var/www/something; } <= means whenever i access domain.com/something it will use /var/www/something instead of the server block's root?
+T 1419409057 18<28Peng18>	KeiKun_: No, it will use /var/www/something/something
+T 1419409125 18<24KeiKun_18>	Peng, so what should i use??
+T 1419409144 18<28Peng18>	"root /var/www;"? How should I know?
+T 1419409158 18<28Peng18>	alias?
+T 1419410900 18<25irctc91118>	Guys, can anyboby help me with rewrite rules for nginx? Just one string.
+T 1419410911 18<25quydo18>	okay
+T 1419410914 18<25quydo18>	I will try
+T 1419410997 18<25irctc91118>	I have a rule: RewriteRule ^([a-zA-Z0-9_-]+)(/?)/+$ index.php?page=$1 [L]
+T 1419411042 18<25irctc91118>	And i have to apply it for nginx
+T 1419411074 18<25quydo18>	is Apache rules?
+T 1419411087 18<25irctc91118>	this string from .htaccess
+T 1419411096 18<25irctc91118>	on my server i want nginx only
+T 1419411109 18<25quydo18>	# nginx configuration location / { rewrite ^/([a-zA-Z0-9_-]+)(/?)/+$ /index.php?page=$1 break; }
+T 1419411125 18<25quydo18>	you can use this site to convert http://winginx.com/en/htaccess
+T 1419411143 18<25quydo18>	just paste your .htaccess configuration and click Convert button
+T 1419411158 18<25irctc91118>	is it correct?
+T 1419411159 18<25irctc91118>	        location / {                 rewrite ^/([a-zA-Z0-9_-]+)(/?)/+$ /index.php?page=$1 break;                 try_files $uri $uri/ =404;         }
+T 1419411166 18<25irctc91118>	it doesnt works
+T 1419411325 18<25irctc91118>	I tried to convert whole htaccess
+T 1419411424 18<25irctc91118>	i got 404 anyway :(
+T 1419411433 18<25irctc91118>	trying to access http://visatelecom.of/eml_compose
+T 1419411460 18<25quydo18>	you want to remove index.php?
+T 1419411660 18<25irctc91118>	i have a project wich handle files by get parameters
+T 1419411681 18<25irctc91118>	for example page /eml_compose should be on php lile a "index.php?page=eml_compose"
+T 1419412036 18<25Axisar18>	irctc911, why not to use only try_files and work with 404 via index.php?
+T 1419412088 18<25irctc91118>	<Axisar>, how?
+T 1419412095 18<25Axisar18>	something like a location / { try_files $uri /index.php?page=$uri } ?
+T 1419412168 18<25Axisar18>	oh. sorry. i`m wrong.
+T 1419412209 18<25Axisar18>	gimme a second. will upload an example config
+T 1419412233 18<25irctc91118>	i have also page=page&page2=page2 if url is /page/page2/
+T 1419412255 18<20ngxbot18>	Paste from Axisar: [ http://p.ngx.cc/e7 ] - try_files example
+T 1419412270 18<25Axisar18>	check my paste
+T 1419412336 18<25Axisar18>	just sent all uri to your index.php and work with it inside php
+T 1419412596 24*	28Spockz_ is now known as 18Spockz
+T 1419413788 18<19James_T18>	What will it take for someone to look at a bug on trac...
+T 1419414306 18<28KeiKun18>	still doesn't work
+T 1419414313 18<28KeiKun18>	location /test/ { alias /var/www/tests; index index.php index.html index.htm; }
+T 1419414318 18<28KeiKun18>	i get 404
+T 1419414351 18<27thresh18>	check error logs for the constructed path
+T 1419414413 18<28KeiKun18>	*1 open() "/var/www/domain-com/html/tests"
+T 1419414416 18<28KeiKun18>	O_O
+T 1419414421 18<28KeiKun18>	but i added alias O_o
+T 1419414622 18<28KeiKun18>	this is confusing....
+T 1419414749 18<27thresh18>	did you reload / restart nginx after that change?
+T 1419414799 18<28KeiKun18>	yeah
+T 1419414801 18<28KeiKun18>	i restarted
+T 1419414806 18<28KeiKun18>	service nginx restart
+T 1419414843 18<28KeiKun18>	i get 404
+T 1419414875 18<27thresh18>	well then your request is served by some different location
+T 1419414882 18<27thresh18>	show the full configuration
+T 1419414994 18<20ngxbot18>	Paste from KeiKun: [ http://p.ngx.cc/5b ] - my conf
+T 1419414999 18<28KeiKun18>	thresh, ^^
+T 1419415018 18<28KeiKun18>	i can't access https://domain.com/test/
+T 1419415029 18<28KeiKun18>	i get 404 Not Found
+T 1419415204 18<27thresh18>	you said it was alias, but in the configuration file you use root
+T 1419415227 18<24lewellyn18>	same thing! ;)
+T 1419415305 18<28KeiKun18>	i changed it back
+T 1419415309 18<28KeiKun18>	since it didn't work
+T 1419415358 18<28KeiKun18>	still 404
+T 1419415362 18<28KeiKun18>	alias or even root
+T 1419415488 18<27thresh18>	and you're testing with the exact URI of https://domain.com/test/ ?
+T 1419415498 18<27thresh18>	or https://domain.com/test/index.php or something else?
+T 1419415626 24*	28KeiKun_ is now known as 18KeiKun
+T 1419415640 18<28KeiKun18>	yeah i tried access https://domain.com/test <= which should show index of /var/www/tests, which is php
+T 1419415768 24*	28IAmTheClaw is now known as 18RobotsOnDrugs
+T 1419415980 18<27thresh18>	well, once it reaches the index.php, it goes for the php location in try_files
+T 1419416055 18<28KeiKun18>	try_files?
+T 1419416206 18<28KeiKun18>	does that mean i can't use alias for that? even root? due to try_files $uri =404; ?
+T 1419417130 24*	28quydo is now known as 18ubungu
+T 1419417135 18<28KeiKun18>	thresh, is location only works on where root is configured?
+T 1419419760 24*	28raar is now known as 18Guest19042
+T 1419420006 24*	28koobs is now known as 18koobs-kringle
+T 1419421374 18<20ngxbot18>	Paste from sabre801: [ http://p.ngx.cc/1b ] - LANcache server configuration
+T 1419421439 18<24sabre80118>	I've got nginx acting as a caching proxy for Sony PlayStation 4 game files. They are huuuge and I don't feel like having to download them again if I ever upgrade the hard drive. I'm having problems with the TCP connection resetting when I try to download the file from the PS4.
+T 1419421475 18<24sabre80118>	I could be wrong as to the reason for the transfer failure, so I have some tcpdump captures also
+T 1419421650 18<24sabre80118>	I've tried using different ethernet cables, switches, and server NICs, to eliminate any hardware issues.
+T 1419421789 18<20ngxbot18>	Paste from sabre801: [ http://p.ngx.cc/dd ] - tcpdump capture for ps4
+T 1419421831 18<24sabre80118>	I'm thinking at this point that there is some TCP related tuning that needs to be done, but I could use some direction
+T 1419422062 18<24sabre80118>	I tried to transfer the file directly i.e. not using the proxy cache function, and I still get the transfer failures
+T 1419422226 18<20ngxbot18>	Paste from sabre801: [ http://p.ngx.cc/c0 ] - HTTP headers
+T 1419424011 24*	28IAmTheClaw is now known as 18RobotsOnDrugs
+T 1419424673 18<19vandemar18>	sabre801: why is the PS4 still sending after it sends a fin+ack?
+T 1419424776 18<24sabre80118>	vandemar: you're referring to timestamp 6.954415000 ?
+T 1419424820 18<19vandemar18>	oh that's the client.  Have you successfully fetched the file using curl?
+T 1419424829 18<24sabre80118>	The nginx server is 10.0.0.3, and the PS4 is 10.0.0.4
+T 1419424834 18<24sabre80118>	yup, tried wget and curl
+T 1419424869 18<24sabre80118>	I did notice that every now and then the connection gets closed and wget will just retry and complete successfully
+T 1419424891 18<24sabre80118>	but, with the PS4 it's pretty much an immediate fail
+T 1419424934 18<24sabre80118>	at least wget would get a couple of gigs in to the transfer before having the connection closed on it... and it doesn't happen every time I try
+T 1419424937 18<24KeiKun_18>	btw what's the best connection processing method should i use?
+T 1419425155 18<19vandemar18>	sabre801: are all those fragment overlaps real or just mistaken artifacts in the packet capture
+T 1419425272 18<24sabre80118>	I don't know. How would I confirm?
+T 1419425294 18<24sabre80118>	They don't show up in successful transfer captures
+T 1419425601 18<19vandemar18>	sabre801: I don't know quite enough about tcp to follow the capture step by step.  I'd compare the first 6-10 packets against the first 6-10 from a (partially) successful transfer.
+T 1419425789 18<19vandemar18>	if you tell wireshark to decode does the window (Which should show http-level data) show any response at all?  It looks like things break as soon as the PS4 tries to send a response to the GET
+T 1419425972 18<19vandemar18>	another fun thing to try would be add another http proxy (tinyproxy, for instance) between nginx and the PS4 and see if that behave any better
+T 1419426120 18<24sabre80118>	vandemar: comparing the first 10s of packets looks like the fragment overlaps are probably artefacts.  both captures look similar in pattern up till where the tcp window full message shows up
+T 1419426132 18<24sabre80118>	yeah, i'm about getting to that stage
+T 1419426183 18<24sabre80118>	I've been pulling my hair out over this for a few days now... I haven't even been playing really... just trying to tweak nginx and linux tcp parameters unsuccessfully and staring at the captures
+T 1419426214 18<24sabre80118>	wife is getting annoyed that I have the PS4 running and I'm not even using it
+T 1419426263 18<24sabre80118>	here's the http info - http://p.ngx.cc/c0
+T 1419426337 18<24sabre80118>	vandemar: http get and response happen. it's at the data transferring phase where it fails
+T 1419427197 18<27bhuemer18>	hello! I configured nginx as a proxy using the proxy_pass directive, amongst others, and would like to implement some performance monitoring around it (i.e. how well the upstream backends perform)
+T 1419427235 18<27bhuemer18>	it works sort of okay-ish already, using header_filter_by_lua_file after the proxy_pass directive, however (and here comes the question:)
+T 1419427267 18<27bhuemer18>	when Nginx cannot forward the request to the upstream backend, because it's not available (BAD_GATEWAY - 502), it doesn't seem to execute the header_filter_by_lua_file directive either
+T 1419427295 18<27bhuemer18>	which is a bit of a shame .. as that's where I'm trying to detect whether the backend we used died
+T 1419427326 18<27bhuemer18>	is there anything I need to configure to intercept that response somehow, so that I can do my filtering?
+T 1419427368 18<27bhuemer18>	I tried "proxy_intercept_errors on" merely because it sounded like what I'm looking for .. a wild guess though
+T 1419427376 18<27bhuemer18>	(in case that wasn't blatantly obvious)
+T 1419428095 18<19sh1shm1sh18>	hello all. could anyone help me out with this piece of configuration? it's a bit puzzling. http://pastebin.com/w4ke6E0L
+T 1419428240 18<19sh1shm1sh18>	the problem i'm having is this. php app is served via fastcgi_pass in last block, and each request that is *not* an existing filename is passed to that block. in another file (included, static_files_params) there are several location ~* blocks which target several file extensions. that also works well.
+T 1419428254 18<19sh1shm1sh18>	see http://pastebin.com/4MvUWub9 for that included file
+T 1419428342 18<19vandemar18>	sabre801: if you're not doing anything else important on the network with the box running nginx, you could try disabling window scaling net.ipv4.tcp_window_scaling
+T 1419428379 18<19sh1shm1sh18>	now. problem is this. we need to match all urls starting with /router/ path prefix and always regard them as php webapp url (ie send it to proxy). which works fine, IF url does not end with some of common extensions, defined in static_files_params. but our router actually works as a redirection script, and urls often end up looking like this: /rout
+T 1419428380 18<19sh1shm1sh18>	er/123abc234def123bde/something.jpg
+T 1419428427 18<19sh1shm1sh18>	these urls do not exist in filesystem. but due to their extension being picked up earlier in the process by ~* rule, nginx tries to find them in filesystem, fails, and gives 404
+T 1419428672 19<vandemar>	sh1shm1sh: /router/foo/bar.jpg hits location ^~ /router, rewrites to /app.php/router/foo/bar.jpg, which then hits one of the static file regex locations (either the one in main config line 14, or the jpg match in the included file).
+T 1419428672 18<19sh1shm1sh18>	that is when i added ^~ /router/ block, which seems to work, but not really: I still receive 404's, only rewrite debug log directive is different: now I get (20: Not a directory) instead of usual (2: No such file or directory). see http://pastebin.com/nggrbLSh - first line corresponds to ^~ /router/ block, second corresponds to what i get when i re
+T 1419428672 18<19sh1shm1sh18>	move that block
+T 1419428703 18<19sh1shm1sh18>	vandemar: sorry I was delayed in typing. please read my last message
+T 1419428740 18<19vandemar18>	sh1shm1sh: line 26 doesn't do anything, rewrites do not match against args, and if it did you'd still have to escape the ?
+T 1419428754 18<19sh1shm1sh18>	oh
+T 1419428758 18<19vandemar18>	sh1shm1sh: try not to rewrite so much, it creates complexity that's difficult to deal with
+T 1419428764 24*	28Stellar_ is now known as 18Stellar
+T 1419428798 18<24sabre80118>	vandemar: thanks. i'll check it out in a few hours
+T 1419428843 19<sh1shm1sh>	vandemar: yes, I see. but how do I prevent hitting some later ~* regex after it is rewritten to /app.php/router/.../something.mp3?
+T 1419428874 18<19vandemar18>	sabre801: if you're still here later I'll try to look through and see if I can find a way to restructure the config better
+T 1419428882 18<19vandemar18>	oh, sorry, sh1shm1sh
+T 1419428898 18<19vandemar18>	sh1shm1sh: location ordering.
+T 1419428917 18<19sh1shm1sh18>	I should be here for a while
+T 1419428931 18<19sh1shm1sh18>	also, I don't think that L26 is mathing against url params
+T 1419428949 18<24sabre80118>	vandemar: ok. in the meanwhile i got tinyproxy working. now I just need to get home to try it with the ps4
+T 1419428956 18<19vandemar18>	given the rewrites that might not be possible though.  if you have rewrites mapping urls you want handled differently to the same url, and asking nginx (via rewrite .. last) to reevaluate location match, you'll have problems
+T 1419428960 18<19sh1shm1sh18>	it was supposed to be app.php followed by optional forward slash / and then by anything
+T 1419429007 18<24sabre80118>	i'm out for now
+T 1419429018 18<19sh1shm1sh18>	it is already confusing enough, even without this additional /router/ stuff
+T 1419432385 18<24KeiKun_18>	can use alias /var/www/something; inside a server-block where root /var/www/domain/html; ???
+T 1419432424 18<24KeiKun_18>	anyone?
+T 1419432914 18<28MTecknology18>	What are you asking?
+T 1419433997 18<27erisco18>	how can I list loaded configuration files? I am trying to find where a particular server has been configured
+T 1419434040 18<27erisco18>	ah ha mystery solved... it is not using nginx whoops
+T 1419435086 18<28KeiKun18>	is there a mod that uses mysql for authentications?
+T 1419435396 18<19vandemar18>	sh1shm1sh: in the static file include config, line 38 is more complicated than it needs to be.  url paths always start with /  ...there is no possibility that ^\. would match
+T 1419435530 18<19vandemar18>	sh1shm1sh: in the main config, line 47 is doubling the slash after app.php, since $1 includes the url's initial slash
+T 1419435832 19<vandemar>	sh1shm1sh: you need your php regex match block before your static file regex match blocks for that to work
+T 1419435850 18<28KeiKun18>	anyone?
+T 1419435887 24*	28nimoot is now known as 18toomom
+T 1419435890 24*	28toomom is now known as 18toomin
+T 1419436054 18<19sh1shm1sh18>	vandemar: I'm back
+T 1419436263 18<19sh1shm1sh18>	vandemar: re: line 38, can it be location ~* /\. { , to match any path segment starting with dot? that should in theory match both at the start of string (ie ^/.htaccess) or in the middle ( .../.git/...)
+T 1419436398 18<19vandemar18>	that's what I use
+T 1419436399 18<19sh1shm1sh18>	vandemar: so, moving include static_file_params after last location block should do the trick?
+T 1419436447 19<vandemar>	sh1shm1sh: yes, at least for your existing problem, but then you have to make sure no other regexes are accidently capturing static files that you want served with the ending static regex locations
+T 1419436475 19<vandemar>	moving just the php regex block before the include might be safer
+T 1419436475 18<19sh1shm1sh18>	is there a strategy to avoid having this mess?
+T 1419436498 24*	28bhuemer_ is now known as 18bhuemer
+T 1419436529 18<19sh1shm1sh18>	except serving static files from entirely different subdomain, because it is not always possible
+T 1419436543 18<19vandemar18>	sh1shm1sh: lines 38..45, is there a problem having those apply to every (app|config).php request?  Do you have them there for a reason, rather than putting them in the line 59 location?
+T 1419436630 18<19sh1shm1sh18>	vandemar: there shouldn't be a problem, since that rewrite is followed by yet another internal lookup, which ends up in that block you mentioned
+T 1419436645 18<19vandemar18>	because if you do that you can change line 29 to try_files $uri /app.php$uri;  and then get rid of location @rewriteapp
+T 1419436705 24*	28YuviPanda is now known as 18YuviPanda|brb
+T 1419437009 18<19vandemar18>	sh1shm1sh: for security you need to separate out the last two location matches in the included file, put them in a new include file, and include them first in your server block
+T 1419437124 18<19sh1shm1sh18>	vandemar: when I remove @rewriteapp block and change location / 's try_files line to try_files $uri /app.php$uri;, i get redirect loop
+T 1419437148 18<19sh1shm1sh18>	for some reason, with @rewriteapp block it doesn't occur.. no idea why though
+T 1419437313 18<19sh1shm1sh18>	try_files $uri /app.php$uri;
+T 1419437323 18<19sh1shm1sh18>	equals to redirect loop
+T 1419437357 18<19sh1shm1sh18>	ah, found the culprit..
+T 1419437381 18<19sh1shm1sh18>	L26 was trying to remove /app.php/ while location / was putting it back
+T 1419437473 18<19sh1shm1sh18>	how do I then make sure that visiting any url starting with /app.php(.*) ends up 301 redirected to $1 ?
+T 1419437615 18<19vandemar18>	sh1shm1sh: do you have existing incoming links to /app.php ?  Does your app generate any urls of the form /app.php/something ?
+T 1419437652 18<19sh1shm1sh18>	vandemar: no, but in theory they could happen, due to inattentivness of a developer writing the app
+T 1419437684 18<19vandemar18>	sh1shm1sh: you could split /app.php from /config.php and make the /app.php location "internal;"
+T 1419437710 18<19vandemar18>	requests to it will fail so nobody will use it for links, and you don't have to rewrite it to anything
+T 1419437717 18<19sh1shm1sh18>	also, I remembered why add_header directives had to be there.. because accessing static js files via js throws cross origin exception
+T 1419437749 18<19sh1shm1sh18>	hmm, interesting approach
+T 1419437790 18<19sh1shm1sh18>	also, could php block be greatly simplified if I put location = /app.php in there?
+T 1419437790 18<19vandemar18>	the other option is to move the php directives into @rewriteapp, hardcoding SCRIPT_FILENAME as $document_root/app.php
+T 1419437844 18<19sh1shm1sh18>	because I think that config.php could be safely dropped, it is not needed any longer
+T 1419437859 18<19vandemar18>	the problem with both of those is that... yeah, you'd need to handle config.php separately
+T 1419438080 18<19sh1shm1sh18>	ok, so. config.php is unnecessary, i changed last block to location = /app.php {, now it dies on me, trying to redirect too many times ( *7982 rewrite or internal redirection cycle while internally redirecting to "/app.php/app.php/app.php/app.php/app.php/app.php/app.php/app.php/app.php/app.php/app.php/")
+T 1419438099 18<19sh1shm1sh18>	i guess try_files $uri /app.php$uri; triggers that somehow
+T 1419438354 18<19vandemar18>	sh1shm1sh: /app.php won't match /app.php/path
+T 1419438362 22*	26ChanServ sets quiet on 18*!*@mediawiki/yuvipanda
+T 1419438450 18<19vandemar18>	sh1shm1sh: if you only have one php script that requests ever need to access, you can use s/@rewriteapp/@app/ and move everything php-related into that block, then hardcode SCRIPT_FILENAME for app.php as above.
+T 1419440917 18<19sh1shm1sh18>	vandemar: is there another way to activate @app, except try_files? something that would allow "daisy chaining", so to say.. so that i don't have to redefine /app.php in several places
+T 1419440954 18<28MTecknology18>	no
+T 1419440969 18<19sh1shm1sh18>	another question: putting static file params include below @app block (repacked as you suggested) doesn't yield desired results, since filetype location matches anyway, giving me 404
+T 1419441001 24*	28bhuemer_ is now known as 18bhuemer
+T 1419441063 18<19sh1shm1sh18>	isn't there some catch-all that would prevent this kind of behavior? like, matching urls starting with /router/, and then just handing it off to php without further processing?
+T 1419441103 18<28MTecknology18>	location ^~ /router { proxy_pass _php; }
+T 1419441900 18<19sh1shm1sh18>	vandemar: finally. it works as expected. http://pastebin.com/W0PeCY75
+T 1419441910 18<19sh1shm1sh18>	thanks!
+T 1419441919 18<19sh1shm1sh18>	MTecknology: thank you as well
+T 1419441939 24*	28lectrick is now known as 18pmarreck
+T 1419444873 18<27abcd59318>	Hi, I have two separate servers configured almost identically that run nginx on Debian Wheezy (one is a backup server). Several days everything went Ok. Now one went down. Once I have redirected the traffic on the second it went down as well. nginx/error.log show only this: 2014/12/24 19:04:40 [info] 2142#0: Using 32768KiB of shared memory for push module in /etc/nginx/nginx.conf:73  What is wrong? Thank you in advance
+T 1419444964 18<27abcd59318>	went down = no pings
+T 1419445110 18<27thresh18>	you should look at system logs
+T 1419445124 18<27abcd59318>	thresh: which one?
+T 1419445172 18<27thresh18>	kernel messages for a start
+T 1419445220 18<27abcd59318>	I have a lot of such lines: Dec 23 15:44:59 media0 kernel: [444233.771112] TCP: Peer 46.39.47.80:58691/80 unexpectedly shrunk window 4171874124:4171877012 (repaired)
+T 1419445237 18<27abcd59318>	in /var/log/debug
+T 1419445768 18<20ngxbot18>	Paste from rkantos: [ http://p.ngx.cc/7cce ] - Open Xchange rewrite
+T 1419445826 18<26rkantos18>	Hi, Can someone see how I could type that within an existing vhost in nginx? It's Open Xchange's default config for doing rewrites in apache
+T 1419448629 24*	28AC`97 is now known as 18offtopper
+T 1419451228 18<19ezy_e18>	in getting directory permission errors on CentOS. Ive tried variations of root:root, user:www-data, nginx:nginx and 755
+T 1419451240 18<19ezy_e18>	any tips/indication of what im doing wrong?
+T 1419451288 18<28MTecknology18>	You're probably not understanding how/why permissions actually work.
+T 1419451317 18<28MTecknology18>	!details
+T 1419451317 18<20ngxbot18>	We need more details to be able to help you. Please, paste your *entire* server block(s) on http://p.ngx.cc/. Provide concrete examples: what do you expect to happen and what happens instead? Check nginx error logs and provide relevant error messages. Do NOT split... thoughts over... multiple lines.
+T 1419451336 18<19ezy_e18>	with regard to nginx, your right hence the question.
+T 1419451649 18<20ngxbot18>	Paste from ezy_e: [ http://p.ngx.cc/42 ] - sample
+T 1419451679 18<28MTecknology18>	namei -l /var/www/html/xxxx
+T 1419451704 18<28MTecknology18>	nginx is likely running as www-data or similar, so you need to know that user can access that data
+T 1419451800 18<20ngxbot18>	Paste from ezy_e: [ http://p.ngx.cc/c6 ] - sample
+T 1419451891 18<28MTecknology18>	any user that has access to that system has access to those files
+T 1419451922 18<19ezy_e18>	This is a minimal install with 1 user
+T 1419451939 18<28MTecknology18>	and?
+T 1419451951 18<28MTecknology18>	that doesn't impact what I just said in any way
+T 1419452146 18<19ezy_e18>	like i stated previously, ive given ownership to the root web directory to variations of what nginx might be looking for and still getting a permissions error. The /etc/groups file shows nginx and apache as possible candidates, but nginx:nginx or user:nginx still throw the error
+T 1419452237 18<28MTecknology18>	look at your logs
+T 1419452265 18<19ezy_e18>	is forbidden (13: Permission denied)
+T 1419452290 18<28MTecknology18>	sudo -u <nginx_user> ls /foo/bar
+T 1419452291 18<19ezy_e18>	there is no other telling information except for an error number
+T 1419452318 18<28MTecknology18>	I don't believe that's all the error log holds
+T 1419452384 18<19ezy_e18>	of course not ..
+T 1419452384 18<19ezy_e18>	2014/12/24 13:43:01 [error] 18205#0: *2 "/var/www/html/SITE/index.html" is forbidden (13: Permission denied), client: xx.xx.xx.xx, server: xxxxx.com, request: "GET / HTTP/1.1", host: "www.xxxxx.com"
+T 1419452433 18<28MTecknology18>	then run namei -l /var/www/html/SITE/index.html and look at what user nginx is running as
+T 1419452458 18<28MTecknology18>	This is basic linux permissions and should be pretty dang easy to think through...
+T 1419452471 18<28MTecknology18>	linux/unix/bsd/aix/mac...
+T 1419452635 18<19ezy_e18>	its nginx:nginx from www/*, root owns /var
+T 1419452702 18<28MTecknology18>	Like I said before with sudo...
+T 1419452719 18<28MTecknology18>	sudo -u nginx file /var/www/html/SITE/index.html
+T 1419452746 18<28RobotsOnDrugs18>	it's kind of amusing how people will find excuses to avoid following simple directions to help them troubleshoot their problems
+T 1419452772 18<28MTecknology18>	I'd use a different word, but amusing works. :P
+T 1419452792 18<28RobotsOnDrugs18>	it's amusing for me as an outside party
+T 1419452808 18<19ezy_e18>	... /var/www/html/SITE/index.html: ASCII HTML document text
+T 1419453671 18<26rkantos18>	anyone know how to translate the apache config to nginx?
+T 1419454575 18<24esde18>	manually?
+T 1419456201 18<28MTecknology18>	rkantos: 1) look at your apache config to figure out what the app needs 2) learn nginx configs 3) create a new nginx config without referencing the apache one
+T 1419456206 18<28MTecknology18>	easy as 1 2 3
+T 1419458749 18<26rkantos18>	MTecknology: could you help me a bit with http://p.ngx.cc/7cce
+T 1419461740 18<19SleePy18>	Is there a list of compatibility issues/bc with upgrading nginx?
+T 1419462119 18<28MTecknology18>	rkantos: sure... what's your issue?
+T 1419462183 18<28MTecknology18>	SleePy: I've only ever seen it happen once, and the change logs identified that.
+T 1419462204 18<19SleePy18>	I'm going from a really old version of Nginx.  Pre 1.0 :|
+T 1419462257 18<24lewellyn18>	lots of changes. easiest thing to do is to spin up a testing box, install the new version, compare configs, merge as necessary, fix errors as they occur.
+T 1419462264 18<24lewellyn18>	a simple config likely won't require changes.
+T 1419462297 18<19SleePy18>	Fairly complex :P
+T 1419462325 18<26rkantos18>	MTecknology: still trying to figure out the config for Nginx :P, check out my paste
+T 1419462335 18<19SleePy18>	Plan on doing that anyways, just helps to have a list of known things that where deprecated and what to look to change
+T 1419462377 18<24lewellyn18>	consult each tree's changelog :P
+T 1419462390 18<28MTecknology18>	SleePy: You'll likely run into an issue with ports because olden times had an issue
+T 1419462418 18<28MTecknology18>	default -> default_server in server_name, but the legacy option is still there
+T 1419462424 18<19SleePy18>	You mean listen lines?          listen  80 default;
+T 1419462433 18<28MTecknology18>	err.. ya, that
+T 1419462463 18<19SleePy18>	In server_name?  You don't specify default there :P
+T 1419462474 18<28MTecknology18>	so far, nginx has stayed insanely backward compatible (except for modules and development)
+T 1419462483 18<28MTecknology18>	17:07 < MTecknology> err.. ya, that
+T 1419462488 18<28MTecknology18>	yes, I was wrong
+T 1419462507 18<19SleePy18>	Weird thing is, only 1 of my vhosts specifies the listen, the other vhosts do not appear to do that :|
+T 1419462574 18<28MTecknology18>	!listen | SleePy
+T 1419462575 18<20ngxbot18>	SleePy: listen is http://ngx.cc/r/listen
+T 1419462589 18<28MTecknology18>	!pitfalls | SleePy
+T 1419462590 18<20ngxbot18>	SleePy: Pitfalls and how to fix them - http://docs.ngx.cc/en/latest/topics/tutorials/config_pitfalls.html
+T 1419462595 18<28MTecknology18>	read those and it'll make perfect sense
+T 1419462642 18<19SleePy18>	Well thats a new pitfalls page
+T 1419462677 18<19SleePy18>	I am fairly good against pitfalls.  I built the nginx configs about 2 years ago or so.  Been a while since I've been active in this channel :)
+T 1419462864 18<28MTecknology18>	rkantos: This looks insanely simple. Stop trying to convert. I told you that.
+T 1419462875 18<28MTecknology18>	Figure out what you need, and then do that in Nginx.
+T 1419462905 18<28MTecknology18>	!primer | rkantos
+T 1419462905 18<20ngxbot18>	rkantos: Primer is: http://blog.martinfjordvald.com/2010/07/nginx-primer/
+T 1419462909 18<28MTecknology18>	!pitfalls | rkantos
+T 1419462909 18<20ngxbot18>	rkantos: Pitfalls and how to fix them - http://docs.ngx.cc/en/latest/topics/tutorials/config_pitfalls.html
+T 1419462912 18<28MTecknology18>	!dummies | rkantos
+T 1419462913 18<20ngxbot18>	rkantos: Dummies guide to a common setup on resource limited servers. http://michael.lustfield.net/nginx/dummies-guide-to-setting-up-nginx
+T 1419465784 -18tomaw-	[Global Notice] Merry Christmas freenode! Don't drink to much, at least not if you're at the keyboard! ;)
+T 1419469441 18<19kurt_18>	Hi all - Happy Holidays for some.  If anyone is watching, I am really struggling with trying to log POST message body data.  I cannot recompile the code at this point.  There are a few examples floating around on google, the example that is the most common one that does not require recompile I cannot get to work.  Can someone please provide some help with this?  Thank you!
+T 1419469444 18<28autrilla18>	nginx doesn't usually serve .php files,right? It hands them to cgi and it gets the html back?
+T 1419469484 18<29teward18>	autrilla: or to php5-fpm and that handles the processing
+T 1419469492 18<29teward18>	autrilla: depends on the setup (we always suggest the use of php5-fpm)
+T 1419469509 18<28autrilla18>	But anyway, nginx does nothing with PHP code but hand it to some other program
+T 1419469781 18<29teward18>	mhm
+T 1419469799 18<29teward18>	it is, after all, a dynamic language, i don't think nginx can at all handle it natively
+T 1419469817 18<29teward18>	it can 'serve' php, but not on its own.  (serving the content and actually rendering the content as HTML is different)
+T 1419470197 18<28autrilla18>	I'm moving stuff from a single-server setup to a load balanced multi-server setup
+T 1419470211 18<28autrilla18>	There's a lot of stuff I have to take care of :(
+T 1419470268 18<28autrilla18>	teward, well yes, it can server .php files but It'd show the phpcode
+T 1419472240 24*	28ubungu is now known as 18quydo
+T 1419472530 18<19James_T18>	\o/
+T 1419472532 18<19James_T18>	<3 nginx
+T 1419473063 18<29cliluw18>	How do I make nginx send out a 308 redirect?
+T 1419473296 18<28MTecknology18>	!return | cliluw
+T 1419473296 18<20ngxbot18>	cliluw: return is http://ngx.cc/r/return
+T 1419473351 18<29cliluw18>	MTecknology: It doesn't seem to work for a 308. When I do a "return 307 [url]" it works fine. When I do a "return 308 [url]", it fails to include the new location.
+T 1419473941 18<28MTecknology18>	Did you read the documentation yet?
+T 1419474137 18<29cliluw18>	MTecknology: Yes, I've read it. It doesn't mention 308.
+T 1419474217 18<28MTecknology18>	exactly
+T 1419474239 18<29cliluw18>	MTecknology: nginx should let me return whatever status code I want.
+T 1419478220 24*	28Thor is now known as 18Guest1025
+T 1419478308 24*	28Thor^^ is now known as 18Guest31540
+T 1419482109 24*	28thor_ is now known as 18Thor
+T 1419483353 24*	28quydo is now known as 18ubungu
+T 1419486405 24*	28ubungu is now known as 18quydo
+T 1419487033 18<28no_wai18>	
+T 1419487039 18<28no_wai18>	oops
+T 1419487962 24*	28Stellar is now known as 18Guest35688
+T 1419491578 18<29kryo_18>	hey can anyone help me with a weird 403 error?
+T 1419491597 18<29kryo_18>	'sudo -u www-data ls /var/www' works fine
+T 1419491634 18<29kryo_18>	but the logs say 'directory index of "/var/www/" is forbidden'
+T 1419491701 18<25quydo18>	could you paste output of command: ls -al /var | grep www
+T 1419491810 18<29kryo_18>	that works just fine
+T 1419491840 18<25quydo18>	can you paste output here?
+T 1419491849 18<29kryo_18>	http://pastebin.com/FJavnjSg
+T 1419491859 18<29kryo_18>	the directory names are different
+T 1419491893 18<25quydo18>	ls -al /var | grep www
+T 1419491899 18<25quydo18>	exactly, please
+T 1419491932 18<29kryo_18>	it's the exact same output if i run as root
+T 1419491937 18<25quydo18>	I want to view permissions on /var/www folder
+T 1419491940 18<29kryo_18>	the web directory is actually /home/torrents/data
+T 1419491951 18<25quydo18>	oh
+T 1419491954 18<29kryo_18>	i changed it above for clarity
+T 1419491963 18<25quydo18>	so are you use Debian, or RedHat
+T 1419491966 18<29kryo_18>	ubunut
+T 1419491970 18<29kryo_18>	u
+T 1419491992 24*	28Guest35688 is now known as 18Stellar
+T 1419492006 18<25quydo18>	try, ls -al / | grep home
+T 1419492023 18<29kryo_18>	as root or www-data?
+T 1419492030 18<25quydo18>	normal user
+T 1419492036 18<25quydo18>	not www-data
+T 1419492046 18<25quydo18>	root, you can
+T 1419492053 18<29kryo_18>	drwxr-xr-x  3 root root  4096 Dec 24 15:10 home
+T 1419492073 18<25quydo18>	ls -al /home/ | grep torrents
+T 1419492076 18<25quydo18>	try this
+T 1419492085 18<29kryo_18>	drwxr-xr-x  7 torrents torrents 4096 Dec 24 15:43 torrents
+T 1419492111 18<25quydo18>	okay, www-data can read web folder
+T 1419492120 18<25quydo18>	so are you use apache web server?
+T 1419492133 18<29kryo_18>	nginx
+T 1419492142 18<25quydo18>	oh
+T 1419492159 18<25quydo18>	have you got an index.php file in /home/torrents/data ?
+T 1419492165 18<25quydo18>	or index.html
+T 1419492183 18<29kryo_18>	nope.. i want a directory index
+T 1419492210 18<25quydo18>	okay
+T 1419492216 18<25quydo18>	just use like this
+T 1419492217 18<25quydo18>	Syntax: 	autoindex on | off;
+T 1419492218 18<25quydo18>	Default: 	
+T 1419492218 18<25quydo18>	autoindex off;
+T 1419492218 18<25quydo18>	Context: 	http, server, location
+T 1419492234 18<25quydo18>	autoindex on;
+T 1419492250 18<29kryo_18>	autoindex on
+T 1419492253 18<29kryo_18>	fixed it
+T 1419492254 18<29kryo_18>	...
+T 1419492256 18<25quydo18>	try this, and reload your nginx web server;
+T 1419492259 18<25quydo18>	okay
+T 1419492263 18<29kryo_18>	why 403 error? :P
+T 1419492280 18<29kryo_18>	should be 404 if it can't find index.html?
+T 1419492281 18<25quydo18>	because, default, nginx not allow listing files and folders
+T 1419492294 18<25quydo18>	no, web folder is valid
+T 1419492315 18<25quydo18>	autoindex off is default, so nginx will return 403 code
+T 1419492338 18<29kryo_18>	at least the log message should be more helpful :s
+T 1419492353 18<29kryo_18>	directory index of "/home/torrents/data/" is forbidden
+T 1419492358 18<29kryo_18>	sounds like nginx is trying to autoindex
+T 1419492360 18<29kryo_18>	:\
+T 1419492363 18<25quydo18>	:D
+T 1419492391 18<25quydo18>	I think, 403 for bidden error because one of the following error
+T 1419492406 18<25quydo18>	auto index directory and permission, that web user can not access
+T 1419492430 18<25quydo18>	like things I had asked you
+T 1419492432 18<25quydo18>	ok :D
+T 1419492524 18<29kryo_18>	log should be more helpful...
+T 1419492529 18<29kryo_18>	but thanks
+T 1419492534 18<29kryo_18>	happy holidays :D
+T 1419492536 18<25quydo18>	yep
+T 1419492540 18<25quydo18>	happy holigan :D
+T 1419495841 18<27atan18>	Is it possible to have Nginx dynamically assign routes based on connecting IP on a large scale? I could of course write a config and reload but there's quite a number of clients and I'm not sure that's the best way
+T 1419497581 24*	28Stellar is now known as 18Guest81627
+T 1419497684 24*	28hakunin_ is now known as 18hakunin
+T 1419497835 24*	28Guest81627 is now known as 18Stellar
+T 1419502363 24*	28koobs-kringle is now known as 18koobs
+T 1419502904 18<28Stellar18>	anyone using naxsi latest?
+T 1419502914 18<28Stellar18>	where is nx_util.py gone in latest git?
+T 1419503050 24*	28quydo is now known as 18ubungu
+T 1419506224 24*	28Ulrike_Rayne is now known as 18Ulrike_Klaus
+T 1419509829 18<29_ez_18>	is it possible to configure nginx to not respond to any of the servers ip's, but only repond to configured hosts/domain names
+T 1419510229 18<28Peng18>	_ez_: Define a vhost that returns 403 or something.
+T 1419510232 18<27thresh18>	_ez_: you can define a default server with _, and return 444; and define your hostnames in other server {} blocks, http://nginx.org/en/docs/http/server_names.html
+T 1419510297 18<29_ez_18>	Peng, thresh: thanks, I will try this
+T 1419511182 18<24esde18>	merry christmas!
+T 1419513467 18<29_ez_18>	what return code should i use in nginx to return no response whatsoever?
+T 1419513635 18<29_ez_18>	return 444; gives the error: "Message Corrupt" in Midori browser
+T 1419514022 18<27thresh18>	midori is not very robust then it seems
+T 1419514210 18<28Peng18>	_ez_: What does "return no response whatsoever" mean? THe special code 444 makes Nginx suddenly close hte TCP connection. It probably returns an RST packet or something.
+T 1419514298 18<29_ez_18>	Peng: it is most definately better than my previous configuration
+T 1419514338 18<28Peng18>	if you say so
+T 1419514340 18<29_ez_18>	But I cant even douplicate that success now, the server has reverted to its old behaviour for some reason, perhaps because my configs are loaded in a different order now
+T 1419514364 18<28Peng18>	If you properly define things, order doesn'tmatter.
+T 1419514391 18<29_ez_18>	listen 80 default_server;server_name _ "";return444;
+T 1419514399 18<29_ez_18>	that seemed to work initially
+T 1419514437 18<29_ez_18>	or at least listen (myip):80 default_server; did
+T 1419514945 18<29_ez_18>	now it reverts to redirecting to one of my domains, although i have no wewrites active
+T 1419515028 18<29_ez_18>	rewrites*
+T 1419518228 18<20irctc98918>	hello,guys.I have a problem that nginx is faster than  backend server script,so I often got 502 error for first visit
+T 1419518250 18<20irctc98918>	how can I fix this problem ,can anybody help me??
+T 1419518644 18<22py018>	irctc989, setup a timed function
+T 1419518660 18<22py018>	or make it so your script executes after certain conditions are met
+T 1419518925 18<22Longgeek18>	irctc989: I have the same problem.....
+T 1419518949 18<22Longgeek18>	Has troubled me for a long time
+T 1419519071 18<20irctc98918>	i made a lua timer function, but no works
+T 1419519171 24*	28hassel_ is now known as 18hassel
+T 1419519205 18<20irctc98918>	the nginx configuration use      proxy_pass http://$ip:$port,  but got a 502,how to make it auto retry?
+T 1419519268 18<20irctc98918>	ping longgeek
+T 1419519366 18<22Longgeek18>	Use upstream.
+T 1419519404 18<20irctc98918>	OK i'll try it.3Q
+T 1419519423 18<20irctc98918>	ping py0
+T 1419519501 18<22py018>	cha
+T 1419519528 18<22py018>	I'm not savvy with nginx.. I just know that if your script isn't executing on time then you need to set better conditions for it
+T 1419519538 18<20irctc98918>	py0, http://wiki.nginx.org/HttpUpstreamModule#server
+T 1419519562 18<22Longgeek18>	Attention: If you use only one upstream server, the max_fails & fail_timeout parameter are ignored.
+T 1419519581 18<22Longgeek18>	py0: He has only one server
+T 1419519603 18<20irctc98918>	yeah ,the documention said so
+T 1419519608 18<22Longgeek18>	py0: the max_fails & fail_timeout parameter are ignored.
+T 1419519740 18<22py018>	cool
+T 1419519879 18<27thresh18>	Or increase proxy_read_timeout.
+T 1419520124 18<22Longgeek18>	thresh: The problem is the back-end ip&port does not start
+T 1419520154 18<22Longgeek18>	thresh: I need proxy_pass to connect again several times
+T 1419520273 18<22Longgeek18>	How to fix this?
+T 1419520309 18<22Longgeek18>	Anything... :)
+T 1419523905 24*	28IAmTheClaw is now known as 18RobotsOnDrugs
+T 1419524722 24*	28MacLemon_ is now known as 18MacLemon
+T 1419531523 18<24flakerimi18>	I am trying to process via proxy host.com:3000 to host.com/api but I am getting 404
+T 1419531526 24*	28bahumbug is now known as 18niq
+T 1419531570 18<27thresh18>	what?
+T 1419531735 18<24flakerimi18>	http://pastebin.com/qZa1YTpm
+T 1419531775 18<24flakerimi18>	I tried many ways , but still 404
+T 1419531949 18<20jaybe18>	explain, better, what you're trying to accomplish
+T 1419532083 18<24flakerimi18>	I have nodejs app for apis
+T 1419532104 18<24flakerimi18>	and angular app that I use those apis
+T 1419532135 18<24flakerimi18>	angular is on location / and I want apis to be on location /api via proxyparr
+T 1419532140 18<24flakerimi18>	pass*
+T 1419532181 18<20jaybe18>	example: "i wish to proxy pass all URI requests to nginx' /example/pass to backend http://localhost:3000."
+T 1419532269 18<24flakerimi18>	yeah
+T 1419532302 18<20jaybe18>	example:  location /example/pass { proxy_pass http://localhost:3000/; }
+T 1419532311 18<20jaybe18>	nginx.org/r/location && nginx.org/r/proxy_pass
+T 1419533023 24*	28fengshaun is now known as 18nuahsgnef
+T 1419533100 24*	28nuahsgnef is now known as 18fengshaun
+T 1419537412 18<27JohnTheFaptist18>	Hey guys
+T 1419537427 18<27JohnTheFaptist18>	Having some trouble here. Creating a paste any moment now.
+T 1419537841 18<27JohnTheFaptist18>	Here is the config: http://hastebin.com/lidepejelu.nginx
+T 1419537854 18<27JohnTheFaptist18>	Any idea why that isn't redirecting the panel url to https:// properly?
+T 1419537874 18<27JohnTheFaptist18>	For some reason it is serving up the www. version instead of panel.
+T 1419537945 18<27JohnTheFaptist18>	Not that I've also tried "redirect 301 https://$server_name$server_uri;
+T 1419537946 18<27JohnTheFaptist18>	"
+T 1419539481 18<28peterx18>	I do not have php5-fpm.sock file in my var/run folder
+T 1419539526 18<28peterx18>	I am getting 502 bad gateway error when I open php files
+T 1419539567 18<28peterx18>	anyone there ?
+T 1419539676 18<27JohnTheFaptist18>	peterx: nobody seems to be awake or they're spending Christmas with their family
+T 1419539723 18<19vandemar18>	peterx: did you check your nginx error logs?
+T 1419539740 18<28peterx18>	doing that now
+T 1419539801 18<28peterx18>	2014/12/26 00:34:58 [crit] 2783#0: *13 connect() to unix:/var/run/php5-fpm.sock failed (2: No such file or directory) while connecting to upstream, vandemar
+T 1419539879 18<19vandemar18>	so?  either php5-fpm isn't running or it's running with a socket in a different location or it's using tcp sockets
+T 1419539915 18<28peterx18>	I check /var/run for php5-fpm.sock file
+T 1419539916 18<28peterx18>	it wasnt there
+T 1419539927 18<28peterx18>	so i did locate php5-fpm.sock I got nothing
+T 1419539979 18<25Axisar18>	not file. check config of php or maybe php pool for using sock. afair default settings is tcp socket
+T 1419540017 18<28peterx18>	which file should i check ?
+T 1419540135 18<25Axisar18>	/etc/php5/fpm/pool.d/www.conf but i`m not sure. btw. try to google "php-fpm unix socket"
+T 1419540183 18<25Axisar18>	right. uncomment listen = /var/run/php5-fpm.sock and restart php-fpm
+T 1419540204 18<28peterx18>	a post on stack overflow suggests to replace /var/run/php5-fpm.sock with 127.0.0.1:7777
+T 1419540241 18<28peterx18>	in www.conf
+T 1419541525 18<28MTecknology18>	Axisar: so against the /better/ suggestion he use a unix socket instead of a tcp socket, he's going to go the tcp route...
+T 1419543866 18<24mischief18>	hi
+T 1419543882 18<24mischief18>	what's the easiest way to serve content like print 'hello world' directly in nginx config?
+T 1419546284 18<19vandemar18>	mischief: lua, maybe
+T 1419546382 18<24mischief18>	that's what i figured, i was hoping there's a simpler way
+T 1419547796 18<28autrilla18>	I have a nginx server on http://54.154.92.104/ . In fact I have two, as it is load balanced. One of them works fine, but the other one does not. From it, I can curl http://54.154.92.104/ and that works, but it doesn't work for remote requests apparently. The server in question is working here http://54.154.30.154/
+T 1419559779 18<26sdfdsf55sss18>	How to redirect all pages except files ending in php to templatefile.php
+T 1419559867 18<26sdfdsf55sss18>	rewrite ^/[A-Za-z0-9_!]+/?$ /templatefile.php last;
+T 1419559882 18<26sdfdsf55sss18>	^ that worked but now nginx doesnt display images?
+T 1419559904 18<28Peng18>	you want to run images through something called templatefile.php? :X
+T 1419559908 18<26sdfdsf55sss18>	and the css went out the window
+T 1419559922 18<28Peng18>	by the way try_files might be better
+T 1419559925 18<28Peng18>	maybe
+T 1419559958 18<26sdfdsf55sss18>	i want to redirect all pages except files ending in php to templatefile.php and still have nginx display images and not ignore css
+T 1419559986 18<26sdfdsf55sss18>	redirect all pages except files ending in php, to templatefile.php
+T 1419559992 18<26sdfdsf55sss18>	added a comma :S
+T 1419560008 18<28Peng18>	maybe you should fix templatefile.php to not break images and CSSS then
+T 1419560009 18<26sdfdsf55sss18>	so that all my auto-generated pages redirect to that php page
+T 1419560034 18<26sdfdsf55sss18>	index.php does too
+T 1419560035 18<28Peng18>	CSSSSSSS <- I'm a snake
+T 1419560037 18<26sdfdsf55sss18>	so thats not the problem
+T 1419562163 24*	28chke_ is now known as 18chke
+T 1419562166 24*	28AJC_Z0 is now known as 18AJ_Z0
+T 1419562168 24*	28akkad_ is now known as 18akkad
+T 1419563282 24*	28ubungu is now known as 18quydo
+T 1419566283 24*	28agrajag| is now known as 18agrajag`
+T 1419572117 18<22mdoge18>	getting an error while trying to proxy forward '/bdapi/' to 127.0.0.1:1300
+T 1419572119 18<22mdoge18>	http://pastebin.com/raw.php?i=yvwr1Y8V
+T 1419572130 18<22mdoge18>	something about internal redirection ?
+T 1419572139 18<22mdoge18>	what gives ?
+T 1419577459 24*	28Ulrike_Klaus is now known as 18Ulrike_Rayne
+T 1419580878 24*	28rwp_ is now known as 18rwp
+T 1419581452 24*	28the_ktosiek is now known as 18ktosiek
+T 1419583633 18<24tapout18>	why does   location /iwp { ... }  not match;   /iwp/login.php ?
+T 1419585206 18<25akkad18>	try /iwp/
+T 1419585741 18<24tapout18>	thanks
+T 1419588485 24*	28oasisfleeting_ is now known as 18oasisfleeting
+T 1419589824 24*	28quydo is now known as 18ubungu
+T 1419592708 24*	28microchip__ is now known as 18microchip_
+T 1419592719 24*	28AUS3RIS is now known as 18aus3ris
+T 1419594711 24*	28aus3ris is now known as 18AUS3RIS
+T 1419594743 24*	28AUS3RIS is now known as 18aus3ris
+T 1419598779 24*	28AUS3RIS is now known as 18aus3ris
+T 1419598818 24*	28aus3ris is now known as 18AUS3RIS
+T 1419601038 18<22mdoge18>	http://stackoverflow.com/questions/27653291/nginx-rewrite-or-internal-redirection-cycle-error
+T 1419601041 18<22mdoge18>	can someone help me^
+T 1419601841 18<28MTecknology18>	!linkit | mdoge
+T 1419601841 18<20ngxbot18>	mdoge: Don't send us a link to a forum. If you want help here, then ask for help here. Use our pastebin (p.ngx.cc) if you need to show us your configuration or errors. When asking a question, ask it with ONE intelligible line and explain your issue.
+T 1419601972 18<22mdoge18>	ok MTecknology. Hello, nginx gives me an error, please see: http://pastebin.com/raw.php?i=yvwr1Y8V.
+T 1419602039 18<28MTecknology18>	1) read the topic 2) what error? 3) look at your logs
+T 1419602070 18<22mdoge18>	MTecknology: if you dont want to help me, dont respond please.
+T 1419602713 22*	26ChanServ sets quiet on 18*!*@pwned.systems
+T 1419602827 18<28MTecknology18>	If you don't want to follow simple instructions and irc etiquette like reading a topic when you enter or reading and following instructions, then fuck off.
+T 1419602964 18<22Longgeek18>	Hi, Guys
+T 1419602966 18<22Longgeek18>	I met a problem now, I need to use the proxy TCP request is forwarded, but my rear end port server does not start, how can I let proxy go to try connecting again the backend server? I know there is a upstream module, but i have only server, so the max_fails & fail_timeout parameter is ignored, there is no other way?
+T 1419603110 18<20ngxbot18>	Paste from Longgeek: [ http://p.ngx.cc/84 ] - my nginx.conf
+T 1419603133 18<22Longgeek18>	this is my nginx.conf: http://p.ngx.cc/84
+T 1419603285 22*	26ChanServ gives channel operator status to 18MTecknology
+T 1419603304 22*	26MTecknology sets ban on 18*!*@pwned.systems
+T 1419603304 22*	26MTecknology removes quiet on 18*!*@pwned.systems
+T 1419603308 22*	26MTecknology has kicked 18mdoge from 22#nginx (24mdoge)
+T 1419603314 22*	26ChanServ removes channel operator status from 18MTecknology
+T 1419603377 18<28MTecknology18>	Longgeek: You want nginx to try reconnecting to the same backend if it failed?
+T 1419603399 18<22Longgeek18>	MTecknology: yes
+T 1419603435 18<22Longgeek18>	MTecknology: How to realize the upstream without the use of the module case?
+T 1419603509 18<20ngxbot18>	Paste from wgi: [ http://p.ngx.cc/67 ] - rewrite or internal redirection
+T 1419603539 18<24wgi18>	Hello friendly people of freenode, could someone help me with a 'rewrite or internal redireciton error'. The error_log is in the paste above.
+T 1419603637 18<28MTecknology18>	Longgeek: I'm out of time... I have to leave in about 1min. I'm struggling to understand you questions... :(
+T 1419603663 18<28MTecknology18>	Longgeek: I don't think you can have nginx try an upstream and then retry that same upstream if it fails.
+T 1419603664 18<24wgi18>	MTecknology: perhaps you can help me, seeing as you have been helpful in the past!
+T 1419603713 18<28MTecknology18>	Longgeek: In lua, perhaps you could try to do a tcp connect to that port before deciding if it's available... I don't know how, though.
+T 1419603771 22*	26ChanServ gives channel operator status to 18MTecknology
+T 1419603778 18<24wgi18>	yeyeyeye
+T 1419603789 22*	26MTecknology sets ban on 18*!*@*nattewasbeer.nl
+T 1419603794 18<22Longgeek18>	My rear end IP address and port is stored in the redis, I use Lua to get to it, I can't define in advance upstream module.
+T 1419603801 22*	26ChanServ removes channel operator status from 18MTecknology
+T 1419603817 18<22Longgeek18>	MTecknology: Yes, can I try on this point, the use of lua.
+T 1419603817 18<28MTecknology18>	ban evasion... that'll get you another week or two...
+T 1419603878 18<29teward18>	MTecknology: s/week or two/eon/
+T 1419603880 18<22Longgeek18>	MTecknology: Thank you, your patience to answer, you are a good man.
+T 1419603881 18<29teward18>	:P
+T 1419603923 18<28MTecknology18>	heheh :)
+T 1419603975 18<22Longgeek18>	:)
+T 1419604115 18<28MTecknology18>	Longgeek: good luck! If nothing else, check out the mailing list. Some excellent knowledge on there.
+T 1419604206 18<22Longgeek18>	MTecknology: OK, I will try to Lua connected to the HTTP, to do judgment, sleep time, connect again, wait for my good news. Thank you once again.
+T 1419606101 18<26sdfdsf55sss18>	Hello. Can anyone write me a rewrite rule that sends all pages not ending in .php to templatefile.php?
+T 1419606271 18<20jaybe18>	sdfdsf55sss, example:  location ~ [^\.php$] { rewrite ^ /templatefile.php last; }
+T 1419606282 18<20jaybe18>	sdfdsf55sss, nginx.org/r/location && nginx.org/r/rewrite
+T 1419606284 19<jaybe>	!regex | sdfdsf55sss
+T 1419606285 19<ngxbot>	sdfdsf55sss: regex is Regex tutorial: http://regexone.com  ||  Interactive regex testing: http://regexpal.com  ||  Regex is like XML is like violence.  If it doesn't solve your problem, you aren't using enough of it.
+T 1419606536 18<20ngxbot18>	Paste from Longgeek: [ http://p.ngx.cc/3e ] - lua connect http
+T 1419606576 18<22Longgeek18>	MTecknology: My solution. http://p.ngx.cc/3e
+T 1419606603 18<22Longgeek18>	MTecknology: The perfect solution, thanks again.
+T 1419606643 22*	26sendak.freenode.net gives channel operator status to 18ChanServ
+T 1419606731 24*	28Boscop_ is now known as 18Boscop
+T 1419606736 18<26sdfdsf55sss18>	jaybe, thank you but i already have a location block. how do i make it work then?
+T 1419606776 18<20jaybe18>	sdfdsf55sss, ok; but does your location block accomplish what my example provides for?
+T 1419606794 18<26sdfdsf55sss18>	uh. no
+T 1419606797 18<26sdfdsf55sss18>	location / {
+T 1419606800 18<26sdfdsf55sss18>	is my location block
+T 1419606801 18<20jaybe18>	*see above
+T 1419606828 18<26sdfdsf55sss18>	i tried deleting it and just using yours but it gives me a 500 server error
+T 1419606855 18<20jaybe18>	check your logs
+T 1419606866 18<26sdfdsf55sss18>	maybe i actually has to read the beginners guide :(
+T 1419606872 18<26sdfdsf55sss18>	man i hate this :|
+T 1419606876 18<20jaybe18>	note: having both locations (yours and mine) is sensible
+T 1419606881 18<20jaybe18>	nginx.org/r/location
+T 1419606899 18<26sdfdsf55sss18>	i tried putting your location block inside mine but that didnt work either
+T 1419606920 18<20jaybe18>	why would you put it inside?
+T 1419606921 18<26sdfdsf55sss18>	and also outside(with both) didnt work
+T 1419606932 18<26sdfdsf55sss18>	well obviously because i dont know what im doing :D
+T 1419606940 18<20jaybe18>	perhaps describe, with words, simply, and on one line... what you're actually trying to accomplish.
+T 1419606942 18<20jaybe18>	haha
+T 1419606949 24*	28Gill_ is now known as 18Gill
+T 1419607014 18<26sdfdsf55sss18>	goddamit. gonna make myself a coffe
+T 1419607053 18<20jaybe18>	think i'll have another
+T 1419608438 18<28h4k1m18>	hi
+T 1419608457 18<28h4k1m18>	Im new to nginx and want to add /phpmyadmin alias to one of my vhosts
+T 1419608484 18<28h4k1m18>	I dont want to have phpmyadmin on a separate vhost (which is easier)
+T 1419608597 18<20jaybe18>	h4k1m, hi.  it's best and much easier to use a subdomain for apps/services such as phpmyadmin.
+T 1419608602 18<20jaybe18>	!subdir | h4k1m
+T 1419608602 18<20ngxbot18>	h4k1m: Setting up a stock dynamic webapp in a subdirectory like http://site/app/, particularly when you have several (/app1/, /app2/), can be difficult if the apps cannot be told about their baseuri(s) somehow.  Use subdomains rather than uri subdirs for each app, when practical.  If you can modify the application(s), hardcode a baseuri or have it passed in from nginx using http headers, fastcgi/uwsgi/etc params, etc.
+T 1419608635 18<20jaybe18>	h4k1m, however, you can use subdirectories if you enjoy pain:  nginx.org/r/location && nginx.org/r/fastcgi_pass
+T 1419608720 18<28h4k1m18>	jaybe: thanks I'll search on how to configure phpmyadmin as a subdomain on nginx
+T 1419608816 18<20jaybe18>	h4k1m, you don't need to search; see the links i provided
+T 1419608841 18<20jaybe18>	and... http://nginx.com/resources/admin-guide/reverse-proxy
+T 1419608951 18<28h4k1m18>	jaybe: Im using php-fpm btw (so I have no issue dealing with apache..)
+T 1419608979 18<20jaybe18>	apache has nothing to do with our conversation
+T 1419609020 18<28h4k1m18>	fien
+T 1419609022 18<28h4k1m18>	fine
+T 1419609144 18<28h4k1m18>	jaybe: I added a separate server block and added the subdomain's servername to /etc/hosts
+T 1419609157 18<28h4k1m18>	and it's working fine (I'm working locally)
+T 1419609203 18<20jaybe18>	h4k1m, :) great. good choice.
+T 1419609227 18<28h4k1m18>	jaybe: thanks again for the help
+T 1419609232 18<20jaybe18>	h4k1m, welcome
+T 1419616327 18<20Anuraag18>	Hello. I want to setup HTTP authentication on my nginx webserver. Whenever I type my IP in browser it should ask for password. I followed a tutorial on DO and set it up. But now all my domains also ask password and username to open.
+T 1419616335 18<20Anuraag18>	How do I just setup for my IP
+T 1419616392 18<20Anuraag18>	Anyone here?
+T 1419616647 18<19Tykling18>	Anuraag: you should only do it in the default server block then
+T 1419616658 18<20jaybe18>	Anuraag, specify a server  block { } (just) for the IP version/server
+T 1419616692 18<20jaybe18>	Anuraag, i.e. server { listen 80; server_name xx.xxx.xx.xx; root /srv/www/ip/pub; http_auth... ... }
+T 1419616723 18<20jaybe18>	Anuraag, nginx.org/r/server_name
+T 1419616775 18<20Anuraag18>	Let me do it. Can it be inside " /etc/nginx/sites-enabled# "
+T 1419616826 18<20jaybe18>	Anuraag, sure; if you've configured your installation to function that way
+T 1419617170 18<20Anuraag18>	Thanks a lot . It's done.
+T 1419617171 18<20Anuraag18>	:0
+T 1419617173 18<20Anuraag18>	:)
+T 1419617244 18<20Anuraag18>	thank you jaybe
+T 1419619485 18<29NBhosting18>	why doesnt this activate gzip on my site , nginx config http://pastebin.com/bR17ZBMQ
+T 1419619491 18<29NBhosting18>	http://checkgzipcompression.com/?url=http%3A%2F%2Fwww.directopdate.nl
+T 1419619928 18<29NBhosting18>	ow bad site i gues, elsewhere i get good results
+T 1419620416 24*	28pardusf is now known as 18parduse
+T 1419621034 18<29NBhosting18>	mm so odd, even my browser says gzip is not enabled.
+T 1419621037 18<29NBhosting18>	bad config?
+T 1419621074 18<29teward18>	doesn't look it to me, nuke your browser cache first
+T 1419621132 18<29teward18>	NBhosting: i'm getting a 301 though
+T 1419621154 18<29teward18>	NBhosting: http:// will return a 301 redir to SSL
+T 1419621158 18*	29teward runs testssl
+T 1419621174 18<29NBhosting18>	but you see the website right?
+T 1419621179 18<29NBhosting18>	http should go to https
+T 1419621185 18<29teward18>	i'm using curl for the gzip test :)
+T 1419621237 18<29teward18>	NBhosting: looks like GZip is enabled - proof is that BREACH is not mitigated
+T 1419621263 18<29NBhosting18>	someone is saying: fix your caches in between
+T 1419621287 18<29teward18>	and i'm saying: don't test gzip on a redir
+T 1419621299 18<29teward18>	(the checkgzipcompression site was hitting http:// not https)
+T 1419621305 18<29teward18>	(and the redirect on its own breaks a lot of testers)
+T 1419621307 18<29NBhosting18>	NBhosting@server:~$ curl -I -H "Accept-Encoding: gzip, deflate" https://www.directopdate.nl/static/js/jquery1.11.1.js 2>&1|grep gzip
+T 1419621313 18<29NBhosting18>	same no gzip
+T 1419621353 18<29NBhosting18>	is there a btr way for http to https
+T 1419621359 18<29NBhosting18>	redirect is the only way right
+T 1419621372 18<29teward18>	NBhosting: http://p.ngx.cc/cf7ebab7fee6bd30
+T 1419621386 18<29teward18>	the testssl script i use tests gzip compression
+T 1419621391 18<29teward18>	by way of testing BREACH
+T 1419621435 18<29teward18>	also you might want to test the root, rather than individual files
+T 1419621436 18<29NBhosting18>	what should i see here
+T 1419621449 18<29teward18>	NBhosting: the line with 5 * at the beginning of it
+T 1419621453 18<29teward18>	the one about HTTP compression
+T 1419621469 18<29NBhosting18>	**** BREACH =HTTP Compression, experimental    uses gzip compression  (only "/" tested)
+T 1419621475 18<29teward18>	http://p.ngx.cc/7b1fbae834cc74c4 curl output
+T 1419621481 18<29teward18>	NBhosting: i haven't tested every file though :P
+T 1419621510 18<29teward18>	oh, heck, something got into my ftp honeypot
+T 1419621511 18<29teward18>	heheheheh
+T 1419621523 18<29NBhosting18>	why doe it mark it as BREACH btw, because compression is a bad thing with ssl?
+T 1419621637 18<29NBhosting18>	ah breach is a attack type
+T 1419621734 18<29NBhosting18>	mm but disabling gzip is not really improving my page speed :P
+T 1419621814 18<29teward18>	NBhosting: that's just one way to mitigate :P
+T 1419621829 18<29teward18>	fwiw curl detects the compression, but it might not be compressing *every* little thing
+T 1419621840 18<29NBhosting18>	would u fix this or is it safe to ignore
+T 1419621904 18<29teward18>	NBhosting: i'm paranoid - i fixed it on my sites, but my sites dont' serve a lot of content
+T 1419621909 18<29teward18>	at least, nothing heavy
+T 1419621914 18<29teward18>	so in most cases you can leave gzip on
+T 1419621938 18<29NBhosting18>	yeah from what i read u will notice an attack because they need milions of requests
+T 1419621964 18<29teward18>	mhm
+T 1419627619 24*	28Ranomier2 is now known as 18Ranomier
+T 1419631527 18<27joespeakeasy18>	I'm a bit new to nginx… Once I have an instance of nginx up, do I need to restart/reload it if I add any server blocks? or will they be available upon creation?
+T 1419632801 18<27`VL18>	joespeakeasy: you have to reload if you have changed something in your configuration
+T 1419632974 18<27joespeakeasy18>	VL roger that. If I execute "nginx -s reload" will that kill existing connections?
+T 1419634301 18<27`VL18>	joespeakeasy: no, it will start new worker processes. old will exit when existing connections are complete
+T 1419635391 18<27joespeakeasy18>	VL, thanks. Will new connections automatically be served from the new worker processes?
+T 1419635959 18<19stdvector18>	Hello. Is it possible to get nginx to ignore requests to some location? (don't return any HTTP error code, just close the connection or timeout)
+T 1419636020 18<25qwebirc4423118>	hey guys ..
+T 1419636047 18<25qwebirc4423118>	how can I have a specific html page shown .. when all the backend servers are unhealthy
+T 1419636060 18<25qwebirc4423118>	?
+T 1419636078 18<25qwebirc4423118>	I am currently using nginx plus .. health check module
+T 1419636333 18<29teward18>	not sure if nginx plus is offtopic or not...
+T 1419640095 18<22Mikke18>	acer: add a comment before GRUB_HIDDEN_TIMEOUT=0
+T 1419640144 18<22Mikke18>	qwerty2, yea
+T 1419640381 18<22Mikke18>	Mikke: /join #defocus
+T 1419640428 18<22Mikke18>	sweet got it working
+T 1419640626 18<22Mikke18>	well said CatTheCinnamon
+T 1419641278 18<22daurnimator18>	https://gist.github.com/daurnimator/55acef0626e00cf66c16
+T 1419641283 18<22daurnimator18>	^^ anyone feel like reviewing?
+T 1419641289 18<22daurnimator18>	it's my first time writing an nginx plugin
+T 1419642415 18<29Bustin18>	Hello there, just installed nginx on centos 6, with php. Now when I visit my page, i get "No input file specified"
+T 1419642810 18<22daurnimator18>	Bustin: what does your config look like? please use pastebin in title
+T 1419643180 18<29Bustin18>	daurnimator: I figured it out, thank you. I have MySQL installed, but nginx / php is not recognizing it. Any way to assist?
+T 1419643280 18<22daurnimator18>	Bustin: 'recognizing it'? have should be providing the location/user/password....
+T 1419643287 18<22daurnimator18>	or maybe not; I don't know PH
+T 1419643289 18<22daurnimator18>	P
+T 1419643328 18<29Bustin18>	I have MySQL 5.5 installed, previous to me install php and nginx
+T 1419643340 18<29Bustin18>	nginx / php does not recognize it was installed
+T 1419643352 18<29Bustin18>	the extensions I guess are not loaded / installed
+T 1419643358 18<29Bustin18>	@ daurnimator
+T 1419643658 18<29Bustin18>	Sorry, I had apache, PHP 5.5, and MySQL 5.5 installed. I removed apache and PHP 5.5, installed nginx and php-fpm, keeping.
+T 1419643709 18<29Bustin18>	but MySQL is not recognized by nginx / php - phpinfo also shows no extension for mysql

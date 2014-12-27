@@ -1,0 +1,19 @@
+T 1418166327 19*	Now talking on 22#npm
+T 1418166327 22*	Topic for 22#npm is: don't use npm update -g! - Bugs: https://github.com/npm/npm/issues - Support: support@npmjs.com
+T 1418166327 22*	Topic for 22#npm set by 26othiym23!ogd@aglaia.aoaioxxysz.net (24Wed Sep 24 20:34:00 2014)
+T 1418166338 20<tunnckoCore>30	nahhhhh new npmjs web design looks awful...
+T 1418166359 20<tunnckoCore>30	and.. from where gets "irc" field and "homepage"?
+T 1418166615 18<19timoxley18>	othiym23: yeah I need to get a reproducible scenario, can live with it for now, wiping the node_modules and starting over seems to work.
+T 1418166728 18<22othiym2318>	timoxley: I want to fix this, on the one hand, but I suspect that whole swathes of these problems are going to disappear with npm@3
+T 1418166746 18<22othiym2318>	timoxley: regardless, if you come up with a smallish repro case, even if it's not 100% reproducible, let me know
+T 1418166813 18<19timoxley18>	othiym23: yep very much looking forward to npm@3. what's current eta looking like?
+T 1418166845 18<22othiym2318>	timoxley: iarna is spending her time writing tests and docs now, working on getting the progress bars right
+T 1418166854 18<19timoxley18>	maybe I should trial that branch
+T 1418166861 18<22othiym2318>	timoxley: so, beta by the end of the year, general release sometime in January probably
+T 1418166869 18<22othiym2318>	it's feature complete, I believe
+T 1418166913 18<19timoxley18>	othiym23: Wow, ok. Great. With holidays etc that will be here in no time.
+T 1418166943 18<22othiym2318>	yeah, I wouldn't say that if Rebecca weren't almost already done ;)
+T 1418166953 18<22othiym2318>	this week is sort of a loss for me thanks to oakland.jsfest.com
+T 1418168024 18<24Fishrock12318>	woo new npm site :D
+T 1418168522 24*	28tiCeR is now known as 18tiCeR_off
+T 1418168635 18<27rhalff18>	I can't help but frown upon the coding style guide :-)

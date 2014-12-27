@@ -1,0 +1,44 @@
+T 1418869954 19*	Now talking on 22#{
+T 1418903248 19*	Now talking on 22#{
+T 1418906885 18<22GitHub17018>	[mustache.js] dasilvacontin pushed 2 new commits to master: http://git.io/59CfmQ
+T 1418906885 18<22GitHub17018>	mustache.js/master d166547 Alvaro Videla: an image is wroth a thousand words
+T 1418906885 18<22GitHub17018>	mustache.js/master 162d815 David da Silva Contín: Merge pull request #327 from videlalvaro/patch-1...
+T 1418938984 18<19locks18>	https://github.com/blog/1938-git-client-vulnerability-announced
+T 1418949162 18<22thomad1618>	hello
+T 1418949204 18<22thomad1618>	command to execute moustache files taking json data from stdin?
+T 1418949395 18<24bobthecow18>	thomad16: that depends on which mustache you're talking about.
+T 1418949412 18<22thomad1618>	there are different versions?
+T 1418949419 18<24bobthecow18>	dozens, at least.
+T 1418949438 18<24bobthecow18>	https://github.com/mustache/mustache/wiki/Other-Mustache-implementations
+T 1418949487 18<24bobthecow18>	47 on that page, and i know there are some that aren't there :)
+T 1418949499 18<24bobthecow18>	assuming you're talking about the ruby implementation?
+T 1418949503 18<24bobthecow18>	http://mustache.github.io/mustache.1.html
+T 1418949632 18<24bobthecow18>	mustache data.json template.mustache
+T 1419016385 24*	28ELLIOTTCABLE_ is now known as 18ELLIOTTCABLE
+T 1419130457 19*	Now talking on 22#{
+T 1419130457 -18NickServ-	You are now identified for tunnckoCore.
+T 1419163474 18<24vargadanis18>	hello everyone!
+T 1419163922 18<24vargadanis18>	trying to compile mustache with Java JDK7 and I cannot. MVN tells me about an invalid target 8. I assume that is because Java 8 is to be used.
+T 1419163946 18<24vargadanis18>	I am not comfortable using version 8 yet, is it possible to have it compile with 7?
+T 1419187453 19*	Now talking on 22#{
+T 1419250996 18<25uphoria18>	I don't really have anything to say
+T 1419251010 18<25uphoria18>	but I wanted to jump on and say this is the most ridiculously awesome IRC channel name I've ever seen
+T 1419251017 18<25uphoria18>	and Handlebar looks neat
+T 1419251100 18<19locks18>	haha
+T 1419251105 18<19locks18>	\m/
+T 1419268534 18<22Lauxley18>	hey, i am a bit confused, what is the 'right' way to load a partial depending on an attribute ? do i have to add the compare function to each object ?
+T 1419268627 18<22Lauxley18>	i tried {{#is_foo?}}{{>foo}}{{/is_foo?}}  is_foo being a function returning object.attr == 'foo', but it doesn't work it gets passed '{{>foo}}' as a string
+T 1419269102 18<19locks18>	hm, interesting
+T 1419269244 18<22Lauxley18>	locks: it shouldn't behave like this ?
+T 1419269277 18<22Lauxley18>	btw i'm using pystache, i'm going to try with the mustache.js
+T 1419269319 18<19locks18>	not quite sure, if it works the same in mustache.js then it's definitely intended
+T 1419269877 18<22Lauxley18>	well yeah it does the same thing in js
+T 1419269913 18<22Lauxley18>	i guess i'm gonna have to loop over each object and add something like 'is_foo: true'
+T 1419270903 18<22Lauxley18>	oh well, it doesn't work either in js, even if i set is_foo directly in each object... i don't get it i'll try again tomorow
+T 1419296296 19*	Now talking on 22#{
+T 1419362367 18<28richerlariviere18>	I love mustache
+T 1419410975 18<27Wes-18>	kpom
+T 1419438477 24*	28Wes-_ is now known as 18Wes-
+T 1419620721 18<24bobthecow18>	https://github.com/mustache/mustache.github.com/pull/51
+T 1419620726 18<24bobthecow18>	https://github.com/mustache/mustache/issues/166
+T 1419620735 18<24bobthecow18>	https://github.com/mustache/mustache/pull/184

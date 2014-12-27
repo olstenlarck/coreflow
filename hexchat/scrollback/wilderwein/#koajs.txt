@@ -1,0 +1,185 @@
+T 1417707331 19*	Now talking on 22#koajs
+T 1417707710 19*	Now talking on 22#koajs
+T 1417707853 18<26hammerhead190018>	anyone everused 'nvm-windows' ?
+T 1417732669 19*	Now talking on 22#koajs
+T 1417762817 24*	28csurap_ is now known as 18csurap
+T 1417816119 24*	28csurap_ is now known as 18csurap
+T 1417816368 24*	28csurap_ is now known as 18csurap
+T 1417824691 19*	Now talking on 22#koajs
+T 1417825198 19*	Now talking on 22#koajs
+T 1417843690 24*	28csurap_ is now known as 18csurap
+T 1417961769 19<TheAceOfHearts>	oh cool, tunnckoCore starred my snippets thing :D
+T 1417961772 18<19TheAceOfHearts18>	https://github.com/cesarandreu/sublime-javascript-next-snippets ~
+T 1418015420 18<19TheAceOfHearts18>	Hmmm, do you guys use actual Errors when something fails, or do you just throw objects?
+T 1418019338 18<29rickharrison18>	I always use actual errors
+T 1418019783 18<19TheAceOfHearts18>	so, isn't there a concern about leaking information? I was thinking of having a set of custom Application Errors and throwing those, and then having a middleware to intercept all errors
+T 1418154728 18<20Absorbent18>	hello
+T 1418154731 18<20Absorbent18>	in this example
+T 1418154732 18<20Absorbent18>	https://github.com/koajs/examples/blob/master/upload/index.js
+T 1418154741 18<20Absorbent18>	how do I detect if the upload has ended
+T 1418160503 18<20hipsterslapfight18>	at the end of the while loop
+T 1418163060 20<tunnckoCore>30	TheAceOfHearts: haha, yep. I'll try it soon.
+T 1418163111 18<19TheAceOfHearts18>	awesome :D
+T 1418163123 18<19TheAceOfHearts18>	I added async testing methods too, it's super clean
+T 1418163148 18<19TheAceOfHearts18>	if you use supertest-as-promised you can do tests as simple as this:
+T 1418163158 18<19TheAceOfHearts18>	https://www.dropbox.com/s/rzdlk1q5eaw9frt/Screenshot%202014-12-09%2014.12.36.png?dl=0
+T 1418163234 20<tunnckoCore>30	Absorbent: you can set some iterator, or use something more powerful like koa-body or https://github.com/tunnckoCore/koa-better-body/
+T 1418163249 20<tunnckoCore>30	my supports all kinds of request body.
+T 1418163334 20<tunnckoCore>30	TheAceOfHearts: cool
+T 1418163708 20<tunnckoCore>30	oh, i need some cli irc client :D
+T 1418163754 20<tunnckoCore>30	that allow me to write through cli
+T 1418310097 19*	Now talking on 22#koajs
+T 1418363948 18<28xintox18>	hipsterslapfight: oh :(
+T 1418386831 18<27roymiloh_18>	Hey there!
+T 1418386986 19<roymiloh_>	Is Koa ready for production?
+T 1418388017 19<hipsterslapfight>	koa is currently only useable on an unstable version of node (0.12 any day now ... maybe!) and under a flag
+T 1418388035 18<20hipsterslapfight18>	so ... it depends on how risky you want to be
+T 1418388042 19<hipsterslapfight>	personally i haven't had any problems running koa in production though
+T 1418397176 18<20roymiloh18>	hipsterslapfight: iojs release a stable version next month, aren't they? :-P
+T 1418397199 18<20hipsterslapfight18>	sure, generators will still only be available under a flag though
+T 1418397411 18<20roymiloh18>	It's a web app with around 10K unique / day, currently running on express. what could problems be?
+T 1418398464 18<20hipsterslapfight18>	who knows, that's why the feature is behind a flag at the moment!
+T 1418444285 19<TheAceOfHearts>	I feel like I've been seeing more people mention koa at the internet, but the channel is still kinda dead :(
+T 1418445266 18<19TheAceOfHearts18>	what happens if I yield an array where some of the elements throw?
+T 1418467118 24*	28roymiloh is now known as 18Santis
+T 1418473123 18<29guy18>	What benefit does the use of generators have over, say, promises?
+T 1418473659 18<26Hestil18>	guy: you use both of them.
+T 1418473689 18<26Hestil18>	you have situations when you yield a promise
+T 1418474591 19<guy>	Any reason not to use Koa for RESTful API?
+T 1418474651 20<tunnckoCore>30	guy, nope
+T 1418475432 18<29guy18>	and how would you say that would compare with something like Restify?
+T 1418479922 20<tunnckoCore>30	guy: everybody have different tastes. We have awesome https://github.com/alexmingoia/koa-router and https://github.com/alexmingoia/koa-resource-router for that cases
+T 1418480034 20<tunnckoCore>30	im fan of latest origins and from 8-9 months and currently using node 0.11
+T 1418480227 18<20hipsterslapfight18>	there's also a trie based router if you want to do routes as they should be handled
+T 1418481995 18<26Hestil18>	Will we nodejs release an update which wrap yield in promise?
+T 1418482010 18<26Hestil18>	without "we" -.-
+T 1418485714 19<Hestil>	koa + mongoose? anyone?
+T 1418486988 18<20hipsterslapfight18>	"wrap yield in a promise" ??
+T 1418487068 18<26Hestil18>	hipsterslapfight: yes. you just use co?
+T 1418487088 18<20hipsterslapfight18>	your question doesn't make sense to me
+T 1418487095 18<20hipsterslapfight18>	you want to return a promise from a generator?
+T 1418487113 18<26Hestil18>	I've seen that v3.9 (unstable yet) is return promise.
+T 1418487136 18<26Hestil18>	yiels promise
+T 1418487139 18<26Hestil18>	yield
+T 1418487150 18<26Hestil18>	oh
+T 1418487160 18<26Hestil18>	you talked about the previous question
+T 1418487224 18<26Hestil18>	I mean to wrap a function with callback to return a promise then yield it
+T 1418487458 18<26Hestil18>	instead of `yield co(fs.readFile(... no callback))`
+T 1418494899 20<tunnckoCore>30	Hestil: promisify method? `fs.readFile(... no callback` i think this (with only filepath without cb) is impossible
+T 1418494957 19<Hestil>	tunnckoCore: Sorry, It would work if I wrap fs.read with thunkify before.
+T 1418495011 20<tunnckoCore>30	Hestil: oh, yea :D
+T 1418495078 19<Hestil>	tunnckoCore: But, well, it anormal way
+T 1418495083 18<26Hestil18>	its
+T 1418495095 20<tunnckoCore>30	Hestil: describe again please, i cant figure it out
+T 1418495109 20<tunnckoCore>30	want to yield promise?
+T 1418495184 19<Hestil>	tunnckoCore: No, I mean, when will node release a version which we can use yield in a normal way way
+T 1418495193 18<26Hestil18>	= return promise and not callback
+T 1418495242 20<tunnckoCore>30	ooo.. gotcha :D I beleave soon
+T 1418495266 18<26Hestil18>	should I do it for every module I want to use and now using callbacks?
+T 1418495291 18<26Hestil18>	wrap in a thunkify & promise
+T 1418495305 20<tunnckoCore>30	you can use all new features from 0.11 right now
+T 1418495365 18<26Hestil18>	core modules not implemented yet to return a promise (?)
+T 1418495458 18<26Hestil18>	btw, have you used mongoose with yield?
+T 1418497033 18<20hipsterslapfight18>	18:29 <Hestil> core modules not implemented yet to return a promise (?)
+T 1418497037 18<20hipsterslapfight18>	this will never happen
+T 1418497042 18<20hipsterslapfight18>	at least not any time soon
+T 1418497042 18<20hipsterslapfight18>	not even in io.js
+T 1418586642 24*	28Bnaya_ is now known as 18Bnaya
+T 1418624840 24*	28mikaelb_ is now known as 18mikaelb
+T 1418686751 18<27admond18>	Hey yo
+T 1418686824 18<27admond18>	Is it already safe to use koajs for production for an early stage company?
+T 1418754119 18<26Hestil18>	Hi.
+T 1418754134 18<19TheAceOfHearts18>	hi
+T 1418754262 18<19TheAceOfHearts18>	good to see the channel bustling with life~
+T 1418754518 19<Hestil>	I didn't understand why all co-{{ module }} are wrapped in thunkify and that it. I have browsed the Koa's source and it seems that's the whole response is wrapped with co.wrap, is that the reason?
+T 1418754697 18<19TheAceOfHearts18>	uhh
+T 1418754725 18<19TheAceOfHearts18>	co modules are thunkified so they can be yielded :D
+T 1418754824 18<26Hestil18>	TheAceOfHearts: But you should wrap it also in a promise
+T 1418754831 18<26Hestil18>	to return a promise
+T 1418754838 18<19TheAceOfHearts18>	why would you use a promise…?
+T 1418754856 18<19TheAceOfHearts18>	promises are just unnecessary overhead in a lot of cases
+T 1418754890 18<26Hestil18>	to be async (?)
+T 1418754963 18<19TheAceOfHearts18>	huh?
+T 1418755023 18<19TheAceOfHearts18>	thunks are async too, they're just callbacks
+T 1418755069 18<19TheAceOfHearts18>	maybe I'm misunderstanding
+T 1418755075 18<19TheAceOfHearts18>	what's your concern? or what don't you understand?
+T 1418755143 18<26Hestil18>	I wanna know how it exactly works
+T 1418755192 18<26Hestil18>	the purpose of think is just kind of one more level
+T 1418755276 18<26Hestil18>	thunk*
+T 1418755288 18<19TheAceOfHearts18>	https://github.com/tj/co/blob/master/index.js co
+T 1418755318 18<26Hestil18>	i've seen that
+T 1418755394 19<Hestil>	https://github.com/koajs/koa/blob/master/lib/application.js#L114
+T 1418755442 18<19TheAceOfHearts18>	yeah
+T 1418755450 18<19TheAceOfHearts18>	what do you want to understand?
+T 1418755487 18<26Hestil18>	I just didn't understand how it ONLY wraps with thunk. it didn't make sense for me.
+T 1418755537 18<19TheAceOfHearts18>	I'm not sure I'm understanding you
+T 1418755546 18<19TheAceOfHearts18>	you're asking why co-* modules use thunkify?
+T 1418755553 18<19TheAceOfHearts18>	compared to returning promises?
+T 1418755558 18<26Hestil18>	why they use only thunkify
+T 1418755564 18<26Hestil18>	not co itself
+T 1418755571 18<26Hestil18>	co.wrap for example
+T 1418755638 18<19TheAceOfHearts18>	co.wrap is so you can convert a co-generator into a promise function
+T 1418755674 18<19TheAceOfHearts18>	co allows you to yield promises or thunks or a couple other things
+T 1418755697 18<19TheAceOfHearts18>	thunks just have the lowest overhead I thin
+T 1418755697 18<19TheAceOfHearts18>	k
+T 1418755775 18<26Hestil18>	but you cannot use only thunk
+T 1418755781 18<26Hestil18>	you should convert it to promise
+T 1418755808 18<26Hestil18>	that's the purpose of co
+T 1418755829 18<19TheAceOfHearts18>	what?
+T 1418755832 18<19TheAceOfHearts18>	I'm seriously confused
+T 1418755852 18<19TheAceOfHearts18>	you can yield thunks inside of co
+T 1418755854 18<19TheAceOfHearts18>	that's their purpose
+T 1418755868 18<19TheAceOfHearts18>	the purpose of co is to catch stuff that you yield and push the values back in
+T 1418756159 18<26Hestil18>	TheAceOfHearts: yes, but you have to use thunk with co, you can't use only thunk
+T 1418756245 18<19TheAceOfHearts18>	so?
+T 1418756255 18<19TheAceOfHearts18>	the purpose of a lot of these co-* things is to wrap existing modules
+T 1418756258 18<19TheAceOfHearts18>	they're just wrappers
+T 1418756271 18<19TheAceOfHearts18>	and you *can* use thunks by themselves
+T 1418756274 18<19TheAceOfHearts18>	they're just callbacks
+T 1418756287 18<26Hestil18>	and I didn't understand why it doesn't use co all of these modules
+T 1418756331 18<19TheAceOfHearts18>	I think you're confused
+T 1418756350 18<19TheAceOfHearts18>	you normally use thunks inside of the generator that you pass into co
+T 1418756358 18<19TheAceOfHearts18>	so you can yield them
+T 1418756361 18<19TheAceOfHearts18>	that's their purpose
+T 1418756370 18<19TheAceOfHearts18>	I'm gonna go get food~ we can keep this up later
+T 1418756383 18<26Hestil18>	no prob. thank you!
+T 1418762270 18<19TheAceOfHearts18>	Hestil: I'm back~ are you still trying to understand whatever it was you weren't understanding?
+T 1418762790 18<26Hestil18>	TheAceOfHearts: Oh, yes.
+T 1418762804 18<26Hestil18>	Without CO in the response, will it still gonna work?
+T 1418764604 18<19TheAceOfHearts18>	I had to step out for a bit
+T 1418764611 19<TheAceOfHearts>	so, you're using koa, right?
+T 1418764630 18<19TheAceOfHearts18>	you can just yield co-* stuff in the middleware
+T 1418764636 18<19TheAceOfHearts18>	^ @Hestil
+T 1418764662 18<26Hestil18>	yes
+T 1418764678 19<Hestil>	btw, have you tried to use mongoose in koa?
+T 1418764684 18<19TheAceOfHearts18>	no
+T 1418764711 19<TheAceOfHearts>	so, like I said, you can just yield a thunk in co/koa
+T 1418764727 19<Hestil>	that's because we use co in koa
+T 1418764736 18<19TheAceOfHearts18>	yeah
+T 1418764740 18<19TheAceOfHearts18>	so what's your concern?
+T 1418764805 18<26Hestil18>	just asked to verify that issue
+T 1418764822 18<19TheAceOfHearts18>	what issue?
+T 1418764898 18<26Hestil18>	things around thunks / co / yield
+T 1418764908 18<26Hestil18>	but i think i understand it now
+T 1418764952 18<19TheAceOfHearts18>	that doesn't really answer lol, but alright
+T 1418764964 18<19TheAceOfHearts18>	thunks are just wrappers
+T 1418764970 18<19TheAceOfHearts18>	you can consume them like you normally would
+T 1418765218 18<26Hestil18>	yes, but I had to understand how all of these things are integrated
+T 1418765567 18<19TheAceOfHearts18>	I see
+T 1418816681 24*	28mikaelb_ is now known as 18mikaelb
+T 1418903248 19*	Now talking on 22#koajs
+T 1418911534 19<Hestil>	have someone tried to work with koa + passport + jwt?
+T 1419130457 19*	Now talking on 22#koajs
+T 1419187453 19*	Now talking on 22#koajs
+T 1419194908 24*	28accelerate- is now known as 18accelerate
+T 1419244147 19<TheAceOfHearts>	I'm excited, I just got an isomorphic koa/flux/react app up and running
+T 1419296296 19*	Now talking on 22#koajs
+T 1419409516 24*	28mekwall_ is now known as 18mekwall
+T 1419637274 18<24moscownights18>	evening all
+T 1419637275 18<24moscownights18>	ehm
+T 1419637312 19<moscownights>	so, yea, im having some trouble getting my first koa app started, ive googled, used several params when trying to run the app, googled again
+T 1419637314 18<24moscownights18>	cried a little
+T 1419637316 18<24moscownights18>	and gave up
+T 1419637413 18<24moscownights18>	and then tried again and suddendly it seems to work
+T 1419637420 18<24moscownights18>	id like to thank my parents, my agent
+T 1419637430 18<24moscownights18>	and everyone else who believed in me

@@ -1,0 +1,11 @@
+T 1417805204 19*	Now talking on 22#regexps
+T 1417805204 22*	26weber.freenode.net sets mode 24+n on 22#regexps
+T 1417805204 22*	26weber.freenode.net sets mode 24+s on 22#regexps
+T 1417825198 19*	Now talking on 22#regexps
+T 1417825198 22*	26wilhelm.freenode.net sets mode 24+n on 22#regexps
+T 1417825198 22*	26wilhelm.freenode.net sets mode 24+s on 22#regexps
+T 1417825198 -18NickServ-	You are now identified for tunnckoCore.
+T 1418310097 19*	Now talking on 22#regexps
+T 1418310097 22*	26rajaniemi.freenode.net sets mode 24+n on 22#regexps
+T 1418310097 22*	26rajaniemi.freenode.net sets mode 24+s on 22#regexps
+T 1418310097 -18NickServ-	You are now identified for tunnckoCore.

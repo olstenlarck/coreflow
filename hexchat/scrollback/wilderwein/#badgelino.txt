@@ -1,0 +1,31 @@
+T 1417707330 19*	Now talking on 22#badgelino
+T 1417707330 22*	26holmes.freenode.net sets mode 24+n on 22#badgelino
+T 1417707330 22*	26holmes.freenode.net sets mode 24+s on 22#badgelino
+T 1417707710 19*	Now talking on 22#badgelino
+T 1417707710 22*	26cameron.freenode.net sets mode 24+n on 22#badgelino
+T 1417707710 22*	26cameron.freenode.net sets mode 24+s on 22#badgelino
+T 1417707710 29*	[freenode-info] please register your nickname...don't forget to auto-identify! http://freenode.net/faq.shtml#nicksetup
+T 1417732669 19*	Now talking on 22#badgelino
+T 1417732669 22*	26weber.freenode.net sets mode 24+n on 22#badgelino
+T 1417732669 22*	26weber.freenode.net sets mode 24+s on 22#badgelino
+T 1417824691 19*	Now talking on 22#badgelino
+T 1417824691 22*	26holmes.freenode.net sets mode 24+n on 22#badgelino
+T 1417824691 22*	26holmes.freenode.net sets mode 24+s on 22#badgelino
+T 1417825197 19*	Now talking on 22#badgelino
+T 1417825197 22*	26wilhelm.freenode.net sets mode 24+n on 22#badgelino
+T 1417825197 22*	26wilhelm.freenode.net sets mode 24+s on 22#badgelino
+T 1418310097 19*	Now talking on 22#badgelino
+T 1418310097 22*	26rajaniemi.freenode.net sets mode 24+n on 22#badgelino
+T 1418310097 22*	26rajaniemi.freenode.net sets mode 24+s on 22#badgelino
+T 1418903248 19*	Now talking on 22#badgelino
+T 1418903248 22*	26morgan.freenode.net sets mode 24+n on 22#badgelino
+T 1418903248 22*	26morgan.freenode.net sets mode 24+s on 22#badgelino
+T 1419130457 19*	Now talking on 22#badgelino
+T 1419130457 22*	26asimov.freenode.net sets mode 24+n on 22#badgelino
+T 1419130457 22*	26asimov.freenode.net sets mode 24+s on 22#badgelino
+T 1419187453 19*	Now talking on 22#badgelino
+T 1419187453 22*	26card.freenode.net sets mode 24+n on 22#badgelino
+T 1419187453 22*	26card.freenode.net sets mode 24+s on 22#badgelino
+T 1419296296 19*	Now talking on 22#badgelino
+T 1419296296 22*	26sendak.freenode.net sets mode 24+n on 22#badgelino
+T 1419296296 22*	26sendak.freenode.net sets mode 24+s on 22#badgelino

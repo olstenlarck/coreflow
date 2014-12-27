@@ -1,0 +1,514 @@
+T 1419625118 18<27dman777_alter18>	shoshy: I might...what's the question?
+T 1419625219 18<25shoshy18>	dman777_alter: so i have this simple code: http://pastie.org/9799845
+T 1419625242 18<25shoshy18>	i'm trying to use my own custom write stream to manipulate the "finish" event
+T 1419625281 18<25shoshy18>	to "do something" and then call an outside callback (this code sitts inside an async flow)
+T 1419625343 18<27dman777_alter18>	shoshy: touch2 module might be of some help.
+T 1419625382 18<25shoshy18>	dman777_alter: touch2 ?
+T 1419625426 18<25shoshy18>	dman777_alter: could you please elaborate... and why would i need another module for this "simple" task? i just want to handle the finish event
+T 1419625700 18<27dman777_alter18>	shoshy: what is it not doing?
+T 1419625734 18<25Guest8309718>	help me pls
+T 1419625741 24*	28abortionist is now known as 18panzerchrist
+T 1419625773 18<25Guest8309718>	i try iconv.decode(new Buffer(str, 'win1251').toString('win1251)) and send params in cp1251 charset in http.request
+T 1419625781 18<25shoshy18>	dman777_alter: it's not using the "ws" stream... doesn't invoke the finish / write or _write ...
+T 1419625790 18<25Guest8309718>	in php iconv works, but this don`t work
+T 1419625809 18<27dman777_alter18>	shoshy: It doesn't look like you have the event listener set up properly. Here are some examples: http://nodejs.org/api/stream.html#stream_event_error
+T 1419625875 18<25Guest8309718>	iconv.decode(new Buffer(str, 'win1251').toString('win1251))  it`s correct to encode at cp1251 from utf8?
+T 1419625899 18<27dman777_alter18>	ws.finish = function(){console.log('here!!!!');return callback(null, 'something');}; should be something like ws.on('finish', foo);
+T 1419625968 18<25shoshy18>	dman777_alter: i tried that as well, didn't work :/
+T 1419625978 18<25shoshy18>	just tried it again..
+T 1419625980 18<27dman777_alter18>	shoshy: keep trying...patience.
+T 1419626009 18<25shoshy18>	dman777_alter: obviously i'm doing something wrong that's why i seek help, the 'finish' event isn't called even
+T 1419626020 18<27dman777_alter18>	shoshy: do a ws.on("finish", function() { console.log("hi") }) to see if it's going through
+T 1419626047 18<27dman777_alter18>	shoshy: is finsih even a event? maybe it should be 'end'?
+T 1419626052 18<22topwobble18>	did semver change between 1.3.6 and 1.4.3?
+T 1419626054 18<25shoshy18>	dman777_alter: it's not
+T 1419626059 18<22topwobble18>	(npm versions)
+T 1419626062 18<25shoshy18>	dman777_alter: end is right before finish,
+T 1419626072 18<25shoshy18>	dman777_alter: 'end' still has a chunk left
+T 1419626080 18<27dman777_alter18>	shoshy: are you using a third party module or low level node?
+T 1419626098 18<25shoshy18>	dman777_alter: "low-level node"
+T 1419626110 18<25shoshy18>	"Event: 'finish'# " @ http://nodejs.org/api/stream.html#stream_event_error
+T 1419626131 18<27hipertracker18>	Can commonjs load non javascript files in the browser (after browserify) like amd can?
+T 1419626193 18<27dman777_alter18>	shoshy: maybe then it's not finishing.
+T 1419626259 18<25shoshy18>	dman777_alter: idk, it's a simple fs.createReadStream
+T 1419626267 18<22topwobble18>	I worried about having to upgrade NPM on production from 1.3.6 to 2.x.  Only need to do it so a module using a ^ in semver will update ok
+T 1419626323 18<27dman777_alter18>	shoshy: if you can't get a finish event to broadcast then it's not finishing. I would trouble shoot from there. Stackoverflow could probably help you alot with that.
+T 1419626379 18<25shoshy18>	dman777_alter: ok, thanks, i got a progress .. was able to finish
+T 1419626419 18<27dman777_alter18>	progress feels good :)
+T 1419626439 18<25shoshy18>	i changed the code for testing to be: fs.createReadStream('./somefile.json').pipe(ws); and it finished
+T 1419626481 18<25shoshy18>	meaning that along the way, my use of JSONStream npm, for somereason, makes it not to finish...
+T 1419626486 18<25shoshy18>	as i pipe with it
+T 1419626802 18<25Guest8309718>	please assist me
+T 1419626806 18<25Guest8309718>	and help my mouth
+T 1419626989 24*	28panzerchrist is now known as 18abortionist
+T 1419627104 24*	28kurtkraut is now known as 18KurtKraut
+T 1419627595 18<28Lucky---18>	what language abbreivation is et?
+T 1419627602 18<20merpnderp18>	How hard is it to land a remote programming job in node for a senior developer who wrote Business software?
+T 1419627776 18<25crised18>	Where can I see the API of socketIO?
+T 1419627840 18<25crised18>	For example this variable. io = socketio.listen(server);
+T 1419627844 18<25crised18>	What type is io of?
+T 1419627855 24*	28abortionist is now known as 18cryptopsy
+T 1419627856 18<25crised18>	What does .listen(server) returns?
+T 1419627863 18<25crised18>	Aria: hi!
+T 1419627869 18<24Aria18>	'allo!
+T 1419627882 18<25crised18>	Aria: O debiera decir, hola!
+T 1419627883 18<24Aria18>	type of io? object.
+T 1419627889 18<24Aria18>	¡hola!
+T 1419627896 18<25crised18>	Aria: ;)
+T 1419627904 18<24Aria18>	And listen? should return an http server object.
+T 1419627907 18<25crised18>	Aria: object... that's it?
+T 1419627915 18<24Aria18>	Javascript doesn't have more defined types.
+T 1419627930 18<25crised18>	var socketio = require('socket.io');  .... io = socketio.listen(server);
+T 1419627942 18<25crised18>	Aria: so it just fails on runtime if the type does not match
+T 1419627950 18<25crised18>	*if the object is not suited
+T 1419627963 18<24Aria18>	Yeah, if the method you're trying to call isn't there.
+T 1419627991 18<25crised18>	Aria: I don't understand something... How can I see what options  does an object have?
+T 1419627999 18<24Aria18>	inspect it, and its prototype.
+T 1419628001 18<25crised18>	Where are the *javadocs*
+T 1419628017 18<24Aria18>	Javadocs? This is JAvascript!
+T 1419628019 18<25crised18>	Aria: How can I inspect it?
+T 1419628021 18<24Aria18>	And JSDoc? Not everyone uses that.
+T 1419628026 18<24Aria18>	util.inspect(object)
+T 1419628032 18<24Aria18>	I use the repl a lot.
+T 1419628035 18<25crised18>	Aria: yes I know, but which is the equivalent of javadocs in javascript
+T 1419628046 18<24Aria18>	jsdoc is one equivalent. Readme.md is an equivalent.
+T 1419628108 18<25crised18>	Aria: "As far as I know, no API documentation exists without inspecting the code on your own."
+T 1419628127 18<25crised18>	Aria: how can this be?
+T 1419628187 18<24Aria18>	It's really hard to document the full possibility of javascript APIs well. How do you document "call the x method on the object you get as the first argument of a callback you get from calling y on the z object"?
+T 1419628198 18<24Aria18>	I find that prose is quite often the better choice for actually documenting things.
+T 1419628221 18<24Aria18>	Much better than finding /** the foo method \n* @param arg1 */
+T 1419628249 18<25crised18>	=-O
+T 1419628295 18<24Aria18>	Javascript community is not unified around any one approach -- we've got large projects (MDN, Jquery, etc) providing whole doc browsers and being relatively comprehensive; we've some people trying a literate programming approach with docco; we've got some people who do JSDoc.
+T 1419628307 18<24Aria18>	And like all programming communities, we have more bad docs than good ones.
+T 1419628316 18<25crised18>	Aria: protype is the *parent object* equivalent in java? How do I find out the prototype?
+T 1419628344 18<24Aria18>	crised: try the __proto__ property on an object.
+T 1419628358 18<24Aria18>	__proto__.constructor, too.
+T 1419628373 18<24Aria18>	(that's as close as javascript has to a 'class' -- the constructor function)
+T 1419628385 18<24Aria18>	and obj.constrcutor directly
+T 1419628390 18<24Aria18>	er. obj.constructor
+T 1419628396 18<22node7js08718>	<Crised> Try using node-debug  you can see the properties of JavaScript object  that is in your node.js code and the properties it inherited from prototype
+T 1419628424 18<25crised18>	node7js087: U see
+T 1419628428 18<25crised18>	*I see...
+T 1419628442 18<22node7js08718>	If your main node code is in app.js, try running "node-debug app.js" instead of "node app.js"
+T 1419628473 18<25crised18>	node7js087: cool but webstorm does it out of the box
+T 1419628493 18<22node7js08718>	https://www.npmjs.com/package/node-debug
+T 1419628494 18<25crised18>	Aria: io = socketio.listen(server);
+T 1419628528 18<25crised18>	Aria: what's the repl?
+T 1419628547 18<25crised18>	Aria: io = socketio.listen(server); it's of 'Manager' Prototype
+T 1419628673 24*	28KurtKraut is now known as 18kurtkraut
+T 1419629780 18<24Aria18>	repl is the read-eval-print-loop -- just type "node" and that's teh repl.
+T 1419629799 18<24Aria18>	crised: so now you can look at socket.io's whatever and see if you can find reference to the Manager.
+T 1419629814 18<24Aria18>	crised: that said, socket.io is super complicated and that's why I don't use it. I, quite frankly, find it impossible.
+T 1419629959 18<24Aria18>	(also, you can tab-complete and see what methods are defined)
+T 1419629970 18<24Aria18>	(and foo.method.toSource() to see the function definition)
+T 1419629973 18<24Aria18>	(Imperfect, but usable)
+T 1419629995 18<25crised18>	Aria: thanks, which alternatives to socket.io? it seem darn popular
+T 1419630006 18<24Aria18>	Depends on what you use socket.io for.
+T 1419630021 18<25crised18>	Aria: Websockets
+T 1419630022 18<24Aria18>	It does so many unrelated, many-layered things that it's hard to recommend just one thing.
+T 1419630033 18<24Aria18>	Just websockets, or websockets plus fallbacks?
+T 1419630049 18<24Aria18>	And are you really using websockets full capabilities, or just server-pushed messages?
+T 1419630053 18<25crised18>	Aria: hopefully plus fallabcsk
+T 1419630058 18<25crised18>	Aria: server pushed messages
+T 1419630062 18<24Aria18>	(I tend to fall to BOSH type techniques right away, and just use that)
+T 1419630067 18<24Aria18>	If you're not using IE, server-sent events work great.
+T 1419630108 18<24Aria18>	But just a long-poll loop works pretty darn well.
+T 1419630136 18<25crised18>	Aria: Why the popularity of socket.io?
+T 1419630218 18<19GreenJello18>	crised, backwards compatibility, the api is nicer than raw websockets, and it makes demo apps very simple e.g. the basic chat app
+T 1419630226 18<24Aria18>	Because it does everything.
+T 1419630233 18<24Aria18>	It's easy to throw at stuff and it's reasonably well demoed.
+T 1419630237 18<24Aria18>	Not documented, but demoed.
+T 1419630244 18<24Aria18>	People love 'frameworks', complete piles of stuff that do it all.
+T 1419630251 18<24Aria18>	And then people keep using it because they can't factor it back out.
+T 1419630274 18<25crised18>	Aria: Maybe I should use a service like pubnub or push.com
+T 1419630298 18<24Aria18>	You might try engine.io -- it's not perfect, but it's socket.io's IO engine only.
+T 1419630307 18<24Aria18>	Without the rest of the weird API with all the channeling and 'room' stuff.
+T 1419630343 18<25ProLoser|Mac18>	anyone here use openshift?
+T 1419630754 18<26Dwarf18>	Question; how would I access a hash key with a dot in it?
+T 1419630768 18<26Dwarf18>	{"duration":249,"owner.screenname":"redshirtfilms","title":"HOW TO KILL FATHER CHRISTMAS!!","rating":0,"views_total":30829,"created_time":1419031844}
+T 1419630778 18<26Dwarf18>	I want to access owner.screenname but have no idea how
+T 1419630794 18<26Dwarf18>	data.owner.screenname says TypeError: Cannot read property 'screenname' of undefined
+T 1419630800 18<27ljharb18>	Dwarf: with bracket notation
+T 1419630803 18<22chenghiz18>	data['owner.screenname']
+T 1419630808 18<24geirha18>	x['owner.screenname']
+T 1419630808 18<27ljharb18>	^
+T 1419630823 18<24geirha18>	d'oh, I'm too slow
+T 1419630835 18<26Dwarf18>	That works?
+T 1419630839 18<25Xstasy18>	Yep
+T 1419630842 18<26Dwarf18>	Awesome.
+T 1419630851 18<26Dwarf18>	You guys are great
+T 1419630879 18<27ljharb18>	Dwarf: common convention is to always use dot notation, except where you have to use bracket because it's otherwise an invalid identifier
+T 1419630900 18<22chenghiz18>	bracket is also marginally slower isn't it?
+T 1419630913 18<24Aria18>	If it is that's a transient artifact of the runtime, not inherent.
+T 1419630934 18<27ljharb18>	chenghiz: i doubt it
+T 1419630949 18<27ljharb18>	but unless you're doing billions of property accesses per second or something i wouldn't worry about it
+T 1419630956 18<22chenghiz18>	well yeah :p
+T 1419631115 18<29scottstamp18>	Is pub/sub considered a good idea with Node for linking microservices? (RabbitMQ and jackrabbit)
+T 1419631143 18<29scottstamp18>	It seems fine and it's a solution I'm okay with, but I was curious if there might be a more standard eventing style.
+T 1419631157 18<24Aria18>	Message busses are awesome.
+T 1419631176 18<24Aria18>	But pubsub is only one pattern you can use over one. But it tends to encourage you to decouple things.
+T 1419631178 18<24Aria18>	Which is good.
+T 1419631189 18<24Aria18>	But people also directly call with HTTP, and just work on service discovery.
+T 1419631252 18<29scottstamp18>	These services aren't very standalone, if I was doing something more distributed I'd probably rock HTTP. Message busses look interesting though, I haven't seen that before.
+T 1419631270 18<25nuizzy18>	agree with Aria about socket.io
+T 1419631296 18<25nuizzy18>	but if you need things like rooms or namespaces socket.uio l;ets you set it up pretty fast
+T 1419631306 18<24Aria18>	Yup.
+T 1419631311 18<24Aria18>	Though I might go to primus for that.
+T 1419631312 24*	28ProLoser|Mac is now known as 18ProLoser
+T 1419631327 18<25nuizzy18>	yea im starting to think about that
+T 1419631329 18<24Aria18>	If you're gonna go all-in, might as well use something a bit more rigorous and well designed, less ad-hoc evolved.
+T 1419631339 18<25nuizzy18>	simply because I can change the engine
+T 1419631369 18<25nuizzy18>	ONly issue I have now with that is I have many client who want a "wrapper/API to the sockets
+T 1419631377 18<25nuizzy18>	and socket.io has many client wrappers
+T 1419631385 18<25nuizzy18>	at least for java, c# etc
+T 1419631393 18<25nuizzy18>	so i ca just pull from those
+T 1419631436 18<29scottstamp18>	gah, two space tabbing
+T 1419631467 18<25crised18>	Aria: What about Faye?
+T 1419631468 18<24Aria18>	Heh. They want a thing, but they don't ever want to actually use it.
+T 1419631471 18<24Aria18>	Faye ++
+T 1419631475 18<24Aria18>	Love the author's approach to things.
+T 1419631483 18<24Aria18>	He's a great guy.
+T 1419631488 18<25crised18>	Aria: Do they have fallback compatibility?
+T 1419631511 18<24Aria18>	Kinda not really you wouldn't need it.
+T 1419631517 18<24Aria18>	It's its own protocol, and well made.
+T 1419631527 18<25crised18>	Aria: no websockets?
+T 1419631530 18<24Aria18>	Doesn't have so many edge cases to deal with, so fewer times to fall back.
+T 1419631539 18<29scottstamp18>	Faye looks good. I think that's more what I was after. The centralized concept is a little concerning though
+T 1419631587 18<25crised18>	Aria: With AngularJS on the client side, would you still recommedn Faye?
+T 1419631591 18<24Aria18>	Centralized concept?
+T 1419631611 18<24Aria18>	crised: no idea. I have stayed far away from Angular. My default is just long polling, and falling back to short polling.
+T 1419631618 18<24Aria18>	But faye is spiffy.
+T 1419631657 18<29scottstamp18>	Faye uses a central server that doesn't seem to be scalable/fault-tolerant. At least, I don't see any way to do load balancing..
+T 1419631750 18<29scottstamp18>	Not that rabbitmq supports a server falling over particularly well either, but at least it has that capability.
+T 1419631753 18<29tejas-manohar18>	https://github.com/npm/npm/issues/7020 -- any idea on how to solve?
+T 1419631834 18<19johnkpaul18>	Where can/should I request that the maintainership of a npm module be given to me? I have a jquery plugin that I just updated that used to be on the old jquery plugin registry
+T 1419631855 18<25crised18>	Aria: guestNumber = assignGuestName(socket, guestNumber, nickNames, namesUsed); ?
+T 1419631864 18<19johnkpaul18>	the recommendation is to use npm instead, but I look and see that someone else released the plugin
+T 1419631864 18<25crised18>	Aria: guestnumber in both sides?
+T 1419631874 18<19johnkpaul18>	with my github repo, so I don’t think that they’re trying to take credit or anything
+T 1419631881 18<19johnkpaul18>	but I need to be able to release the new version
+T 1419631911 18<24Aria18>	crised: What about that?
+T 1419631939 18<25crised18>	Aria: mmm
+T 1419631968 18<24Aria18>	scottstamp: Should that be at the protocol level, or pushed up a layer?
+T 1419631977 18<24Aria18>	scottstamp: I'm inclined to push that up a layer
+T 1419631993 18<24Aria18>	(applications usually need to be involved in scaling patterns -- they usually have to give something up to get that scale)
+T 1419632010 18<29scottstamp18>	hmm, yeah, that would probably be a cleaner solution
+T 1419632021 18<29tejas-manohar18>	@Aria: you've published npm modules right?
+T 1419632031 18<24Aria18>	tejas-manohar: definitely. http://npmjs.org/~aredridel/
+T 1419632050 18<29scottstamp18>	I think if I was going to go that far with it though I'd just use HTTP with a load balancer and some logic to keep everything in sync
+T 1419632052 18<29tejas-manohar18>	@Aria: damn thats a lot! any idea on this error? https://github.com/npm/npm/issues/7020
+T 1419632080 18<24Aria18>	tejas-manohar: 'internal server error' -- it's what it says on the tin.
+T 1419632091 18<29tejas-manohar18>	@Aria: yeah so nothing i can do?
+T 1419632098 18<24Aria18>	Might try the newest npm and see if you get lucky, but it's a registry problem.
+T 1419632098 18<22xinobrax18>	Q: Does it make sense to save huge images in a mongodb? Or should I just save the image path? Does it even make a difference in performance?
+T 1419632127 18<24Aria18>	Not sure anyone's in the npm office today, but you've done right to open an issue.
+T 1419632136 18<24Aria18>	You might want to bump the patch version and see if you can publish that, but that's just a hack.
+T 1419632158 24*	28saschpe is now known as 18zz_saschpe
+T 1419632167 18<29tejas-manohar18>	@Aria: Sweet! I'll hold up on them :) -- Any chance you know if I can change my NPM username?
+T 1419632180 18<24Aria18>	I think you'd have to ask them to do that.
+T 1419632184 18<29tejas-manohar18>	@Aria: I like tejasmanohar instead of tejas-manohar since a ton of sites don't allow the nice -
+T 1419632188 18<29tejas-manohar18>	@Aria: ok shooting an email
+T 1419632193 18<25nuizzy18>	xinobraz: i put images on cdn and store just the path
+T 1419632243 18<22xinobrax18>	k, thx
+T 1419632254 18<29tejas-manohar18>	@Aria: so NPM is like a legit startup, not related to Node?
+T 1419632267 18<24Aria18>	Yes and no respectively.
+T 1419632270 18<29tejas-manohar18>	@Aria: why did joyent add it in node installation? is there some $ involved?
+T 1419632360 18<24Aria18>	Ryah added it because it was useful.
+T 1419632361 18<24Aria18>	Why?
+T 1419632383 18<29tejas-manohar18>	@Aria: just curious
+T 1419632408 18<24Aria18>	npm runs on node, so it's related; it was mostly node packages at first. But it's turned out generally useful, if opinionated.
+T 1419632430 18<24Aria18>	But npm is a legit startup, and they're a great group of people. Involved and caring, and in it for the long haul, not a quick cash-out.
+T 1419632445 18<24Aria18>	(not sure what would make a startup illegit, but that's a whole other conversation)
+T 1419633275 18<27fullstack18>	hmmm
+T 1419633283 18<27fullstack18>	i'm getting some Headers Already Sent error in socket.io
+T 1419633314 18<24Aria18>	Are you sending headers previously on that request / response?
+T 1419633316 18<27fullstack18>	even if I comment out EVERYTHING in my io.on('connection'), it crashes as soon as whatever browser i have in teh background
+T 1419633327 18<24Aria18>	Middleware?
+T 1419633346 18<27fullstack18>	var io = require("socket.io")(server); . The middleware is RESTify
+T 1419633361 18<27fullstack18>	I mean, "server" is restify.createServer
+T 1419633368 18<24Aria18>	So are your middlewares setting headers or starting output?
+T 1419633404 18<27fullstack18>	well thats the thing
+T 1419633408 18<27fullstack18>	I don't know
+T 1419633420 18<27fullstack18>	io.on('connection').. what URL would that be?
+T 1419633439 18<27fullstack18>	I have a catch all "/*.*" that goes to public/index.html, but if I comment that out, it still crashes
+T 1419633474 18<24Aria18>	socket.io? It carves out a whole subset of your URL space.
+T 1419633478 18<27fullstack18>	And if i close the browser and start the server first, then reload the URL with the socket.io client, it works fine
+T 1419633514 18<24Aria18>	Sounds like only some of socket.io's requests fail. (and since it has complicated fallbacks, it's hard to know just what it's doing without digging)
+T 1419633795 18<27fullstack18>	yeah I am getting some 404 in chrome inspector
+T 1419633983 18<29tejas-manohar18>	Anyone have some ideas for writing a phantomjs bot to do something?
+T 1419634000 18<29tejas-manohar18>	idc if they violate TOS just for fun not gonna troll around
+T 1419634006 18<27fullstack18>	OMG you have to be kidding me. If I put a breakpoint on the exception (to get a real backtrace) it slows it down JUST enough not to error!
+T 1419634263 18<24Aria18>	Yay heisenbugs!
+T 1419634533 18<27fullstack18>	anyway
+T 1419634541 18<27fullstack18>	hey Aria, what type of monitor setup do you use?
+T 1419634598 18<24Aria18>	Monitor for what?
+T 1419634612 18<27fullstack18>	desktop
+T 1419634627 18<24Aria18>	Macbook Air 13".
+T 1419634658 18<27fullstack18>	oh cool
+T 1419634688 18<27fullstack18>	i want to upgrade my dual head display, and i'm thinking about two desktop monitors at 90 degrees
+T 1419634807 18<27secrettriangle18>	Anyone here good with sailsj?
+T 1419634841 18<19esatterwhite18>	maybe try the sailsjs channel
+T 1419634898 18<27secrettriangle18>	Dead :/
+T 1419635201 18<27fullstack18>	#failsjs
+T 1419635622 18<24Aria18>	I can't track cursors over much screen real estate, so I just don't.
+T 1419635629 18<24Aria18>	Full-screen term, semi-full-screen browser.
+T 1419635646 18<24Aria18>	Only miss  more real estate when deep in the web inspector on a responsive design that only fails in some sizes.
+T 1419635681 24*	28zz_silvers is now known as 18silvers
+T 1419635743 18<29bitbit18>	Hi, how do I make an npm package that also downloads executeables like git cli, openssl cli? or do I have to make a build file for that? or are build files not usually used for that?
+T 1419635866 18<24Aria18>	You'd usually write a script for that, but that's unusual to do.
+T 1419635880 18<24Aria18>	(And you will immediately end up in the weeds dealing with OSes and distros)
+T 1419635956 24*	28vikinghug-afk is now known as 18vikinghug
+T 1419636106 18<29bitbit18>	Aria: so say I have to have git cli installed for my package to work properly, do I tell the user he has to download it manually? and how is the best practice to do that?
+T 1419636116 18<29bitbit18>	s/how/what
+T 1419636136 18<24Aria18>	Yeah, usually. I'd throw a warning if it's not in their PATH at install time though
+T 1419636141 18<24Aria18>	(npm itself also requires git)
+T 1419636235 18<29bitbit18>	Aria: but what js runs at "install time"?
+T 1419636264 18<24Aria18>	the npm "preinstall" script.
+T 1419636276 18<29bitbit18>	Aria: oh. thanks!
+T 1419636436 18<29bitbit18>	Aria: ohh look, I found one with an .exe in it! hmmm https://github.com/mscdex/ssh2/tree/master/util
+T 1419636482 18<24Aria18>	Hehe. One can do that, but you're in for a world of hurt ;-)
+T 1419636507 18<24Aria18>	It's all fun and games until someone installs your module on some wacky OS and your scripts break.
+T 1419636645 24*	28vikinghug is now known as 18vikinghug-afk
+T 1419636852 18<29bitbit18>	Aria: I guess it will be better if I make a cli script that asks the user if he wants to download and install it, then get the version for his OS
+T 1419636874 18<24Aria18>	Yeah, a post-install tool?
+T 1419636936 18<27fullstack18>	Aria, i tink I figured out the socket.io/restify issue
+T 1419636947 18<27fullstack18>	its a bug in restify. I'm this close to switching to hapi
+T 1419636983 18<29bitbit18>	yes post-install
+T 1419637014 18<24Aria18>	fullstack: fun! What kind of bug?
+T 1419637028 24*	28vifino- is now known as 18vifino
+T 1419637039 18<27fullstack18>	when you pass socket.io to the restify service instance. instead of passing server, you have to pass "server.server"
+T 1419637059 18<27fullstack18>	var io = require('socket.io').listen(server.server);
+T 1419637186 18<29leafybasil18>	Wait a minute... restify is for restful services... what's going on here!
+T 1419637226 18<27fullstack18>	yeah i'm 100% angular
+T 1419637231 18<27fullstack18>	so my backend is always restify
+T 1419637241 18<27fullstack18>	but i might switch to hapi. which is walmart's version
+T 1419637297 18<27fullstack18>	one thing that really grinds my gears is why nobody has thought of server.crud('/asdfas', obj that returns.get.post.del.head
+T 1419637314 18<27fullstack18>	instead you have to bust out and type server.get server.head server.del server.post
+T 1419637358 18<27fullstack18>	and my javascript abilites aren't good enough to implement it
+T 1419637415 18<29arcanine6918>	i got some sleep finally. slept in my office conference room.
+T 1419637418 18<29arcanine6918>	heheh.
+T 1419637636 18<27fullstack18>	i just code and code and go to bed whenever i feel like it and wake up whenever i feel like it
+T 1419637664 18<29arcanine6918>	yeah that sounds like me
+T 1419637673 18<27fullstack18>	and i'm a really slow coder
+T 1419637673 18<29arcanine6918>	but i have to work 3d
+T 1419637698 18<29arcanine6918>	well the turtle wins the race
+T 1419637743 18<27fullstack18>	thats nice :)
+T 1419637863 18<27fullstack18>	like today i spent 5 hours on this stupid restify/socket.io problem
+T 1419637949 18<24drorh18>	yeah. googleing 'node js fork' is all about io.js, except the nodejs.org documentation
+T 1419638058 18<29bitbit18>	a couple of nights ago I started "figuring out" programming problems while dreaming. that ever happen to you?
+T 1419638092 18<29bitbit18>	I told myself no, stop, at least while you're dreaming don't mess with programming!
+T 1419638108 18<29leafybasil18>	fullstack: i'm using restify, it's neat, will probably submit a pull request regarding the rate-limiting though
+T 1419638113 18<27fullstack18>	bitbit: Yup. I debugged a pthread lockup in a dream once and ran to my computer with the fix
+T 1419638127 18<29bitbit18>	lol
+T 1419638148 18<27fullstack18>	I also debated billing the client
+T 1419638159 18<27fullstack18>	:) for that sleep session, cuz technically I was working
+T 1419638162 18<24drorh18>	i find my bugs when i close my eyes in bed at night :)
+T 1419638168 18<29bitbit18>	:)
+T 1419638175 18<24drorh18>	and somtimes good algos
+T 1419638188 18<29bitbit18>	mew meaning for bed bugs
+T 1419638196 18<24drorh18>	lol yep
+T 1419638216 18<29arcanine6918>	lol the lsat thing id dream about is programming
+T 1419638251 24*	28wowaname is now known as 18CHolbySucks
+T 1419638251 18<24drorh18>	sometimes it penetrates my dreams in some metaphorical way
+T 1419638260 24*	28CHolbySucks is now known as 18CholbySucks
+T 1419638264 18<29arcanine6918>	i think about my code, but id rather not dream about it....
+T 1419638272 18<24drorh18>	thats always ****ed up
+T 1419638361 18<24drorh18>	arcanine69: u never had some symbols of ur work/code at night if u worked 11hrs a day at something specific for a week? :)
+T 1419638374 18<24drorh18>	in a dream*
+T 1419638392 18<29arcanine6918>	drorh: no lol..
+T 1419638393 18<24drorh18>	u prolly just forgot em
+T 1419638402 18<24drorh18>	or im just crazy
+T 1419638411 18<24drorh18>	yes.
+T 1419638421 18<29arcanine6918>	drorh: i dream about dragons and saving princesses
+T 1419638427 18<29arcanine6918>	drorh: sometimes a pirate in space
+T 1419638432 18<29arcanine6918>	lol
+T 1419638455 18<24drorh18>	nice dreams
+T 1419638460 18<29arcanine6918>	or fighting off werewolves (i had a panic attack once from this one)
+T 1419638467 18<29arcanine6918>	like i woke up sweating
+T 1419638471 18<24drorh18>	lol
+T 1419638477 18<29arcanine6918>	and heart beating hard
+T 1419638485 18<24drorh18>	so u play rpgs......?
+T 1419638491 18<29arcanine6918>	no
+T 1419638494 18<29arcanine6918>	i code
+T 1419638497 18<29arcanine6918>	sleep
+T 1419638501 18<29arcanine6918>	rinse
+T 1419638502 18<29arcanine6918>	repeat
+T 1419638509 18<24drorh18>	so why that dream content.. odd..
+T 1419638548 18<24drorh18>	my favs are the lucid dreams
+T 1419638555 18<24drorh18>	these are rare
+T 1419638670 18<24drorh18>	im pondering if i shall fork processes, or merge two projects....
+T 1419638770 18<24TeddyMurray18>	hi, can someone help me with my websocket and postgresql application? its disconnecting my clients and crashing. i will pastebin the error
+T 1419638799 18<24drorh18>	i shall merge
+T 1419638833 18<26lxe18>	Hello
+T 1419638846 18<24drorh18>	Hello
+T 1419638846 18<24TeddyMurray18>	http://pastebin.com/hbFE0EKP
+T 1419638927 18<26lxe18>	TeddyMurray: is pg.connect(pgConString, function(err, client) { .. }) setting the 'err'?
+T 1419638946 18<24TeddyMurray18>	i will check
+T 1419638981 18<24TeddyMurray18>	lxe, should i put it in the notification event block?
+T 1419638984 18<24TeddyMurray18>	the console log
+T 1419638998 18<25shoshy18>	hey, i have a question about streams, i can't find an answer (or figure out) on the web. I've implemented a writeable stream. I'm piping a stream, lets say a.pipe(b).pipe(c).pipe(ws); ws is a stream i've create that has ws.on('pipe', function(src){ }); , my question is, how can i read the stream data in the 'pipe' event? as i'd like to use src.write(...) it so it could output it (call the _write function)
+T 1419639000 18<26lxe18>	TeddyMurray: you should just console.log(err)
+T 1419639064 18<24TeddyMurray18>	the err is null
+T 1419639101 18<26lxe18>	shoshy: the 'src' is probably a readableStream, so you can't really 'write' to it
+T 1419639159 18<25shoshy18>	lxe: i did "console.log(src);" and in it's properties it has: "writable:true;readable:true" does that mean its a "duplex" ? or something else
+T 1419639174 18<26lxe18>	TeddyMurray: hmm the error is coming from the websocket...
+T 1419639198 18<24TeddyMurray18>	lxe yeah, it works perfectly like once but if i refresh my browser client and try to do the same thing
+T 1419639200 18<25shoshy18>	lxe: and my custom stream "ws" is a writeable stream, so it can get as an input a readable stream. Doesn't it mean i should be able to write it?
+T 1419639209 18<24TeddyMurray18>	it disconnects and shows the error
+T 1419639241 18<24TeddyMurray18>	that's why i added the LISTEN twice
+T 1419639245 18<24TeddyMurray18>	but that didn't fix it
+T 1419639251 18<24TeddyMurray18>	i thought maybe listen only returned once
+T 1419639276 18<26lxe18>	shoshy: ...or a Transform stream. I bet you can try writing to the src, and if it's a duplex stream, that would make sense, but in your case, why would you want to do that?
+T 1419639422 18<25shoshy18>	lxe: it looks like: fs.createReadStream('...').pipe(..).pipe(es.map(function (data) {...}).pipe(ws); es = require('event-stream'); ws = require('stream').Writable(); , i want to be able to use the output of the previous stream and handle the 'finish' event so i could process it
+T 1419639462 18<24TeddyMurray18>	lxe, maybe i need a separate pg client for each connected?
+T 1419639520 18<26lxe18>	TeddyMurray: nah, once the reference to 'ws' is established on connection you should be able to 'send' to it.
+T 1419639548 18<25suciuvlad18>	I'm receiving the following error with node 0.10.33 "Segmentation fault (core dumped)". Any ideas how to debug this?
+T 1419639548 18<26lxe18>	client.on('notification') registers per EACH ws connection, so you should be good.
+T 1419639585 18<24TeddyMurray18>	ah right
+T 1419639591 18<28MrWebington18>	Hi there, I've been using app.use for a long time to include routing made in external files into my index.js, but now I'm trying to debug all POST data recieved. I tell it to console.log my req.body but it wont show anything :/
+T 1419639593 18<27ljharb18>	suciuvlad: first would be to upgrade to 0.10.35 and see if your issue is fixed
+T 1419639596 18<24TeddyMurray18>	well it works until i have more than one connected
+T 1419639608 18<26lxe18>	TeddyMurray: try ws.send() something without the pg...
+T 1419639618 18<24TeddyMurray18>	ok
+T 1419639653 18<25shoshy18>	lxe: when i ws.on('pipe',function(src){console.log(src);}); this is the output: http://pastie.org/9800084
+T 1419639666 18<28MrWebington18>	I've read some Express/Connect middleware tutorials but none of them seem to answer my problem.
+T 1419639692 18<26lxe18>	shoshy: you can still push/write to the writer (self) on the pipe event
+T 1419639728 18<25shoshy18>	lxe: right, but how can i push/write the stream data? src.write(... )
+T 1419639732 18<26lxe18>	writer.on('pipe', function (readable) { writer.doWhatever(...) }},
+T 1419639755 18<25shoshy18>	but i want to write what the readable gives me
+T 1419639761 18<26lxe18>	don't use the src argument, use ws
+T 1419639762 18<28MrWebington18>	Here's a pastie of my index.js for anyone willing to help: http://pastie.org/9800088
+T 1419639769 18<26lxe18>	you can read form src, then write to ws
+T 1419639817 24*	28kurtkraut is now known as 18KurtKraut
+T 1419639829 18<20SergioFilhow18>	Hello, I have a project that needs to require a file from another module (with absolute path), but when I require from the first module, it lacks some dependencies that are on the second module, is there a way to use require giving "node_modules" scope?
+T 1419639840 18<25shoshy18>	lxe: i think i understood what you mean.. so src  = readable and i need to read from it and use ws.write ...
+T 1419639846 18<28MrWebington18>	The middle ware I was testing is at the bttom of the Configuring app comment
+T 1419639863 18<28MrWebington18>	*section
+T 1419639882 18<26lxe18>	shoshy: that's right! I'm trying to come up with an example
+T 1419639921 18<26lxe18>	shoshy: you should use a transform stream thoguh!
+T 1419639984 18<25shoshy18>	lxe: uh oh... if you could show me code or link me to one related it would be amazing, i'm trying to do this for several hours and i've read the "streams-handbook" and various other resources.. idk why there's not so well put examples
+T 1419639993 18<26lxe18>	shoshy: just a sec
+T 1419640023 18<28MrWebington18>	I think I'll asnwer my own question -> Middleware sequence is cursial. Thanks anyways.
+T 1419640103 18<26lxe18>	shoshy: https://gist.github.com/lxe/b995cb519710abb8bbc3
+T 1419640134 18<26lxe18>	http://nodejs.org/api/stream.html#stream_transform_transform_chunk_encoding_callback
+T 1419640196 18<25shoshy18>	lxe: thanks! so basically, i should use the transform stream inside the on('pipe',... ) of my own writeable stream, right?
+T 1419640210 18<26lxe18>	shoshy: you don't even need on(pipe)
+T 1419640219 18<25shoshy18>	OR i should transofrm the readable i got to writeable
+T 1419640306 18<25shoshy18>	OR i should transofrm the readable i got to writeable
+T 1419640310 18<25shoshy18>	ops..
+T 1419640327 18<25shoshy18>	ahh... i think i got it
+T 1419640349 18<26lxe18>	shoshy: you should only use on.pipe() if you need to catch events from the source readable stream
+T 1419640355 18<26lxe18>	*on('pipe')
+T 1419640363 18<25shoshy18>	lxe: i do, i want to catch the 'finish'
+T 1419640399 18<25shoshy18>	lxe: i want to know when it finished processing it so i could process the whole data
+T 1419640519 18<26lxe18>	shoshy: ah cool well.. https://gist.github.com/lxe/b995cb519710abb8bbc3
+T 1419640544 18<26lxe18>	the only caveat, is that .write() will be caught by the _stransform, and transform whatever you write
+T 1419640549 18<27fullstack18>	put it in your pipe and smoke it
+T 1419640627 18<25shoshy18>	lxe: the 'end' isn't being triggered
+T 1419640661 18<25shoshy18>	lxe: i guess cause i need to "read" it ?
+T 1419640731 18<26lxe18>	shoshy: I'm actually not quite sure here, but I don't think you can write after the finish event, since it is called after the last write,
+T 1419640760 18<26lxe18>	oh
+T 1419640765 18<26lxe18>	shoshy: i know
+T 1419640772 18<26lxe18>	duh
+T 1419640781 18<26lxe18>	forgot the drain
+T 1419640791 18<25shoshy18>	lxe: i used the code in your gist, and did a "console.log('here!');" inside the "on('end',..)" and it wasn't triggered..
+T 1419640810 18<26lxe18>	don't forget to .pipe(ts, {end: false})
+T 1419640829 18<25shoshy18>	lxe: i didn't...
+T 1419640837 18<25shoshy18>	lxe: drain ? where do you put it
+T 1419640854 24*	28night-owl is now known as 18zz_night-owl
+T 1419640867 18<26lxe18>	I was thinking _flush event
+T 1419640875 18<26lxe18>	*event = handler
+T 1419640879 18<26lxe18>	for the transform stream
+T 1419640935 18<27obiwahn18>	hi is there a command to link form /usr/local/lib/node_module/<pkg>/bin/* to /usr/local/bin
+T 1419640981 18<24Aria18>	npm install -g generally does this, as you install <pkg>
+T 1419641114 18<25shoshy18>	lxe: i added a _flush property with a callback.. (ts._flush = function(clb){...}) not being called
+T 1419641157 18<26lxe18>	shoshy: I just changed ts.write to ts.push in https://gist.github.com/lxe/b995cb519710abb8bbc3. The end event is being handled in my case.
+T 1419641162 18<27obiwahn18>	Aria: mmh coffee, cake, bower and grunt did not get linked:(
+T 1419641202 18<24Aria18>	"npm config get prefix" says what?
+T 1419641202 18<24TeddyMurray18>	lxe, have any other ideas? the ws.send() worked fine
+T 1419641209 18<24TeddyMurray18>	im using two separate nodejs scripts
+T 1419641231 18<24TeddyMurray18>	for two different triggers
+T 1419641231 18<24TeddyMurray18>	is it possible i can only have 1 connection at a time?
+T 1419641244 18<26lxe18>	TeddyMurray: I don't quite know :/
+T 1419641251 18<24TeddyMurray18>	D= okay, thank you
+T 1419641267 18<25shoshy18>	lxe: in my case it's not :/ hmm...
+T 1419641268 18<26lxe18>	TeddyMurray: i haven't played around with either, but I'll give it a shot
+T 1419641288 18<24TeddyMurray18>	awesome thank you
+T 1419641292 18<24TeddyMurray18>	i love push notifications
+T 1419641464 18<24TeddyMurray18>	this is such a weird error..
+T 1419641592 18<25shoshy18>	lxe: i think the fact that i see in the console.log(src); "{ drain: [Function: ondrain], ...}, write: [Function]," doesn't mean the stream is a writeable? i don't see a read function only a 'write' one
+T 1419641662 18<26lxe18>	shoshy: you shouldn't assume your 'src' is writeable in most cases, unless you're explicitly using a chain of duplex streams
+T 1419641722 18<26lxe18>	you can pipe readables -> writeables, or readables -> transforms -> ... -> writeables
+T 1419641723 18<25shoshy18>	lxe: i use https://github.com/dominictarr/JSONStream just instead of this part: ".pipe(es.mapSync(function (data) {" i use ".pipe(es.map(function (data) {" the async version
+T 1419641767 18<25shoshy18>	so the "next pipe" i want a stream that has a 'finish' event that i can manipulate the final object
+T 1419641785 18<26lxe18>	ah JSONStream might be using through, which uses streams 1, which I'm confused about
+T 1419641825 18<25shoshy18>	lxe: it says "Create a through stream from an asynchronous function"
+T 1419641839 18<25shoshy18>	uh oh... :/
+T 1419641906 18<26lxe18>	http://nodejs.org/api/stream.html#stream_readable_wrap_stream ? :P
+T 1419641917 18<25shoshy18>	lxe: under https://github.com/substack/stream-handbook it says: "Through streams are simple readable/writable filters that transform input and produce output."
+T 1419641928 18<25shoshy18>	and places it under "transform"
+T 1419642053 18<26lxe18>	shoshy: so you want something to happen at the very end, right?
+T 1419642059 18<25shoshy18>	yes
+T 1419642121 18<25shoshy18>	lxe: yes
+T 1419642175 18<27fullstack18>	like, a happy ending
+T 1419642288 22*	26ChanServ gives channel operator status to 18AvianFlu
+T 1419642296 18<26lxe18>	shoshy: what is supposed to emit the finish event? the JSONStream.parse()?
+T 1419642300 18<25shoshy18>	lxe: yes
+T 1419642302 18<25shoshy18>	sorry
+T 1419642348 19<Xstasy>	Any reason this shouldn't work? var res = new RegExp(/{([a-zA-Z0-9_]+)}/g).exec(trigger); It gets the first match but not the second one.
+T 1419642355 18<25shoshy18>	lxe: no, after that .pipe(JSONStream.parse..) there's another pipe . .pipe(es.map(function (data) {
+T 1419642361 18<25shoshy18>	so the es.map should
+T 1419642403 18<25shoshy18>	lxe: but maybe i understood wrongly how they work... and the 'end' event is emitted ACROSS pipes and not for each pipe
+T 1419642421 18<26lxe18>	shoshy: looks like neither parse not map are emitting the finish events....
+T 1419642439 18<26lxe18>	shoshy: also I'm not very familiar with object streams :/
+T 1419642493 24*	28zz_night-owl is now known as 18night-owl
+T 1419642508 18<25shoshy18>	lxe: All the event-stream functions return instances of Stream. event-stream creates 0.8 streams , which are compatible with 0.10 streams NOTE: I shall use the term "through stream" to refer to a stream that is writable and readable.
+T 1419642508 24*	28Havvy[Hex] is now known as 18Havvy
+T 1419642587 18<25shoshy18>	lxe: progress!!!
+T 1419642590 18<26lxe18>	shoshy: yeah the finish events are not firing.. the end events are firing on parse however, but not on map
+T 1419642601 18<26lxe18>	shoshy: nice! how did yo do it?
+T 1419642604 18<25shoshy18>	lxe: i was able to fire a finish event
+T 1419642639 18<25shoshy18>	lxe: ".pipe(es.map(function (data,cb) { cb(null)}).pipe(ts,{end: false})
+T 1419642669 18<25shoshy18>	lxe: ".pipe(es.map(function (data,cb) { cb(null,data)}).pipe(ts,{end: false})
+T 1419642673 18<25shoshy18>	would pass the data
+T 1419642752 18<26lxe18>	shoshy: interesting. I'm unable to see the finish event
+T 1419642797 18<25shoshy18>	lxe: and i changed in the on('pipe',src){ src.on('finish',..) } instead src.on('end')
+T 1419642898 18<25shoshy18>	lxe: sec, i'll write my a gist of the code i used
+T 1419642951 18<22Jan-18>	oh, so it is
+T 1419642953 18<22Jan-18>	hihi all :)
+T 1419642997 18<22Jan-18>	...is there some way  I can link javascript files in node in the normal way, other than just eval()ing a loaded file?
+T 1419643015 18<19substack18>	Jan-: load them with require()
+T 1419643027 18<19substack18>	var somefile = require('./somefile.js')
+T 1419643029 18<22Jan-18>	that would require me to style the loaded files with module.exports etc?
+T 1419643037 18<19substack18>	yes and?
+T 1419643047 18<19substack18>	otherwise you'll have globals everywhere
+T 1419643047 18<22Jan-18>	Hrm.
+T 1419643059 18<22Jan-18>	That's fine, I'm porting some code which I'd rather not totally restyle.
+T 1419643077 18<22Jan-18>	there's no more conventional linking arrangements?
+T 1419643092 18<19substack18>	"conventional"
+T 1419643096 18<19substack18>	not sure what that means
+T 1419643103 18<29deltab18>	JS doesn't really have that
+T 1419643105 18<19substack18>	node programs just use require() and module.exports
+T 1419643106 18<25shoshy18>	lxe: http://pastie.org/9800137
+T 1419643142 18<29deltab18>	Jan-: require() *is* the convention
+T 1419643159 18<25shoshy18>	lxe: you're right, src.on('finish',.. ISN'T being called
+T 1419643164 18<26lxe18>	I have a http/net question. If I made a http.request(.., handler(IncomingMessage){..}) and now I'm inside the the handler, and have the IncomingMessage, and I only need the first chunk of it, would doing IncomingMessage.socket.destroy() afterwards conserve the bandwidth in any way?
+T 1419643195 18<22Jan-18>	The workaround seems to be eval(fs.readFileSync('foo.js'));
+T 1419643221 18<25shoshy18>	lxe: in anyway, thank you sooooooooooooooo much! really learnt a lot from this.
+T 1419643258 18<26lxe18>	shoshy: https://gist.github.com/lxe/99fbb4efb3b8b1ae7ae2 I'm only seeing some end events... and the .map isnt' even firing that one
+T 1419643315 18<22Jan-18>	what mean this: http://pastebin.com/79jgc5KR
+T 1419643375 18<25shoshy18>	lxe: change line 7 to "var map = es.map(function (data,cb) { cb(null,JSON.stringify(data));});"
+T 1419643380 18<26lxe18>	Jan-: does 'G:\Stuff\devel\node_playing\cli.js' actually exist?
+T 1419643399 18<26lxe18>	shoshy: duh async
+T 1419643409 18<22Jan-18>	Yes.
+T 1419643443 18<25shoshy18>	lxe: ok?
+T 1419643485 18<26lxe18>	shoshy: yes! we get finish!
+T 1419643494 18<26lxe18>	for the whole pipeline
+T 1419643503 18<25shoshy18>	lxe: yay! glad to hear that!... i got it as well :)
+T 1419643518 18<26lxe18>	but ONLY if it ends with .pipe(fs.createWriteStream('/dev/null'));
+T 1419643557 18<25shoshy18>	lxe: not sure why yet but you have to "JSON.stringify(data)" ... requires string i guess
+T 1419643594 18<26lxe18>	yeah because normal non-object streams don't like non-buffer or non-string chunks
+T 1419643596 18<25shoshy18>	lxe: might stream ends with .pipe(ws,{end : false}); as you saw
+T 1419643623 18<25shoshy18>	lxe: that's what i thought..
+T 1419643628 18<25shoshy18>	*might = my
+T 1419643777 18<25shoshy18>	lxe: anyway, thanks again, i gtg. Great day! glad we worked it out :)
